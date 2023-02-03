@@ -30,4 +30,5 @@ $(document).ready(function(){
 	total += 1;
 	document.getElementById("iCount").innerHTML = total + " chars";
 	
-});
+
+});	
