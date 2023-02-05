@@ -44,7 +44,7 @@ $(document).ready(function(){
 	docViewBottom = docViewTop + $(window).height(), 
 	elemTop = $(elem).offset().top;
 	
-    return ((elemTop <= docViewBottom));
+    return ((elemTop <= docViewBottom - 200));
 }
 
 	$(window).scroll(function(){
