@@ -9,6 +9,15 @@ background: -webkit-linear-gradient(to right, #CCFFE5, rgba(136, 123, 138, 1));
 background: linear-gradient(to right, #CCFFE5, rgba(166, 193, 238, 1))
 }
 
+
+
+.wrapper2 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -40,8 +49,6 @@ background: linear-gradient(to right, #CCFFE5, rgba(166, 193, 238, 1))
   grid-column: 2;
   grid-row: 3 ;
 }
-
-
 .seven {
   grid-column: 1 / 2;
   grid-row: 1;
