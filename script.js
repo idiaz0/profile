@@ -30,5 +30,10 @@ $(document).ready(function(){
 	total += 1;
 	document.getElementById("iCount").innerHTML = total + " chars";
 	
+	$("[class*='projectsClass']").animate({
+	  fontSize: '50px',
+      opacity: '0.7',
+	  top: '150px',
+    }, 1000);
 
 });	
