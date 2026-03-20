@@ -399,39 +399,75 @@
   <div class="container-fluid py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-12 col-xl-12">
-        <div class="card">
-          <div class="rounded-top text-white d-flex flex-row" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp'); height:280px;">
-            <div class="ms-4 mt-5 d-flex flex-column" style="width: 250px;">
-              <img src="img/imgProfile.PNG" alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2" style="width: 100%; z-index: 1">
-              
-            </div>
-            <div class="ms-3" style="margin-top: 130px;">
-              <h1 style="position:absolute;" class="projectsClass">Ivan Diaz</h1>
-            </div>
-          </div>
-          <div class="p-6 text-black" style="background-color: #f8f9fa;">
-            <div class="d-flex justify-content-end text-center py-1">
-              <div>
-				<p class="mb-1 h1"><i class="fas fa-award fa-2x animated fadeInUp" style="color: #D6E39A; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.73);"></i></p>
-                <p class="mb-1 h1">15 Years</p>
-                <p class="small text-muted mb-0">Experience</p>
-              </div>
-              <div class="px-4">
-			  <p class="mb-1 h1"><i class="fas fa-atlas fa-2x animated fadeInLeft" style="color: #9AC4E3; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.73);"></i></p>
-                <p class="mb-1 h1">3</p>
-                <p class="small text-muted mb-0">Certification</p>
-              </div>
-              <div>
-			  <p class="mb-1 h1"><i class="fas fa-atom fa-2x animated fadeInRight" style="color: #D89AE3; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.73);"></i></p>
-                <p class="mb-1 h1">1</p>
-                <p class="small text-muted mb-0">Master's Degree</p>
-              </div>
-			  <p class="mb-1 h1"><i class="fas fa-atom fa-2x animated fadeInRight" style="color: #D89AE3; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.73);"></i></p>
-                <p class="mb-1 h1">1</p>
-                <p class="small text-muted mb-0">Bacherlor's Degree</p>
-              </div>
-            </div>
-          </div>
+        <div class="card border-0 shadow-lg overflow-hidden rounded-5">
+			<!-- Portada con Gradiente y Overlay -->
+			<div class="rounded-top text-white d-flex flex-row position-relative" 
+				 style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp'); background-size: cover; background-position: center; height:280px;">
+			  
+			  <!-- Overlay para que el nombre resalte -->
+			  <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(transparent, rgba(0,0,0,0.6)); z-index: 1;"></div>
+		  
+			  <div class="ms-4 mt-5 d-flex flex-column" style="width: 180px; z-index: 2;">
+				<img src="img/imgProfile.PNG" 
+					 alt="Ivan Diaz" 
+					 class="img-fluid rounded-circle border border-4 border-white shadow-lg mt-4 mb-2" 
+					 style="z-index: 2; background: #fff;">
+			  </div>
+			  
+			  <div class="ms-3" style="margin-top: 160px; z-index: 2;">
+				<h1 class="fw-bold display-4 text-white mb-0" style="letter-spacing: -1px;">Ivan Diaz</h1>
+				<p class="text-white-50 fw-light"><i class="fas fa-microchip me-2"></i>Data Systems Analyst & IIoT Expert</p>
+			  </div>
+			</div>
+		  
+			<!-- Barra de Estadísticas Estilo Dashboard -->
+			<div class="p-4 bg-white">
+			  <div class="row g-0 text-center">
+				<div class="col-6 col-md-3 border-end border-light py-2">
+				  <div class="d-flex flex-column align-items-center">
+					<i class="fas fa-award text-warning mb-2 animated fadeInUp" style="font-size: 1.5rem;"></i>
+					<h4 class="fw-bold mb-0">15</h4>
+					<small class="text-muted text-uppercase fw-bold" style="font-size: 10px;">Years Exp.</small>
+				  </div>
+				</div>
+				
+				<div class="col-6 col-md-3 border-end-md border-light py-2">
+				  <div class="d-flex flex-column align-items-center">
+					<i class="fas fa-certificate text-info mb-2 animated fadeInLeft" style="font-size: 1.5rem;"></i>
+					<h4 class="fw-bold mb-0">3</h4>
+					<small class="text-muted text-uppercase fw-bold" style="font-size: 10px;">Certifications</small>
+				  </div>
+				</div>
+		  
+				<div class="col-6 col-md-3 border-end border-light py-2">
+				  <div class="d-flex flex-column align-items-center border-top-sm pt-2 pt-md-0">
+					<i class="fas fa-graduation-cap text-danger mb-2 animated fadeInRight" style="font-size: 1.5rem;"></i>
+					<h4 class="fw-bold mb-0">1</h4>
+					<small class="text-muted text-uppercase fw-bold" style="font-size: 10px;">Master's Degree</small>
+				  </div>
+				</div>
+		  
+				<div class="col-6 col-md-3 py-2">
+				  <div class="d-flex flex-column align-items-center border-top-sm pt-2 pt-md-0">
+					<i class="fas fa-university text-success mb-2 animated fadeInRight" style="font-size: 1.5rem;"></i>
+					<h4 class="fw-bold mb-0">1</h4>
+					<small class="text-muted text-uppercase fw-bold" style="font-size: 10px;">Bachelor's Degree</small>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+		  <style>
+			/* Ajustes extra para que se vea premium */
+			.rounded-5 { border-radius: 1.5rem !important; }
+			.shadow-lg { box-shadow: 0 1rem 3rem rgba(0,0,0,.1) !important; }
+			@media (max-width: 768px) {
+			  .border-end-md { border-right: none !important; }
+			  .border-top-sm { border-top: 1px solid #f1f1f1 !important; }
+			}
+		  </style>
+		  
           <div class="card-body p-4 text-black" style="text-align: center;">
             <div class="row">
               <div class="p-4 col col-lg-8" style="background-color: #f8f9fa; text-align: left;">
