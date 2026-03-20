@@ -12,175 +12,281 @@
 	<!-- MDB -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 	
-	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="script.js"></script>
 	
 	<title>MIT IVAN DIAZ PROFILE GITHUB</title>
 </head>
-
 <body>
+<!-- Navbar Moderna con Efecto Glassmorphism -->
+<nav class="navbar fixed-top navbar-expand-lg custom-navbar">
+	<div class="container"> <!-- 'container' centra mejor que 'container-fluid' -->
+	  <a id="homeButton" class="navbar-brand fw-bold" href="#"> 
+		<i class="fas fa-home me-2"></i>IVAN <span class="text-primary text-gradient">DIAZ</span>
+	  </a>
+	  
+	  <button
+		class="navbar-toggler border-0"
+		type="button"
+		data-mdb-toggle="collapse"
+		data-mdb-target="#navbarNav"
+		aria-controls="navbarNav"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	  >
+		<i class="fas fa-bars text-dark"></i>
+	  </button>
+  
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav ms-auto"> <!-- ms-auto mueve el menú a la derecha -->
+		  <li class="nav-item mx-2">
+			<a id="bioButton" class="nav-link custom-link" href="#">
+			  <i class="fas fa-user-graduate me-1"></i> BIO
+			</a>
+		  </li>
+		  <li class="nav-item mx-2">
+			<a id="projectsButton" class="nav-link custom-link" href="#">
+			  <i class="fas fa-project-diagram me-1"></i> PROJECTS
+			</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+  
+  <style>
+	/* Efecto de Vidrio (Glassmorphism) */
+	.custom-navbar {
+	  background: rgba(255, 255, 255, 0.8) !important;
+	  backdrop-filter: blur(10px); /* Desenfoque del fondo */
+	  -webkit-backdrop-filter: blur(10px);
+	  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	  padding: 12px 0;
+	  transition: all 0.3s ease;
+	}
+  
+	/* Estilo del Logo */
+	.navbar-brand {
+	  font-size: 1.2rem;
+	  letter-spacing: 1px;
+	  color: #333 !important;
+	}
+	
+	.text-gradient {
+	  background: linear-gradient(45deg, #007bff, #00d4ff);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	}
+  
+	/* Links Modernos */
+	.custom-link {
+	  color: #555 !important;
+	  font-weight: 500;
+	  position: relative;
+	  transition: color 0.3s ease;
+	  padding: 8px 15px !important;
+	}
+  
+	.custom-link:hover {
+	  color: #007bff !important;
+	}
+  
+	/* Línea animada debajo del link al pasar el mouse */
+	.custom-link::after {
+	  content: '';
+	  position: absolute;
+	  width: 0;
+	  height: 2px;
+	  bottom: 5px;
+	  left: 15px;
+	  background-color: #007bff;
+	  transition: width 0.3s ease;
+	}
+  
+	.custom-link:hover::after {
+	  width: calc(100% - 30px);
+	}
+  
+	/* Quitar el recuadro feo al hacer clic en móvil */
+	.navbar-toggler:focus {
+	  box-shadow: none;
+	  outline: none;
+	}
+  </style>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a id="homeButton" class="navbar-brand" href="#"> <i class="fas fa-home text-muted"></i> HOME</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-mdb-toggle="collapse"
-      data-mdb-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a id="bioButton" style="cursor: pointer;" class="nav-link" href="#"><i class="fas fa-user-graduate text-muted"></i> BIO</a>
-        </li>
-        <li class="nav-item">
-          <a id="projectsButton" style="cursor: pointer;" class="nav-link" href="#"><i class="fas fa-project-diagram text-muted"></i> PROJECTS</a>
-        </li>
+<section id="projects" class="py-5" style="display: none; background-color: #f4f7f9;">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
         
-      </ul>
-    </div>
-  </div>
-
-</nav>
-
-
-<section id="projects" class="h-100 gradient-custom-2" style="display: none">
-  <div class="container-fluid py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-9 col-xl-7">
-        <div class="card animated fadeInDown" style="margin: 20px;">
-          
-          <div class="card-body p-4 text-black" >
-            
-			<div class="mb-5" style="text-align: left;">
-              <p class="lead fw-normal mb-1 "><i class="fab fa-fantasy-flight-games"></i> PROJECTS</p>
-              <div class="row rounded" style="background-color: #f8f9fa;">
-                <p class="font-italic col col-lg-4"><a href="https://idiaz0.github.io/PacMen-Exercise/"><i class="fab fa-github"></i> PacMen Exercise github</a></p>
-                <p class="font-italic col col-lg-4"><a href="https://idiaz0.github.io/EyeMovement/"><i class="fab fa-github"></i> Eye Exercise</a></p>
-                <p class="font-italic col col-lg-4"><a href="https://idiaz0.github.io/BusTracker/"><i class="fab fa-github"></i> Real Time Bus Tracking</a></p>
-				<hr class="hr hr-blurry" />
-			  </div>
+        <!-- SECCIÓN 1: QUICK ACCESS PROJECTS -->
+        <div class="mb-5 animated fadeInDown">
+          <h5 class="fw-bold mb-3 text-uppercase text-primary" style="letter-spacing: 2px;">
+            <i class="fab fa-fantasy-flight-games me-2"></i> Featured Projects
+          </h5>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <a href="https://idiaz0.github.io/PacMen-Exercise/" class="project-btn">
+                <i class="fab fa-github me-2"></i> PacMen Exercise
+              </a>
             </div>
-						
+            <div class="col-md-4">
+              <a href="https://idiaz0.github.io/EyeMovement/" class="project-btn">
+                <i class="fab fa-github me-2"></i> Eye Exercise
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="https://idiaz0.github.io/BusTracker/" class="project-btn">
+                <i class="fab fa-github me-2"></i> Real Time Bus Tracking
+              </a>
+            </div>
           </div>
         </div>
-		<div class="card animated fadeInRight" style="margin: 20px;">
-          
-          <div class="card-body p-4 text-black">
-			<div class="mb-5" style="text-align: left;">
-			  <img src="img/imageDataScience.PNG" class="img img-thumbnail animated fadeInUp"></img>
-              <p class="lead fw-normal mb-1 animated fadeIn"><i class="fa-brands fa-python"></i> PYTHON FOR DATA SCIENCE AND MACHINE LEARNING</p>
-				<p style="font-size:12px; font-style: italic;">
-					<i>The study of data science analyzes the information with the optics of descriptive analytics. The models used to
-					predict variations in systems, allows me to make decisions based on numerical evidence, creating null hypotheses, linear models,
-					PCA analysis, kNN linear regression, linear progression among others. In these terms, the following questions arise</i>
-					<div class="wrapper3" > 
-					
-						<ul class="animated fadeInLeft wrapper3Col1 ">
-							<li>
-								<b>MANUFACTURING CASE STUDY</b>
-							</li>
-							<li>
-								Is it possible to predict the amount of scrap before it is produced?
-							</li>
-							<li>
-								Can the behavior of a manufacturing system be predicted? Downtime, Scrap, Defects in material
-							</li>
-						</ul>
-											
-						<ul class="animated fadeInLeft wrapper3Col2">
-							<li>
-								<b>SALES CASE STUDY</b>
-							</li>
-							<li>
-								How can you improve sales using a recommendation system by machine learning based on demographics,
-								geographic location, population characteristics, big data?
-							</li>
-							<li>
-								Is it possible to generate new products based on this analysis?
-							</li>
-						</ul>
-											
-						<ul class="animated fadeInLeft wrapper3Col3">
-							<li>
-								<b>ENGINNERING CASE STUDY</b>
-							</li>
-							<li>
-								How can you improve the characteristics of a product based on big data?
-							</li>
-							<li>
-								How can you improve the process, material, production of a product or service?
-							</li>
-						</ul>
-											
-						<ul class="animated fadeInLeft wrapper3Col4">
-							<li>
-								<b>FINANCE CASE STUDY</b>
-							</li>
-							<li>
-								Based on a non-parametric supervised learning method used for classification and regression. Is it possible to crate a model that predicts the value of a target variable by learning simple decision rules?
-								In financial analysis, Decision Trees are a Net Present Value or NPV calculation that integrates different future landscapes based on how is the likelihood they are to occur.
-								Is it possible to predict the cash flow, for a certain given decision based on the sum of cash flows for all alternative options, weighted based on their assigned probability?
-							</li>
-						</ul>					
-											
-						<ul class="animated fadeInLeft wrapper3Col5">
-							<li>
-								<b>TECHNICAL SUPPORT CASE STUDY</b>
-							</li>
-							<li>
-								In operations analytics, data collection systems often do not have classifiers. The information does not have
-								labels when the ETL process manages the data. So how can we get valuable information from this data source?
-								Currently the data collection methods are processed by digital classrooms, untag data and unsupervised lnearning,
-								Is it possible to implement a data mining analysis under a clustering model?	</li>
-						</ul>
-					
-						<div class="animated fadeInLeft wrapper3Col6" style="background-color: #f8f9fa; padding:20px;">
-							<a href="pages/MastersDegreeDesisionTree.html"><i class="fa-brands fa-python"></i> MastersDegreeDesisionTree.html</a>
-								</br>
-							<img style="width:500px;" src="img/MastersDegreeDesisionTreeImage.PNG"></img>
-							<hr class="hr hr-blurry" />
-							
-							<a href="pages/MastersDegreekNN.html"><i class="fa-brands fa-python"></i> MastersDegreekNN.html</a>
-							<hr class="hr hr-blurry" />
-							<a href="pages/MastersDegreePCAAbsenteeismAtWork.html"><i class="fa-brands fa-python"></i> MastersDegreePCAAbsenteeismAtWork.html</a>
-							<hr class="hr hr-blurry" />
-							<a href="pages/MastersDegreeRecommendationSystems.html"><i class="fa-brands fa-python"></i> MastersDegreeRecommendationSystems.html</a>
-							<hr class="hr hr-blurry" />
-						</div>
-						
-					</div>
 
-
-
-					
-
-</p>
-              
+        <!-- SECCIÓN 2: CORE - DATA SCIENCE -->
+        <div class="card border-0 shadow-lg overflow-hidden animated fadeInUp" style="border-radius: 20px;">
+          <div class="card-header bg-white p-4 border-0">
+            <div class="d-flex align-items-center">
+              <div class="flex-shrink-0 bg-soft-primary p-3 rounded-3">
+                <i class="fa-brands fa-python fa-2x text-primary"></i>
+              </div>
+              <div class="ms-3">
+                <h3 class="fw-bold mb-0">Data Science & Machine Learning</h3>
+                <small class="text-muted">Descriptive & Predictive Analytics Professional Portfolio</small>
+              </div>
             </div>
-						
+          </div>
+
+          <div class="card-body p-4 p-md-5 bg-white">
+            <div class="row align-items-center mb-5">
+              <div class="col-md-6">
+                <p class="lead-text">
+                  The study of data science analyzes information through the lens of descriptive analytics. I build numerical evidence-based models using: 
+                  <span class="badge bg-light text-dark shadow-sm">Null Hypotheses</span>
+                  <span class="badge bg-light text-dark shadow-sm">Linear Models</span>
+                  <span class="badge bg-light text-dark shadow-sm">PCA</span>
+                  <span class="badge bg-light text-dark shadow-sm">kNN Regression</span>
+                </p>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="img/imageDataScience.PNG" class="img-fluid rounded-4 shadow-sm img-hover" alt="Data Science">
+              </div>
+            </div>
+
+            <!-- CASOS DE ESTUDIO (GRID) -->
+            <h5 class="fw-bold mb-4 border-bottom pb-2">Business Case Studies</h5>
+            <div class="row g-4">
+              <!-- Case 1 -->
+              <div class="col-md-6 col-xl-4">
+                <div class="case-card">
+                  <div class="icon-circle bg-primary text-white"><i class="fas fa-industry"></i></div>
+                  <h6>Manufacturing</h6>
+                  <p>Predicting scrap amounts, downtime, and material defects before they occur.</p>
+                </div>
+              </div>
+              <!-- Case 2 -->
+              <div class="col-md-6 col-xl-4">
+                <div class="case-card">
+                  <div class="icon-circle bg-success text-white"><i class="fas fa-shopping-cart"></i></div>
+                  <h6>Sales</h6>
+                  <p>Recommendation systems based on demographics and big data behavior.</p>
+                </div>
+              </div>
+              <!-- Case 3 -->
+              <div class="col-md-6 col-xl-4">
+                <div class="case-card">
+                  <div class="icon-circle bg-info text-white"><i class="fas fa-microchip"></i></div>
+                  <h6>Engineering</h6>
+                  <p>Process and material optimization using product characteristics analysis.</p>
+                </div>
+              </div>
+              <!-- Case 4 -->
+              <div class="col-md-6 col-xl-4">
+                <div class="case-card">
+                  <div class="icon-circle bg-warning text-dark"><i class="fas fa-coins"></i></div>
+                  <h6>Finance</h6>
+                  <p>Decision Trees for NPV calculations and future cash flow probability landscapes.</p>
+                </div>
+              </div>
+              <!-- Case 5 -->
+              <div class="col-md-6 col-xl-4">
+                <div class="case-card">
+                  <div class="icon-circle bg-dark text-white"><i class="fas fa-headset"></i></div>
+                  <h6>Tech Support</h6>
+                  <p>Unsupervised learning and clustering for ETL data mining and labeling.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACADEMIC LINKS (FOOTER DE LA CARD) -->
+            <div class="mt-5 p-4 rounded-4 bg-dark text-white shadow-sm">
+              <div class="row align-items-center">
+                <div class="col-lg-7">
+                  <h5 class="text-warning fw-bold mb-3"><i class="fas fa-graduation-cap me-2"></i> Master's Degree Models</h5>
+                  <div class="list-group list-group-flush border-0">
+                    <a href="pages/MastersDegreeDesisionTree.html" class="list-group-item bg-transparent text-white-50 border-0 ps-0 hover-text-white"><i class="fas fa-chevron-right me-2 small"></i> Decision Tree Analysis</a>
+                    <a href="pages/MastersDegreekNN.html" class="list-group-item bg-transparent text-white-50 border-0 ps-0 hover-text-white"><i class="fas fa-chevron-right me-2 small"></i> kNN Linear Regression</a>
+                    <a href="pages/MastersDegreePCAAbsenteeismAtWork.html" class="list-group-item bg-transparent text-white-50 border-0 ps-0 hover-text-white"><i class="fas fa-chevron-right me-2 small"></i> PCA Absenteeism Study</a>
+                    <a href="pages/MastersDegreeRecommendationSystems.html" class="list-group-item bg-transparent text-white-50 border-0 ps-0 hover-text-white"><i class="fas fa-chevron-right me-2 small"></i> Recommendation Systems</a>
+                  </div>
+                </div>
+                <div class="col-lg-5 text-center mt-3 mt-lg-0">
+                  <img src="img/MastersDegreeDesisionTreeImage.PNG" class="img-fluid rounded shadow border border-secondary" style="max-height: 180px;">
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+        
       </div>
     </div>
   </div>
 </section>
 
-
-
-
-
-
-
-
-
+<style>
+  .project-btn {
+    display: block;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .project-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    color: #0d6efd;
+  }
+  .bg-soft-primary { background-color: #e7f1ff; }
+  .lead-text { font-size: 1.1rem; line-height: 1.7; color: #555; }
+  .rounded-4 { border-radius: 1.5rem !important; }
+  .img-hover { transition: transform 0.4s ease; }
+  .img-hover:hover { transform: scale(1.03); }
+  .case-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    height: 100%;
+    transition: 0.3s;
+  }
+  .case-card:hover { border-color: #0d6efd; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+  .icon-circle {
+    width: 45px; height: 45px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 15px; font-size: 1.2rem;
+  }
+  .case-card h6 { font-weight: 700; margin-bottom: 10px; color: #222; }
+  .case-card p { font-size: 0.85rem; color: #666; margin-bottom: 0; }
+  .hover-text-white:hover { color: #fff !important; padding-left: 10px !important; transition: 0.3s; }
+</style>
 
 
 
@@ -224,8 +330,6 @@
 				
 			  </div>
             </div>
-			
-			
 			
 			
 			<div class="mb-5">
@@ -462,7 +566,6 @@
 								  <li>POSTGRESQL</li>
 								  <li>TIMESCALE</li>
 								  <li>PORTAINER</li>
-								  <li>OLLAMA/LLAMA3</li>
 							  </ul>
 						  </p>
 						 			
@@ -498,7 +601,7 @@
 					  </div>
 					  <div class="card bg-muted card5">
 						  <p style="text-align:left;">
-							  <p style="text-align: center;"><i class="fab fa-atom fa-4x text-warning" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.73);"></i></p>
+							  <p style="text-align: center;"><i class="fab fa-briefcase fa-4x text-warning" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.73);"></i></p>
 							  <p style="text-align: center;">FUNDAMENTAL TOOLS AND STRATEGIES FOR MODERN DATAODRIVEN MANAGEMENT.</p> 
 							  <hr class="hr hr-blurry" />
 							  <ul style="text-align:left;">
@@ -566,19 +669,7 @@
 				</div>
 			  </div>
             </div>
-			
-			
-			
-            
-            
-			
-			
-			
-			
-			
-			
-			
-			
+	
           </div>
         </div>
       </div>
