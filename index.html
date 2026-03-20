@@ -1,381 +1,172 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIT IVAN DIAZ PROFILE GITHUB</title>
+    <title>MIT IVAN DIAZ PROFILE</title>
     
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
 
     <style>
-        :root {
-            --bg-dark: #05070a;
-            --card-glass: rgba(15, 23, 42, 0.85);
-            --neon-blue: #00d2ff;
-            --neon-green: #39ff14;
-            --text-main: #e2e8f0;
+        body { background-color: #f4f7f6; font-family: 'Roboto', sans-serif; }
+        .gradient-custom {
+            background: #2c3e50;
+            background: -webkit-linear-gradient(to right, #2c3e50, #000000);
+            background: linear-gradient(to right, #2c3e50, #000000);
+            color: white;
+            padding: 60px 0;
+            border-radius: 0 0 50px 50px;
         }
-
-        body {
-            background-color: var(--bg-dark);
-            background-image: radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.05) 0%, transparent 20%);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Navegación */
-        .navbar {
-            background: rgba(5, 7, 10, 0.95) !important;
-            border-bottom: 1px solid rgba(0, 210, 255, 0.2);
-            backdrop-filter: blur(15px);
-        }
-        .nav-link { color: var(--text-main) !important; font-size: 0.9rem; font-weight: 600; }
-        .nav-link:hover { color: var(--neon-blue) !important; }
-
-        /* Estilo Glassmorphism */
-        .glass-card {
-            background: var(--card-glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .card-skill {
+            border: none;
             border-radius: 15px;
-            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
             margin-bottom: 20px;
+            min-height: 450px;
         }
+        .card-skill:hover { transform: translateY(-10px); }
+        .tech-list { list-style: none; padding-left: 0; font-size: 0.85rem; }
+        .tech-list li { margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+        .section-header { border-bottom: 3px solid #00b7ff; display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
+        
+        /* Colores originales de tus iconos */
+        .text-success { color: #28a745 !important; } /* Eléctrica */
+        .text-primary { color: #007bff !important; } /* Gestión */
+        .text-danger { color: #dc3545 !important; }  /* Educación */
+        .text-warning { color: #ffc107 !important; } /* Herramientas/AI */
 
-        .section-title { font-family: 'Orbitron'; color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 210, 255, 0.3); }
-
-        section { display: none; padding-top: 100px; min-height: 100vh; }
-        section.active { display: block; }
-
-        .case-study-box {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid var(--neon-green);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 0 10px 10px 0;
-        }
+        .img-cert { width: 100%; border-radius: 8px; margin-bottom: 15px; border: 1px solid #ddd; }
+        .job-box { background: white; padding: 25px; border-radius: 15px; margin-bottom: 30px; border-left: 5px solid #00b7ff; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top shadow-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white fw-bold" href="#" onclick="showTab('home')"> <i class="fas fa-home text-muted"></i> HOME</a>
-    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#" onclick="showTab('bio')"><i class="fas fa-user-graduate me-1"></i> BIO</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" onclick="showTab('projects')"><i class="fas fa-project-diagram me-1"></i> PROJECTS</a></li>
-      </ul>
+<div class="gradient-custom text-center mb-5">
+    <div class="container">
+        <img src="img/imgProfile.PNG" class="rounded-circle border border-4 border-white mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+        <h1 class="display-4 fw-bold">IVAN DIAZ</h1>
+        <p class="lead">Master of Science (M.S.) in Information Technology Management</p>
+        <div class="d-flex justify-content-center gap-3">
+            <span><i class="fas fa-map-marker-alt"></i> Georgetown, KY</span>
+            <span><i class="fas fa-phone"></i> +1 309 612 4822</span>
+        </div>
     </div>
-  </div>
-</nav>
+</div>
 
-<section id="projects" class="active animate__animated animate__fadeIn">
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-11">
-        
-        <div class="glass-card">
-          <h2 class="section-title mb-4"><i class="fab fa-fantasy-flight-games"></i> PROJECTS</h2>
-          <div class="row p-3 mb-4 rounded" style="background: rgba(255,255,255,0.05);">
-            <div class="col-md-4"><a href="https://idiaz0.github.io/PacMen-Exercise/" class="text-info"><i class="fab fa-github"></i> PacMen Exercise github</a></div>
-            <div class="col-md-4"><a href="https://idiaz0.github.io/EyeMovement/" class="text-info"><i class="fab fa-github"></i> Eye Exercise</a></div>
-            <div class="col-md-4"><a href="https://idiaz0.github.io/BusTracker/" class="text-info"><i class="fab fa-github"></i> Real Time Bus Tracking</a></div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <img src="img/imageDataScience.PNG" class="img-fluid rounded mb-4 border border-info">
-              <h4 class="text-white mb-3"><i class="fa-brands fa-python"></i> PYTHON FOR DATA SCIENCE AND MACHINE LEARNING</h4>
-              <p class="small italic text-info mb-4" style="font-style: italic;">
-                The study of data science analyzes the information with the optics of descriptive analytics. The models used to predict variations in systems, allows me to make decisions based on numerical evidence, creating null hypotheses, linear models, PCA analysis, kNN linear regression, linear progression among others. In these terms, the following questions arise:
-              </p>
-
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <div class="case-study-box">
-                    <strong class="text-white">MANUFACTURING CASE STUDY</strong>
-                    <ul class="small mt-2 opacity-75">
-                      <li>Is it possible to predict the amount of scrap before it is produced?</li>
-                      <li>Can the behavior of a manufacturing system be predicted? Downtime, Scrap, Defects in material</li>
-                    </ul>
-                  </div>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-skill p-4">
+                <div class="text-center mb-3">
+                    <i class="fas fa-seedling fa-4x text-success" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);"></i>
+                    <h5 class="mt-3 fw-bold">ELECTRICAL KNOWLEDGE</h5>
+                    <hr class="hr-blurry">
                 </div>
-                <div class="col-md-6">
-                  <div class="case-study-box">
-                    <strong class="text-white">SALES CASE STUDY</strong>
-                    <ul class="small mt-2 opacity-75">
-                      <li>How can you improve sales using a recommendation system by machine learning based on demographics, geographic location, population characteristics, big data?</li>
-                      <li>Is it possible to generate new products based on this analysis?</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="case-study-box">
-                    <strong class="text-white">ENGINEERING CASE STUDY</strong>
-                    <ul class="small mt-2 opacity-75">
-                      <li>How can you improve the characteristics of a product based on big data?</li>
-                      <li>How can you improve the process, material, production of a product or service?</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="case-study-box">
-                    <strong class="text-white">FINANCE CASE STUDY</strong>
-                    <ul class="small mt-2 opacity-75">
-                      <li>Based on a non-parametric supervised learning method used for classification and regression. Is it possible to crate a model that predicts the value of a target variable by learning simple decision rules? In financial analysis, Decision Trees are a Net Present Value or NPV calculation that integrates different future landscapes based on how is the likelihood they are to occur. Is it possible to predict the cash flow, for a certain given decision based on the sum of cash flows for all alternative options, weighted based on their assigned probability?</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="case-study-box">
-                    <strong class="text-white">TECHNICAL SUPPORT CASE STUDY</strong>
-                    <ul class="small mt-2 opacity-75">
-                      <li>In operations analytics, data collection systems often do not have classifiers. The information does not have labels when the ETL process manages the data. So how can we get valuable information from this data source? Currently the data collection methods are processed by digital classrooms, untag data and unsupervised lnearning, Is it possible to implement a data mining analysis under a clustering model?</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-4 p-4 rounded" style="background: rgba(0, 210, 255, 0.05);">
-                <a href="pages/MastersDegreeDesisionTree.html" class="text-info d-block mb-3"><i class="fa-brands fa-python"></i> MastersDegreeDesisionTree.html</a>
-                <img style="max-width:500px;" src="img/MastersDegreeDesisionTreeImage.PNG" class="img-fluid rounded border border-secondary mb-3">
-                <div class="d-flex flex-wrap gap-3 small">
-                    <a href="pages/MastersDegreekNN.html" class="text-info">MastersDegreekNN.html</a>
-                    <a href="pages/MastersDegreePCAAbsenteeismAtWork.html" class="text-info">MastersDegreePCAAbsenteeismAtWork.html</a>
-                    <a href="pages/MastersDegreeRecommendationSystems.html" class="text-info">MastersDegreeRecommendationSystems.html</a>
-                </div>
-              </div>
+                <ul class="tech-list">
+                    <li>PLC PROGRAMMING ALLEN BRADLEY</li>
+                    <li>MICROLOGIX, CONTROLOGIX, COMPACTLOGIX</li>
+                    <li>ROBOT PROGRAMMING FANUC, ABB</li>
+                    <li>SENSORS & VISION SYSTEMS CAMERAS</li>
+                    <li>NORDSON SYSTEMS & MOTION CONTROL</li>
+                    <li>IGNITION GATEWAY & EDGE</li>
+                    <li>EMQX-MQTT / POSTGRESQL / TIMESCALE</li>
+                    <li>PORTAINER / PROXMOX HA</li>
+                </ul>
             </div>
-          </div>
         </div>
 
-      </div>
+        <div class="col-md-4">
+            <div class="card card-skill p-4">
+                <div class="text-center mb-3">
+                    <i class="fab fa-black-tie fa-4x text-primary" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);"></i>
+                    <h5 class="mt-3 fw-bold">ADMINISTRATION SKILLS</h5>
+                    <hr class="hr-blurry">
+                </div>
+                <ul class="tech-list">
+                    <li>PDCA CONTINUOUS IMPROVEMENT</li>
+                    <li>KANBAN / SCRUM / SCRUMBAN</li>
+                    <li>SAMEF / SIX SIGMA / LEAN MANUFACTURING</li>
+                    <li>WORK BREAKDOWN STRUCTURE (WBS)</li>
+                    <li>ITIL-ITSM STRATEGIES</li>
+                    <li>PMO PORTFOLIO MANAGEMENT</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-skill p-4">
+                <div class="text-center mb-3">
+                    <i class="fab fa-medium fa-4x text-warning" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);"></i>
+                    <h5 class="mt-3 fw-bold">AI & MODERN DATA TOOLS</h5>
+                    <hr class="hr-blurry">
+                </div>
+                <ul class="tech-list">
+                    <li>RAG (Retrieval-Augmented Generation)</li>
+                    <li>OLLAMA / LLAMA 3 / NLP</li>
+                    <li>N8N AUTOMATION</li>
+                    <li>DATA MINING & BUSINESS INTELLIGENCE</li>
+                    <li>DIGITAL TRANSFORMATION ROADMAP</li>
+                    <li>DESCRIPTIVE STATISTICS / PARETO</li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-</section>
-<section id="bio" class="animate__animated animate__fadeIn">
-	<div class="container py-5">
-	  <div class="row justify-content-center">
-		<div class="col-lg-11">
-		  
-		  <div class="glass-card mb-5">
-			<h2 class="section-title mb-5 text-center"><i class="fas fa-brain me-3"></i>JOB EXPERIENCE</h2>
-			
-			<div class="mb-5 border-start border-info border-3 ps-4">
-			  <h4 class="text-white fw-800">DATA SYSTEM ANALYST</h4>
-			  <div class="d-flex justify-content-between mb-2">
-				<span class="text-info fw-600">Workforce-Toyota EV Battery Manufacturing</span>
-				<span class="badge bg-dark border border-info">August 2023 - March 2026</span>
-			  </div>
-			  <p class="small text-muted mb-3" style="font-style: italic; text-align: justify; line-height: 1.6;">
-				Infrastructure Strategy | Machine Learning | High Availability Systems. Professional achievements: Expert in architecting mission-critical IIoT ecosystems within the manufacturing sector. Specialized in bridging OT/IT gaps through High-Availability (HA) infrastructure, containerized microservices, and AI-driven operational intelligence for 15+ production lines and 300+ stations. 
-				<br><br>
-				<strong>Core Competencies:</strong> Infrastructure & Virtualization: Proxmox VE (HA Cluster), Docker, Portainer, YAML Automation. IIoT & SCADA: Ignition Gateway & Edge, EMQX (MQTT Broker), .NET Industrial Apps. Data & Backend: Microservices Architecture, TimescaleDB, PostgreSQL, Express.js, Node.js, Python (ML). Frontend & Visualization: React.js Dashboards, Power BI, Ignition Perspective/Vision. 
-				<br><br>
-				<strong>Experience & Achievements:</strong> Engineered a resilient server environment using Proxmox HA clusters; orchestrated Docker-based microservices via Portainer to ensure zero-downtime for critical manufacturing services. Designed a multi-tier Ignition (Gateway & Edge) architecture synchronized through EMQX brokers, enabling high-throughput data transmission across 300+ stations. Built robust RESTful APIs and Node.js microservices to bridge factory-floor data with real-time React.js dashboards for monitoring KPIs and labor compliance. Authored complex Docker Compose configurations to automate the deployment of data brokers and databases. Deployed Machine Learning models for real-time pattern analysis on battery cell production, reducing waste and mitigating financial risks through predictive maintenance.
-				<br><br>
-				<strong>Custom RAG Application:</strong> Developed a custom Retrieval-Augmented Generation (RAG) application powered by Ollama and Llama 3 to provide stakeholders with a natural language interface for Operational Excellence (Real-time analysis of KPIs, Downtime, and SPC), Financial Impact (Automated calculation of Downtime Costs per Business Unit), and Human Capital Optimization (Analyzed turnover trends and labor performance).
-			  </p>
-			</div>
-  
-			<div class="mb-5 border-start border-info border-3 ps-4">
-			  <h4 class="text-white fw-800">IT MES BUSINESS ANALYTICS</h4>
-			  <div class="d-flex justify-content-between mb-2">
-				<span class="text-info fw-600">TATA-RIVIAN Project</span>
-				<span class="badge bg-dark border border-info">Feb 2022 - Oct 2023</span>
-			  </div>
-			  <p class="small text-muted mb-3" style="font-style: italic; text-align: justify;">
-				MES Developer Engineer & Industrial Data Scientist. Enterprise Integration | Neural Networks | Rockwell FTPC & Strategic Governance. Key Professional Achievements & Narrative: As a Lead IT MES Architect, I spearheaded the end-to-end management, integration, and high-level support of Rockwell Automation’s FactoryTalk ProductionCentre (FTPC) within high-stakes Electric Vehicle (EV) production lines. My role was pivotal in orchestrating the digital platform architecture, ensuring that the MES (Manufacturing Execution System) acted as a seamless bridge between shop-floor automation and corporate intelligence. By administering complex ETL (Extract, Transform, Load) processes, I ensured data integrity across the enterprise, transforming raw industrial signals into a high-fidelity data fabric. Learning, industrial automation, and strategic leadership consistently empowered the organization to make rapid, data-driven decisions in a volatile global market.
-			  </p>
-			</div>
-  
-			<div class="mb-5 border-start border-info border-3 ps-4">
-			  <h4 class="text-white fw-800">IT MES COORDINATOR</h4>
-			  <div class="d-flex justify-content-between mb-2">
-				<span class="text-info fw-600">ABC INOAC</span>
-				<span class="badge bg-dark border border-info">Aug 2016 - February 2022</span>
-			  </div>
-			  <p class="small text-muted mb-3" style="font-style: italic; text-align: justify;">
-				Main achievements: Lead teamwork on implementing digital platform architecture working with a multitude of technologies such as PLCs, OPC Servers, HMI and SCADA development, custom software development, integrating databases, working with data historians and OEE’s, etc. Responsible for coordinate IT developer team to engaging with the other departments, guiding and leading them through solutions, and ultimately delivering successful projects and operations. Defining KPI's and generate digital platforms to implement OLAP solution based on Decision System Support and Business Intelligence. Saving cost based on data driven processes. Implementing DMAIC data driven improvement strategy to control and improve manufacturing process. Managing PMO, Portfolio Project application for Mexico, Freemont, Livingston and Toronto facilities. Greenfield at ABC INOAC Queretaro. Design, lead and implement MES System. KANBAN, SCRUM, SCRUMBAN. Manage comprehensive strategies that empower the organization to manage projects with speed and flexibility.
-			  </p>
-			</div>
-  
-			<div class="mb-5 border-start border-info border-3 ps-4">
-			  <h4 class="text-white fw-800">IT MES PROGRAMMER</h4>
-			  <div class="d-flex justify-content-between mb-2">
-				<span class="text-info fw-600">MAGNA INTERNATIONAL</span>
-				<span class="badge bg-dark border border-info">NOV 2012 – MAR 2016</span>
-			  </div>
-			  <p class="small text-muted mb-3" style="font-style: italic; text-align: justify;">
-				Main achievements: Lead projects from design, through quotation, development and full implementation of manufacturing and business applications, systems and services. Plan, Design, install, maintain and optimize data management and infrastructure across site to achieve business needs. Take data management to information, building processes and procedures that support sound business decision-making across the organization. Create value through analysis, generating data-driven decisions. Train associates across the organization on sound business practices, processes and procedures. Establish relationships with vendors and oversee contract support. Create customer experience and provide timely response to employee IT escalations. Launching projects and facilitys at MAGNA Michigan, AIM at Ohio.
-			  </p>
-			</div>
-		  </div>
-  
-		  <div class="glass-card mb-5 text-center">
-			  <h4 class="text-white mb-4"><i class="fas fa-flask"></i> MIT STUDY RESEARCH & VIDEOS</h4>
-			  <div class="row g-3">
-				  <div class="col-md-4"><div class="ratio ratio-16x9 rounded overflow-hidden shadow"><iframe src="https://www.youtube.com/embed/G2VaJvNNp4k" allowfullscreen></iframe></div><p class="small mt-2">Autonomous Driving Research</p></div>
-				  <div class="col-md-4"><div class="ratio ratio-16x9 rounded overflow-hidden shadow"><iframe src="https://www.youtube.com/embed/8h9vU1pnNZA" allowfullscreen></iframe></div><p class="small mt-2">Object Detection</p></div>
-				  <div class="col-md-4"><div class="ratio ratio-16x9 rounded overflow-hidden shadow"><iframe src="https://www.youtube.com/embed/S1imHE2_GiA" allowfullscreen></iframe></div><p class="small mt-2">Face Recognition</p></div>
-			  </div>
-		  </div>
-  
-		</div>
-	  </div>
-	</div>
-  </section>
-  <section id="home" class="animate__animated animate__fadeIn">
-	<div class="container py-5">
-	  <div class="glass-card mb-5">
-		<div class="row align-items-center">
-		  <div class="col-md-4 text-center">
-			<img src="img/imgProfile.PNG" class="img-fluid rounded-circle border border-info border-4 shadow-lg mb-4" style="width: 220px; height: 220px; object-fit: cover;">
-			<h2 class="section-title">IVAN DIAZ</h2>
-			<p class="text-info fw-600">Master of Science (M.S.) in IT Management</p>
-			<div class="mt-3">
-			  <a href="https://linkedin.com/in/ivan-diaz-260a50228/" class="text-white fs-4 me-3"><i class="fab fa-linkedin"></i></a>
-			  <a href="https://github.com/idiaz0" class="text-white fs-4"><i class="fab fa-github"></i></a>
-			</div>
-		  </div>
-		  <div class="col-md-8">
-			<div class="row text-center g-3 mb-4">
-			  <div class="col-6 col-md-3">
-				<div class="p-3 rounded border border-info bg-dark shadow">
-				  <h3 class="fw-bold text-info mb-0">15</h3>
-				  <small class="text-muted">YEARS EXP.</small>
-				</div>
-			  </div>
-			  <div class="col-6 col-md-3">
-				<div class="p-3 rounded border border-info bg-dark shadow">
-				  <h3 class="fw-bold text-info mb-0">3</h3>
-				  <small class="text-muted">CERTS.</small>
-				</div>
-			  </div>
-			  <div class="col-6 col-md-3">
-				<div class="p-3 rounded border border-info bg-dark shadow">
-				  <h3 class="fw-bold text-info mb-0">1</h3>
-				  <small class="text-muted">MASTER</small>
-				</div>
-			  </div>
-			  <div class="col-6 col-md-3">
-				<div class="p-3 rounded border border-info bg-dark shadow">
-				  <h3 class="fw-bold text-info mb-0">1</h3>
-				  <small class="text-muted">BACHELOR</small>
-				</div>
-			  </div>
-			</div>
-			<p class="text-muted small" style="text-align: justify; line-height: 1.8;">
-			  <i class="fas fa-quote-left text-info me-2"></i>Results-oriented Automation & Control Engineer. Expert in leading Industry 4.0 initiatives by bridging the gap between industrial automation and IT infrastructure. Specialized in MES/MOM systems, Industrial IoT (IIoT), and data-driven solutions to optimize manufacturing execution. Proven track record of developing IIoT architectures and Generative AI (RAG) solutions using Ollama/Llama 3 to transform production data into financial insights, KPI optimization, and workforce performance strategies. Responsible for analyzing the observed probability distribution to quantify the difference in the distributions of the manufacturing variables. Saving cost based on Business Analytics processes.
-			</p>
-			<hr class="border-secondary">
-			<div class="row small">
-			  <div class="col-md-6"><i class="fas fa-phone-alt text-info me-2"></i> +1 309 612 4822</div>
-			  <div class="col-md-6"><i class="fas fa-map-marker-alt text-info me-2"></i> Georgetown, Kentucky</div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-  
-	  <h3 class="section-title text-center mb-4">TECHNICAL_KNOWLEDGE_BASE</h3>
-	  <div class="row g-3 mb-5">
-		<div class="col-md-4">
-		  <div class="glass-card h-100">
-			<h6 class="text-info border-bottom border-info pb-2"><i class="fas fa-laptop-code me-2"></i>SOFTWARE & DATA</h6>
-			<ul class="list-unstyled small mt-3 opacity-75">
-			  <li><i class="fas fa-caret-right text-info"></i> Python / C# / OpenCV / TensorFlow</li>
-			  <li><i class="fas fa-caret-right text-info"></i> React.js / Node.js / Express.js</li>
-			  <li><i class="fas fa-caret-right text-info"></i> SQL / PostgreSQL / TimescaleDB</li>
-			  <li><i class="fas fa-caret-right text-info"></i> API REST / SOAP / MQTT / AJAX</li>
-			  <li><i class="fas fa-caret-right text-info"></i> RAG / Ollama / Llama 3 / n8n</li>
-			</ul>
-		  </div>
-		</div>
-		<div class="col-md-4">
-		  <div class="glass-card h-100">
-			<h6 class="text-success border-bottom border-success pb-2"><i class="fas fa-seedling me-2"></i>ELECTRICAL & OT</h6>
-			<ul class="list-unstyled small mt-3 opacity-75">
-			  <li><i class="fas fa-caret-right text-success"></i> PLC AB (ControlLogix, CompactLogix)</li>
-			  <li><i class="fas fa-caret-right text-success"></i> Robot Programming (FANUC, ABB)</li>
-			  <li><i class="fas fa-caret-right text-success"></i> Ignition Gateway / Ignition Edge</li>
-			  <li><i class="fas fa-caret-right text-success"></i> Vision Systems / Nordson Systems</li>
-			  <li><i class="fas fa-caret-right text-success"></i> Proxmox HA Clusters / Portainer</li>
-			</ul>
-		  </div>
-		</div>
-		<div class="col-md-4">
-		  <div class="glass-card h-100">
-			<h6 class="text-warning border-bottom border-warning pb-2"><i class="fas fa-tasks me-2"></i>MANAGEMENT & TOOLS</h6>
-			<ul class="list-unstyled small mt-3 opacity-75">
-			  <li><i class="fas fa-caret-right text-warning"></i> Scrum / Kanban / Scrumban / WBS</li>
-			  <li><i class="fas fa-caret-right text-warning"></i> Lean Manufacturing / Six Sigma</li>
-			  <li><i class="fas fa-caret-right text-warning"></i> PDCA / SAMEF / DMAIC / ITIL</li>
-			  <li><i class="fas fa-caret-right text-warning"></i> Business Intelligence / Data Mining</li>
-			  <li><i class="fas fa-caret-right text-warning"></i> Digital Transformation Roadmap</li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
-  
-	  <div class="row g-4">
-		<div class="col-lg-7">
-		  <div class="glass-card">
-			<h4 class="text-white mb-4"><i class="fas fa-graduation-cap text-info me-2"></i>EDUCATION</h4>
-			<div class="mb-3">
-			  <h6 class="text-info mb-1">M.S. IN INFORMATION TECHNOLOGY MANAGEMENT</h6>
-			  <p class="small text-muted mb-0">Tecnológico de Monterrey | 2021 – CURRENT</p>
-			</div>
-			<div class="mb-3">
-			  <h6 class="text-info mb-1">BACHELOR IN CONTROL AND AUTOMATION ENGINEERING</h6>
-			  <p class="small text-muted mb-0">National Institute Polytechnic | Graduated June 2011</p>
-			</div>
-			<hr class="border-secondary">
-			<h6 class="text-white mb-3">MIT MACHINE LEARNING & DATA SCIENCE IDSS</h6>
-			<a href="https://olympus1.mygreatlearning.com/certificate/TWJTRBZT" class="btn btn-sm btn-outline-info rounded-pill">View MIT Trophy Certificate</a>
-		  </div>
-		</div>
-		<div class="col-lg-5">
-		  <div class="glass-card">
-			<h4 class="text-white mb-4"><i class="fas fa-certificate text-warning me-2"></i>CERTIFICATIONS</h4>
-			<div class="row g-2">
-			  <div class="col-4"><img src="img/MITCertification.PNG" class="img-fluid rounded border border-secondary" alt="MIT Cert"></div>
-			  <div class="col-4"><img src="img/scoreCard.PNG" class="img-fluid rounded border border-secondary" alt="Score"></div>
-			  <div class="col-4"><img src="img/coursesMIT.PNG" class="img-fluid rounded border border-secondary" alt="Courses"></div>
-			  <div class="col-4"><img src="img/Capture1.PNG" class="img-fluid rounded border border-secondary" alt="Cert1"></div>
-			  <div class="col-4"><img src="img/Capture2.PNG" class="img-fluid rounded border border-secondary" alt="Cert2"></div>
-			  <div class="col-4"><img src="img/Capture7.PNG" class="img-fluid rounded border border-secondary" alt="Cert7"></div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </section>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
-  <script>
-	  function showTab(tabId) {
-		  // Ocultar todas las secciones
-		  document.querySelectorAll('section').forEach(section => {
-			  section.classList.remove('active');
-		  });
-		  // Quitar active de los links de navegación
-		  document.querySelectorAll('.nav-link').forEach(link => {
-			  link.classList.remove('active');
-		  });
-		  // Mostrar la sección seleccionada
-		  document.getElementById(tabId).classList.add('active');
-		  // Marcar link activo
-		  event.currentTarget.classList.add('active');
-		  // Scroll al inicio
-		  window.scrollTo(0, 0);
-	  }
-  </script>
-  </body>
-  </html>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="section-header">PROFESSIONAL EXPERIENCE</h3>
+            
+            <div class="job-box">
+                <h4 class="fw-bold text-dark">DATA SYSTEM ANALYST | Workforce-Toyota</h4>
+                <p class="text-primary fw-bold">August 2023 - March 2026</p>
+                <p style="text-align: justify;" class="text-muted small">
+                    Expert in architecting mission-critical IIoT ecosystems. Specialized in bridging OT/IT gaps through High-Availability (HA) infrastructure, containerized microservices, and AI-driven operational intelligence for 15+ production lines and 300+ stations. Engineered a resilient server environment using Proxmox HA clusters; orchestrated Docker-based microservices via Portainer. Developed a custom <strong>RAG application powered by Ollama and Llama 3</strong> for real-time analysis of KPIs, Downtime, and Financial Impact.
+                </p>
+            </div>
+
+            <div class="job-box">
+                <h4 class="fw-bold text-dark">IT MES BUSINESS ANALYTICS | TATA-RIVIAN</h4>
+                <p class="text-primary fw-bold">Feb 2022 - Oct 2023</p>
+                <p style="text-align: justify;" class="text-muted small">
+                    As a Lead IT MES Architect, I spearheaded the end-to-end management, integration, and high-level support of Rockwell Automation’s FactoryTalk ProductionCentre (FTPC) within high-stakes Electric Vehicle (EV) production lines. My role was pivotal in orchestrating the digital platform architecture, ensuring that the MES acted as a seamless bridge between shop-floor automation and corporate intelligence.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+        <div class="col-lg-8">
+            <h3 class="section-header">MIT RESEARCH & DATA SCIENCE</h3>
+            <div class="bg-white p-4 rounded shadow-sm">
+                <p class="small">Is it possible to predict the amount of scrap before it is produced? Can the behavior of a manufacturing system be predicted? In financial analysis, Decision Trees are a Net Present Value or NPV calculation that integrates different future landscapes...</p>
+                <div class="row">
+                    <div class="col-md-6"><img src="img/imageDataScience.PNG" class="img-fluid rounded border"></div>
+                    <div class="col-md-6">
+                        <ul class="small">
+                            <li><a href="#">MastersDegreeDesisionTree.html</a></li>
+                            <li><a href="#">MastersDegreekNN.html</a></li>
+                            <li><a href="#">MastersDegreePCAAbsenteeism.html</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <h3 class="section-header">CERTIFICATIONS</h3>
+            <div class="row g-2">
+                <div class="col-6"><img src="img/MITCertification.PNG" class="img-cert shadow-sm"></div>
+                <div class="col-6"><img src="img/scoreCard.PNG" class="img-cert shadow-sm"></div>
+                <div class="col-6"><img src="img/Capture1.PNG" class="img-cert shadow-sm"></div>
+                <div class="col-6"><img src="img/Capture7.PNG" class="img-cert shadow-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+</body>
+</html>
