@@ -3,107 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIT IVAN DIAZ PROFILE GITHUB</title>
-    <!-- MDB & Font Awesome (CDNs oficiales) -->
-    <link href="https://cloudflare.com" rel="stylesheet">
-    <link href="https://cloudflare.com" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cloudflare.com" rel="stylesheet""")/>>
+    <!-- Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet""")/>>
+    <!-- MDB -->
+    <link href="https://cloudflare.com" rel="stylesheet""")/>>		
+    
     <style>
-        :root { --main-bg: #f8f9fa; }
-        body { background-color: var(--main-bg); padding-top: 70px; font-family: 'Roboto', sans-serif; }
-        .card { border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 25px; transition: transform 0.3s; }
-        .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .gradient-custom { background: linear-gradient(45deg, #29323c 0%, #485563 100%); color: white; border-radius: 15px; padding: 30px; }
-        .project-link { transition: all 0.3s; border: 1px solid #ddd; }
-        .project-link:hover { background-color: #1266f1; color: white !important; transform: translateY(-3px); }
-        section { display: none; animation: fadeIn 0.8s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        /* Estilo Moderno Aplicado */
+        body { background-color: #f0f2f5; font-family: 'Roboto', sans-serif; }
+        .navbar { box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important; border-bottom: 1px solid rgba(255,255,255,0.3); }
+        .card { border-radius: 20px !important; border: none !important; box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .gradient-custom-2 { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
+        .rounded-pill-custom { border-radius: 50px !important; padding: 10px 25px; }
+        .img-thumbnail { border-radius: 15px !important; border: 3px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        hr.hr-blurry { opacity: 0.15; }
     </style>
+
+    <script type="text/javascript" src="https://cloudflare.com"></script>
+    <script type="text/javascript" src="https://jquery.com"></script>
+    <script src="script.js"></script>
+    <title>MIT IVAN DIAZ PROFILE GITHUB</title>
 </head>
 <body>
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#" onclick="show('projects')">
-        <i class="fas fa-code-branch text-primary me-2"></i>IVAN DIAZ
-    </a>
-    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
+  <div class="container-fluid">
+    <a id="homeButton" class="navbar-brand fw-bold" href="#"> <i class="fas fa-home text-primary me-2"></i> HOME</a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link fw-bold" href="#" onclick="show('bio')">BIO</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold" href="#" onclick="show('projects')">PROJECTS</a></li>
+        <li class="nav-item">
+          <a id="bioButton" style="cursor: pointer;" class="nav-link fw-bold px-3" href="#"><i class="fas fa-user-graduate me-1"></i> BIO</a>
+        </li>
+        <li class="nav-item">
+          <a id="projectsButton" style="cursor: pointer;" class="nav-link fw-bold px-3" href="#"><i class="fas fa-project-diagram me-1"></i> PROJECTS</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container mt-4">
-    <!-- SECCIÓN PROYECTOS -->
-    <section id="projects" style="display: block;">
-        <div class="card p-4">
-            <h4 class="fw-bold mb-4 border-bottom pb-2">GITHUB PROJECTS</h4>
-            <div class="row g-3 text-center">
-                <div class="col-md-4"><a href="https://github.io" class="nav-link project-link rounded p-3 text-dark"><i class="fab fa-github mb-2"></i><br>PacMen Exercise</a></div>
-                <div class="col-md-4"><a href="https://github.io" class="nav-link project-link rounded p-3 text-dark"><i class="fab fa-github mb-2"></i><br>Eye Movement</a></div>
-                <div class="col-md-4"><a href="https://github.io" class="nav-link project-link rounded p-3 text-dark"><i class="fab fa-github mb-2"></i><br>Bus Tracker</a></div>
+<section id="projects" class="h-100 py-5" style="display: none; margin-top: 60px;">
+  <div class="container-fluid py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-10 col-xl-8">
+        <div class="card animated fadeInDown mb-4">
+          <div class="card-body p-5 text-black">
+            <div class="mb-4">
+              <p class="h4 fw-bold mb-3"><i class="fab fa-fantasy-flight-games text-primary me-2"></i> PROJECTS</p>
+              <div class="row g-3 rounded p-4 shadow-sm" style="background-color: #ffffff; border: 1px solid #eee;">
+                <p class="col-lg-4 mb-0"><a class="btn btn-link text-dark fw-bold" href="https://github.io"><i class="fab fa-github me-1"></i> PacMen Exercise</a></p>
+                <p class="col-lg-4 mb-0"><a class="btn btn-link text-dark fw-bold" href="https://github.io"><i class="fab fa-github me-1"></i> Eye Exercise</a></p>
+                <p class="col-lg-4 mb-0"><a class="btn btn-link text-dark fw-bold" href="https://github.io"><i class="fab fa-github me-1"></i> Bus Tracking</a></p>
+              </div>
             </div>
+          </div>
         </div>
-
-        <div class="card p-4">
-            <div class="row align-items-center">
-                <div class="col-lg-4"><img src="img/imageDataScience.PNG" class="img-fluid rounded shadow-sm mb-3"></div>
-                <div class="col-lg-8">
-                    <h4 class="fw-bold text-success"><i class="fab fa-python me-2"></i>DATA SCIENCE & ML</h4>
-                    <p class="text-muted italic">Estudio analítico descriptivo, modelos predictivos, PCA y kNN linear regression para toma de decisiones basadas en evidencia numérica.</p>
-                </div>
-            </div>
-            <div class="mt-4 p-3 bg-light rounded">
-                <h6 class="fw-bold">CASE STUDIES:</h6>
-                <div class="row small g-2 mt-2 text-uppercase">
-                    <div class="col-6 col-md-3"><i class="fas fa-industry me-1"></i> Manufacturing</div>
-                    <div class="col-6 col-md-3"><i class="fas fa-shopping-cart me-1"></i> Sales</div>
-                    <div class="col-6 col-md-3"><i class="fas fa-tools me-1"></i> Engineering</div>
-                    <div class="col-6 col-md-3"><i class="fas fa-chart-line me-1"></i> Finance</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN BIO -->
-    <section id="bio">
-        <div class="card overflow-hidden">
-            <div class="gradient-custom text-center mb-4">
-                <h2 class="fw-bold"><i class="fas fa-user-graduate me-3"></i>JOB EXPERIENCE</h2>
-            </div>
-            <div class="card-body p-4">
-                <div class="row mb-5">
-                    <div class="col-md-6 border-end">
-                        <h5 class="fw-bold"><i class="fas fa-history text-primary me-2"></i>COMPANIES</h5>
-                        <ul class="list-group list-group-light">
-                            <li class="list-group-item border-0 px-0">MAGNA / ABC INOAC (Automotive)</li>
-                            <li class="list-group-item border-0 px-0">RIVIAN / TOYOTA EV (Battery tech)</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <h5 class="fw-bold mb-3"><i class="fas fa-certificate text-warning me-2"></i>MIT CERTIFICATES</h5>
-                        <a href="https://mygreatlearning.com" target="_blank" class="btn btn-outline-primary btn-sm mb-3">Ver Certificado MIT</a>
-                        <img src="img/MITCertification.PNG" class="img-fluid rounded border shadow-sm">
-                    </div>
-                </div>
-                <h5 class="fw-bold mb-4 text-center">MIT STUDY RESEARCH</h5>
-                <div class="ratio ratio-16x9 shadow rounded-4 mb-4"><iframe src="https://youtube.com" allowfullscreen></iframe></div>
-            </div>
-        </div>
-    </section>
-</div>
-
-<script>
-    function show(id) {
-        document.getElementById('projects').style.display = (id === 'projects' ? 'block' : 'none');
-        document.getElementById('bio').style.display = (id === 'bio' ? 'block' : 'none');
-    }
-</script>
-<script src="https://cloudflare.com"></script>
-</body>
-</html>
+        <!-- Card: PYTHON FOR DATA SCIENCE AND MACHINE LEARNING -->
+        <div class="card animated fadeInRight shadow-4-strong mb-5" style="margin: 20px; border-radius: 20px;">
+			<div class="card-body p-5 text-black">
+			  <div class="mb-5" style="text-align: left;">
+				<div class="text-center mb-4">
+				  <img src="img/imageDataScience.PNG" class="img-fluid rounded-4 shadow-sm mb-3 animated fadeInUp" style="max-height: 250px; border: 4px solid #fff;">
+				</div>
+				<p class="h3 fw-bold mb-4 animated fadeIn text-primary">
+				  <i class="fa-brands fa-python me-2"></i> PYTHON FOR DATA SCIENCE AND MACHINE LEARNING
+				</p>
+				<div class="p-4 rounded-4 mb-4" style="background-color: #fcfcfc; border-left: 5px solid #1266f1;">
+				  <p style="font-size:15px; line-height: 1.6; color: #4f4f4f;">
+					<i>The study of data science analyzes the information with the optics of descriptive analytics. The models used to
+					predict variations in systems, allows me to make decisions based on numerical evidence, creating null hypotheses, linear models,
+					PCA analysis, kNN linear regression, linear progression among others. In these terms, the following questions arise:</i>
+				  </p>
+				</div>
+  
+				<!-- Case Studies Grid -->
+				<div class="wrapper3 row g-4"> 
+				  <div class="col-md-6 col-lg-4 animated fadeInLeft">
+					<div class="p-4 h-100 rounded-4 shadow-sm border bg-white">
+					  <p class="fw-bold mb-2 text-uppercase" style="letter-spacing: 1px; color: #2e3135;">MANUFACTURING</p>
+					  <ul class="list-unstyled small text-muted">
+						<li class="mb-2"><i class="fas fa-caret-right me-2"></i>Predict scrap before production.</li>
+						<li><i class="fas fa-caret-right me-2"></i>Predict Downtime & Defects.</li>
+					  </ul>
+					</div>
+				  </div>
+  
+				  <div class="col-md-6 col-lg-4 animated fadeInLeft">
+					<div class="p-4 h-100 rounded-4 shadow-sm border bg-white">
+					  <p class="fw-bold mb-2 text-uppercase" style="letter-spacing: 1px; color: #2e3135;">SALES</p>
+					  <ul class="list-unstyled small text-muted">
+						<li class="mb-2"><i class="fas fa-caret-right me-2"></i>Recommendation systems.</li>
+						<li><i class="fas fa-caret-right me-2"></i>ML based on demographics.</li>
+					  </ul>
+					</div>
+				  </div>
+  
+				  <div class="col-md-6 col-lg-4 animated fadeInLeft">
+					<div class="p-4 h-100 rounded-4 shadow-sm border bg-white">
+					  <p class="fw-bold mb-2 text-uppercase" style="letter-spacing: 1px; color: #2e3135;">ENGINEERING</p>
+					  <ul class="list-unstyled small text-muted">
+						<li class="mb-2"><i class="fas fa-caret-right me-2"></i>Big Data characteristics.</li>
+						<li><i class="fas fa-caret-right me-2"></i>Process & Material optimization.</li>
+					  </ul>
+					</div>
+				  </div>
+  
+				  <div class="col-md-6 col-lg-4 animated fadeInLeft">
+					<div class="p-4 h-100 rounded-4 shadow-sm border bg-white">
+					  <p class="fw-bold mb-2 text-uppercase" style="letter-spacing: 1px; color: #2e3135;">FINANCE</p>
+					  <ul class="list-unstyled small text-muted">
+						<li class="mb-2"><i class="fas fa-caret-right me-2"></i>Non-parametric learning.</li>
+						<li><i class="fas fa-caret-right me-2"></i>NPV & Decision Trees.</li>
+					  </ul>
+					</div>
+				  </div>
+  
+				  <div class="col-md-6 col-lg-4 animated fadeInLeft">
+					<div class="p-4 h-100 rounded-4 shadow-sm border bg-white">
+					  <p class="fw-bold mb-2 text-uppercase" style="letter-spacing: 1px; color: #2e3135;">SUPPORT</p>
+					  <ul class="list-unstyled small text-muted">
+						<li class="mb-2"><i class="fas fa-caret-right me-2"></i>ETL & Unlabeled data.</li>
+						<li><i class="fas fa-caret-right me-2"></i>Clustering models.</li>
+					  </ul>
+					</div>
+				  </div>
+  
+				  <!-- Python Resources Card -->
+				  <div class="col-md-12 col-lg-4 animated fadeInLeft">
+					<div class="p-4 h-100 rounded-4 shadow-sm border-0 text-white shadow-5" style="background: linear-gradient(135deg, #2c3e50, #000000);">
+					  <p class="fw-bold mb-3"><i class="fa-brands fa-python me-2"></i>MASTERS RESOURCES</p>
+					  <div class="list-group list-group-light list-group-small">
+						<a href="pages/MastersDegreeDesisionTree.html" class="text-white small mb-2 d-block text-decoration-none">Decision Trees Master</a>
+						<a href="pages/MastersDegreekNN.html" class="text-white small mb-2 d-block text-decoration-none">kNN Master Study</a>
+						<a href="pages/MastersDegreePCAAbsenteeismAtWork.html" class="text-white small mb-2 d-block text-decoration-none">PCA Absenteeism</a>
+					  </div>
+					</div>
+				  </div>
+				</div> <!-- End row -->
+  
+				<div class="mt-5 p-4 rounded-4 shadow-sm bg-light text-center border">
+				  <img class="img-fluid rounded-4 shadow mb-3" style="max-width: 100%; height: auto; border: 3px solid #fff;" src="img/MastersDegreeDesisionTreeImage.PNG">
+				  <p class="small text-muted mb-0">Visual analysis of Decision Tree model from Masters Degree</p>
+				</div>
+  
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  <!-- Section: BIO -->
+<section id="bio" class="h-100 py-5" style="display: none; margin-top: 60px;">
+	<div class="container-fluid py-5 h-100">
+	  <div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col col-lg-10 col-xl-8">
+		  <div class="card shadow-4-strong rounded-5 border-0 overflow-hidden">
+			
+			<div class="card-body p-5 text-black">
+			  
+			  <!-- Job Experience -->
+			  <div class="mb-5 animated fadeInRight text-center">
+				<p class="display-6 fw-bold mb-4 animated fadeInDown text-uppercase" 
+				   style="text-shadow: 2px 2px 8px rgba(0,0,0,0.1); letter-spacing: 2px;">
+				  <i class="fas fa-brain text-primary me-3"></i>JOB EXPERIENCE
+				</p>
+				<div class="p-4 rounded-4 shadow-sm border bg-light text-start">
+				  <p class="mb-2 text-muted fw-bold"><i class="fas fa-caret-right text-primary me-2"></i> MAGNA. Automotive Manufacturing Industry</p>
+				  <p class="mb-2 text-muted fw-bold"><i class="fas fa-caret-right text-primary me-2"></i> ABC INOAC. Automotive Manufacturing Industry</p>
+				  <p class="mb-2 text-muted fw-bold"><i class="fas fa-caret-right text-primary me-2"></i> RIVIAN. EV Automotive Industry</p>
+				  <p class="mb-0 text-muted fw-bold"><i class="fas fa-caret-right text-primary me-2"></i> WORKFORCE-TOYOTA EV Battery Industry</p>
+				  <hr class="hr hr-blurry mt-3" />
+				</div>
+			  </div>
+  
+			  <!-- Programing Certificates -->
+			  <div class="mb-5">
+				<p class="h3 fw-bold mb-4 text-center"><i class="fas fa-briefcase text-warning me-2"></i> PROGRAMMING CERTIFICATES</p>
+				<div class="p-4 rounded-5 shadow-sm text-center border bg-white">
+				  <a href="https://mygreatlearning.com" 
+					 class="btn btn-outline-primary btn-rounded mb-4 shadow-0 px-4 py-2" style="font-size: 16px;">
+					<i class="fas fa-trophy me-2"></i> MIT, Machine Learning and Data Science IDSS
+				  </a>
+				  <div class="row g-4 justify-content-center mb-4">
+					<div class="col-md-6"><img class="img-fluid rounded-4 shadow-sm border" src="img/scoreCard.PNG" alt="Score Card"></div>
+					<div class="col-md-6"><img class="img-fluid rounded-4 shadow-sm border" src="img/coursesMIT.PNG" alt="MIT Courses"></div>
+				  </div>
+				  <hr class="hr hr-blurry my-4" />
+				  <p class="h5 fw-bold text-muted mb-4"><i class="fab fa-empire me-2"></i> Full Stack Development with MERN - Oct 2022</p>
+				  <img class="img-fluid rounded-4 shadow-lg border w-75" src="img/MITCertification.PNG" alt="Full Stack Certification">
+				  <hr class="hr hr-blurry mt-4" />
+				</div>
+			  </div>
+  
+			  <!-- MIT Study Research -->
+			  <div class="mb-5">
+				<p class="h4 fw-bold mb-4"><i class="fas fa-flask text-danger me-2"></i> MIT STUDY RESEARCH</p>
+				<div class="row g-3">
+				  <div class="col-md-4"><div class="p-3 rounded-4 shadow-sm border bg-light text-center small fw-bold">AUTONOMOUS DRIVING</div></div>
+				  <div class="col-md-4"><div class="p-3 rounded-4 shadow-sm border bg-light text-center small fw-bold">OBJECT DETECTION</div></div>
+				  <div class="col-md-4"><div class="p-3 rounded-4 shadow-sm border bg-light text-center small fw-bold">FACE RECOGNITION</div></div>
+				</div>
+			  </div>
+  
+			  <!-- Research Videos -->
+			  <div class="row g-4 justify-content-center text-center mb-5">
+				<div class="col-md-6"><div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border"><iframe src="https://youtube.com" allowfullscreen></iframe></div></div>
+				<div class="col-md-6"><div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border"><iframe src="https://youtube.com" allowfullscreen></iframe></div></div>
+				<div class="col-12"><div class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border w-75 mx-auto"><iframe src="https://youtube.com" allowfullscreen></iframe></div></div>
+			  </div>
+  
+			  <hr class="hr hr-blurry mb-5" />
+  
+			  <!-- Project Management Section -->
+			  <div class="mb-4">
+				<p class="h4 fw-bold mb-4"><i class="fas fa-glasses text-info me-2"></i> PMP & METHODOLOGIES</p>
+				<div class="p-4 rounded-4 shadow-sm border bg-white">
+				  <div class="mb-3">
+					<p class="fw-bold text-primary mb-1"><i class="fas fa-business-time me-2"></i> SCRUM</p>
+					<p class="small text-muted mb-0">Self-organizing teams focused on continuous value delivery and collaborative processes.</p>
+				  </div>
+				  <div class="mb-3">
+					<p class="fw-bold text-primary mb-1"><i class="fas fa-business-time me-2"></i> KANBAN</p>
+					<p class="small text-muted mb-0">Agile method aimed at continuous improvement and flexibility through visual task management.</p>
+				  </div>
+				  <div class="mb-0">
+					<p class="fw-bold text-primary mb-1"><i class="fas fa-business-time me-2"></i> SCRUMBAN</p>
+					<p class="small text-muted mb-0">Hybrid methodology that combines Scrum and Kanban to adopt pull-based systems.</p>
+				  </div>
+				</div>
+			  </div>
+  
+			</div> <!-- End Card Body -->
+		  </div> <!-- End Card -->
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+  <!-- Logic for Navigation -->
+  <script>
+	  const homeBtn = document.getElementById('homeButton');
+	  const bioBtn = document.getElementById('bioButton');
+	  const projBtn = document.getElementById('projectsButton');
+	  const bioSec = document.getElementById('bio');
+	  const projSec = document.getElementById('projects');
+  
+	  bioBtn.onclick = () => { bioSec.style.display = 'block'; projSec.style.display = 'none'; window.scrollTo(0,0); };
+	  projBtn.onclick = () => { projSec.style.display = 'block'; bioSec.style.display = 'none'; window.scrollTo(0,0); };
+	  homeBtn.onclick = () => { bioSec.style.display = 'none'; projSec.style.display = 'none'; window.scrollTo(0,0); };
+  </script>
+  
+  </body>
+  </html>
+  
