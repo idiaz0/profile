@@ -1,139 +1,300 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIT IVAN DIAZ PROFILE GITHUB</title>
+    <title>Ivan Diaz | Data Systems & AI Portfolio</title>
     
-    <!-- Fonts & Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-    
-    <!-- Frameworks (MDB & Custom) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
-    <script src="script.js"></script>
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #6366f1;
+            --dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Blur Effect */
+        .navbar {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.7) !important;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+
+        /* Modern Sections */
+        section { padding: 100px 0; display: none; min-height: 100vh; }
+        section.active { display: block; }
+
+        /* Hero Styling */
+        .hero-header {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 120px 0 60px;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: -50px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: none;
+        }
+
+        /* Experience Timeline */
+        .exp-box {
+            border-left: 3px solid var(--primary);
+            padding-left: 25px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .exp-box::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        /* Skills Bento Grid */
+        .skill-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+        }
+
+        .badge-tech {
+            background: #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin: 4px;
+            display: inline-block;
+        }
+
+        .img-cert {
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .img-cert:hover { filter: brightness(0.8); }
+
+        .video-box {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
-
 <body>
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light shadow-sm">
-  <div class="container-fluid">
-    <a id="homeButton" class="navbar-brand fw-bold" href="#"> <i class="fas fa-home text-primary"></i> HOME</a>
-    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"> <!-- ms-auto lo mueve a la derecha -->
-        <li class="nav-item">
-          <a id="bioButton" class="nav-link" href="#"><i class="fas fa-user-graduate me-1"></i> BIO</a>
-        </li>
-        <li class="nav-item">
-          <a id="projectsButton" class="nav-link" href="#"><i class="fas fa-project-diagram me-1"></i> PROJECTS</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-dark" href="#">IVAN<span class="text-primary">DIAZ</span></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link fw-bold px-3 active" href="#" onclick="showPage('home')">HOME</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-3" href="#" onclick="showPage('bio')">EXPERIENCE</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold px-3" href="#" onclick="showPage('projects')">PROJECTS</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
-<section id="projects" class="py-5 mt-5" style="display: none; background: #f4f7f6;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        
-        <!-- CARD 1: REPOSITORIOS -->
-        <div class="card shadow-sm border-0 mb-4 animated fadeInDown">
-          <div class="card-body p-4">
-            <h4 class="card-title fw-bold mb-4"><i class="fab fa-fantasy-flight-games text-primary"></i> KEY PROJECTS</h4>
-            <div class="row g-3">
-              <div class="col-md-4">
-                <a href="https://idiaz0.github.io/PacMen-Exercise/" class="btn btn-outline-dark w-100"><i class="fab fa-github"></i> PacMen</a>
-              </div>
-              <div class="col-md-4">
-                <a href="https://idiaz0.github.io/EyeMovement/" class="btn btn-outline-dark w-100"><i class="fab fa-github"></i> Eye Exercise</a>
-              </div>
-              <div class="col-md-4">
-                <a href="https://idiaz0.github.io/BusTracker/" class="btn btn-outline-dark w-100"><i class="fab fa-github"></i> Bus Tracker</a>
-              </div>
+<section id="home" class="active animate__animated animate__fadeIn">
+    <div class="hero-header text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <img src="img/imgProfile.PNG" class="img-fluid rounded-4 shadow-lg border border-4 border-white mb-4" alt="Ivan Diaz">
+                </div>
+                <div class="col-md-9">
+                    <h1 class="display-3 fw-800 mb-2">Ivan Diaz</h1>
+                    <p class="h4 opacity-75 fw-light">Data Systems Analyst | MES | IIoT | AI Developer</p>
+                    <div class="mt-4">
+                        <span class="me-4"><i class="fas fa-location-dot me-2"></i> Georgetown, Kentucky</span>
+                        <span><i class="fas fa-envelope me-2"></i> +1 309 612 4822</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-
-        <!-- CARD 2: DATA SCIENCE -->
-        <div class="card shadow-sm border-0 animated fadeInUp">
-          <div class="card-body p-4">
-            <div class="text-center mb-4">
-                <img src="img/imageDataScience.PNG" class="img-fluid rounded shadow-sm mb-3" style="max-height: 200px;">
-                <h3 class="fw-bold"><i class="fa-brands fa-python text-warning"></i> DATA SCIENCE & ML</h3>
-            </div>
-
-            <p class="text-muted fst-italic border-start border-primary ps-3 mb-4">
-                "The study of data science analyzes information with descriptive analytics to make decisions based on numerical evidence..."
-            </p>
-
-            <!-- Grid de Casos de Estudio -->
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-              
-              <div class="col">
-                <div class="p-3 border rounded h-100 bg-light">
-                  <h6 class="fw-bold text-primary"><i class="fas fa-industry"></i> MANUFACTURING</h6>
-                  <small>Predicting scrap and system behavior like downtime and defects.</small>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="p-3 border rounded h-100 bg-light">
-                  <h6 class="fw-bold text-success"><i class="fas fa-chart-line"></i> SALES</h6>
-                  <small>Improving sales through recommendation systems and Big Data.</small>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="p-3 border rounded h-100 bg-light">
-                  <h6 class="fw-bold text-info"><i class="fas fa-microchip"></i> ENGINEERING</h6>
-                  <small>Enhancing product characteristics and production processes via data.</small>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="p-3 border rounded h-100 bg-light">
-                  <h6 class="fw-bold text-danger"><i class="fas fa-hand-holding-usd"></i> FINANCE</h6>
-                  <small>Decision trees and NPV calculations for future cash flow landscapes.</small>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Enlaces a Masters -->
-            <div class="mt-5 p-4 bg-dark text-white rounded shadow">
-                <h5 class="mb-3">Master's Degree Resources</h5>
-                <div class="list-group list-group-flush shadow-sm">
-                    <a href="pages/MastersDegreeDesisionTree.html" class="list-group-item list-group-item-action bg-dark text-white border-secondary">
-                        <i class="fa-brands fa-python text-warning me-2"></i> Decision Tree Analysis
-                    </a>
-                    <a href="pages/MastersDegreekNN.html" class="list-group-item list-group-item-action bg-dark text-white border-secondary">
-                        <i class="fa-brands fa-python text-warning me-2"></i> kNN Linear Regression
-                    </a>
-                    <a href="pages/MastersDegreePCAAbsenteeismAtWork.html" class="list-group-item list-group-item-action bg-dark text-white border-secondary">
-                        <i class="fa-brands fa-python text-warning me-2"></i> PCA Analysis
-                    </a>
-                </div>
-                <div class="text-center mt-3">
-                    <img src="img/MastersDegreeDesisionTreeImage.PNG" class="img-fluid rounded mt-2" style="max-width: 80%;">
-                </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+
+    <div class="container mt-5">
+        <div class="row g-4 text-center mb-5">
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <h2 class="fw-bold text-primary mb-0">15</h2>
+                    <p class="text-muted small mb-0 text-uppercase">Years Experience</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <h2 class="fw-bold text-primary mb-0">3</h2>
+                    <p class="text-muted small mb-0 text-uppercase">Certifications</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <h2 class="fw-bold text-primary mb-0">1</h2>
+                    <p class="text-muted small mb-0 text-uppercase">Master's Degree</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <h2 class="fw-bold text-primary mb-0">RAG</h2>
+                    <p class="text-muted small mb-0 text-uppercase">Expertise</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card profile-card p-4 p-md-5">
+            <h3 class="fw-bold mb-4"><i class="fas fa-rocket text-primary me-3"></i>Professional Summary</h3>
+            <p class="lead text-muted" style="text-align: justify;">
+                Results-oriented Automation & Control Engineer with a Master of Science (M.S.) in Information Technology Management. 
+                Expert in leading Industry 4.0 initiatives by bridging the gap between industrial automation and IT infrastructure. 
+                Specialized in MES/MOM systems and GenAI (RAG) solutions using Ollama/Llama 3 to transform production data into financial insights.
+            </p>
+            <div class="mt-4">
+                <a href="https://github.com/idiaz0" class="btn btn-dark rounded-pill px-4 me-2"><i class="fab fa-github me-2"></i>GitHub</a>
+                <a href="https://www.linkedin.com/in/ivan-diaz-260a50228/" class="btn btn-primary rounded-pill px-4"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+            </div>
+        </div>
+    </div>
 </section>
+
+<section id="bio" class="animate__animated animate__fadeIn">
+    <div class="container">
+        <h2 class="display-5 fw-bold mb-5"><i class="fas fa-history text-primary me-3"></i>Professional Path</h2>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="exp-box">
+                    <h4 class="fw-bold">Data Systems Analyst | EV Battery Manufacturing</h4>
+                    <p class="text-primary fw-bold mb-2">Workforce-Toyota | 2023 - 2026</p>
+                    <p class="text-muted small">Architected IIoT ecosystems for 300+ stations. Implemented High-Availability Proxmox clusters and AI-driven predictive maintenance using RAG (Llama 3).</p>
+                </div>
+
+                <div class="exp-box">
+                    <h4 class="fw-bold">IT MES Business Analytics</h4>
+                    <p class="text-primary fw-bold mb-2">TATA-RIVIAN Project | 2022 - 2023</p>
+                    <p class="text-muted small">Lead IT MES Architect for EV production lines. Strategic integration of Rockwell FactoryTalk ProductionCentre (FTPC).</p>
+                </div>
+
+                <div class="exp-box">
+                    <h4 class="fw-bold">IT MES Coordinator</h4>
+                    <p class="text-primary fw-bold mb-2">ABC INOAC | 2016 - 2022</p>
+                    <p class="text-muted small">Led digital transformation roadmap, implementing DMAIC strategies and MES systems across international facilities (Mexico, USA, Canada).</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="skill-card bg-dark text-white p-4">
+                    <h5 class="fw-bold border-bottom border-secondary pb-2 mb-4">Core Skills</h5>
+                    <div class="mb-4">
+                        <h6><i class="fas fa-brain me-2 text-info"></i> AI & Data</h6>
+                        <span class="badge-tech bg-secondary text-white">RAG</span>
+                        <span class="badge-tech bg-secondary text-white">Llama 3</span>
+                        <span class="badge-tech bg-secondary text-white">Python</span>
+                        <span class="badge-tech bg-secondary text-white">TensorFlow</span>
+                    </div>
+                    <div class="mb-4">
+                        <h6><i class="fas fa-microchip me-2 text-warning"></i> Industrial</h6>
+                        <span class="badge-tech bg-secondary text-white">PLC AB</span>
+                        <span class="badge-tech bg-secondary text-white">Ignition</span>
+                        <span class="badge-tech bg-secondary text-white">MQTT/EMQX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="animate__animated animate__fadeIn">
+    <div class="container">
+        <h2 class="display-5 fw-bold mb-5 text-center">Tech & Innovation</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="skill-card text-center">
+                    <i class="fab fa-python fa-3x text-primary mb-3"></i>
+                    <h5>Data Science</h5>
+                    <p class="small text-muted">Predictive models for scrap and maintenance downtime.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="skill-card text-center">
+                    <i class="fas fa-robot fa-3x text-success mb-3"></i>
+                    <h5>Automation</h5>
+                    <p class="small text-muted">Fanuc/ABB Programming & ControlLogix integration.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="skill-card text-center">
+                    <i class="fas fa-database fa-3x text-warning mb-3"></i>
+                    <h5>Infrastructure</h5>
+                    <p class="small text-muted">Proxmox VE clusters, Docker & Portainer management.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6 mb-4">
+                <div class="video-box ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/G2VaJvNNp4k" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="video-box ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/8h9vU1pnNZA" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        
+        document.getElementById(pageId).classList.add('active');
+        event.target.classList.add('active');
+        window.scrollTo(0, 0);
+    }
+</script>
 
 </body>
 </html>
