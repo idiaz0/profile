@@ -115,7 +115,9 @@
 	}
   </style>
 
-<section id="projects" class="py-5" style="display: none; background-color: #f4f7f9;">
+<div class="row">
+	<div class="col col-lg-8">
+		<section id="projects" class="py-5" style="display: none; background-color: #f4f7f9;">
 	<div class="container py-5">
 	  <div class="row justify-content-center">
 		<div class="col-lg-10 col-xl-9">
@@ -939,6 +941,157 @@
     </div>
   </div>
 </section>
+	</div>
+	<div class="col col-lg-4">
+		<!-- Sección: Certificaciones - Vitrina Digital Premium -->
+<div class="col-lg-4 animated fadeIn">
+    <div class="card border-0 shadow-lg rounded-5 bg-white h-100 overflow-hidden">
+        <div class="card-body p-4">
+            <!-- Título Estilizado -->
+            <div class="text-center mb-4">
+                <i class="fas fa-certificate text-danger fa-3x mb-2 animated pulse infinite"></i>
+                <h2 class="fw-bold text-dark mb-0" style="letter-spacing: -1.5px; font-size: 2.5rem;">CERTIFICATIONS</h2>
+                <div class="mx-auto mt-2" style="width: 50px; height: 3px; background: #e74c3c; border-radius: 10px;"></div>
+            </div>
+
+            <!-- Galería de Credenciales -->
+            <div class="certification-grid px-1">
+                <!-- Certificado Principal MIT -->
+                <div class="cert-item mb-4">
+                    <div class="cert-wrapper shadow-sm rounded-4 overflow-hidden border">
+                        <img src="img/MITCertification.png" alt="MIT Certification" class="img-fluid cert-img">
+                        <div class="cert-overlay">
+                            <span class="badge bg-primary px-3 py-2">MIT Professional Education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid Secundario para el resto -->
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture7.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture1.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture6.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture5.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture4.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture2.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="cert-wrapper-mini shadow-sm rounded-3 border overflow-hidden">
+                            <img src="img/Capture3.PNG" alt="Credential" class="img-fluid cert-img-mini">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer de la sección -->
+            <div class="mt-4 text-center">
+                <p class="text-muted small fw-medium">
+                    <i class="fas fa-shield-check text-success me-1"></i> Verified Digital Credentials
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Diseño de la Galería de Certificados */
+    .rounded-5 { border-radius: 2rem !important; }
+    
+    .cert-wrapper {
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+    }
+
+    .cert-wrapper:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+    }
+
+    .cert-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+    }
+
+    .cert-wrapper:hover .cert-img {
+        transform: scale(1.05);
+    }
+
+    /* Overlay para el certificado principal */
+    .cert-overlay {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .cert-wrapper:hover .cert-overlay {
+        opacity: 1;
+    }
+
+    /* Estilo para los certificados pequeños */
+    .cert-wrapper-mini {
+        position: relative;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background: #fff;
+    }
+
+    .cert-wrapper-mini:hover {
+        transform: scale(1.08);
+        z-index: 10;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        border-color: #e74c3c !important;
+    }
+
+    .cert-img-mini {
+        width: 100%;
+        filter: grayscale(10%);
+        transition: filter 0.3s ease;
+    }
+
+    .cert-wrapper-mini:hover .cert-img-mini {
+        filter: grayscale(0%);
+    }
+
+    /* Animación de pulso para el icono */
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+</style>
+
+	</div>
+</div>
+
 
 
 </body>
