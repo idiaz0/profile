@@ -566,37 +566,79 @@
     .rounded-4 { border-radius: 1.5rem !important; }
 </style>
 
-				<p >
-					<ul>
-						<li>Job Title: Data System Analyst</li>
-						<li>Date: (August 2023 - March 2026)</li>
-						<li>Company: Workforce-Toyota EV Battery Manufacturing </li>
-						<li class="animated fadeInRight" id="testCount" style="font-size:12px; font-style: italic;">
-							Infrastructure Strategy | Machine Learning | High Availability Systems
-							Professional achievements
-							Data Systems Analyst | EV Battery Manufacturing 
-							Summary
-							Expert in architecting mission-critical IIoT ecosystems within the manufacturing  sector. Specialized in bridging OT/IT gaps through High-Availability (HA) infrastructure, containerized microservices, and AI-driven operational intelligence for 15+ production lines and 300+ stations. 
-							Core Competencies 
-							Infrastructure & Virtualization: Proxmox VE (HA Cluster), Docker, Portainer, YAML Automation.
-							IIoT & SCADA: Ignition Gateway & Edge, EMQX (MQTT Broker), .NET Industrial Apps.
-							Data & Backend: Microservices Architecture, TimescaleDB, PostgreSQL, Express.js, Node.js, Python (ML).
-							Frontend & Visualization: React.js Dashboards, Power BI, Ignition Perspective/Vision. 
-							Professional Experience & Achievements 
-							High-Availability & Containerization: Engineered a resilient server environment using Proxmox HA clusters; orchestrated Docker-based microservices via Portainer to ensure zero-downtime for critical manufacturing services.
-							Scalable IIoT Architecture: Designed a multi-tier Ignition (Gateway & Edge) architecture synchronized through EMQX brokers, enabling high-throughput data transmission across 300+ stations.
-							Full-Stack Microservices: Built robust RESTful APIs and Node.js microservices to bridge factory-floor data with real-time React.js dashboards for monitoring KPIs and labor compliance.
-							Automated Infrastructure: Authored complex Docker Compose configurations to automate the deployment of data brokers and databases, ensuring secure, isolated communication via dedicated virtual networks.
-							AI-Driven Intelligence: Deployed Machine Learning models for real-time pattern analysis on battery cell production, reducing waste and mitigating financial risks through predictive maintenance.
-							Developed a custom Retrieval-Augmented Generation (RAG) application powered by Ollama and Llama 3 to provide stakeholders with a natural language interface for:
-							Operational Excellence: Real-time analysis of KPIs, Downtime, and Statistical Process Control (SPC).
-							Financial Impact: Automated calculation of Downtime Costs per Business Unit, linking technical failures to bottom-line losses.
-							Human Capital Optimization: Analyzed turnover trends and labor performance to generate data-driven training plans based on hours worked and specific operator skills.
-							<i style="font-weight: 800" id="iCount"></i>
-						</li>
-					</ul>
-				</p>
-				<hr class="hr hr-blurry" />
+				<!-- Experiencia Toyota: Estilo Executive Dashboard -->
+<div class="card border-0 shadow-sm rounded-4 mb-5 animated fadeInRight" style="background-color: #ffffff; border-left: 5px solid #eb0a1e !important;">
+    <div class="card-body p-4">
+        <!-- Encabezado de Puesto -->
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <h4 class="fw-bold mb-1 text-dark">Data System Analyst</h4>
+                <p class="text-danger fw-bold mb-0"><i class="fas fa-industry me-2"></i>Workforce-Toyota EV Battery Manufacturing</p>
+                <small class="text-muted fw-bold text-uppercase" style="font-size: 11px;">August 2023 — March 2026</small>
+            </div>
+            <img src="https://wikimedia.org" alt="Toyota" style="width: 40px; opacity: 0.8;">
+        </div>
+
+        <!-- Resumen Ejecutivo -->
+        <div class="p-3 rounded-3 mb-4" style="background-color: #f8f9fa; border: 1px solid #eee;">
+            <p class="mb-0 small text-muted fst-italic" id="testCount">
+                <strong>Summary:</strong> Expert in architecting mission-critical IIoT ecosystems. Specialized in bridging OT/IT gaps through High-Availability (HA) infrastructure, containerized microservices, and AI-driven operational intelligence for 15+ production lines and 300+ stations.
+            </p>
+        </div>
+
+        <!-- Grid de Competencias Core (Etiquetas Modernas) -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-6">
+                <h6 class="fw-bold small text-uppercase text-muted mb-2">Infrastructure & Data</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-soft-dark text-dark border">Proxmox HA</span>
+                    <span class="badge bg-soft-dark text-dark border">Docker & Portainer</span>
+                    <span class="badge bg-soft-dark text-dark border">Ignition SCADA</span>
+                    <span class="badge bg-soft-dark text-dark border">PostgreSQL / Timescale</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h6 class="fw-bold small text-uppercase text-muted mb-2">AI & Intelligence</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-soft-danger text-danger border">RAG (Ollama/Llama 3)</span>
+                    <span class="badge bg-soft-danger text-danger border">Python ML</span>
+                    <span class="badge bg-soft-danger text-danger border">React.js KPI Dashboards</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logros Profesionales (Lista de Impacto) -->
+        <div class="experience-details">
+            <h6 class="fw-bold mb-3 border-bottom pb-2 text-dark">Professional Achievements</h6>
+            
+            <div class="achievement-item mb-3">
+                <p class="mb-1 fw-bold small text-dark"><i class="fas fa-server text-danger me-2"></i>High-Availability & Scalability</p>
+                <p class="small text-muted mb-0 ps-4">Engineered resilient server environments using Proxmox HA clusters and orchestrated Docker microservices for zero-downtime manufacturing.</p>
+            </div>
+
+            <div class="achievement-item mb-3">
+                <p class="mb-1 fw-bold small text-dark"><i class="fas fa-robot text-danger me-2"></i>AI-Driven Operational Excellence</p>
+                <p class="small text-muted mb-0 ps-4">Deployed custom RAG applications for natural language KPI analysis, predictive maintenance on battery cells, and financial risk mitigation.</p>
+            </div>
+
+            <div class="achievement-item mb-0">
+                <p class="mb-1 fw-bold small text-dark"><i class="fas fa-users-cog text-danger me-2"></i>Human Capital Optimization</p>
+                <p class="small text-muted mb-0 ps-4">Analyzed turnover trends and labor performance to generate data-driven training plans based on operator skills.</p>
+            </div>
+        </div>
+        <i id="iCount"></i>
+    </div>
+</div>
+
+<style>
+    /* Estilos para el toque "Bonito y Profesional" */
+    .bg-soft-dark { background-color: #f1f3f5; color: #495057; font-weight: 500; font-size: 11px; }
+    .bg-soft-danger { background-color: #fff5f5; color: #e03131; font-weight: 500; font-size: 11px; }
+    .achievement-item i { font-size: 0.9rem; }
+    .card:hover { transform: translateY(-5px); transition: 0.3s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important; }
+    .badge { padding: 6px 12px; border-radius: 8px; }
+</style>
+
 				
 
 
