@@ -3,169 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIT IVAN DIAZ PROFILE</title>
+    <title>IVAN DIAZ | MIT IDSS PROFILE</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        body { background-color: #f4f7f6; font-family: 'Roboto', sans-serif; }
-        .gradient-custom {
-            background: #2c3e50;
-            background: -webkit-linear-gradient(to right, #2c3e50, #000000);
-            background: linear-gradient(to right, #2c3e50, #000000);
-            color: white;
-            padding: 60px 0;
-            border-radius: 0 0 50px 50px;
+        body { 
+            background-color: #f1f5f9; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: #1e293b;
         }
-        .card-skill {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            margin-bottom: 20px;
-            min-height: 450px;
-        }
-        .card-skill:hover { transform: translateY(-10px); }
-        .tech-list { list-style: none; padding-left: 0; font-size: 0.85rem; }
-        .tech-list li { margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-        .section-header { border-bottom: 3px solid #00b7ff; display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
         
-        /* Colores originales de tus iconos */
-        .text-success { color: #28a745 !important; } /* Eléctrica */
-        .text-primary { color: #007bff !important; } /* Gestión */
-        .text-danger { color: #dc3545 !important; }  /* Educación */
-        .text-warning { color: #ffc107 !important; } /* Herramientas/AI */
+        /* Header Profesional con Identidad */
+        .hero-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: -50px;
+            position: relative;
+            z-index: 1;
+        }
 
-        .img-cert { width: 100%; border-radius: 8px; margin-bottom: 15px; border: 1px solid #ddd; }
-        .job-box { background: white; padding: 25px; border-radius: 15px; margin-bottom: 30px; border-left: 5px solid #00b7ff; }
+        /* Bento Grid Style Cards */
+        .bento-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            height: 100%;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+
+        /* Secciones de Habilidades con los Colores Originales */
+        .skill-icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .bg-success-light { background-color: rgba(40, 167, 69, 0.1); }
+        .bg-primary-light { background-color: rgba(0, 123, 255, 0.1); }
+        .bg-danger-light { background-color: rgba(220, 53, 69, 0.1); }
+        .bg-warning-light { background-color: rgba(255, 193, 7, 0.1); }
+
+        /* Lista de Habilidades Limpia */
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .tech-list li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+        }
+        .tech-list li:last-child { border-bottom: none; }
+
+        /* Estilo para la Experiencia Laboral */
+        .job-entry {
+            border-left: 4px solid #0ea5e9;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .job-title { font-weight: 800; color: #0f172a; font-size: 1.2rem; }
+        .job-company { color: #0ea5e9; font-weight: 600; }
+        .job-date { font-size: 0.85rem; color: #64748b; }
+
+        /* Navegación por Pestañas Moderna */
+        .nav-pills .nav-link {
+            border-radius: 50px;
+            padding: 10px 25px;
+            color: #64748b;
+            font-weight: 600;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #0ea5e9;
+            color: white;
+            box-shadow: 0 4px 6px rgba(14, 165, 233, 0.3);
+        }
+
+        .img-cert {
+            border-radius: 15px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease;
+        }
+        .img-cert:hover { transform: scale(1.05); }
+
     </style>
 </head>
 <body>
 
-<div class="gradient-custom text-center mb-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
-        <img src="img/imgProfile.PNG" class="rounded-circle border border-4 border-white mb-3" style="width: 150px; height: 150px; object-fit: cover;">
-        <h1 class="display-4 fw-bold">IVAN DIAZ</h1>
-        <p class="lead">Master of Science (M.S.) in Information Technology Management</p>
-        <div class="d-flex justify-content-center gap-3">
-            <span><i class="fas fa-map-marker-alt"></i> Georgetown, KY</span>
-            <span><i class="fas fa-phone"></i> +1 309 612 4822</span>
+        <a class="navbar-brand fw-bold text-dark" href="#">IVAN<span style="color: #0ea5e9;">DIAZ</span></a>
+        <div class="d-flex flex-row gap-2">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-mdb-toggle="pill" data-mdb-target="#pills-home" type="button" role="tab"><i class="fas fa-home me-2"></i>HOME</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-bio-tab" data-mdb-toggle="pill" data-mdb-target="#pills-bio" type="button" role="tab"><i class="fas fa-briefcase me-2"></i>BIO</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-projects-tab" data-mdb-toggle="pill" data-mdb-target="#pills-projects" type="button" role="tab"><i class="fas fa-flask me-2"></i>PROJECTS</button>
+                </li>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
 
-<div class="container">
-    
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card card-skill p-4">
-                <div class="text-center mb-3">
-                    <i class="fas fa-seedling fa-4x text-success" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);"></i>
-                    <h5 class="mt-3 fw-bold">ELECTRICAL KNOWLEDGE</h5>
-                    <hr class="hr-blurry">
-                </div>
-                <ul class="tech-list">
-                    <li>PLC PROGRAMMING ALLEN BRADLEY</li>
-                    <li>MICROLOGIX, CONTROLOGIX, COMPACTLOGIX</li>
-                    <li>ROBOT PROGRAMMING FANUC, ABB</li>
-                    <li>SENSORS & VISION SYSTEMS CAMERAS</li>
-                    <li>NORDSON SYSTEMS & MOTION CONTROL</li>
-                    <li>IGNITION GATEWAY & EDGE</li>
-                    <li>EMQX-MQTT / POSTGRESQL / TIMESCALE</li>
-                    <li>PORTAINER / PROXMOX HA</li>
-                </ul>
+<header class="hero-header text-center text-md-start">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-center">
+                <img src="img/imgProfile.PNG" class="rounded-circle border border-4 border-white shadow-lg mb-4 mb-md-0" style="width: 180px; height: 180px; object-fit: cover;">
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card card-skill p-4">
-                <div class="text-center mb-3">
-                    <i class="fab fa-black-tie fa-4x text-primary" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);"></i>
-                    <h5 class="mt-3 fw-bold">ADMINISTRATION SKILLS</h5>
-                    <hr class="hr-blurry">
+            <div class="col-md-9">
+                <h1 class="display-4 fw-800">Ivan Diaz</h1>
+                <p class="h5 fw-light opacity-75 mb-3">Master of Science (M.S.) in Information Technology Management</p>
+                <p class="h6 fw-light opacity-75">Automation & Control Engineering | Georgetown, Kentucky</p>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
+                    <a href="https://linkedin.com/in/ivan-diaz-260a50228/" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/idiaz0" class="text-white fs-4"><i class="fab fa-github"></i></a>
+                    <span class="text-white ms-3"><i class="fas fa-phone me-2"></i> +1 309 612 4822</span>
                 </div>
-                <ul class="tech-list">
-                    <li>PDCA CONTINUOUS IMPROVEMENT</li>
-                    <li>KANBAN / SCRUM / SCRUMBAN</li>
-                    <li>SAMEF / SIX SIGMA / LEAN MANUFACTURING</li>
-                    <li>WORK BREAKDOWN STRUCTURE (WBS)</li>
-                    <li>ITIL-ITSM STRATEGIES</li>
-                    <li>PMO PORTFOLIO MANAGEMENT</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card card-skill p-4">
-                <div class="text-center mb-3">
-                    <i class="fab fa-medium fa-4x text-warning" style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);"></i>
-                    <h5 class="mt-3 fw-bold">AI & MODERN DATA TOOLS</h5>
-                    <hr class="hr-blurry">
-                </div>
-                <ul class="tech-list">
-                    <li>RAG (Retrieval-Augmented Generation)</li>
-                    <li>OLLAMA / LLAMA 3 / NLP</li>
-                    <li>N8N AUTOMATION</li>
-                    <li>DATA MINING & BUSINESS INTELLIGENCE</li>
-                    <li>DIGITAL TRANSFORMATION ROADMAP</li>
-                    <li>DESCRIPTIVE STATISTICS / PARETO</li>
-                </ul>
             </div>
         </div>
     </div>
+</header>
 
-    <div class="row mt-5">
-        <div class="col-12">
-            <h3 class="section-header">PROFESSIONAL EXPERIENCE</h3>
+<main class="container py-5 mt-5">
+    <div class="tab-content" id="pills-tabContent">
+        
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
             
-            <div class="job-box">
-                <h4 class="fw-bold text-dark">DATA SYSTEM ANALYST | Workforce-Toyota</h4>
-                <p class="text-primary fw-bold">August 2023 - March 2026</p>
-                <p style="text-align: justify;" class="text-muted small">
-                    Expert in architecting mission-critical IIoT ecosystems. Specialized in bridging OT/IT gaps through High-Availability (HA) infrastructure, containerized microservices, and AI-driven operational intelligence for 15+ production lines and 300+ stations. Engineered a resilient server environment using Proxmox HA clusters; orchestrated Docker-based microservices via Portainer. Developed a custom <strong>RAG application powered by Ollama and Llama 3</strong> for real-time analysis of KPIs, Downtime, and Financial Impact.
-                </p>
+            <div class="row g-4 text-center mb-5">
+                <div class="col-6 col-md-3">
+                    <div class="bento-card p-4">
+                        <h2 class="fw-800 text-info" style="color: #0ea5e9 !important;">15</h2>
+                        <p class="text-muted small mb-0 text-uppercase">Years Exp.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="bento-card p-4">
+                        <h2 class="fw-800 text-info" style="color: #0ea5e9 !important;">3</h2>
+                        <p class="text-muted small mb-0 text-uppercase">Certs.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="bento-card p-4">
+                        <h2 class="fw-800 text-info" style="color: #0ea5e9 !important;">1</h2>
+                        <p class="text-muted small mb-0 text-uppercase">M.S. Degree</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="bento-card p-4">
+                        <h2 class="fw-800 text-info" style="color: #0ea5e9 !important;">1</h2>
+                        <p class="text-muted small mb-0 text-uppercase">B.E. Degree</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="job-box">
-                <h4 class="fw-bold text-dark">IT MES BUSINESS ANALYTICS | TATA-RIVIAN</h4>
-                <p class="text-primary fw-bold">Feb 2022 - Oct 2023</p>
-                <p style="text-align: justify;" class="text-muted small">
-                    As a Lead IT MES Architect, I spearheaded the end-to-end management, integration, and high-level support of Rockwell Automation’s FactoryTalk ProductionCentre (FTPC) within high-stakes Electric Vehicle (EV) production lines. My role was pivotal in orchestrating the digital platform architecture, ensuring that the MES acted as a seamless bridge between shop-floor automation and corporate intelligence.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-5 mb-5">
-        <div class="col-lg-8">
-            <h3 class="section-header">MIT RESEARCH & DATA SCIENCE</h3>
-            <div class="bg-white p-4 rounded shadow-sm">
-                <p class="small">Is it possible to predict the amount of scrap before it is produced? Can the behavior of a manufacturing system be predicted? In financial analysis, Decision Trees are a Net Present Value or NPV calculation that integrates different future landscapes...</p>
-                <div class="row">
-                    <div class="col-md-6"><img src="img/imageDataScience.PNG" class="img-fluid rounded border"></div>
-                    <div class="col-md-6">
-                        <ul class="small">
-                            <li><a href="#">MastersDegreeDesisionTree.html</a></li>
-                            <li><a href="#">MastersDegreekNN.html</a></li>
-                            <li><a href="#">MastersDegreePCAAbsenteeism.html</a></li>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <div class="bento-card p-4">
+                        <div class="skill-icon-box bg-success-light text-success">
+                            <i class="fas fa-seedling fa-3x" style="text-shadow: 0px 4px 4px rgba(0,0,0,0.1);"></i>
+                        </div>
+                        <h5 class="fw-bold text-center mb-3">ELECTRICAL KNOWLEDGE</h5>
+                        <ul class="tech-list">
+                            <li>PLC PROGRAMMING ALLEN BRADLEY</li>
+                            <li>MICROLOGIX, CONTROLOGIX, COMPACTLOGIX</li>
+                            <li>ROBOT PROGRAMMING FANUC, ABB</li>
+                            <li>SENSORS & VISION SYSTEMS CAMERAS</li>
+                            <li>NORDSON SYSTEMS & MOTION CONTROL</li>
+                            <li>IGNITION GATEWAY & EDGE</li>
+                            <li>EMQX-MQTT / POSTGRESQL / TIMESCALE</li>
+                            <li>PORTAINER / PROXMOX HA Cluster</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bento-card p-4">
+                        <div class="skill-icon-box bg-primary-light text-primary">
+                            <i class="fab fa-black-tie fa-3x" style="text-shadow: 0px 4px 4px rgba(0,0,0,0.1);"></i>
+                        </div>
+                        <h5 class="fw-bold text-center mb-3">ADMINISTRATION SKILLS</h5>
+                        <ul class="tech-list">
+                            <li>PDCA CONTINUOUS IMPROVEMENT</li>
+                            <li>KANBAN / SCRUM / SCRUMBAN</li>
+                            <li>SAMEF / SIX SIGMA / LEAN MANUFACTURING</li>
+                            <li>WORK BREAKDOWN STRUCTURE (WBS)</li>
+                            <li>ITIL-ITSM STRATEGIES</li>
+                            <li>PMO PORTFOLIO MANAGEMENT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bento-card p-4">
+                        <div class="skill-icon-box bg-warning-light text-warning">
+                            <i class="fab fa-medium fa-3x" style="text-shadow: 0px 4px 4px rgba(0,0,0,0.1);"></i>
+                        </div>
+                        <h5 class="fw-bold text-center mb-3">AI & MODERN DATA</h5>
+                        <ul class="tech-list">
+                            <li>RAG (Retrieval-Augmented Generation)</li>
+                            <li>OLLAMA / LLAMA 3 / NLP</li>
+                            <li>N8N AUTOMATION</li>
+                            <li>DATA MINING & BUSINESS INTELLIGENCE</li>
+                            <li>DIGITAL TRANSFORMATION ROADMAP</li>
+                            <li>DESCRIPTIVE STATISTICS / PARETO</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 text-center">
-            <h3 class="section-header">CERTIFICATIONS</h3>
-            <div class="row g-2">
-                <div class="col-6"><img src="img/MITCertification.PNG" class="img-cert shadow-sm"></div>
-                <div class="col-6"><img src="img/scoreCard.PNG" class="img-cert shadow-sm"></div>
-                <div class="col-6"><img src="img/Capture1.PNG" class="img-cert shadow-sm"></div>
-                <div class="col-6"><img src="img/Capture7.PNG" class="img-cert shadow-sm"></div>
+
+            <div class="bento-card p-5">
+                <h3 class="fw-bold mb-4"><i class="fas fa-user-gear me-3" style="color: #0ea5e9;"></i>Professional Summary</h3>
+                <p class="lead text-muted" style="text-align: justify; line-height: 1.8;">
+                    Results-oriented Automation & Control Engineer with 15 years of experience. Expert in leading Industry 4.0 initiatives by bridging the gap between industrial automation and IT infrastructure. Specialized in Manufacturing Execution Systems (MES/MOM), Industrial IoT (IIoT), and data-driven solutions to optimize manufacturing execution. Proven track record of developing IIoT architectures and containerized environments. Responsible for analyzing the observed probability distribution to quantify the difference in the distributions of the manufacturing variables. Saving cost based on Business Analytics processes.
+                </p>
             </div>
         </div>
+        
+        <div class="tab-pane fade" id="pills-bio" role="tabpanel">
+            <div class="bento-card p-5">
+                <h2 class="fw-bold mb-5"><i class="fas fa-briefcase me-3" style="color: #0ea5e9;"></i>Job Experience & Achievements</h2>
+                
+                <div class="job-entry">
+                    <div class="job-title text-uppercase">Data System Analyst</div>
+                    <div class="job-company">Workforce-Toyota EV Battery Manufacturing</div>
+                    <div class="job-date">August 2023 - March 2026</div>
+                    <p class="small text-muted mt-3" style="text-align: justify;">
+                        Infrastructure Strategy | Machine Learning | High Availability Systems. <br>
+                        <strong>Key Professional Achievements & Narrative:</strong> Expert in architecting mission-critical IIoT ecosystems within the manufacturing sector. Specialized in bridging OT/IT gaps through High-Availability (HA) infrastructure, containerized microservices, and AI-driven operational intelligence for 15+ production lines and 300+ stations. <br>
+                        <strong>Competencies:</strong> Proxmox VE, Docker, Ignition, TimescaleDB. <br>
+                        <strong>Achievements:</strong> Engineered Proxmox HA clusters and Docker microservices via Portainer. Designed Ignition architecture synchronized via EMQX brokers. Deployed ML models for real-time pattern analysis. Developed a custom <strong>Retrieval-Augmented Generation (RAG)</strong> application powered by <strong>Ollama and Llama 3</strong> for real-time analysis of KPIs and Financial Impact.
+                    </p>
+                </div>
+
+                <div class="job-entry">
+                    <div class="job-title text-uppercase">IT MES Business Analytics</div>
+                    <div class="job-company">TATA-RIVIAN Project</div>
+                    <div class="job-date">Feb 2022 - Oct 2023</div>
+                    <p class="small text-muted mt-3" style="text-align: justify;">
+                        MES Developer Engineer & Industrial Data Scientist. Enterprise Integration | Neural Networks | Rockwell FTPC & Strategic Governance. Lead IT MES Architect for Rockwell Automation’s FactoryTalk ProductionCentre (FTPC) within EV production lines. Orchestrated the digital platform architecture between shop-floor automation and corporate intelligence.
+                    </p>
+                </div>
+
+                <div class="job-entry">
+                    <div class="job-title text-uppercase">IT MES Coordinator</div>
+                    <div class="job-company">ABC INOAC</div>
+                    <div class="job-date">Aug 2016 - February 2022</div>
+                    <p class="small text-muted mt-3" style="text-align: justify;">
+                        Implemented digital platform architecture (PLCs, OPC Servers, SCADA). Responsible for coordinating IT developer team and defining KPIs for OLAP solutions. Implementing DMAIC data-driven improvement strategy. Managing PMO for Mexico, Freemont, Livingston and Toronto. Greenfield at ABC INOAC Queretaro. KANBAN, SCRUM.
+                    </p>
+                </div>
+
+                <div class="job-entry">
+                    <div class="job-title text-uppercase">IT MES Programmer</div>
+                    <div class="job-company">Magna International</div>
+                    <div class="job-date">NOV 2012 – MAR 2016</div>
+                    <p class="small text-muted mt-3" style="text-align: justify;">
+                        Lead projects from design to full implementation of manufacturing apps. Plan, design, install and maintain data management. Train associates on sound business practices. Launching projects at Magna Michigan, AIM Ohio.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-projects" role="tabpanel">
+            <div class="bento-card p-5">
+                <h2 class="fw-bold mb-5 text-center"><i class="fas fa-flask me-3" style="color: #0ea5e9;"></i>MIT Data Science & ML Research</h2>
+                
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-5">
+                        <img src="img/imageDataScience.PNG" class="img-fluid rounded border mb-4 mb-md-0">
+                    </div>
+                    <div class="col-md-7">
+                        <p class="small italic text-info" style="font-style: italic; color: #0ea5e9 !important;">
+                            The study of data science analyzes the information with the optics of descriptive analytics. The models used to predict variations in systems, allows me to make decisions based on numerical evidence, creating null hypotheses, linear models, PCA analysis, kNN linear regression, linear progression among others. In these terms, the following questions arise:
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-5">
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded bg-light">
+                            <strong>MANUFACTURING:</strong> Predict scrap before produced. Downtime, Scrap, Defects.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded bg-light">
+                            <strong>SALES:</strong> Improve sales using machine learning recommendation based on demographics.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded bg-light">
+                            <strong>FINANCE:</strong> Predicting cash flow using NPV calculation and supervised learning likelihood.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded bg-light">
+                            <strong>SUPPORT:</strong> Data mining analysis under clustering model for unlabelled ETL data.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="p-4 border rounded shadow-sm text-center">
+                            <i class="fa-brands fa-python fa-2x mb-2 text-info"></i><br>
+                            <a href="pages/MastersDegreeDesisionTree.html" class="fw-bold">MastersDegreeDesisionTree.html</a>
+                            <img src="img/MastersDegreeDesisionTreeImage.PNG" class="img-fluid mt-2 border">
+                        </div>
+                    </div>
+                    <div class="col-md-6 small">
+                        <div class="list-group">
+                            <a href="pages/MastersDegreekNN.html" class="list-group-item list-group-item-action text-info">MastersDegreekNN.html</a>
+                            <a href="pages/MastersDegreePCAAbsenteeismAtWork.html" class="list-group-item list-group-item-action text-info">PCAAbsenteeismAtWork.html</a>
+                            <a href="pages/MastersDegreeRecommendationSystems.html" class="list-group-item list-group-item-action text-info">RecommendationSystems.html</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="fw-bold mt-5 mb-4 text-center">Trophy & Certifications Gallery</h4>
+                <div class="row g-3 text-center">
+                    <div class="col-4 col-md-2"><img src="img/MITCertification.PNG" class="img-cert img-fluid"></div>
+                    <div class="col-4 col-md-2"><img src="img/scoreCard.PNG" class="img-cert img-fluid"></div>
+                    <div class="col-4 col-md-2"><img src="img/coursesMIT.PNG" class="img-cert img-fluid"></div>
+                    <div class="col-4 col-md-2"><img src="img/Capture1.PNG" class="img-cert img-fluid"></div>
+                    <div class="col-4 col-md-2"><img src="img/Capture7.PNG" class="img-cert img-fluid"></div>
+                    <div class="col-4 col-md-2"><a href="#" class="btn btn-sm btn-outline-info rounded-pill">View Trophy</a></div>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+</main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 </body>
