@@ -1032,77 +1032,76 @@
 			</div>
 		</div>
 	</div>
-<style>
-    /* Diseño de Tarjetas de Certificados Uniformes */
-    .rounded-5 { border-radius: 2rem !important; }
-    .rounded-4 { border-radius: 1.2rem !important; }
-    
-    .cert-wrapper {
-        position: relative;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        cursor: pointer;
-        background: #fff;
-    }
+	<style>
+		/* Diseño de Tarjetas de Certificados Uniformes */
+		.rounded-5 { border-radius: 2rem !important; }
+		.rounded-4 { border-radius: 1.2rem !important; }
+		
+		.cert-wrapper {
+			position: relative;
+			transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+			cursor: pointer;
+			background: #fff;
+		}
 
-    .cert-wrapper:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
-        border-color: #e74c3c !important; /* Resalta el borde al pasar el mouse */
-    }
+		.cert-wrapper:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
+			border-color: #e74c3c !important; /* Resalta el borde al pasar el mouse */
+		}
 
-    .cert-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 0.6s ease;
-    }
+		.cert-img {
+			width: 100%;
+			height: auto;
+			display: block;
+			transition: transform 0.6s ease;
+		}
 
-    .cert-wrapper:hover .cert-img {
-        transform: scale(1.03); /* Zoom sutil */
-    }
+		.cert-wrapper:hover .cert-img {
+			transform: scale(1.03); /* Zoom sutil */
+		}
 
-    /* Etiqueta elegante que aparece al pasar el mouse */
-    .cert-label {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        font-size: 0.75rem;
-        font-weight: bold;
-        text-align: center;
-        padding: 8px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+		/* Etiqueta elegante que aparece al pasar el mouse */
+		.cert-label {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.7);
+			color: white;
+			font-size: 0.75rem;
+			font-weight: bold;
+			text-align: center;
+			padding: 8px;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
 
-    .cert-wrapper:hover .cert-label {
-        opacity: 1;
-    }
+		.cert-wrapper:hover .cert-label {
+			opacity: 1;
+		}
 
-    /* Animación de pulso para el icono principal */
-    .pulse { animation: pulse 2s infinite; }
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
+		/* Animación de pulso para el icono principal */
+		.pulse { animation: pulse 2s infinite; }
+		@keyframes pulse {
+			0% { transform: scale(1); }
+			50% { transform: scale(1.05); }
+			100% { transform: scale(1); }
+		}
 
-    /* Espaciado para que el scroll no sea brusco si agregas muchos */
-    .certification-stack {
-        max-height: 1200px; /* Ajusta según prefieras el largo de la columna */
-        overflow-y: auto;
-        padding-right: 5px;
-    }
-    .certification-stack::-webkit-scrollbar { width: 4px; }
-    .certification-stack::-webkit-scrollbar-thumb { background: #eee; border-radius: 10px; }
-</style>
+		/* Espaciado para que el scroll no sea brusco si agregas muchos */
+		.certification-stack {
+			max-height: 1200px; /* Ajusta según prefieras el largo de la columna */
+			overflow-y: auto;
+			padding-right: 5px;
+		}
+		.certification-stack::-webkit-scrollbar { width: 4px; }
+		.certification-stack::-webkit-scrollbar-thumb { background: #eee; border-radius: 10px; }
+	</style>
 
 
-	</div>
 </div>
-
+</div>
 
 
 </body>
