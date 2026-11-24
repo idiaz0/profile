@@ -1189,6 +1189,98 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .rv.fl{transform:translateX(-60px)}.rv.fr{transform:translateX(60px)}.rv.zm{transform:scale(.85)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.portrait img{opacity:1;transform:none}.sig{clip-path:none}.hd .bar{transform:none}}
+
+/* ===== concept map ===== */
+.cmband{background:radial-gradient(1200px 600px at 50% 45%,color-mix(in srgb,var(--b) 9%,transparent),transparent 70%),var(--paper)}
+.cmap{position:relative;max-width:1240px;margin:0 auto;aspect-ratio:1240/860}
+.cmap svg.cml{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.cml .lk{fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round;opacity:.55;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.3s var(--ease),opacity .35s,stroke-width .35s}
+.cml .lf{fill:none;stroke:var(--c);stroke-width:1.6;stroke-dasharray:4 6;opacity:0;transition:opacity .8s,stroke-width .3s}
+.cmap.in .cml .lk{stroke-dashoffset:0}.cmap.in .cml .lf{opacity:.55}
+.cml .halo{fill:none;stroke:var(--b);stroke-width:1.2;opacity:.25;stroke-dasharray:2 10}
+.cml .pls{fill:var(--c);filter:drop-shadow(0 0 6px var(--c))}
+.cmc{position:absolute;left:50%;top:50%;width:18%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:5}
+.cmc .ring{position:absolute;inset:-9%;border-radius:50%;background:conic-gradient(from 0deg,#1e88e5,#26b5a8,#43a047,#f4b400,#ff7043,#e53935,#8e24aa,#1e88e5);animation:cmspin 9s linear infinite;-webkit-mask:radial-gradient(circle,transparent 63%,#000 64.5%);mask:radial-gradient(circle,transparent 63%,#000 64.5%)}
+.cmc .ring2{position:absolute;inset:-20%;border-radius:50%;border:2px dashed color-mix(in srgb,var(--b) 40%,transparent);animation:cmspin 30s linear infinite reverse}
+.cmc .ring2 i{position:absolute;width:14px;height:14px;border-radius:50%;top:-7px;left:calc(50% - 7px);background:var(--o);box-shadow:0 0 12px var(--o)}
+.cmc .ring2 i:nth-child(2){top:auto;bottom:-7px;background:var(--t);box-shadow:0 0 12px var(--t)}
+.cmc .face{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#dfe8f3;box-shadow:0 24px 60px -18px rgba(20,60,120,.55),inset 0 0 0 5px #fff}
+.cmc .face video,.cmc .face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.cmc .nm{position:absolute;left:50%;top:86%;z-index:2;transform:translateX(-50%);white-space:nowrap;text-align:center;background:var(--w);border-radius:999px;padding:8px 18px;box-shadow:var(--e2);border:1px solid var(--line)}
+.cmc .nm b{display:block;font-size:15.5px;font-weight:900;letter-spacing:.3px}
+.cmc .nm span{display:block;font-size:11.5px;color:var(--mute);font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.cmc .ed{position:absolute;left:50%;bottom:90%;z-index:2;transform:translateX(-50%);display:flex;gap:6px}
+.cmc .ed span{font-size:11px;font-weight:900;padding:4px 10px;border-radius:999px;color:#fff;box-shadow:var(--e1);white-space:nowrap}
+.hub{all:unset;box-sizing:border-box;position:absolute;transform:translate(-50%,-50%) scale(.3);opacity:0;z-index:4;cursor:pointer;display:flex;align-items:center;gap:10px;padding:9px 16px 9px 9px;border-radius:999px;background:var(--w);border:2px solid color-mix(in srgb,var(--c) 55%,transparent);box-shadow:0 14px 30px -14px color-mix(in srgb,var(--c) 80%,#000);transition:transform .7s cubic-bezier(.34,1.56,.64,1),opacity .5s,box-shadow .3s,filter .3s;white-space:nowrap}
+.hub .ms{width:42px;height:42px;font-size:24px;line-height:42px;border-radius:50%;color:#fff;background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 60%,#000));box-shadow:0 6px 14px -4px var(--c)}
+.hub b{font-size:15px;font-weight:900;color:var(--ink)}
+.hub small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--c)}
+.cmap.in .hub{opacity:1;transform:translate(-50%,-50%) scale(1);animation:cmfloat 5s ease-in-out infinite;animation-delay:var(--fd)}
+.leaf{position:absolute;transform:translate(-50%,-50%) scale(.5);opacity:0;z-index:3;display:flex;align-items:center;gap:6px;padding:6px 12px 6px 7px;border-radius:14px;font-size:12.5px;font-weight:700;white-space:nowrap;color:var(--ink);background:color-mix(in srgb,var(--c) 10%,var(--w));border:1px solid color-mix(in srgb,var(--c) 30%,transparent);transition:transform .6s cubic-bezier(.34,1.56,.64,1),opacity .5s,filter .3s;box-shadow:var(--e1)}
+.leaf .ms{font-size:16px;color:var(--c)}
+.cmap.in .leaf{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.cmap.foc .hub:not(.on),.cmap.foc .leaf:not(.on){filter:grayscale(.7) opacity(.35)}
+.cmap.foc .lk:not(.on),.cmap.foc .lf:not(.on){opacity:.12}
+.cmap .hub.on{box-shadow:0 0 0 6px color-mix(in srgb,var(--c) 22%,transparent),0 18px 36px -12px var(--c);z-index:6}
+.cmap .leaf.on{transform:translate(-50%,-50%) scale(1.08)}
+.cml .lk.on{stroke-width:5;opacity:1}.cml .lf.on{opacity:1;stroke-width:2.4}
+.cmhint{text-align:center;margin-top:18px;color:var(--mute);font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px}
+@keyframes cmspin{to{transform:rotate(360deg)}}
+@keyframes cmfloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@media(max-width:1020px){.cmap{aspect-ratio:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.cmap svg.cml{display:none}
+.cmc{position:relative;left:auto;top:auto;transform:none;width:min(220px,55vw);margin:30px auto 60px;grid-column:1/-1}
+.cmgrp{display:flex;flex-wrap:wrap;gap:8px;padding:14px;border-radius:20px;background:var(--w);border-top:4px solid var(--c);box-shadow:var(--e1)}
+.hub,.leaf{position:relative!important;left:auto!important;top:auto!important;transform:none!important;opacity:1!important;animation:none!important;align-self:flex-start;white-space:normal}
+.hub{box-shadow:none;flex-basis:100%;max-width:max-content}}
+@media(max-width:560px){.cmap{grid-template-columns:minmax(0,1fr)}}
+@media(min-width:1021px){.cmgrp{display:contents}}
+@media(prefers-reduced-motion:reduce){.cmc .ring,.cmc .ring2,.cmap.in .hub{animation:none}}
+
+/* ===== project journey infographic ===== */
+.pjw{position:relative;margin:0 auto 70px;max-width:1240px}
+.pj{position:relative;aspect-ratio:1240/720}
+.pj svg.pjr{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pjr .rd{fill:none;stroke:color-mix(in srgb,var(--ink) 80%,transparent);stroke-width:34;stroke-linecap:round;stroke-dasharray:1800;stroke-dashoffset:1800;transition:stroke-dashoffset 2.2s var(--ease)}
+.pjr .rde{fill:none;stroke:url(#pjg);stroke-width:44;stroke-linecap:round;opacity:.25;stroke-dasharray:1800;stroke-dashoffset:1800;transition:stroke-dashoffset 2.2s var(--ease)}
+.pjr .ln{fill:none;stroke:#fff;stroke-width:3;stroke-dasharray:16 14;opacity:0;transition:opacity .6s 1.8s;animation:pjln 1.4s linear infinite}
+.pj.in .rd,.pj.in .rde{stroke-dashoffset:0}.pj.in .ln{opacity:.9}
+@keyframes pjln{to{stroke-dashoffset:-30}}
+.pjr .stem{stroke:var(--c);stroke-width:2.5;stroke-dasharray:5 6;opacity:0;transition:opacity .5s}
+.pj.in .stem{opacity:.8}
+.pjm{position:absolute;transform:translate(-50%,-50%) scale(0);width:7.4%;aspect-ratio:1;z-index:4;transition:transform .7s cubic-bezier(.34,1.56,.64,1)}
+.pj.in .pjm{transform:translate(-50%,-50%) scale(1)}
+.pjm .g{position:absolute;inset:-14%;border-radius:50%;background:repeating-conic-gradient(var(--c) 0 12deg,transparent 12deg 24deg);-webkit-mask:radial-gradient(circle,transparent 62%,#000 63%);mask:radial-gradient(circle,transparent 62%,#000 63%);animation:cmspin 12s linear infinite;opacity:.8}
+.pjm .p{position:absolute;inset:0;border-radius:50%;border:3px solid var(--c);animation:pjp 2.4s ease-out infinite}
+.pjm i{position:absolute;inset:6%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--c) 55%,#fff),var(--c) 60%,color-mix(in srgb,var(--c) 60%,#000));box-shadow:0 10px 24px -6px var(--c),inset 0 -4px 10px rgba(0,0,0,.25);border:4px solid var(--w)}
+.pjm i .ms{color:#fff;font-size:clamp(20px,2.3vw,32px)}
+.pjm b{position:absolute;left:50%;bottom:-6%;transform:translate(-50%,100%);font-size:12px;font-weight:900;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;white-space:nowrap;box-shadow:var(--e1)}
+.pjm.dn b{bottom:auto;top:-6%;transform:translate(-50%,-100%)}
+@keyframes pjp{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.75);opacity:0}}
+.pjc{position:absolute;width:21%;z-index:5;opacity:0;transition:opacity .6s,transform .8s cubic-bezier(.34,1.56,.64,1);border-radius:22px;padding:16px 16px 14px;background:var(--w);border:1px solid color-mix(in srgb,var(--c) 30%,var(--line));box-shadow:0 22px 44px -22px color-mix(in srgb,var(--c) 70%,#000);overflow:hidden}
+.pjc.up{transform:translate(-50%,-100%) translateY(30px)}.pjc.dn{transform:translate(-50%,0) translateY(-30px)}
+.pj.in .pjc{opacity:1}.pj.in .pjc.up{transform:translate(-50%,-100%)}.pj.in .pjc.dn{transform:translate(-50%,0)}
+.pjc::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 40%,#fff))}
+.pjc::after{content:"";position:absolute;right:-40px;bottom:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--c) 22%,transparent),transparent 70%)}
+.pjc .tp{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.pjc .tp small{font-size:10.5px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:var(--c)}
+.pjc .tp .lg{margin-left:auto;font-size:11px;font-weight:900;color:#fff;background:var(--c);border-radius:8px;padding:2px 7px}
+.pjc h3{font-size:16.5px;font-weight:900;line-height:1.2}
+.pjc p{font-size:12.5px;color:var(--mute);margin:6px 0 10px;line-height:1.4}
+.pjc .ch{display:flex;flex-wrap:wrap;gap:5px}
+.pjc .ch span{font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;background:color-mix(in srgb,var(--c) 12%,transparent);color:color-mix(in srgb,var(--c) 75%,var(--ink))}
+.pjc .im{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:9px;border-top:1px dashed color-mix(in srgb,var(--c) 35%,transparent);font-size:12px;font-weight:800;color:var(--ink)}
+.pjc .im .ms{font-size:18px;color:var(--c);animation:pjb 2s ease-in-out infinite}
+@keyframes pjb{50%{transform:translateY(-3px) scale(1.12)}}
+.pjstat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 auto 26px;max-width:1000px}
+.pjs{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:18px;background:var(--w);box-shadow:var(--e1);border-left:5px solid var(--c)}
+.pjs .ms{width:44px;height:44px;line-height:44px;border-radius:14px;color:#fff;background:var(--c);font-size:24px}
+.pjs b{display:block;font-size:22px;font-weight:900;line-height:1}
+.pjs span{font-size:12px;color:var(--mute);font-weight:700}
+@media(max-width:1100px){.pj{aspect-ratio:auto;padding-left:34px}.pj svg.pjr,.pjm{display:none}
+.pj::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:6px;border-radius:6px;background:linear-gradient(#5c6bc0,#1e88e5,#f4b400,#e53935,#ff7043)}
+.pjc{position:relative;left:auto!important;top:auto!important;width:auto;margin-bottom:16px;transform:none!important;opacity:1!important}
+.pjc .vi{position:absolute;left:-34px}.pjstat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.pjm .g,.pjm .p,.pjr .ln,.pjc .im .ms{animation:none}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1293,6 +1385,24 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   </div>
 </section>
 
+
+<section class="band cmband" id="map">
+  <div class="wrap" style="max-width:1260px">
+    <div class="hd rv"><span class="ms">hub</span><h2>My profile at a glance</h2><div class="bar"></div><p class="sub">One engineer, eight connected worlds, from the PLC to the boardroom.</p></div>
+    <div class="cmap" id="cmap">
+      <svg class="cml" id="cml" viewBox="0 0 1240 860" aria-hidden="true"></svg>
+      <div class="cmc">
+        <div class="ring2"><i></i><i></i></div>
+        <div class="ring"></div>
+        <div class="face"><video src="img/AvatarIvan.mp4" poster="img/AvatarIvan.jpg" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
+        <div class="ed"><span style="background:#26b5a8">IPN</span><span style="background:#e53935">MIT</span><span style="background:#1e88e5">Tec</span></div>
+        <div class="nm"><b>Ivan Diaz Rodriguez</b><span>MES · Automation · AI</span></div>
+      </div>
+    </div>
+    <p class="cmhint rv"><span class="ms" style="font-size:18px">touch_app</span>Hover or tap a branch to light it up</p>
+  </div>
+</section>
+
 <section class="band mv" id="plant">
   <div class="mvbg" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
   <div class="wrap">
@@ -1386,6 +1496,11 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <section class="band" id="projects">
   <div class="wrap">
     <div class="hd rv"><span class="ms">insights</span><h2>Data science &amp; projects</h2><div class="bar"></div></div>
+    <div class="h3s rv"><span class="ms">route</span>Project journey · 14 years from the PLC to GenAI</div>
+    <div class="pjw">
+      <div class="pjstat rv" id="pjstat"></div>
+      <div class="pj" id="pj"><svg class="pjr" id="pjr" viewBox="0 0 1240 720" aria-hidden="true"></svg></div>
+    </div>
     <div class="ds">
       <div class="shot rv fl" data-lb="img/imageDataScience.PNG" data-cap="Data Science & Machine Learning"><span class="ms">monitoring</span><img src="img/imageDataScience.PNG" alt="Data science portfolio" loading="lazy" onerror="this.remove()"></div>
       <div class="rv fr"><h3>Descriptive &amp; predictive analytics</h3><p>Evidence-based models with null hypotheses, linear models, PCA, kNN and regression — applied to real manufacturing, sales, engineering and finance problems.</p>
@@ -1575,7 +1690,7 @@ MGA:["groups","Team lead · ROI business cases",`${[0,1,2,3,4].map(i=>{const x=4
 ${[0,1,2,3,4].map(i=>{const x=60+i*64;return `<g><circle cx="${x}" cy="232" r="11" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][i]}"/><path d="M${x-18} 272 q0-24 18-24 q18 0 18 24z" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][i]}"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="1.6s" begin="${i*.25}s" repeatCount="indefinite"/></g>`}).join('')}`]};
 $('#tl').insertAdjacentHTML('beforeend',jobs.map((j,i)=>{const sc=scenes[j.l],c=icons[j.l];return `<div class="row ${i%2?'rev':''} ${j.now?'now':''}" style="--c:${c}">
  <div class="pin2">${({ITG:"ITG Brands",TOY:"Toyota",RIV:"Rivian",ABC:"ABC Technologies",MGA:"Magna"})[j.l]}</div>
- <div class="scene rv ${i%2?'fr':'fl'}" style="--c:${c};aspect-ratio:400/${sc[3]||300}"><span class="cap"><span class="ms">${sc[0]}</span>${sc[1]}</span>${j.l==='ABC'?`<video class="svid" src="img/Vide01.mp4" autoplay muted loop playsinline preload="metadata" aria-label="${sc[1]}" onerror="this.remove()" onloadeddata="this.classList.add('ok')"></video>`:''}<svg viewBox="0 0 400 ${sc[3]||300}" role="img" aria-label="${sc[1]}"><defs></defs>${sc[2]}</svg></div>
+ <div class="scene rv ${i%2?'fr':'fl'}" style="--c:${c};aspect-ratio:400/${sc[3]||300}"><span class="cap"><span class="ms">${sc[0]}</span>${sc[1]}</span>${j.l==='ABC'?`<video class="svid" src="img/Vide02.mp4" autoplay muted loop playsinline preload="metadata" aria-label="${sc[1]}" onerror="this.remove()" onloadeddata="this.classList.add('ok')"></video>`:''}<svg viewBox="0 0 400 ${sc[3]||300}" role="img" aria-label="${sc[1]}"><defs></defs>${sc[2]}</svg></div>
  <article class="job open rv ${i%2?'fl':'fr'} ${j.now?'now':''}" style="--c:${c}">
  <span class="when"><span class="ms">${j.now?'radio_button_checked':'event'}</span>${j.w}</span>
  <h3>${j.t}</h3><div class="org"><span class="ms">apartment</span>${j.o}</div>
@@ -1765,6 +1880,41 @@ chipsF.forEach((c,k)=>c.onclick=()=>{show8(k);loop()});bdg.forEach((c,k)=>c.addE
 $('#stPrev').onclick=()=>{show8(si-1);loop()};$('#stNext').onclick=()=>{show8(si+1);loop()};$('#stPlay').onclick=()=>setPlay(!playing);
 show8(0);setPlay(playing);
 
+
+/* concept map */
+{const CM=[
+ ["factory","MES / MOM","Core","#1e88e5",[["precision_manufacturing","Siemens Opcenter"],["memory","SIMATIC IT"],["settings_input_component","FactoryTalk PC"],["layers","ISA-95"]]],
+ ["account_tree","ERP & Business","Integration","#f4b400",[["inventory_2","SAP S/4HANA · ECC"],["sync_alt","SAP MII · DIS"],["description","IDoc LOIPRO"],["query_stats","Business analysis"]]],
+ ["smart_toy","Automation & Robotics","Plant floor","#ff7043",[["developer_board","PLC programming"],["precision_manufacturing","FANUC robots"],["conveyor_belt","Cobots · AGV"],["battery_charging_full","Li-ion cell lines"]]],
+ ["sensors","IIoT & Data","Real time","#26b5a8",[["monitor_heart","Ignition SCADA"],["cable","Kepware"],["podcasts","MQTT · EMQX"],["speed","OEE · KPI · BSC"]]],
+ ["psychology","AI & ML","Intelligence","#8e24aa",[["model_training","Machine learning"],["terminal","Python"],["hub","MCP servers"],["auto_awesome","Claude Haiku · Sonnet"]]],
+ ["code","Software & Cloud","Build","#e53935",[["javascript","MERN stack"],["web","ASP.NET MVC"],["cloud_sync","Azure DevOps CI/CD"],["verified","Microsoft certified"]]],
+ ["groups","Leadership & Agile","Lead","#43a047",[["view_kanban","Scrum · Kanban"],["flag","Project management"],["join_inner","Systems + Business Analyst"],["trending_up","ROI cases"]]],
+ ["route","Career path","Industries","#7e57c2",[["local_shipping","ITG Brands · NC"],["electric_car","Toyota · KY"],["electric_bolt","Rivian · IL"],["factory","ABC · Magna · MX"]]]];
+const m=$('#cmap'),sv=$('#cml'),W=1240,H=860,cx=W/2,cy=H/2,NS='http://www.w3.org/2000/svg';
+const pct=(x,y,el)=>{el.style.left=x/W*100+'%';el.style.top=y/H*100+'%'};
+const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+sv.append(mk('ellipse',{class:'halo',cx,cy,rx:300,ry:232}),mk('ellipse',{class:'halo',cx,cy,rx:520,ry:375}));
+const items=[];
+CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*300,hy=cy+Math.sin(an)*232;
+ const g=document.createElement('div');g.className='cmgrp';g.style.setProperty('--c',b[3]);
+ const h=document.createElement('button');h.type='button';h.className='hub';h.style.setProperty('--c',b[3]);h.style.setProperty('--fd',(i*.4)+'s');h.style.transitionDelay=(.5+i*.12)+'s';h.innerHTML=`<span class="ms">${b[0]}</span><span><small>${b[2]}</small><b>${b[1]}</b></span>`;pct(hx,hy,h);g.append(h);
+ const c1x=cx+Math.cos(an)*130,c1y=cy+Math.sin(an)*60;
+ const lk=mk('path',{class:'lk',d:`M${cx} ${cy} Q${c1x+Math.sin(an)*60} ${c1y-Math.cos(an)*60} ${hx} ${hy}`});lk.style.setProperty('--c',b[3]);sv.append(lk);
+ const L=lk.getTotalLength?lk.getTotalLength():400;lk.style.setProperty('--len',L);lk.style.transitionDelay=(i*.12)+'s';
+ if(!RM){const d=mk('circle',{class:'pls',r:5});d.style.setProperty('--c',b[3]);d.style.fill=b[3];const am=mk('animateMotion',{dur:'3.2s',repeatCount:'indefinite',begin:(i*.4)+'s',path:lk.getAttribute('d')});d.append(am);sv.append(d)}
+ const grp={h,lk,lf:[],lv:[]};
+ b[4].forEach((l,k)=>{const sg=Math.sign(Math.cos(an)),lx=hx+Math.cos(an)*235-Math.abs(k-1.5)*12*sg,ly=hy+Math.sin(an)*130+(k-1.5)*40;
+  const e=document.createElement('div');e.className='leaf';e.style.setProperty('--c',b[3]);e.style.transitionDelay=(1.1+i*.12+k*.07)+'s';e.innerHTML=`<span class="ms">${l[0]}</span>${l[1]}`;pct(lx,ly,e);g.append(e);
+  const lf=mk('path',{class:'lf',d:`M${hx} ${hy} Q${(hx+lx)/2+Math.cos(an)*30} ${(hy+ly)/2+Math.sin(an)*30} ${lx} ${ly}`});lf.style.setProperty('--c',b[3]);lf.style.transitionDelay=(1+i*.12)+'s';sv.insertBefore(lf,sv.firstChild);
+  if(!RM&&k%2==0){const d=mk('circle',{class:'pls',r:3});d.style.fill=b[3];d.append(mk('animateMotion',{dur:'2.4s',repeatCount:'indefinite',begin:(1+i*.3+k*.5)+'s',path:lf.getAttribute('d')}));sv.append(d)}
+  grp.lf.push(lf);grp.lv.push(e)});
+ m.append(g);items.push(grp);
+ const on=v=>{m.classList.toggle('foc',v);[h,lk,...grp.lf,...grp.lv].forEach(x=>x.classList.toggle('on',v))};
+ h.addEventListener('pointerenter',()=>on(true));h.addEventListener('pointerleave',()=>on(false));h.addEventListener('focus',()=>on(true));h.addEventListener('blur',()=>on(false));
+ h.addEventListener('click',()=>{const v=!h.classList.contains('on');items.forEach(o=>{m.classList.remove('foc');[o.h,o.lk,...o.lf,...o.lv].forEach(x=>x.classList.remove('on'))});on(v)})});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){m.classList.add('in');o.disconnect()}}),{threshold:.25}).observe(m)}
+
 /* education + certificates */
 const ed=[["engineering","Bachelor of Science","Control & Automation Engineering","Instituto Politécnico Nacional (IPN)","2008","img/EnginerringDegree.png","#26b5a8"],
  ["insights","Professional Certificate","Data Science & Machine Learning: Making Data-Driven Decisions","MIT IDSS · Schwarzman College of Computing","Nov 2022","img/MITCertificationIDSS.PNG","#8e24aa",1],
@@ -1806,6 +1956,29 @@ cards.forEach((c,j)=>c.addEventListener('click',e=>{if(j!==cfi){e.stopPropagatio
 tr.addEventListener('pointerenter',()=>clearInterval(ap));tr.addEventListener('pointerleave',cfrun);
 let sx=null;tr.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});tr.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){cfgo(cfi+(dx<0?1:-1));cfrun()}sx=null});
 new ResizeObserver(lay).observe(tr);cfgo(0);cfrun();}
+
+
+/* project journey */
+{const PJ=[
+ ["2012 – 16","MGA","Magna International","dashboard","Plant KPI & OEE apps","Real-time KPIs, OEE, balanced scorecards and labor efficiency for plant leadership.",[".NET","Web apps","Lean · Six Sigma"],"trending_up","ROI cases to senior leadership","#5c6bc0"],
+ ["2016 – 22","ABC","ABC Technologies","hub","SCADA + 4-site PMO","PLCs, OPC servers and custom SCADA / HMI, with a portfolio across Mexico, the U.S. and Canada.",["Kepware","Ignition","Scrum · Kanban"],"speed","Real-time OEE on the floor","#1e88e5"],
+ ["2022 – 23","RIV","Rivian","electric_car","EV MES at scale","Owned Rockwell FactoryTalk ProductionCentre on high-volume EV lines.",["FTPC","ETL","Neural nets"],"link","MES bridges floor and enterprise","#f4b400"],
+ ["2023 – 26","TOY","Toyota EV Battery","battery_charging_full","Battery IIoT platform","Multi-tier Ignition architecture with EMQX, TimescaleDB and ML on battery cells.",["Ignition","EMQX","Terraform"],"psychology","Predictive maintenance, less waste","#e53935"],
+ ["2026 – Now","ITG","ITG Brands","auto_awesome","SAP ↔ MES + GenAI","Simatic IT ↔ SAP MII ↔ S/4HANA IDocs, with GenAI on the line via MCP.",["SAP MII","IDocs","MCP"],"bolt","Operators ask, AI answers","#ff7043"]];
+const ST=[["calendar_month","14+","years of projects","#1e88e5"],["factory","5","global manufacturers","#26b5a8"],["public","3","countries · MX · US · CA","#ff7043"],["layers","L0 → L4","full ISA-95 stack","#7e57c2"]];
+$('#pjstat').innerHTML=ST.map(t=>`<div class="pjs" style="--c:${t[3]}"><span class="ms">${t[0]}</span><div><b>${t[1]}</b><span>${t[2]}</span></div></div>`).join('');
+const box=$('#pj'),sv=$('#pjr'),NS='http://www.w3.org/2000/svg',W=1240,H=720,X=[150,380,620,860,1090],Y=[300,420,300,420,300];
+const road='M30 360 C80 300 110 300 150 300 S310 420 380 420 S560 300 620 300 S790 420 860 420 S1040 300 1090 300 S1190 340 1215 360';
+sv.innerHTML=`<defs><linearGradient id="pjg"><stop offset="0" stop-color="#5c6bc0"/><stop offset=".25" stop-color="#1e88e5"/><stop offset=".5" stop-color="#f4b400"/><stop offset=".75" stop-color="#e53935"/><stop offset="1" stop-color="#ff7043"/></linearGradient></defs><path class="rde" d="${road}"/><path class="rd" d="${road}"/><path class="ln" d="${road}"/>`+
+ PJ.map((p,i)=>{const up=i%2==0;return `<line class="stem" style="--c:${p[9]};transition-delay:${1+i*.35}s" x1="${X[i]}" y1="${Y[i]+(up?-48:48)}" x2="${X[i]}" y2="${up?250:470}"/>`}).join('')+
+ (RM?'':`<g><circle r="13" fill="#fff" stroke="#ff7043" stroke-width="4"/><circle r="5" fill="#ff7043"/><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="${road}"/></g><circle r="20" fill="#ff7043" opacity=".25"><animateMotion dur="9s" repeatCount="indefinite" path="${road}"/><animate attributeName="r" values="14;26;14" dur="1.2s" repeatCount="indefinite"/></circle>`);
+const pc=(x,y,e)=>{e.style.left=x/W*100+'%';e.style.top=y/H*100+'%'};
+PJ.forEach((p,i)=>{const up=i%2==0;
+ const m=document.createElement('div');m.className='pjm'+(up?'':' dn');m.style.setProperty('--c',p[9]);m.style.transitionDelay=(.6+i*.35)+'s';m.innerHTML=`<span class="g"></span><span class="p"></span><i><span class="ms">${p[3]}</span></i><b>${p[0]}</b>`;pc(X[i],Y[i],m);box.append(m);
+ const c=document.createElement('article');c.className='pjc '+(up?'up':'dn');c.style.setProperty('--c',p[9]);c.style.transitionDelay=(1.1+i*.35)+'s';
+ c.innerHTML=`<div class="tp"><small>${p[0]} · ${p[2]}</small><span class="lg">${p[1]}</span></div><h3>${p[4]}</h3><p>${p[5]}</p><div class="ch">${p[6].map(t=>`<span>${t}</span>`).join('')}</div><div class="im"><span class="ms">${p[7]}</span>${p[8]}</div>`;
+ pc(X[i],up?250:470,c);box.append(c)});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){box.classList.add('in');o.disconnect()}}),{threshold:.2}).observe(box)}
 
 /* projects */
 const cases=[["precision_manufacturing","Manufacturing","Predict scrap, downtime and material defects before they occur."],["storefront","Sales","Recommendation systems from demographics and big-data behavior."],["engineering","Engineering","Process and material optimization from product characteristics."],["account_balance","Finance","Decision trees for NPV and future cash-flow probability."],["support_agent","Tech support","Unsupervised clustering for ETL data mining and labeling."],["dashboard","Business intelligence","Real-time KPIs, OEE and balanced scorecards."]];
