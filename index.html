@@ -222,6 +222,13 @@ a{color:var(--b2)}
 .tog .ms{transition:transform .3s}.job.open .tog .ms{transform:rotate(180deg)}
 @media(max-width:860px){.tl::before,.tl .fill{left:26px}.job,.job:nth-child(odd of .job){width:auto;margin-left:68px}.job:nth-child(n of .job) .pin{left:-68px;right:auto;width:44px;height:44px;font-size:12px}}
 
+
+/* skills story video */
+{const v=$('#stvv'),b=$('#stvm'),pi=$('#stvpi');if(v&&b){
+b.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}b.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
+v.addEventListener('timeupdate',()=>{pi.style.width=(v.currentTime/(v.duration||1)*100)+'%'});
+new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.3}).observe(v)}}
+
 /* skills */
 .skg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.skg{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.skg{grid-template-columns:minmax(0,1fr)}}
@@ -1315,6 +1322,34 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 @keyframes adn{0%{top:4px}50%{top:calc(100% - 16px)}100%{top:4px}}
 @media(max-width:900px){.ahero{grid-template-columns:minmax(0,1fr)}.asteps{grid-template-columns:repeat(2,minmax(0,1fr))}.asteps::before{display:none}.lg2{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.ahero::before,.ast>.ms,.alv,.alad i{animation:none}}
+.sk .skd{font-size:13.5px;line-height:1.5;color:var(--mute);margin:-4px 0 14px;padding:0 2px}
+
+/* skills story video */
+.stv{position:relative;max-width:980px;margin:-6px auto 56px;padding:0 4%}
+.stvf{position:relative;border-radius:30px;padding:5px;background:conic-gradient(from var(--ang,0deg),#1e88e5,#26b5a8,#43a047,#f4b400,#ff7043,#e53935,#8e24aa,#1e88e5);animation:stvr 8s linear infinite;box-shadow:0 40px 80px -36px rgba(20,60,120,.6)}
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes stvr{to{--ang:360deg}}
+.stvb{position:absolute;inset:8% 4% -6%;border-radius:40px;background:inherit;filter:blur(40px);opacity:.35;z-index:-1}
+.stvs{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/9;background:#0e1620}
+.stvs video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stvo{position:absolute;inset:0;display:flex;align-items:flex-end;gap:14px;padding:22px 24px 30px;background:linear-gradient(180deg,rgba(8,14,22,.35) 0,transparent 26%,transparent 58%,rgba(8,14,22,.78));pointer-events:none}
+.stvl{position:absolute;left:20px;top:18px;display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:6px 14px 6px 10px;border-radius:999px}
+.stvl i{width:9px;height:9px;border-radius:50%;background:#ff5252;box-shadow:0 0 0 0 #ff5252;animation:stvrec 1.6s infinite}
+@keyframes stvrec{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.stvc{color:#fff;flex:1}
+.stvc b{display:block;font-size:clamp(18px,2.4vw,28px);font-weight:900;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.stvc small{font-size:13.5px;opacity:.85}
+.stvm{pointer-events:auto;all:unset;cursor:pointer;pointer-events:auto;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);transition:.25s;flex:none}
+.stvm:hover{background:#ff7043;transform:scale(1.08)}
+.stvm .ms{font-size:24px}
+.stvp{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.18)}
+.stvp i{display:block;height:100%;width:0;background:linear-gradient(90deg,#26b5a8,#ff7043)}
+.stvt{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);z-index:3;display:inline-flex;align-items:center;gap:7px;padding:8px 14px 8px 8px;border-radius:999px;background:var(--w);font-size:13px;font-weight:800;color:var(--ink);box-shadow:0 14px 28px -12px var(--c);border:1.5px solid color-mix(in srgb,var(--c) 45%,transparent);animation:stvfl 6s ease-in-out infinite;animation-delay:var(--d);white-space:nowrap}
+.stvt .ms{width:28px;height:28px;line-height:28px;border-radius:50%;font-size:17px;color:#fff;background:var(--c)}
+@keyframes stvfl{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.stv.novid{display:none}
+@media(max-width:760px){.stvt{display:none}.stv{padding:0}.stvc small{display:none}.stvo{padding:14px 14px 20px}}
+@media(prefers-reduced-motion:reduce){.stvf,.stvt,.stvl i{animation:none}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1488,6 +1523,26 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <section class="band" id="skills">
   <div class="wrap">
     <div class="hd rv"><span class="ms">construction</span><h2>Expertise &amp; skills</h2><div class="bar"></div><p class="sub">What I work with, from ladder logic to the ERP, and the methods I use to keep projects on time.</p></div>
+    <div class="stv rv" id="stv">
+      <div class="stvf">
+        <span class="stvb"></span>
+        <div class="stvs">
+          <video id="stvv" src="img/Vide02.mp4" autoplay muted loop playsinline preload="metadata" aria-label="My story: from the plant floor to the business" onerror="document.getElementById('stv').classList.add('novid')"></video>
+          <div class="stvo">
+            <span class="stvl"><i></i>My story in motion</span>
+            <div class="stvc"><b>From the plant floor to the business</b><small>The systems I connect every day, PLC → SCADA → MES → SAP</small></div>
+            <button class="stvm" id="stvm" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button>
+          </div>
+          <div class="stvp"><i id="stvpi"></i></div>
+        </div>
+      </div>
+      <span class="stvt" style="--c:#1e88e5;--x:-4%;--y:12%;--d:0s"><span class="ms">cloud</span>SAP S/4HANA</span>
+      <span class="stvt" style="--c:#26b5a8;--x:96%;--y:8%;--d:.8s"><span class="ms">precision_manufacturing</span>Opcenter MES</span>
+      <span class="stvt" style="--c:#ff7043;--x:-6%;--y:62%;--d:1.6s"><span class="ms">sensors</span>Ignition SCADA</span>
+      <span class="stvt" style="--c:#f4b400;--x:98%;--y:52%;--d:2.4s"><span class="ms">memory</span>PLC · AB / S7</span>
+      <span class="stvt" style="--c:#8e24aa;--x:14%;--y:103%;--d:3.2s"><span class="ms">auto_awesome</span>Claude · MCP</span>
+      <span class="stvt" style="--c:#43a047;--x:84%;--y:103%;--d:4s"><span class="ms">smart_toy</span>FANUC · Cobots</span>
+    </div>
     <div class="skg" id="skg"></div>
   </div>
 </section>
@@ -1724,7 +1779,7 @@ MGA:["groups","Team lead · ROI business cases",`${[0,1,2,3,4].map(i=>{const x=4
 ${[0,1,2,3,4].map(i=>{const x=60+i*64;return `<g><circle cx="${x}" cy="232" r="11" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][i]}"/><path d="M${x-18} 272 q0-24 18-24 q18 0 18 24z" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][i]}"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="1.6s" begin="${i*.25}s" repeatCount="indefinite"/></g>`}).join('')}`]};
 $('#tl').insertAdjacentHTML('beforeend',jobs.map((j,i)=>{const sc=scenes[j.l],c=icons[j.l];return `<div class="row ${i%2?'rev':''} ${j.now?'now':''}" style="--c:${c}">
  <div class="pin2">${({ITG:"ITG Brands",TOY:"Toyota",RIV:"Rivian",ABC:"ABC Technologies",MGA:"Magna"})[j.l]}</div>
- <div class="scene rv ${i%2?'fr':'fl'}" style="--c:${c};aspect-ratio:400/${sc[3]||300}"><span class="cap"><span class="ms">${sc[0]}</span>${sc[1]}</span>${j.l==='ABC'?`<video class="svid" src="img/Vide02.mp4" autoplay muted loop playsinline preload="metadata" aria-label="${sc[1]}" onerror="this.remove()" onloadeddata="this.classList.add('ok')"></video>`:''}<svg viewBox="0 0 400 ${sc[3]||300}" role="img" aria-label="${sc[1]}"><defs></defs>${sc[2]}</svg></div>
+ <div class="scene rv ${i%2?'fr':'fl'}" style="--c:${c};aspect-ratio:400/${sc[3]||300}"><span class="cap"><span class="ms">${sc[0]}</span>${sc[1]}</span><svg viewBox="0 0 400 ${sc[3]||300}" role="img" aria-label="${sc[1]}"><defs></defs>${sc[2]}</svg></div>
  <article class="job open rv ${i%2?'fl':'fr'} ${j.now?'now':''}" style="--c:${c}">
  <span class="when"><span class="ms">${j.now?'radio_button_checked':'event'}</span>${j.w}</span>
  <h3>${j.t}</h3><div class="org"><span class="ms">apartment</span>${j.o}</div>
@@ -1769,6 +1824,7 @@ let sk=[["precision_manufacturing","MES / MOM","#1e9bd7","Siemens Opcenter|Simat
  ["dns","Infrastructure","#546e7a","Proxmox HA|Docker / Compose|Portainer|Terraform|Ansible|Linux|Windows Server"],
  ["verified","Quality & planning","#f4b400","CAPA · 8D|SPC · Cp/Cpk|APS scheduling|ECR / ECO|FMEA / SFMEA|OEE|IATF 16949"],
  ["groups","Management","#00897b","Scrum|Kanban|Scrumban|Azure DevOps|WBS & Roadmaps|Lean Six Sigma|PDCA|Root cause|ITIL-ITSM|Pareto|Digital transformation"]];
+const SKD={"MES / MOM": "I deploy and run the MES that dispatches orders, tracks every unit and keeps full genealogy, so each line builds it right the first time.", "ERP integration": "I connect SAP to the shop floor: production orders flow down as IDocs, and confirmations, scrap and inventory flow back up in real time.", "IIoT & SCADA": "I collect live data from every machine and turn it into SCADA screens, alarms and historians that operators and engineers use every shift.", "Controls & robotics": "I program and troubleshoot PLCs, robots and vision systems, and tie them into the MES so every line runs to the recipe.", "Industrial AI": "I put AI on the line: models that predict failures and scrap, and assistants that answer operators from manuals and line history.", "Software & data": "I build the APIs, dashboards and apps that turn plant data into KPIs and decisions for every level of the business.", "Infrastructure": "I build and automate the servers and containers that keep critical manufacturing systems running with zero downtime.", "Quality & planning": "I build quality into the process with SPC, FMEA and CAPA, and plan production so lines hit OEE and delivery targets.", "Management": "I lead cross-functional teams with Agile and Lean, from roadmap and sprints to go-live and continuous improvement."};
 const ART={
 "MES / MOM":`<rect x="20" y="62" width="200" height="12" rx="6" fill="#cfd8dc"/><line x1="20" y1="68" x2="220" y2="68" stroke="#90a4ae" stroke-width="2" class="flow"/>${[0,1,2].map(i=>`<g><rect y="44" width="20" height="18" rx="3" fill="var(--c)"/><animateTransform attributeName="transform" type="translate" values="-30 0;250 0" dur="5s" begin="${i*1.66}s" repeatCount="indefinite"/></g>`).join('')}<g><circle cx="120" cy="22" r="14" fill="none" stroke="var(--c)" stroke-width="7" stroke-dasharray="6 4"/><circle cx="120" cy="22" r="5" fill="var(--c)"/><animateTransform attributeName="transform" type="rotate" values="0 120 22;360 120 22" dur="4s" repeatCount="indefinite"/></g>`,
 "ERP integration":`<rect x="20" y="20" width="60" height="44" rx="10" fill="var(--c)"/><text x="50" y="47" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">SAP</text><rect x="160" y="20" width="60" height="44" rx="10" fill="#1e88e5"/><text x="190" y="47" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">MES</text><path id="e1" d="M82 34H158"/><path id="e2" d="M158 50H82"/><path d="M82 34H158M158 50H82" stroke="#cfd8dc" stroke-width="2" stroke-dasharray="4 4"/>${[0,1].map(i=>`<rect width="14" height="10" rx="2" x="-7" y="-5" fill="#ff7043"><animateMotion dur="1.8s" begin="${i*.9}s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></rect><circle r="5" fill="#43a047"><animateMotion dur="1.8s" begin="${i*.9+.4}s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>`).join('')}`,
@@ -1795,7 +1851,7 @@ const ART={
 "Management":`${['To do','Doing','Done'].map((t,i)=>`<rect x="${20+i*70}" y="6" width="62" height="70" rx="6" fill="#f1f6fb"/><text x="${51+i*70}" y="18" fill="#607d8b" font-size="9" text-anchor="middle" font-weight="700">${t}</text>`).join('')}<g><rect x="26" y="26" width="50" height="14" rx="3" fill="var(--c)"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;70 0;70 0;140 0;140 0" keyTimes="0;.2;.4;.6;.8;1" dur="4s" repeatCount="indefinite"/></g><rect x="26" y="48" width="50" height="14" rx="3" fill="#f4b400"/><rect x="166" y="48" width="50" height="14" rx="3" fill="#43a047"/>`};
 const CI={"Siemens Opcenter":"factory","Simatic IT PM/DIS":"precision_manufacturing","Production Modeler":"schema","Rockwell FTPC":"conveyor_belt","AVEVA":"water_drop","ISA-95":"stacks","eBR · Genealogy":"family_history","NC / Hold · e-Signature":"draw","SAP S/4HANA":"cloud","SAP MII":"hub","SAP ECC":"storage","IDocs LOIPRO / CONF":"description","SAP PP · MM · QM":"inventory_2","WE02 · BD87 · COGI":"troubleshoot","SOAP / XML":"code_blocks","Ignition Gateway & Edge":"router","Perspective / Vision":"desktop_windows","Kepware":"settings_input_component","OPC UA":"lan","MQTT Sparkplug B":"cell_tower","EMQX":"swap_calls","PostgreSQL & Timescale":"database","Allen-Bradley ControlLogix":"memory","CompactLogix":"developer_board","EtherNet/IP":"settings_ethernet","Siemens S7 · S7comm":"memory_alt","FANUC":"precision_manufacturing","ABB":"smart_toy","Cognex":"photo_camera","Keyence":"sensors","Motion control":"360","Model Context Protocol":"extension","Claude Haiku · Sonnet · Fable":"auto_awesome","RAG":"travel_explore","Python ML":"model_training","TensorFlow":"neurology","OpenCV":"visibility","Langflow":"account_tree","n8n":"automation","Node.js / Express":"javascript","React":"web","MongoDB":"eco","Python":"code","SQL Server":"database","PostgreSQL":"database","REST · SOAP":"api","JavaScript":"javascript","Power BI":"bar_chart","Proxmox HA":"dns","Docker / Compose":"deployed_code","Portainer":"view_in_ar","Terraform":"terminal","Ansible":"auto_mode","Linux":"terminal","Windows Server":"computer","CAPA · 8D":"fact_check","SPC · Cp/Cpk":"show_chart","APS scheduling":"calendar_month","ECR / ECO":"published_with_changes","FMEA / SFMEA":"warning","OEE":"speed","IATF 16949":"verified","Scrum":"sprint","Kanban":"view_kanban","Scrumban":"merge","Azure DevOps":"rocket_launch","WBS & Roadmaps":"route","Lean Six Sigma":"trending_down","PDCA":"autorenew","Root cause":"search","ITIL-ITSM":"support_agent","Pareto":"leaderboard","Digital transformation":"auto_awesome",".NET / C#":"data_object","MVC & Ajax":"web_asset"};
 const skAll=sk;sk=sk.filter(x=>x[1]!=='MES / MOM');
-$('#skg').innerHTML=sk.map((s,i)=>`<div class="sk rv" style="--c:${s[2]};--dl:${(i%3)*100}ms"><div class="skart"><svg viewBox="0 0 240 80" aria-hidden="true">${ART[s[1]]||''}</svg></div><div class="h"><span class="ms">${s[0]}</span><h3>${s[1]}</h3></div><div class="chips">${s[3].split('|').map((c,k)=>`<span style="--k:${k}"><i class="ms">${CI[c]||s[0]}</i>${c}</span>`).join('')}</div></div>`).join('');
+$('#skg').innerHTML=sk.map((s,i)=>`<div class="sk rv" style="--c:${s[2]};--dl:${(i%3)*100}ms"><div class="skart"><svg viewBox="0 0 240 80" aria-hidden="true">${ART[s[1]]||''}</svg></div><div class="h"><span class="ms">${s[0]}</span><h3>${s[1]}</h3></div>${SKD[s[1]]?`<p class="skd">${SKD[s[1]]}</p>`:''}<div class="chips">${s[3].split('|').map((c,k)=>`<span style="--k:${k}"><i class="ms">${CI[c]||s[0]}</i>${c}</span>`).join('')}</div></div>`).join('');
 
 
 /* skill card slides */
