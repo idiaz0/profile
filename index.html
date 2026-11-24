@@ -189,7 +189,7 @@ a{color:var(--b2)}
 .loop{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .loop span{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.14);border-radius:6px;padding:6px 10px;font-size:13px;font-weight:500;white-space:nowrap;transition:background .3s,transform .3s var(--ease)}
 .loop span .ms{font-size:16px}
-.loop span.hot{background:#fff;color:var(--b2);transform:translateY(-3px);box-shadow:var(--e2)}
+.loop span.hot{background:#fff;color:#1479ad!important;transform:translateY(-3px);box-shadow:var(--e2)}
 .loop span.back.hot{background:var(--o);color:#fff}
 .mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
 .mods div{background:rgba(255,255,255,.16);border-radius:8px;padding:12px}
@@ -371,9 +371,9 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 .face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .orb{position:absolute;inset:-22px;animation:rot 40s linear infinite reverse}
 .orb span{position:absolute;left:50%;top:50%;transform:rotate(var(--a)) translateY(calc(-50% - min(242px,51vw))) rotate(calc(-1*var(--a)))}
-.orb b{display:inline-flex;align-items:center;gap:6px;animation:rot 40s linear infinite;background:#fff;border:1px solid var(--line);color:#14202e;font-size:13px;font-weight:700;padding:7px 12px;border-radius:12px;white-space:nowrap;box-shadow:0 8px 20px -6px rgba(20,32,46,.25);translate:-50% 0}
+.orb b{display:inline-flex;align-items:center;gap:5px;font-size:12.5px!important;padding:6px 10px!important;animation:rot 40s linear infinite;background:#fff;border:1px solid var(--line);color:#14202e;font-size:13px;font-weight:700;padding:7px 12px;border-radius:12px;white-space:nowrap;box-shadow:0 8px 20px -6px rgba(20,32,46,.25);translate:-50% 0}
 .orb b .ms{font-size:16px;color:var(--c)}
-@media(max-width:900px){.hxw{grid-template-columns:minmax(0,1fr)}.photo{width:min(300px,70vw);margin-top:36px}.orb span{transform:rotate(var(--a)) translateY(calc(-1*min(180px,40vw))) rotate(calc(-1*var(--a)))}}
+@media(max-width:900px){.orb span:nth-child(n+9){display:none}.hxw{grid-template-columns:minmax(0,1fr)}.photo{width:min(300px,70vw);margin-top:36px}.orb span{transform:rotate(var(--a)) translateY(calc(-1*min(180px,40vw))) rotate(calc(-1*var(--a)))}}
 .scroll-hint{position:absolute;bottom:22px;left:50%;width:26px;height:42px;border:2px solid rgba(20,32,46,.25);border-radius:14px;translate:-50% 0}
 .scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;border-radius:2px;background:var(--b);translate:-50% 0;animation:sh 1.6s infinite}
 @keyframes sh{to{transform:translateY(14px);opacity:0}}
@@ -425,12 +425,92 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 .chips span:hover .ms{color:#fff;transform:scale(1.2) rotate(-8deg)}
 .sk.in .chips span{animation:ci .5s var(--ease) both;animation-delay:calc(var(--k)*50ms + 200ms)}
 @keyframes ci{from{opacity:0;transform:translateY(10px) scale(.9)}to{opacity:1;transform:none}}
+
+.sk.skfeat{grid-column:1/-1;border-top-width:4px}
+.fac{margin:16px -22px 0;background:#e3f2fd;border-block:1px solid var(--line)}
+.facsvg{display:block;width:100%;height:auto}
+#spot{transition:transform .9s var(--ease)}
+.bdg circle,.bdg text{transition:fill .3s}
+.bdg.on circle{fill:var(--c)}.bdg.on text{fill:#fff}
+.story{display:flex;align-items:center;gap:16px;margin-top:18px;padding:14px 16px;border-radius:14px;background:#f1f6fb}
+.story.pop{animation:spop .5s var(--ease)}
+@keyframes spop{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}
+.story>.ms{width:56px;height:56px;border-radius:16px;background:var(--c);color:#fff;display:grid;place-items:center;font-size:30px;flex:none}
+.story>div:nth-child(2){flex:1}
+.story b{font-size:18px}.story p{color:var(--mute);margin-top:2px}
+.stnav{display:flex;gap:6px;flex:none}
+.stnav button{width:44px;height:44px;border-radius:50%;border:0;background:#fff;box-shadow:var(--e1);cursor:pointer;display:grid;place-items:center;color:var(--c)}
+.stnav button:hover{background:var(--c);color:#fff}
+.fchips span{cursor:pointer}
+.fchips span.on{background:var(--c);border-color:var(--c);color:#fff}.fchips span.on .ms{color:#fff}
+@media(max-width:600px){.story{flex-wrap:wrap}.stnav{width:100%;justify-content:center}}
+
+/* diploma extras */
+#certs .wrap{position:relative}
+.caps{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.caps span{position:absolute;left:var(--x);bottom:-60px;width:54px;opacity:0;animation:toss var(--t) ease-out infinite;animation-delay:var(--d)}
+@keyframes toss{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.9}55%{transform:translateY(-520px) rotate(calc(var(--r)*.6));opacity:.9}100%{transform:translateY(-300px) rotate(var(--r));opacity:0}}
+.edu{position:relative;z-index:1}
+.stamp{position:absolute;top:44px;right:26px;z-index:3;display:inline-flex;align-items:center;gap:4px;border:3px solid #2e7d32;color:#2e7d32;background:rgba(255,255,255,.85);font-weight:900;font-size:13px;letter-spacing:.12em;padding:4px 10px;border-radius:8px;transform:rotate(-14deg) scale(3);opacity:0;mix-blend-mode:multiply;box-shadow:inset 0 0 0 2px rgba(46,125,50,.25)}
+.stamp .ms{font-size:16px;color:#2e7d32}
+.dip.in .stamp{animation:slam .55s cubic-bezier(.2,1.6,.4,1) forwards;animation-delay:calc(var(--dl,0ms) + 700ms)}
+@keyframes slam{0%{transform:rotate(-14deg) scale(3);opacity:0}70%{transform:rotate(-14deg) scale(.92);opacity:1}100%{transform:rotate(-14deg) scale(1);opacity:1}}
+.dip.in{animation:shake .35s ease-out;animation-delay:calc(var(--dl,0ms) + 1050ms)}
+@keyframes shake{30%{translate:0 3px}60%{translate:0 -2px}}
+.laurel{position:absolute;left:50%;top:50%;width:150px;height:88px;translate:-50% -42%;z-index:-1;overflow:visible}
+.laurel ellipse{opacity:0;transform-box:fill-box;transform-origin:center}
+.dip.in .laurel ellipse{animation:leaf .5s var(--ease) forwards;animation-delay:calc(var(--dl,0ms) + 400ms + var(--d))}
+@keyframes leaf{from{opacity:0;scale:.2}to{opacity:1;scale:1}}
+.drib{animation:flutter 3s ease-in-out infinite}
+@keyframes flutter{50%{transform:translateY(-2px) skewX(-2deg)}}
+.dip{transform-style:preserve-3d}
+.dip::after{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.55),transparent 40%);opacity:0;transition:opacity .3s}
+.dip:hover::after{opacity:1}
+.conf{position:absolute;left:50%;top:40%;width:9px;height:14px;border-radius:2px;pointer-events:none;z-index:5;animation:conf 1.4s cubic-bezier(.2,.6,.4,1) forwards}
+@keyframes conf{to{transform:translate(var(--tx),var(--ty)) rotate(var(--rot));opacity:0}}
+.journey{position:relative;z-index:1;height:78px;margin-top:30px}
+.jtrack{position:absolute;left:16.6%;right:16.7%;top:22px;height:6px;border-radius:3px;background:linear-gradient(90deg,#26b5a8,#e53935,#1e88e5);opacity:.85}
+.jdot{position:absolute;top:50%;left:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;border:4px solid #f4b400;box-shadow:0 0 14px #f4b400;animation:jgo 6s ease-in-out infinite}
+@keyframes jgo{0%,8%{left:0}45%,55%{left:50%}92%,100%{left:100%}}
+.journey span{position:absolute;left:var(--p);top:0;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:900;color:var(--c);font-size:15px}
+.journey b{width:50px;height:50px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:26px;box-shadow:0 0 0 6px #fff,0 8px 16px -6px var(--c);font-weight:normal}
+@media(max-width:980px){.journey{display:none}}
+
+/* digital plant deck */
+.deck{--c:#1e88e5;position:relative;max-width:540px;width:100%;margin:0 auto;aspect-ratio:5/4;border-radius:28px;background:#fff;box-shadow:0 30px 60px -20px rgba(13,71,161,.45);overflow:hidden;transition:box-shadow .6s}
+.dshapes i{position:absolute;display:block;background:var(--c);transition:background .8s var(--ease);opacity:.14}
+.sh1{width:220px;height:220px;border-radius:50%;right:-60px;top:-70px;animation:fl1 9s ease-in-out infinite alternate}
+.sh2{width:120px;height:120px;border-radius:28px;left:-30px;bottom:40px;animation:rot 18s linear infinite}
+.sh3{width:0;height:0;background:none!important;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid var(--c);left:42%;top:-30px;animation:fl1 7s ease-in-out infinite alternate-reverse}
+.sh4{width:60px;height:60px;border-radius:50%;left:18%;top:16%;opacity:.22!important;animation:fl1 5s ease-in-out infinite alternate}
+.sh5{width:140px;height:40px;border-radius:20px;right:10%;bottom:-12px;animation:fl1 6s ease-in-out infinite alternate}
+@keyframes fl1{to{transform:translate(18px,22px) rotate(12deg)}}
+.dslides{position:absolute;inset:0 0 64px}
+.ds{position:absolute;inset:0;display:flex;flex-direction:column;padding:26px 26px 0;opacity:0;transform:translateX(60px) scale(.96);transition:opacity .6s var(--ease),transform .6s var(--ease);pointer-events:none}
+.ds.past{transform:translateX(-60px) scale(.96)}
+.ds.on{opacity:1;transform:none;pointer-events:auto}
+.dvis{flex:1;min-height:0;display:grid;place-items:center}
+.dvis svg{width:100%;height:100%;max-height:230px;overflow:visible}
+.ds.on .dvis{animation:popin .7s var(--ease)}
+@keyframes popin{from{transform:scale(.7);opacity:0}}
+.dmeta{display:flex;gap:14px;align-items:center;background:#fff;border-radius:18px;padding:12px 14px;box-shadow:var(--e2);margin-top:8px}
+.dico{width:52px!important;height:52px!important;border-radius:16px;background:var(--c);color:#fff;display:grid!important;place-items:center;font-size:28px!important;flex:none}
+.dmeta small{color:var(--c);font-weight:700;font-size:12px;letter-spacing:.04em}
+.dmeta b{display:block;font-size:18px;color:#14202e;line-height:1.2}
+.dmeta p{color:var(--mute);font-size:13.5px;margin-top:2px;line-height:1.4}
+.dbar{position:absolute;left:0;right:0;bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px}
+.dbar>button{width:40px;height:40px;border-radius:50%;border:0;background:var(--c);color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:var(--e1);transition:background .6s,transform .2s}
+.dbar>button:hover{transform:scale(1.1)}
+.ddots{display:flex;gap:6px}
+.ddots button{width:9px;height:9px;padding:0;border:0;border-radius:5px;background:#cfd8dc;cursor:pointer;transition:width .35s var(--ease),background .35s}
+.ddots button{position:relative;overflow:hidden}.ddots button.on{width:34px;background:#cfd8dc}.ddots button.on::after{content:"";position:absolute;inset:0;background:var(--c);transform-origin:left;animation:dfill 3.2s linear forwards}@keyframes dfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:520px){.deck{aspect-ratio:auto;height:420px}.dmeta p{display:none}}
 /* story timeline */
 .tl{display:grid;gap:48px}
 .row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:104px;align-items:center}
 .row .job{width:auto!important;margin:0!important}
 .row.rev .scene{order:2}
-.pin2{position:absolute;left:50%;top:50%;translate:-50% -50%;width:56px;height:56px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px;box-shadow:0 0 0 7px #e3f2fd,0 6px 14px rgba(0,0,0,.2);z-index:2}
+.pin2{position:absolute;left:50%;top:50%;translate:-50% -50%;height:46px;padding:0 18px;white-space:nowrap;border-radius:23px;background:var(--c);color:#fff;display:grid;place-items:center;font-weight:900;font-size:14px;box-shadow:0 0 0 7px #e3f2fd,0 6px 14px rgba(0,0,0,.2);z-index:2}
 .row.now .pin2{animation:pl3 2s infinite}
 @keyframes pl3{0%{box-shadow:0 0 0 7px #e3f2fd,0 0 0 7px rgba(255,112,67,.6)}70%{box-shadow:0 0 0 7px #e3f2fd,0 0 0 22px rgba(255,112,67,0)}100%{box-shadow:0 0 0 7px #e3f2fd}}
 .scene{position:relative;background:#fff;border-radius:20px;box-shadow:var(--e2);overflow:hidden;aspect-ratio:4/3}
@@ -441,7 +521,7 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 .scene path[id]{fill:none;stroke:none}
 .flow{stroke-dasharray:6 6;animation:dash 1s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-12}}
-@media(max-width:860px){.row{grid-template-columns:minmax(0,1fr);gap:14px;padding-left:64px}.row.rev .scene{order:0}.pin2{left:26px;top:28px;width:44px;height:44px;font-size:12px}.scene{aspect-ratio:16/10}}
+@media(max-width:860px){.row{grid-template-columns:minmax(0,1fr);gap:14px;padding-left:64px}.row.rev .scene{order:0}.pin2{position:static;translate:none;justify-self:start;margin-left:-50px;height:36px;padding:0 14px;font-size:12.5px}.scene{aspect-ratio:16/10}}
 
 /* floating deco in white space */
 .deco{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
@@ -449,24 +529,89 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 @keyframes drift{from{transform:translate(0,0) rotate(-10deg)}to{transform:translate(14px,-30px) rotate(12deg)}}
 .band>.wrap{position:relative;z-index:1}
 
+
+/* ===== theme toggle ===== */
+.tabsbar{display:flex;align-items:center}
+.tabsbar .tb{flex:1}
+.themebtn{order:2;flex:none;margin:0 max(2vw,10px);width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;display:grid;place-items:center;background:linear-gradient(135deg,#ffd54f,#ff7043);color:#fff;box-shadow:var(--e2);transition:transform .5s var(--ease),background .5s}
+.themebtn:hover{transform:rotate(25deg) scale(1.08)}
+.themebtn.spin .ms{animation:tspin .6s var(--ease)}
+@keyframes tspin{from{transform:rotate(-180deg) scale(.3)}}
+html[data-theme=dark] .themebtn{background:linear-gradient(135deg,#3949ab,#1a237e);color:#fff59d}
+html{transition:background .4s}
+
+
+/* merged header */
+.tabsbar{display:flex;align-items:center;gap:12px;padding:0 max(2vw,12px)}
+.tabsbar .logo{flex:none;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.tabsbar .logo .mk{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--b),var(--t));color:#fff;display:grid;place-items:center;font-weight:900;font-size:15px;box-shadow:var(--e1);transition:transform .4s var(--ease)}
+.tabsbar .logo:hover .mk{transform:rotate(-8deg) scale(1.06)}
+.tabsbar .logo b{display:block;font-size:17px;font-weight:900;line-height:1;letter-spacing:.02em}
+.tabsbar .logo small{color:var(--mute);font-size:11.5px;white-space:nowrap}
+.tabsbar .tb{flex:1;justify-content:center;margin:0}
+.qc2{flex:none;display:flex;gap:6px}
+.qc2 a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c);text-decoration:none;transition:background .25s,color .25s,transform .25s var(--ease)}
+.qc2 a:hover{background:var(--c);color:#fff;transform:translateY(-2px)}
+.qc2 .ms{font-size:20px}
+.themebtn{order:0!important;margin:0!important;width:42px!important;height:42px!important}
+@media(max-width:1180px){.tabsbar .logo .lt{display:none}}
+@media(max-width:860px){.qc2{display:none}.tabsbar{gap:8px}.tb a{padding:8px 11px}}
+
+/* ===== dark theme ===== */
+html[data-theme=dark]{color-scheme:dark;--w:#18212d;--paper:#0e141c;--ink:#e6edf5;--mute:#9fb0c3;--line:#2a3646;--ch3:#2a3646;
+ --e1:0 1px 3px rgba(0,0,0,.5);--e2:0 6px 16px rgba(0,0,0,.5);--e3:0 18px 40px rgba(0,0,0,.6)}
+html[data-theme=dark] body{background:var(--paper)}
+html[data-theme=dark] .tabsbar{background:#121a24}
+html[data-theme=dark] .tb a:hover{background:#1f2a38}
+html[data-theme=dark] .hx{background:radial-gradient(900px 600px at 78% 40%,rgba(30,136,229,.22),transparent 60%),radial-gradient(700px 500px at 5% 95%,rgba(255,112,67,.14),transparent 60%),#0e141c}
+html[data-theme=dark] .hx h1,html[data-theme=dark] .ty2{color:#f2f6fb}
+html[data-theme=dark] .hi{background:#0f2a20;border-color:#1f6b4a;color:#8ff0c4}
+html[data-theme=dark] .hx .btn.gh,html[data-theme=dark] .orb b{background:#1c2633;color:#e6edf5;border-color:#2f3d50}
+html[data-theme=dark] .face{background:linear-gradient(135deg,#1c2b40,#132034)}
+html[data-theme=dark] .mq{background:#121a24}
+html[data-theme=dark] .mq span{color:#3c4b5e}
+html[data-theme=dark] .dark{background:linear-gradient(135deg,#0f1b2a 0%,#0d1f24 50%,#1d1710 100%)}
+html[data-theme=dark] .diag{background:#0e141c}
+html[data-theme=dark] .diag::before{background:linear-gradient(135deg,#0d47a1,#0b3d78)}
+html[data-theme=dark] .mini a,html[data-theme=dark] .fact,html[data-theme=dark] .story,html[data-theme=dark] .vt button,html[data-theme=dark] .imp span,html[data-theme=dark] .dt em{background:#1f2a38}
+html[data-theme=dark] .imp span{color:#90caf9}
+html[data-theme=dark] .mini a:hover{background:#243447}
+html[data-theme=dark] .scene,html[data-theme=dark] .deck{background:#f4f7fb}
+html[data-theme=dark] .dmeta{background:#fff}
+html[data-theme=dark] .dmeta p{color:#5f6870}
+html[data-theme=dark] .skart{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 22%,#18212d),#18212d)}
+html[data-theme=dark] .fac{background:#0d1a2a}
+html[data-theme=dark] .chips span{background:#1c2633}
+html[data-theme=dark] .cert .im,html[data-theme=dark] .thumb,html[data-theme=dark] .round div,html[data-theme=dark] .shot{background:linear-gradient(135deg,#1c2b40,#132034)}
+html[data-theme=dark] .stnav button,html[data-theme=dark] .vt{background:#1c2633}
+html[data-theme=dark] .pin2{box-shadow:0 0 0 7px #0f1b2a,0 6px 14px rgba(0,0,0,.5)}
+html[data-theme=dark] .journey b{box-shadow:0 0 0 6px #0f1b2a,0 8px 16px -6px var(--c)}
+html[data-theme=dark] .jdot{background:#0e141c}
+html[data-theme=dark] .stamp{background:rgba(255,255,255,.9)}
+html[data-theme=dark] .contact{background:linear-gradient(135deg,#0d47a1,#06264f)}
+html[data-theme=dark] footer{background:#060b11}
+html[data-theme=dark] .deco i{opacity:.22}
+html[data-theme=dark] .toast{background:#e6edf5;color:#0e141c}
+html[data-theme=dark] .det li{color:#c3cfdc}
+html[data-theme=dark] .det b{color:#fff}
+html[data-theme=dark] .dip,html[data-theme=dark] .ed,html[data-theme=dark] .pm div,html[data-theme=dark] .rc,html[data-theme=dark] .cert{background:var(--w)}
+html[data-theme=dark] .dt b,html[data-theme=dark] .ed b,html[data-theme=dark] .cert .cp b{color:#f2f6fb}
+html[data-theme=dark] .cert{color:var(--ink)}
+html[data-theme=dark] .vt button.on{background:var(--b);color:#fff}
+html[data-theme=dark] .scroll-hint{border-color:rgba(255,255,255,.3)}
+
 .rv{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--dl,0ms)}
 .rv.fl{transform:translateX(-60px)}.rv.fr{transform:translateX(60px)}.rv.zm{transform:scale(.85)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.portrait img{opacity:1;transform:none}.sig{clip-path:none}.hd .bar{transform:none}}
 </style>
+<script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 
-<header class="top" id="top">
-  <a class="logo" href="#top"><span class="mk">ID</span><span><b>IVAN DIAZ</b><small>Manufacturing Systems · MES · SAP · IIoT · AI</small></span></a>
-  <div class="qc">
-    <a href="mailto:corpse92@hotmail.com"><span class="ms">mail</span>corpse92@hotmail.com</a>
-    <a href="tel:+13096124822"><span class="ms">call</span>+1 (309) 612-4822</a>
-    <a href="#about"><span class="ms">location_on</span>Greensboro, NC</a>
-  </div>
-</header>
 
-<nav class="tabsbar"><div class="tb" id="tb">
+
+<nav class="tabsbar" id="top"><a class="logo" href="#home"><span class="mk">ID</span><span class="lt"><b>IVAN DIAZ</b><small>MES · SAP · PLC programming · FANUC · IIoT · AI</small></span></a><div class="tb" id="tb">
   <a style="--c:#1e88e5" href="#home"><span class="ms">home</span>Home</a>
   <a style="--c:#26b5a8" href="#about"><span class="ms">person</span>About</a>
   <a style="--c:#ff7043" href="#plant"><span class="ms">factory</span>Digital Plant</a>
@@ -476,7 +621,7 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
   <a style="--c:#43a047" href="#projects"><span class="ms">insights</span>Projects</a>
   <a style="--c:#e53935" href="#videos"><span class="ms">smart_display</span>Videos</a>
   <a style="--c:#00acc1" href="#contact"><span class="ms">mail</span>Contact</a>
-</div></nav>
+</div><div class="qc2"><a href="mailto:corpse92@hotmail.com" title="corpse92@hotmail.com" aria-label="Email" style="--c:#1e88e5"><span class="ms">mail</span></a><a href="tel:+13096124822" title="+1 (309) 612-4822" aria-label="Phone" style="--c:#26b5a8"><span class="ms">call</span></a><a href="#about" title="Greensboro, NC" aria-label="Location: Greensboro, NC" style="--c:#ff7043"><span class="ms">location_on</span></a></div><button class="themebtn" id="themebtn" type="button" aria-label="Switch to dark mode"><span class="ms">dark_mode</span></button></nav>
 
 <section class="hx" id="home">
   <canvas id="net"></canvas>
@@ -508,10 +653,10 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 <section class="band" style="padding-top:20px">
   <div class="wrap">
     <div class="rcards">
-      <div class="rc rv"><div class="rib">Highest quality</div>
+      <div class="rc rv"><div class="rib">My master's degree</div>
         <div class="rc-body">
-          <div class="badge"><svg viewBox="0 0 96 110"><path d="M30 70 22 108l26-14 26 14-8-38" fill="#1b8d83"/><g class="spin"><path d="M48 4l8 6 10-1 4 9 9 4-1 10 6 8-6 8 1 10-9 4-4 9-10-1-8 6-8-6-10 1-4-9-9-4 1-10-6-8 6-8-1-10 9-4 4-9 10 1z" fill="#26b5a8"/></g><circle cx="48" cy="44" r="27" fill="#fff"/><text x="48" y="44" text-anchor="middle" font-size="20" font-weight="900" fill="#24282d">14+</text><text x="48" y="58" text-anchor="middle" font-size="9" font-weight="700" fill="#5f6870">YEARS</text></svg></div>
-          <div><h3>IATF 16949 auditor · Lean Six Sigma</h3><p>Quality built into the MES: SFMEA rules, SPC, CAPA and e-signatures.</p><a class="more" href="#experience">Read more <span class="ms">arrow_forward</span></a></div>
+          <div class="badge"><svg viewBox="0 0 96 110"><path d="M30 70 22 108l26-14 26 14-8-38" fill="#1565c0"/><g class="spin"><path d="M48 4l8 6 10-1 4 9 9 4-1 10 6 8-6 8 1 10-9 4-4 9-10-1-8 6-8-6-10 1-4-9-9-4 1-10-6-8 6-8-1-10 9-4 4-9 10 1z" fill="#1e88e5"/></g><circle cx="48" cy="44" r="27" fill="#fff"/><path d="M48 28 64 35 48 42 32 35z" fill="#14202e"/><path d="M38 38v6c0 3 20 3 20 0v-6l-10 4z" fill="#263238"/><path d="M61 36v9" stroke="#f4b400" stroke-width="1.6"/><circle cx="61" cy="46" r="2" fill="#f4b400"/><text x="48" y="62" text-anchor="middle" font-size="11" font-weight="900" fill="#1565c0">M.S. 2025</text></svg></div>
+          <div><h3>M.S. Information Technology Management</h3><p>Tecnológico de Monterrey · 2025. Strategy, data and technology leadership.</p><a class="more" href="#certs">See diploma <span class="ms">arrow_forward</span></a></div>
         </div></div>
       <div class="rc rv" style="--dl:120ms"><div class="rib">My certificates</div>
         <div class="rc-body">
@@ -551,16 +696,10 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 
 <section class="band diag" id="plant">
   <div class="wrap dg">
-    <div class="dev rv fl">
-      <div class="lap">
-        <div class="scr">
-          <div class="tt"><span><i></i>Line 3 · RUNNING</span><span>OEE 86%</span></div>
-          <div class="pan"><div class="bars"><i style="--a:30%;--z:80%;--d:0s"></i><i style="--a:55%;--z:35%;--d:.3s"></i><i style="--a:40%;--z:90%;--d:.6s"></i><i style="--a:70%;--z:45%;--d:.2s"></i><i style="--a:35%;--z:75%;--d:.5s"></i><i style="--a:60%;--z:95%;--d:.1s"></i></div></div>
-          <div class="pan"><svg class="spark" viewBox="0 0 100 60" preserveAspectRatio="none"><path d="M0 45 L12 38 L24 42 L36 25 L48 30 L60 15 L72 22 L84 10 L100 14"/></svg></div>
-        </div>
-        <div class="base"></div>
-      </div>
-      <div class="phone"><svg class="gauge" viewBox="0 0 70 70"><circle cx="35" cy="35" r="28" stroke="#333a41"/><circle class="g2" cx="35" cy="35" r="28"/><text x="35" y="40" text-anchor="middle">Cpk</text></svg></div>
+    <div class="deck rv fl" id="deck" aria-live="polite">
+      <div class="dshapes" aria-hidden="true"><i class="sh1"></i><i class="sh2"></i><i class="sh3"></i><i class="sh4"></i><i class="sh5"></i></div>
+      <div class="dslides" id="dslides"></div>
+      <div class="dbar"><button type="button" id="dprev" aria-label="Previous step"><span class="ms">chevron_left</span></button><div class="ddots" id="ddots"></div><button type="button" id="dnext" aria-label="Next step"><span class="ms">chevron_right</span></button></div>
     </div>
     <div class="dtxt rv fr">
       <div class="who"><span class="ms">factory</span><h2><b>Digital Plant C48</b>End-to-end ISA-95 lab</h2></div>
@@ -593,7 +732,7 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 <section class="band dark" id="certs">
   <div class="wrap">
     <div class="hd rv"><span class="ms">workspace_premium</span><h2>Education &amp; certifications</h2><div class="bar"></div><p class="sub">Verified academic and professional records. Click a certificate to enlarge it.</p></div>
-    <div class="edu" id="edu"></div>
+    <div class="caps" aria-hidden="true"><span style="--x:8%;--d:0s;--r:-200deg;--t:5.5s"><svg viewBox="0 0 60 40"><path d="M30 4 58 16 30 28 2 16z" fill="#14202e"/><path d="M14 21v9c0 4 32 4 32 0v-9l-16 7z" fill="#263238"/><path d="M50 18v14" stroke="#f4b400" stroke-width="2"/><circle cx="50" cy="33" r="3" fill="#f4b400"/></svg></span><span style="--x:22%;--d:1.8s;--r:240deg;--t:6.2s"><svg viewBox="0 0 60 40"><path d="M30 4 58 16 30 28 2 16z" fill="#14202e"/><path d="M14 21v9c0 4 32 4 32 0v-9l-16 7z" fill="#263238"/><path d="M50 18v14" stroke="#f4b400" stroke-width="2"/><circle cx="50" cy="33" r="3" fill="#f4b400"/></svg></span><span style="--x:74%;--d:0.9s;--r:-260deg;--t:5.8s"><svg viewBox="0 0 60 40"><path d="M30 4 58 16 30 28 2 16z" fill="#14202e"/><path d="M14 21v9c0 4 32 4 32 0v-9l-16 7z" fill="#263238"/><path d="M50 18v14" stroke="#f4b400" stroke-width="2"/><circle cx="50" cy="33" r="3" fill="#f4b400"/></svg></span><span style="--x:88%;--d:2.6s;--r:200deg;--t:6.6s"><svg viewBox="0 0 60 40"><path d="M30 4 58 16 30 28 2 16z" fill="#14202e"/><path d="M14 21v9c0 4 32 4 32 0v-9l-16 7z" fill="#263238"/><path d="M50 18v14" stroke="#f4b400" stroke-width="2"/><circle cx="50" cy="33" r="3" fill="#f4b400"/></svg></span><span style="--x:50%;--d:3.4s;--r:300deg;--t:7s"><svg viewBox="0 0 60 40"><path d="M30 4 58 16 30 28 2 16z" fill="#14202e"/><path d="M14 21v9c0 4 32 4 32 0v-9l-16 7z" fill="#263238"/><path d="M50 18v14" stroke="#f4b400" stroke-width="2"/><circle cx="50" cy="33" r="3" fill="#f4b400"/></svg></span></div><div class="edu" id="edu"></div><div class="journey rv" aria-hidden="true"><div class="jtrack"><i class="jdot"></i></div><span style="--p:16.6%;--c:#26b5a8"><b class="ms">engineering</b>2008</span><span style="--p:50%;--c:#e53935"><b class="ms">code</b>2023</span><span style="--p:83.3%;--c:#1e88e5"><b class="ms">school</b>2025</span></div>
     <div class="car rv">
       <button class="arw l" type="button" id="cl" aria-label="Previous certificates"><span class="ms">chevron_left</span></button>
       <div class="track" id="track"></div>
@@ -667,7 +806,7 @@ const ty=$('#ty');let ri=0,ci=0,del=false;
 const tick=()=>{const w=roles[ri];ty.textContent=w.slice(0,ci);if(!del&&ci<w.length)ci++;else if(!del){del=true;return setTimeout(tick,1500)}else if(ci>0)ci--;else{del=false;ri=(ri+1)%roles.length}setTimeout(tick,del?40:85)};
 if(RM)ty.textContent=roles[0];else tick();
 /* orbit */
-const orbit=[["cloud","SAP S/4HANA","#1e88e5"],["precision_manufacturing","Opcenter","#26b5a8"],["desktop_windows","Ignition","#ff7043"],["memory","PLC · S7","#7e57c2"],["sensors","MQTT","#43a047"],["factory","FTPC","#f4b400"],["psychology","Llama 3.2","#e91e63"],["hub","Kepware","#00acc1"]];
+const orbit=[["cloud","SAP S/4HANA","#1e88e5"],["precision_manufacturing","Opcenter","#26b5a8"],["desktop_windows","Ignition","#ff7043"],["memory","PLC · S7","#7e57c2"],["sensors","MQTT","#43a047"],["factory","FTPC","#f4b400"],["psychology","Llama 3.2","#e91e63"],["hub","Kepware","#00acc1"],["stacks","ISA-95","#5c6bc0"],["storage","SAP ECC","#1565c0"],["precision_manufacturing","Simatic IT DIS","#00897b"],["auto_awesome","Claude AI","#d97757"]];
 $('#orb').innerHTML=orbit.map((t,i)=>`<span style="--a:${i*360/orbit.length}deg"><b style="--c:${t[2]}"><i class="ms">${t[0]}</i>${t[1]}</b></span>`).join('');
 /* marquee */
 const mq=["SAP S/4HANA","Siemens Opcenter","Simatic IT","Rockwell FTPC","SAP MII","Ignition","Kepware","OPC UA","MQTT Sparkplug B","EMQX","Allen-Bradley","Siemens S7","FANUC","ABB","Cognex","Ollama","Model Context Protocol","Docker","Proxmox","TimescaleDB","Node.js","React","Power BI","Python"];
@@ -676,7 +815,7 @@ $('#mq').innerHTML=[...mq,...mq].map(t=>`<span>${t}</span>`).join('');
 const cv=$('#net'),cx=cv.getContext('2d');let pts=[],W=0,H=0;
 const size=()=>{const d=devicePixelRatio||1;W=cv.width=cv.offsetWidth*d;H=cv.height=cv.offsetHeight*d;const n=Math.min(80,Math.round(cv.offsetWidth*cv.offsetHeight/16000));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5*d,vy:(Math.random()-.5)*.5*d}))};
 const draw=()=>{const d=devicePixelRatio||1,D=130*d;cx.clearRect(0,0,W,H);for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
- for(let i=0;i<pts.length;i++){const a=pts[i];for(let j=i+1;j<pts.length;j++){const q=pts[j],dd=Math.hypot(a.x-q.x,a.y-q.y);if(dd<D){cx.strokeStyle=`rgba(30,136,229,${(1-dd/D)*.28})`;cx.lineWidth=d;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+ for(let i=0;i<pts.length;i++){const a=pts[i];for(let j=i+1;j<pts.length;j++){const q=pts[j],dd=Math.hypot(a.x-q.x,a.y-q.y);if(dd<D){cx.strokeStyle=`rgba(${document.documentElement.dataset.theme==='dark'?'100,170,255':'30,136,229'},${(1-dd/D)*.32})`;cx.lineWidth=d;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(q.x,q.y);cx.stroke()}}
  cx.fillStyle=i%6?'rgba(30,136,229,.55)':'rgba(255,112,67,.8)';cx.beginPath();cx.arc(a.x,a.y,2.2*d,0,7);cx.fill()}
  if(!RM)requestAnimationFrame(draw)};
 const nro=new ResizeObserver(size);nro.observe(cv);size();draw();
@@ -699,7 +838,26 @@ $('#counts').innerHTML=cn.map((c,i)=>`<div class="cnt rv" style="--dl:${i*100}ms
 /* order loop */
 const steps=[["receipt_long","SAP order",0],["description","LOIPRO IDoc",0],["hub","Middleware",0],["assignment","MES work order",0],["desktop_windows","Ignition",0],["memory","PLCs",0],["task_alt","Confirmation",1],["inventory","Backflush 261",1],["warehouse","GR 101",1],["fact_check","QM stock",1]];
 const lp=$('#loop');lp.innerHTML=steps.map(s=>`<span class="${s[2]?'back':''}"><span class="ms">${s[0]}</span>${s[1]}</span>`).join('');
-const ls=lp.children;let k=0;if(!RM)setInterval(()=>{[...ls].forEach(e=>e.classList.remove('hot'));ls[k].classList.add('hot');k=(k+1)%ls.length},800);
+const ls=lp.children;
+const DK=[
+ ["#1e88e5","receipt_long","SAP order released","Production order created in SAP ECC (CO01) and released to the floor.",`<rect x="60" y="10" width="80" height="100" rx="8" fill="#fff" stroke="var(--c)" stroke-width="3"/><rect x="72" y="22" width="40" height="8" rx="4" fill="var(--c)"/>${[0,1,2,3].map(i=>`<rect x="72" y="${42+i*14}" height="6" rx="3" fill="#90caf9"><animate attributeName="width" values="0;56;56" keyTimes="0;.5;1" dur="2.4s" begin="${i*.2}s" repeatCount="indefinite"/></rect>`).join('')}<g><circle cx="132" cy="92" r="16" fill="#43a047"/><path d="M124 92l6 6 10-12" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/><animateTransform attributeName="transform" type="scale" values="0;0;1.1;1" keyTimes="0;.6;.8;1" dur="2.4s" additive="sum" repeatCount="indefinite"/></g>`],
+ ["#7e57c2","mail","LOIPRO IDoc","The order travels as an IDoc message to the middleware.",`<line x1="10" y1="60" x2="190" y2="60" stroke="#d1c4e9" stroke-width="3" stroke-dasharray="6 6" class="flow"/><g><rect x="-30" y="38" width="60" height="44" rx="6" fill="var(--c)"/><path d="M-30 42l30 22 30-22" stroke="#fff" stroke-width="3" fill="none"/><text x="0" y="98" text-anchor="middle" font-size="12" font-weight="900" fill="var(--c)">&lt;XML/&gt;</text><animateTransform attributeName="transform" type="translate" values="10 0;190 0" dur="2.2s" repeatCount="indefinite"/></g>`],
+ ["#00acc1","hub","Middleware","SAP MII-style middleware maps, validates and routes the message.",`<circle cx="100" cy="60" r="20" fill="var(--c)"/><circle cx="100" cy="60" r="20" fill="none" stroke="var(--c)" stroke-width="3"><animate attributeName="r" values="20;46" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0" dur="1.6s" repeatCount="indefinite"/></circle>${[[30,20],[170,20],[30,100],[170,100]].map(([x,y],i)=>`<line x1="100" y1="60" x2="${x}" y2="${y}" stroke="#b2ebf2" stroke-width="4"/><circle cx="${x}" cy="${y}" r="11" fill="${['#1e88e5','#ff7043','#43a047','#f4b400'][i]}"/><circle r="5" fill="#fff" stroke="var(--c)" stroke-width="2"><animate attributeName="cx" values="100;${x}" dur="1.2s" begin="${i*.3}s" repeatCount="indefinite"/><animate attributeName="cy" values="60;${y}" dur="1.2s" begin="${i*.3}s" repeatCount="indefinite"/></circle>`).join('')}`],
+ ["#26b5a8","assignment","MES work order","Opcenter-style MES creates the work order and dispatches it.",`<rect x="30" y="14" width="140" height="92" rx="10" fill="#fff" stroke="var(--c)" stroke-width="3"/><text x="44" y="38" font-size="13" font-weight="900" fill="var(--c)">WO-1042</text><text x="44" y="56" font-size="10" fill="#607d8b">Dispatched · Line 3</text><rect x="44" y="74" width="112" height="12" rx="6" fill="#e0f2f1"/><rect x="44" y="74" height="12" rx="6" fill="var(--c)"><animate attributeName="width" values="0;112" dur="2.4s" repeatCount="indefinite"/></rect>`],
+ ["#ff7043","desktop_windows","Ignition operator station","The operator runs the order on an Ignition 8.3 HMI.",`<rect x="30" y="10" width="140" height="88" rx="10" fill="#263238"/><rect x="92" y="98" width="16" height="12" fill="#546e7a"/><rect x="70" y="108" width="60" height="6" rx="3" fill="#546e7a"/><path d="M60 80a40 40 0 0 1 80 0" fill="none" stroke="#455a64" stroke-width="10"/><path d="M60 80a40 40 0 0 1 80 0" fill="none" stroke="var(--c)" stroke-width="10" stroke-dasharray="126" stroke-dashoffset="30"/><line x1="100" y1="80" x2="100" y2="50" stroke="#fff" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-60 100 80;50 100 80;-60 100 80" dur="2.4s" repeatCount="indefinite"/></line><circle cx="100" cy="80" r="5" fill="#fff"/>`],
+ ["#7e57c2","memory","PLCs","Multi-vendor PLCs execute: S7comm, EtherNet/IP and Toyopuc.",`${[0,1,2].map(i=>`<rect x="${30+i*50}" y="18" width="40" height="70" rx="6" fill="#eceff1" stroke="#b0bec5" stroke-width="2"/><text x="${50+i*50}" y="104" font-size="10" text-anchor="middle" font-weight="700" fill="#546e7a">${['S7','AB','TOYO'][i]}</text>${[0,1,2].map(j=>`<circle cx="${42+i*50+j*8}" cy="30" r="3" fill="${['#43a047','#f4b400','#e53935'][j]}"><animate attributeName="opacity" values="1;.15;1" dur="${.5+((i+j)%3)*.35}s" repeatCount="indefinite"/></circle>`).join('')}<rect x="${36+i*50}" y="42" width="28" height="38" rx="3" fill="var(--c)" opacity=".25"/>`).join('')}`],
+ ["#43a047","task_alt","Confirmation","The PLC result returns: quantities, scrap and times confirmed.",`<circle cx="100" cy="60" r="44" fill="none" stroke="#c8e6c9" stroke-width="8"/><circle cx="100" cy="60" r="44" fill="none" stroke="var(--c)" stroke-width="8" stroke-dasharray="277" stroke-linecap="round" transform="rotate(-90 100 60)"><animate attributeName="stroke-dashoffset" values="277;0;0" keyTimes="0;.6;1" dur="2.4s" repeatCount="indefinite"/></circle><path d="M80 60l14 14 26-28" fill="none" stroke="var(--c)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="70"><animate attributeName="stroke-dashoffset" values="70;70;0;0" keyTimes="0;.5;.75;1" dur="2.4s" repeatCount="indefinite"/></path>`],
+ ["#f4b400","inventory","Backflush 261","Components consumed automatically (movement type 261).",`${[0,1,2].map(i=>`<rect x="${34+i*48}" y="20" width="36" height="80" rx="6" fill="#fff8e1" stroke="var(--c)" stroke-width="3"/><rect x="${38+i*48}" width="28" rx="3" fill="var(--c)"><animate attributeName="height" values="70;16;70" dur="${2.4+i*.3}s" repeatCount="indefinite"/><animate attributeName="y" values="26;80;26" dur="${2.4+i*.3}s" repeatCount="indefinite"/></rect>`).join('')}<text x="100" y="116" font-size="13" text-anchor="middle" font-weight="900" fill="var(--c)">− 261</text>`],
+ ["#e53935","warehouse","Goods receipt 101","Finished goods posted into stock (movement type 101).",`<path d="M30 50L100 14L170 50V108H30Z" fill="#ffebee" stroke="var(--c)" stroke-width="3"/>${[0,1,2].map(i=>`<rect x="${58+i*30}" width="24" height="20" rx="3" fill="var(--c)"><animate attributeName="y" values="-30;${84};${84}" keyTimes="0;.4;1" dur="2.4s" begin="${i*.25}s" repeatCount="indefinite"/></rect>`).join('')}<text x="100" y="44" font-size="13" text-anchor="middle" font-weight="900" fill="var(--c)">+ 101</text>`],
+ ["#1565c0","fact_check","QM inspection stock","Stock lands in quality inspection until the lot is released.",`<rect x="64" y="50" width="60" height="50" rx="6" fill="#e3f2fd" stroke="var(--c)" stroke-width="3"/><rect x="64" y="50" width="60" height="10" fill="var(--c)"/><g><circle cx="0" cy="0" r="20" fill="rgba(255,255,255,.5)" stroke="#37474f" stroke-width="5"/><line x1="14" y1="14" x2="30" y2="30" stroke="#37474f" stroke-width="7" stroke-linecap="round"/><animateTransform attributeName="transform" type="translate" values="70 54;118 70;80 86;70 54" dur="3s" repeatCount="indefinite"/></g>`]];
+const dsl=$('#dslides'),ddots=$('#ddots'),deck=$('#deck');
+dsl.innerHTML=DK.map((d,i)=>`<div class="ds" style="--c:${d[0]}"><div class="dvis"><svg viewBox="0 0 200 120" aria-hidden="true">${d[4]}</svg></div><div class="dmeta"><span class="ms dico">${d[1]}</span><div><small>Step ${i+1} of ${DK.length}</small><b>${d[2]}</b><p>${d[3]}</p></div></div></div>`).join('');
+ddots.innerHTML=DK.map((d,i)=>`<button type="button" aria-label="Step ${i+1}" style="--c:${d[0]}"></button>`).join('');
+const dss=[...dsl.children],ddb=[...ddots.children];let k=0,dtimer;
+const dstep=n=>{k=(n+DK.length)%DK.length;[...ls].forEach((e,i)=>e.classList.toggle('hot',i===k));dss.forEach((e,i)=>{e.classList.toggle('on',i===k);e.classList.toggle('past',i<k)});ddb.forEach((e,i)=>e.classList.toggle('on',i===k));deck.style.setProperty('--c',DK[k][0])};
+const drun=()=>{clearInterval(dtimer);if(!RM)dtimer=setInterval(()=>dstep(k+1),3200)};
+$('#dprev').onclick=()=>{dstep(k-1);drun()};$('#dnext').onclick=()=>{dstep(k+1);drun()};ddb.forEach((b,i)=>b.onclick=()=>{dstep(i);drun()});[...ls].forEach((e,i)=>{e.style.cursor='pointer';e.onclick=()=>{dstep(i);drun()}});
+dstep(0);drun();
 
 /* timeline */
 const jobs=[
@@ -747,12 +905,13 @@ ITG:["sync_alt","SAP ↔ MES ↔ PLC + AI",`<path class="flow" d="M200 70V130" s
 <circle r="6" fill="#ff7043"><animateMotion dur="1.4s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>`],
 TOY:["battery_charging_full","Li-ion cell: how a battery is built",`<defs><linearGradient id="cat" x1="0" x2="1"><stop offset="0" stop-color="#ef5350"/><stop offset="1" stop-color="#ff8a65"/></linearGradient><linearGradient id="ano" x1="0" x2="1"><stop offset="0" stop-color="#546e7a"/><stop offset="1" stop-color="#263238"/></linearGradient></defs>
 <path class="flow" d="M95 62V48H305V62" stroke="#1e88e5" stroke-width="3" fill="none"/><path id="el" d="M305 62V48H95V62"/>
-<rect x="172" y="36" width="56" height="24" rx="8" fill="#1e88e5"/><text x="200" y="52" fill="#fff" font-size="11" text-anchor="middle">⚡ charge</text>
+
 <rect x="60" y="62" width="280" height="104" rx="10" fill="#e3f2fd"/>
 <rect x="60" y="62" width="70" height="104" rx="10" fill="url(#cat)"/><text x="95" y="118" fill="#fff" font-size="11" text-anchor="middle">Cathode</text><text x="95" y="131" fill="#ffebee" font-size="9" text-anchor="middle">NMC · Al</text>
 <rect x="270" y="62" width="70" height="104" rx="10" fill="url(#ano)"/><text x="305" y="118" fill="#fff" font-size="11" text-anchor="middle">Anode</text><text x="305" y="131" fill="#cfd8dc" font-size="9" text-anchor="middle">graphite · Cu</text>
 <line x1="200" y1="66" x2="200" y2="162" stroke="#90a4ae" stroke-width="4" stroke-dasharray="6 5"/><text x="200" y="180" fill="#607d8b" font-size="9" text-anchor="middle">separator · electrolyte</text>
 ${[0,1,2,3,4,5].map(i=>`<path id="li${i}" d="M132 ${76+i*16} C170 ${70+i*16} 230 ${88+i*16} 268 ${76+i*16}"/><g><circle r="7" fill="#ffca28" stroke="#f9a825"/><text y="3" font-size="6.5" fill="#5d4037" text-anchor="middle">Li+</text><animateMotion dur="2.6s" begin="${i*.43}s" repeatCount="indefinite"><mpath href="#li${i}"/></animateMotion></g>`).join('')}
+<rect x="168" y="36" width="64" height="24" rx="12" fill="#1e88e5"/><text x="200" y="52" fill="#fff" font-size="11" text-anchor="middle">⚡ charging</text>
 ${[0,1,2].map(i=>`<circle r="4" fill="#1e88e5"><animateMotion dur="2.4s" begin="${i*.8}s" repeatCount="indefinite"><mpath href="#el"/></animateMotion></circle>`).join('')}
 ${[["Coating",20],["Stacking",115],["Electrolyte",210],["Formation",305]].map(([n,x],i)=>`<rect x="${x}" y="194" width="78" height="62" rx="10" fill="#fff" stroke="${['#ef5350','#7e57c2','#00acc1','#43a047'][i]}" stroke-width="2"/><text x="${x+39}" y="250" fill="#37474f" font-size="10" text-anchor="middle">${i+1}. ${n}</text>`).join('')}
 <g><circle cx="59" cy="218" r="13" fill="#ffcdd2" stroke="#ef5350" stroke-width="3"/><line x1="59" y1="207" x2="59" y2="229" stroke="#ef5350" stroke-width="3"/><animateTransform attributeName="transform" type="rotate" values="0 59 218;360 59 218" dur="2s" repeatCount="indefinite"/></g><path d="M72 226 h20" stroke="#ef5350" stroke-width="4"/>
@@ -761,12 +920,16 @@ ${[0,1,2].map(i=>`<rect x="138" width="34" height="5" rx="2" fill="${['#ef5350',
 <rect x="331" y="204" width="26" height="36" rx="4" fill="#f1f8e9" stroke="#43a047" stroke-width="2.5"/><rect x="339" y="200" width="10" height="5" rx="1" fill="#43a047"/><rect x="334" width="20" rx="2" fill="#66bb6a"><animate attributeName="height" values="2;30;2" dur="3s" repeatCount="indefinite"/><animate attributeName="y" values="235;207;235" dur="3s" repeatCount="indefinite"/></rect><path d="M346 210l-6 10h5l-3 9 8-12h-5z" fill="#f9a825"/>
 <rect x="0" y="280" width="400" height="10" fill="#cfd8dc"/><line x1="0" y1="285" x2="400" y2="285" stroke="#90a4ae" stroke-width="2" class="flow"/>
 ${[0,1,2,3].map(i=>`<g><rect y="267" width="12" height="13" rx="2" fill="#66bb6a" stroke="#2e7d32"/><rect x="3" y="264" width="6" height="3" fill="#2e7d32"/><animateTransform attributeName="transform" type="translate" values="-20 0;410 0" dur="8s" begin="${i*2}s" repeatCount="indefinite"/></g>`).join('')}`],
-RIV:["precision_manufacturing","EV assembly · humans + cobots",`<rect x="0" y="40" width="400" height="8" rx="4" fill="#b0bec5"/>
-${[[112,0],[252,1]].map(([x,k])=>`<rect x="${x-14}" y="44" width="28" height="12" rx="4" fill="#78909c"/><circle cx="${x}" cy="60" r="9" fill="#26b5a8"/><g><rect x="${x-5}" y="60" width="10" height="48" rx="5" fill="#eceff1" stroke="#b0bec5"/><circle cx="${x}" cy="108" r="8" fill="#26b5a8"/><g><rect x="${x-4}" y="108" width="8" height="40" rx="4" fill="#eceff1" stroke="#b0bec5"/><circle cx="${x}" cy="148" r="6" fill="#1e88e5"/><path d="M${x-8} 150v10M${x+8} 150v10" stroke="#455a64" stroke-width="3" stroke-linecap="round"/><rect x="${x-6}" y="158" width="12" height="9" rx="2" fill="#ff7043"><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.45;.5;.95;1" dur="3.2s" begin="${k*.6}s" repeatCount="indefinite"/></rect><animateTransform attributeName="transform" type="rotate" values="${k?'-30':'30'} ${x} 108;${k?'20':'-20'} ${x} 108;${k?'-30':'30'} ${x} 108" dur="3.2s" begin="${k*.6}s" repeatCount="indefinite"/></g><animateTransform attributeName="transform" type="rotate" values="${k?'25':'-25'} ${x} 60;${k?'-15':'15'} ${x} 60;${k?'25':'-25'} ${x} 60" dur="3.2s" begin="${k*.6}s" repeatCount="indefinite"/></g><rect x="${x-20}" y="22" width="40" height="15" rx="7" fill="#26b5a8"/><text x="${x}" y="33" fill="#fff" font-size="9" text-anchor="middle">Cobot</text>`).join('')}
-<g><rect x="153" y="204" width="6" height="28" rx="3" fill="#37474f"/><rect x="161" y="204" width="6" height="28" rx="3" fill="#455a64"/><rect x="150" y="176" width="20" height="32" rx="6" fill="#ff7043"/><rect x="150" y="190" width="20" height="3" fill="#fff59d"/><circle cx="160" cy="166" r="8" fill="#ffcc80"/><path d="M150 164a10 10 0 0 1 20 0z" fill="#fdd835"/><rect x="149" y="162" width="22" height="3" rx="1.5" fill="#f9a825"/><g><rect x="166" y="180" width="5" height="22" rx="2.5" fill="#ff7043"/><rect x="5" y="0" width="0" height="0"/><path d="M171 200l6 6" stroke="#607d8b" stroke-width="4" stroke-linecap="round"/><animateTransform attributeName="transform" type="rotate" values="-20 171 182;25 171 182;-20 171 182" dur="1.6s" begin="0s" repeatCount="indefinite"/></g><rect x="149" y="180" width="5" height="22" rx="2.5" fill="#ff7043"/></g><g><rect x="323" y="204" width="6" height="28" rx="3" fill="#37474f"/><rect x="331" y="204" width="6" height="28" rx="3" fill="#455a64"/><rect x="320" y="176" width="20" height="32" rx="6" fill="#7e57c2"/><rect x="320" y="190" width="20" height="3" fill="#fff59d"/><circle cx="330" cy="166" r="8" fill="#ffcc80"/><path d="M320 164a10 10 0 0 1 20 0z" fill="#fdd835"/><rect x="319" y="162" width="22" height="3" rx="1.5" fill="#f9a825"/><g><rect x="336" y="180" width="5" height="22" rx="2.5" fill="#7e57c2"/><rect x="337" y="198" width="14" height="10" rx="2" fill="#1e88e5"/><rect x="339" y="200" width="10" height="6" fill="#bbdefb"/><animateTransform attributeName="transform" type="rotate" values="10 341 182;-35 341 182;10 341 182" dur="1.6s" begin="0.4s" repeatCount="indefinite"/></g><rect x="319" y="180" width="5" height="22" rx="2.5" fill="#7e57c2"/></g><g><rect x="363" y="204" width="6" height="28" rx="3" fill="#37474f"/><rect x="371" y="204" width="6" height="28" rx="3" fill="#455a64"/><rect x="360" y="176" width="20" height="32" rx="6" fill="#43a047"/><rect x="360" y="190" width="20" height="3" fill="#fff59d"/><circle cx="370" cy="166" r="8" fill="#ffcc80"/><path d="M360 164a10 10 0 0 1 20 0z" fill="#fdd835"/><rect x="359" y="162" width="22" height="3" rx="1.5" fill="#f9a825"/><g><rect x="376" y="180" width="5" height="22" rx="2.5" fill="#43a047"/><path d="M381 202l5 5" stroke="#607d8b" stroke-width="4" stroke-linecap="round"/><animateTransform attributeName="transform" type="rotate" values="0 381 182;-50 381 182;0 381 182" dur="1.6s" begin="0.8s" repeatCount="indefinite"/></g><rect x="359" y="180" width="5" height="22" rx="2.5" fill="#43a047"/></g>
-<g><path d="M10 222 h120 q8 0 12-10 l-14-22 q-6-8-18-8 h-50 q-12 0-22 10 l-24 18 q-8 4-8 12z" fill="#1e88e5"/><path d="M52 184 h40 l14 20 h-64z" fill="#e3f2fd"/><circle cx="40" cy="224" r="13" fill="#37474f"/><circle cx="40" cy="224" r="5" fill="#cfd8dc"/><circle cx="112" cy="224" r="13" fill="#37474f"/><circle cx="112" cy="224" r="5" fill="#cfd8dc"/><rect x="128" y="200" width="8" height="5" rx="2" fill="#fff59d"/><animateTransform attributeName="transform" type="translate" values="-160 0;-160 0;20 0;20 0;200 0;200 0;420 0" keyTimes="0;.05;.3;.45;.7;.85;1" dur="9s" repeatCount="indefinite"/></g>
-<rect x="0" y="236" width="400" height="14" fill="#cfd8dc"/><line x1="0" y1="243" x2="400" y2="243" stroke="#90a4ae" stroke-width="3" class="flow"/>
-<g><rect x="300" y="262" width="92" height="26" rx="13" fill="#fff" stroke="#e0e0e0"/><circle cx="314" cy="275" r="5" fill="#43a047"><animate attributeName="opacity" values="1;.3;1" dur="1.2s" repeatCount="indefinite"/></circle><text x="324" y="279" fill="#37474f" font-size="10">Safe zone OK</text></g>`],
+RIV:["precision_manufacturing","EV assembly · humans + cobots",`<rect x="10" y="40" width="122" height="74" rx="8" fill="#263238"/><text x="20" y="56" fill="#80cbc4" font-size="10" font-weight="700">OEE · Line 2</text><circle cx="50" cy="88" r="17" fill="none" stroke="#37474f" stroke-width="7"/><circle cx="50" cy="88" r="17" fill="none" stroke="#43a047" stroke-width="7" stroke-linecap="round" stroke-dasharray="107" transform="rotate(-90 50 88)"><animate attributeName="stroke-dashoffset" values="107;14;14;107" keyTimes="0;.4;.9;1" dur="5s" repeatCount="indefinite"/></circle><text x="50" y="92" fill="#fff" font-size="10" text-anchor="middle" font-weight="900">87%</text>${["A 92%","P 95%","Q 99%"].map((t,i)=>`<text x="80" y="${76+i*13}" fill="#cfd8dc" font-size="9" font-weight="700">${t}</text>`).join('')}
+<rect x="139" y="40" width="122" height="74" rx="8" fill="#263238"/><text x="149" y="56" fill="#ffcc80" font-size="10" font-weight="700">Balanced Scorecard</text>${[["Financial","#43a047",.82],["Customer","#1e88e5",.9],["Process","#f4b400",.7],["Learning","#ab47bc",.76]].map(([t,c,v],i)=>`<text x="149" y="${70+i*11}" fill="#cfd8dc" font-size="8" font-weight="700">${t}</text><rect x="196" y="${64+i*11}" width="56" height="6" rx="3" fill="#37474f"/><rect x="196" y="${64+i*11}" height="6" rx="3" fill="${c}"><animate attributeName="width" values="4;${56*v};${56*v};4" keyTimes="0;.4;.9;1" dur="5s" begin="${i*.25}s" repeatCount="indefinite"/></rect>`).join('')}
+<rect x="268" y="40" width="122" height="74" rx="8" fill="#263238"/><text x="278" y="56" fill="#90caf9" font-size="10" font-weight="700">FPY · Takt</text>${[0,1,2,3,4,5].map(i=>`<rect x="${280+i*12}" width="8" rx="2" fill="${i===5?'#ff7043':'#42a5f5'}"><animate attributeName="height" values="6;${18+((i*7)%20)};6" dur="${2+i*.2}s" repeatCount="indefinite"/><animate attributeName="y" values="104;${104-12-((i*7)%20)};104" dur="${2+i*.2}s" repeatCount="indefinite"/></rect>`).join('')}<text x="380" y="80" fill="#fff" font-size="13" text-anchor="end" font-weight="900">98%</text><text x="380" y="98" fill="#ffcc80" font-size="10" text-anchor="end" font-weight="700">52 s</text><circle cx="382" cy="48" r="3.5" fill="#43a047"><animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/></circle>
+<rect x="0" y="120" width="400" height="8" rx="4" fill="#b0bec5"/>
+<g transform="translate(0 80)">${[[112,0],[252,1]].map(([x,k])=>`<rect x="${x-14}" y="44" width="28" height="12" rx="4" fill="#78909c"/><circle cx="${x}" cy="60" r="9" fill="#26b5a8"/><g><rect x="${x-5}" y="60" width="10" height="48" rx="5" fill="#eceff1" stroke="#b0bec5"/><circle cx="${x}" cy="108" r="8" fill="#26b5a8"/><g><rect x="${x-4}" y="108" width="8" height="40" rx="4" fill="#eceff1" stroke="#b0bec5"/><circle cx="${x}" cy="148" r="6" fill="#1e88e5"/><path d="M${x-8} 150v10M${x+8} 150v10" stroke="#455a64" stroke-width="3" stroke-linecap="round"/><rect x="${x-6}" y="158" width="12" height="9" rx="2" fill="#ff7043"><animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.45;.5;.95;1" dur="3.2s" begin="${k*.6}s" repeatCount="indefinite"/></rect><animateTransform attributeName="transform" type="rotate" values="${k?'-30':'30'} ${x} 108;${k?'20':'-20'} ${x} 108;${k?'-30':'30'} ${x} 108" dur="3.2s" begin="${k*.6}s" repeatCount="indefinite"/></g><animateTransform attributeName="transform" type="rotate" values="${k?'25':'-25'} ${x} 60;${k?'-15':'15'} ${x} 60;${k?'25':'-25'} ${x} 60" dur="3.2s" begin="${k*.6}s" repeatCount="indefinite"/></g><rect x="${x+12}" y="52" width="40" height="15" rx="7" fill="#26b5a8"/><text x="${x+32}" y="63" fill="#fff" font-size="9" text-anchor="middle">Cobot</text>`).join('')}</g>
+<g transform="translate(0 58)"><g><rect x="153" y="204" width="6" height="28" rx="3" fill="#37474f"/><rect x="161" y="204" width="6" height="28" rx="3" fill="#455a64"/><rect x="150" y="176" width="20" height="32" rx="6" fill="#ff7043"/><rect x="150" y="190" width="20" height="3" fill="#fff59d"/><circle cx="160" cy="166" r="8" fill="#ffcc80"/><path d="M150 164a10 10 0 0 1 20 0z" fill="#fdd835"/><rect x="149" y="162" width="22" height="3" rx="1.5" fill="#f9a825"/><g><rect x="166" y="180" width="5" height="22" rx="2.5" fill="#ff7043"/><rect x="5" y="0" width="0" height="0"/><path d="M171 200l6 6" stroke="#607d8b" stroke-width="4" stroke-linecap="round"/><animateTransform attributeName="transform" type="rotate" values="-20 171 182;25 171 182;-20 171 182" dur="1.6s" begin="0s" repeatCount="indefinite"/></g><rect x="149" y="180" width="5" height="22" rx="2.5" fill="#ff7043"/></g><g><rect x="323" y="204" width="6" height="28" rx="3" fill="#37474f"/><rect x="331" y="204" width="6" height="28" rx="3" fill="#455a64"/><rect x="320" y="176" width="20" height="32" rx="6" fill="#7e57c2"/><rect x="320" y="190" width="20" height="3" fill="#fff59d"/><circle cx="330" cy="166" r="8" fill="#ffcc80"/><path d="M320 164a10 10 0 0 1 20 0z" fill="#fdd835"/><rect x="319" y="162" width="22" height="3" rx="1.5" fill="#f9a825"/><g><rect x="336" y="180" width="5" height="22" rx="2.5" fill="#7e57c2"/><rect x="337" y="198" width="14" height="10" rx="2" fill="#1e88e5"/><rect x="339" y="200" width="10" height="6" fill="#bbdefb"/><animateTransform attributeName="transform" type="rotate" values="10 341 182;-35 341 182;10 341 182" dur="1.6s" begin="0.4s" repeatCount="indefinite"/></g><rect x="319" y="180" width="5" height="22" rx="2.5" fill="#7e57c2"/></g><g><rect x="363" y="204" width="6" height="28" rx="3" fill="#37474f"/><rect x="371" y="204" width="6" height="28" rx="3" fill="#455a64"/><rect x="360" y="176" width="20" height="32" rx="6" fill="#43a047"/><rect x="360" y="190" width="20" height="3" fill="#fff59d"/><circle cx="370" cy="166" r="8" fill="#ffcc80"/><path d="M360 164a10 10 0 0 1 20 0z" fill="#fdd835"/><rect x="359" y="162" width="22" height="3" rx="1.5" fill="#f9a825"/><g><rect x="376" y="180" width="5" height="22" rx="2.5" fill="#43a047"/><path d="M381 202l5 5" stroke="#607d8b" stroke-width="4" stroke-linecap="round"/><animateTransform attributeName="transform" type="rotate" values="0 381 182;-50 381 182;0 381 182" dur="1.6s" begin="0.8s" repeatCount="indefinite"/></g><rect x="359" y="180" width="5" height="22" rx="2.5" fill="#43a047"/></g>
+</g>
+<g><path d="M6 280Q4 263 20 259L40 256L58 236Q62 232 70 232L112 232Q120 232 126 240L138 255Q147 258 147 268V279Q147 284 141 284H11Q6 284 6 280Z" fill="#1e88e5"/><path d="M6 270H147" stroke="#1565c0" stroke-width="2"/><path d="M60 240Q63 237 70 237H92V254H50Z" fill="#e3f2fd"/><path d="M98 237H111Q116 237 119 242L127 254H98Z" fill="#e3f2fd"/><path d="M95 237V282" stroke="#1565c0" stroke-width="2"/><rect x="84" y="261" width="8" height="2.5" rx="1" fill="#bbdefb"/><rect x="138" y="261" width="9" height="4" rx="2" fill="#fff59d"/><rect x="5" y="261" width="7" height="4" rx="2" fill="#ef5350"/><circle cx="36" cy="284" r="14" fill="#263238"/><circle cx="114" cy="284" r="14" fill="#263238"/>${[36,114].map(x=>`<g><circle cx="${x}" cy="284" r="7" fill="#b0bec5"/><path d="M${x-6} 284H${x+6}M${x} 278V290" stroke="#546e7a" stroke-width="2"/><animateTransform attributeName="transform" type="rotate" values="0 ${x} 284;360 ${x} 284" dur="1s" repeatCount="indefinite"/></g>`).join('')}<animateTransform attributeName="transform" type="translate" values="-170 0;-170 0;30 0;30 0;210 0;210 0;430 0" keyTimes="0;.05;.3;.45;.7;.85;1" dur="9s" repeatCount="indefinite"/></g>
+<rect x="0" y="296" width="400" height="12" fill="#cfd8dc"/><line x1="0" y1="302" x2="400" y2="302" stroke="#90a4ae" stroke-width="3" class="flow"/>
+${[["1. Body","directions_car","#1e88e5"],["2. Battery pack","battery_charging_full","#43a047"],["3. Torque & QA","build","#ff7043"],["4. EOL test","flag","#7e57c2"]].map(([t,ic,c],i)=>`<rect x="${8+i*98}" y="318" width="90" height="34" rx="9" fill="#fff" stroke="${c}" stroke-width="2"><animate attributeName="stroke-width" values="2;4;2" dur="9s" begin="${1.5+i*2}s" repeatCount="indefinite"/></rect><circle cx="${24+i*98}" cy="335" r="9" fill="${c}"/><text x="${24+i*98}" y="339" fill="#fff" font-size="10" text-anchor="middle" font-weight="900">${i+1}</text><text x="${37+i*98}" y="339" fill="#37474f" font-size="9.5" font-weight="700">${t.slice(3)}</text>`).join('')}`,360],
 ABC:["monitoring","SCADA, OEE & 4-site PMO",`<rect x="20" y="40" width="230" height="150" rx="12" fill="#263238"/><text x="34" y="62" fill="#80cbc4" font-size="11">HMI · Line 3</text>
 <rect x="36" y="76" width="40" height="96" rx="6" fill="none" stroke="#80cbc4" stroke-width="2"/><rect x="39" width="34" rx="4" fill="#26b5a8"><animate attributeName="height" values="20;86;20" dur="4s" repeatCount="indefinite"/><animate attributeName="y" values="149;83;149" dur="4s" repeatCount="indefinite"/></rect>
 <path d="M110 160a50 50 0 0 1 100 0" fill="none" stroke="#455a64" stroke-width="12"/><path d="M110 160a50 50 0 0 1 100 0" fill="none" stroke="#ff7043" stroke-width="12" stroke-dasharray="157" stroke-dashoffset="30"/><line x1="160" y1="160" x2="160" y2="120" stroke="#fff" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-60 160 160;40 160 160;-60 160 160" dur="3s" repeatCount="indefinite"/></line><text x="160" y="182" fill="#fff" font-size="12" text-anchor="middle">OEE</text>
@@ -779,8 +942,8 @@ MGA:["groups","Team lead · ROI business cases",`${[0,1,2,3,4].map(i=>{const x=4
 <g><circle cx="348" cy="146" r="22" fill="none" stroke="#7e57c2" stroke-width="10" stroke-dasharray="7 6"/><circle cx="348" cy="146" r="14" fill="#7e57c2"/><circle cx="348" cy="146" r="5" fill="#fff"/><animateTransform attributeName="transform" type="rotate" values="360 348 146;0 348 146" dur="4s" repeatCount="indefinite"/></g>
 ${[0,1,2,3,4].map(i=>{const x=60+i*64;return `<g><circle cx="${x}" cy="232" r="11" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][i]}"/><path d="M${x-18} 272 q0-24 18-24 q18 0 18 24z" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][i]}"/><animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="1.6s" begin="${i*.25}s" repeatCount="indefinite"/></g>`}).join('')}`]};
 $('#tl').insertAdjacentHTML('beforeend',jobs.map((j,i)=>{const sc=scenes[j.l],c=icons[j.l];return `<div class="row ${i%2?'rev':''} ${j.now?'now':''}" style="--c:${c}">
- <div class="pin2">${j.l}</div>
- <div class="scene rv ${i%2?'fr':'fl'}" style="--c:${c}"><span class="cap"><span class="ms">${sc[0]}</span>${sc[1]}</span><svg viewBox="0 0 400 300" role="img" aria-label="${sc[1]}"><defs></defs>${sc[2]}</svg></div>
+ <div class="pin2">${({ITG:"ITG Brands",TOY:"Toyota",RIV:"Rivian",ABC:"ABC Technologies",MGA:"Magna"})[j.l]}</div>
+ <div class="scene rv ${i%2?'fr':'fl'}" style="--c:${c};aspect-ratio:400/${sc[3]||300}"><span class="cap"><span class="ms">${sc[0]}</span>${sc[1]}</span><svg viewBox="0 0 400 ${sc[3]||300}" role="img" aria-label="${sc[1]}"><defs></defs>${sc[2]}</svg></div>
  <article class="job open rv ${i%2?'fl':'fr'} ${j.now?'now':''}" style="--c:${c}">
  <span class="when"><span class="ms">${j.now?'radio_button_checked':'event'}</span>${j.w}</span>
  <h3>${j.t}</h3><div class="org"><span class="ms">apartment</span>${j.o}</div>
@@ -791,7 +954,7 @@ if(RM)document.querySelectorAll('.scene svg').forEach(v=>v.pauseAnimations&&v.pa
 document.querySelectorAll('.tog').forEach(b=>b.onclick=()=>{const o=b.parentElement.classList.toggle('open');b.setAttribute('aria-expanded',o);b.querySelector('em').textContent=o?'Show less':'Read more'});
 
 /* skills */
-const sk=[["precision_manufacturing","MES / MOM","#1e9bd7","Siemens Opcenter|Simatic IT PM/DIS|Production Modeler|Rockwell FTPC|AVEVA|ISA-95|eBR · Genealogy|NC / Hold · e-Signature"],
+let sk=[["precision_manufacturing","MES / MOM","#1e9bd7","Siemens Opcenter|Simatic IT PM/DIS|Production Modeler|Rockwell FTPC|AVEVA|ISA-95|eBR · Genealogy|NC / Hold · e-Signature"],
  ["account_tree","ERP integration","#26b5a8","SAP S/4HANA|SAP MII|SAP ECC|IDocs LOIPRO / CONF|SAP PP · MM · QM|WE02 · BD87 · COGI|SOAP / XML"],
  ["sensors","IIoT & SCADA","#ff7043","Ignition Gateway & Edge|Perspective / Vision|Kepware|OPC UA|MQTT Sparkplug B|EMQX|PostgreSQL & Timescale"],
  ["memory","Controls & robotics","#7e57c2","Allen-Bradley ControlLogix|CompactLogix|EtherNet/IP|Siemens S7 · S7comm|FANUC|ABB|Cognex|Keyence|Motion control"],
@@ -811,17 +974,87 @@ const ART={
 "Quality & planning":`<line x1="20" y1="20" x2="220" y2="20" stroke="#e53935" stroke-dasharray="5 4"/><line x1="20" y1="64" x2="220" y2="64" stroke="#e53935" stroke-dasharray="5 4"/><line x1="20" y1="42" x2="220" y2="42" stroke="#43a047"/><polyline points="20,44 45,36 70,48 95,30 120,46 145,38 170,50 195,34 220,42" fill="none" stroke="var(--c)" stroke-width="3" stroke-dasharray="300" stroke-dashoffset="300"><animate attributeName="stroke-dashoffset" values="300;0;0" keyTimes="0;.7;1" dur="3.5s" repeatCount="indefinite"/></polyline>`,
 "Management":`${['To do','Doing','Done'].map((t,i)=>`<rect x="${20+i*70}" y="6" width="62" height="70" rx="6" fill="#f1f6fb"/><text x="${51+i*70}" y="18" fill="#607d8b" font-size="9" text-anchor="middle" font-weight="700">${t}</text>`).join('')}<g><rect x="26" y="26" width="50" height="14" rx="3" fill="var(--c)"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;70 0;70 0;140 0;140 0" keyTimes="0;.2;.4;.6;.8;1" dur="4s" repeatCount="indefinite"/></g><rect x="26" y="48" width="50" height="14" rx="3" fill="#f4b400"/><rect x="166" y="48" width="50" height="14" rx="3" fill="#43a047"/>`};
 const CI={"Siemens Opcenter":"factory","Simatic IT PM/DIS":"precision_manufacturing","Production Modeler":"schema","Rockwell FTPC":"conveyor_belt","AVEVA":"water_drop","ISA-95":"stacks","eBR · Genealogy":"family_history","NC / Hold · e-Signature":"draw","SAP S/4HANA":"cloud","SAP MII":"hub","SAP ECC":"storage","IDocs LOIPRO / CONF":"description","SAP PP · MM · QM":"inventory_2","WE02 · BD87 · COGI":"troubleshoot","SOAP / XML":"code_blocks","Ignition Gateway & Edge":"router","Perspective / Vision":"desktop_windows","Kepware":"settings_input_component","OPC UA":"lan","MQTT Sparkplug B":"cell_tower","EMQX":"swap_calls","PostgreSQL & Timescale":"database","Allen-Bradley ControlLogix":"memory","CompactLogix":"developer_board","EtherNet/IP":"settings_ethernet","Siemens S7 · S7comm":"memory_alt","FANUC":"precision_manufacturing","ABB":"smart_toy","Cognex":"photo_camera","Keyence":"sensors","Motion control":"360","Model Context Protocol":"extension","Ollama / Llama 3.2":"psychology","RAG":"travel_explore","Python ML":"model_training","TensorFlow":"neurology","OpenCV":"visibility","Langflow":"account_tree","n8n":"automation","Node.js / Express":"javascript","React":"web","MongoDB":"eco","Python":"code","SQL Server":"database","PostgreSQL":"database","REST · SOAP":"api","JavaScript":"javascript","Power BI":"bar_chart","Proxmox HA":"dns","Docker / Compose":"deployed_code","Portainer":"view_in_ar","Terraform":"terminal","Ansible":"auto_mode","Linux":"terminal","Windows Server":"computer","CAPA · 8D":"fact_check","SPC · Cp/Cpk":"show_chart","APS scheduling":"calendar_month","ECR / ECO":"published_with_changes","FMEA / SFMEA":"warning","OEE":"speed","IATF 16949":"verified","Scrum":"sprint","Kanban":"view_kanban","Scrumban":"merge","Azure DevOps":"rocket_launch","WBS & Roadmaps":"route","Lean Six Sigma":"trending_down","PDCA":"autorenew","Root cause":"search","ITIL-ITSM":"support_agent","Pareto":"leaderboard","Digital transformation":"auto_awesome",".NET / C#":"data_object","MVC & Ajax":"web_asset"};
+const skAll=sk;sk=sk.filter(x=>x[1]!=='MES / MOM');
 $('#skg').innerHTML=sk.map((s,i)=>`<div class="sk rv" style="--c:${s[2]};--dl:${(i%3)*100}ms"><div class="skart"><svg viewBox="0 0 240 80" aria-hidden="true">${ART[s[1]]||''}</svg></div><div class="h"><span class="ms">${s[0]}</span><h3>${s[1]}</h3></div><div class="chips">${s[3].split('|').map((c,k)=>`<span style="--k:${k}"><i class="ms">${CI[c]||s[0]}</i>${c}</span>`).join('')}</div></div>`).join('');
+
+/* MES story factory */
+const ST=[
+ [95,"ISA-95","stacks","Every level talks: sensor → PLC → SCADA → MES → SAP."],
+ [200,"Production Modeler","schema","The plant's routes, equipment and rules modeled before the first order runs."],
+ [305,"Siemens Opcenter","factory","Operators dispatch, run and track every work order from one screen."],
+ [410,"Simatic IT PM/DIS","precision_manufacturing","PLC tags travel as XML to SAP MII and land in S/4HANA as IDocs."],
+ [530,"Rockwell FTPC","conveyor_belt","High-volume EV lines tracked step by step, unit by unit."],
+ [650,"eBR · Genealogy","family_history","Every unit remembers its family: lots, materials and who built it."],
+ [748,"NC / Hold · e-Signature","draw","Out of spec? The unit goes on hold until quality signs it off."],
+ [838,"AVEVA","water_drop","Process values and recipes kept in sync across the plant."]];
+const FAC=`<svg viewBox="0 0 900 342" class="facsvg" role="img" aria-label="Animated cartoon MES factory">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bbdefb"/><stop offset="1" stop-color="#e3f2fd"/></linearGradient><radialGradient id="spotg"><stop offset="0" stop-color="#fff59d" stop-opacity=".85"/><stop offset="1" stop-color="#fff59d" stop-opacity="0"/></radialGradient></defs>
+<rect width="900" height="380" fill="url(#sky)"/>
+<g><circle cx="70" cy="48" r="18" fill="#ffd54f"/><circle cx="70" cy="48" r="18" fill="none" stroke="#ffe082" stroke-width="6" stroke-dasharray="4 8"><animateTransform attributeName="transform" type="rotate" values="0 70 48;360 70 48" dur="12s" repeatCount="indefinite"/></circle></g>
+${[[160,40,1],[420,28,.8],[620,52,1.1]].map(([x,y,k],n)=>`<g opacity=".95"><g transform="translate(${x} ${y}) scale(${k})"><ellipse cx="0" cy="0" rx="26" ry="12" fill="#fff"/><ellipse cx="18" cy="-6" rx="18" ry="12" fill="#fff"/><ellipse cx="-16" cy="-4" rx="14" ry="10" fill="#fff"/></g><animateTransform attributeName="transform" type="translate" values="0 0;60 0;0 0" dur="${14+n*4}s" repeatCount="indefinite"/></g>`).join('')}
+<rect x="0" y="320" width="900" height="60" fill="#c5e1a5"/><rect x="0" y="318" width="900" height="6" fill="#aed581"/>
+<rect x="796" y="44" width="34" height="90" rx="4" fill="#b0bec5"/><rect x="796" y="58" width="34" height="8" fill="#ef5350"/>
+${[0,1,2].map(n=>`<circle cx="813" cy="40" r="8" fill="#eceff1"><animate attributeName="cy" values="40;-10" dur="3s" begin="${n}s" repeatCount="indefinite"/><animate attributeName="r" values="7;18" dur="3s" begin="${n}s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0" dur="3s" begin="${n}s" repeatCount="indefinite"/></circle>`).join('')}
+<rect x="30" y="130" width="840" height="190" rx="6" fill="#fafafa" stroke="#cfd8dc" stroke-width="2"/>
+${[0,1,2,3,4,5,6].map(n=>`<path d="M${30+n*120} 130V92L${150+n*120} 130Z" fill="#90caf9" stroke="#64b5f6" stroke-width="2"/>`).join('')}
+<rect x="30" y="300" width="840" height="20" fill="#eceff1"/>
+<g id="spot" style="transform:translate(95px,230px)"><circle r="80" fill="url(#spotg)"/><circle r="66" fill="none" stroke="#ffb300" stroke-width="3" stroke-dasharray="8 7"><animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/></circle></g>
+<!-- 1 ISA-95 -->
+${["L4","L3","L2","L1","L0"].map((t,k)=>`<rect x="${95-(18+k*8)}" y="${172+k*25}" width="${2*(18+k*8)}" height="20" rx="5" fill="${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400'][k]}"/><text x="95" y="${186+k*25}" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">${t}</text>`).join('')}
+<circle cx="${95+42}" r="6" fill="#43a047"><animate attributeName="cy" values="290;180;290" dur="3s" repeatCount="indefinite"/></circle>
+<!-- 2 Modeler -->
+<rect x="152" y="176" width="96" height="72" rx="6" fill="#fff" stroke="#90a4ae" stroke-width="2"/><line x1="165" y1="248" x2="160" y2="300" stroke="#90a4ae" stroke-width="3"/><line x1="235" y1="248" x2="240" y2="300" stroke="#90a4ae" stroke-width="3"/>
+<rect x="162" y="190" width="22" height="14" rx="3" fill="#1e88e5"/><rect x="190" y="214" width="22" height="14" rx="3" fill="#26b5a8"/><rect x="218" y="190" width="22" height="14" rx="3" fill="#ff7043"/>
+<path d="M184 197L190 221M212 221L218 197" stroke="#37474f" stroke-width="2" fill="none" stroke-dasharray="40" stroke-dashoffset="40"><animate attributeName="stroke-dashoffset" values="40;0;0" keyTimes="0;.5;1" dur="2.5s" repeatCount="indefinite"/></path>
+<!-- 3 Opcenter -->
+<rect x="268" y="196" width="74" height="52" rx="6" fill="#263238"/>${[0,1,2,3,4].map(k=>`<rect x="${278+k*12}" width="8" rx="2" fill="${['#4fc3f7','#81c784','#ffb74d','#4fc3f7','#ba68c8'][k]}"><animate attributeName="height" values="6;30;6" dur="${1.6+k*.3}s" repeatCount="indefinite"/><animate attributeName="y" values="240;216;240" dur="${1.6+k*.3}s" repeatCount="indefinite"/></rect>`).join('')}<rect x="300" y="248" width="10" height="14" fill="#546e7a"/><rect x="262" y="262" width="88" height="8" rx="3" fill="#8d6e63"/><rect x="268" y="270" width="6" height="30" fill="#6d4c41"/><rect x="338" y="270" width="6" height="30" fill="#6d4c41"/>
+<!-- operator -->
+<g><rect x="351" y="276" width="6" height="24" rx="3" fill="#37474f"/><rect x="359" y="276" width="6" height="24" rx="3" fill="#455a64"/><rect x="349" y="250" width="18" height="28" rx="6" fill="#1e88e5"/><circle cx="358" cy="240" r="8" fill="#ffcc80"/><path d="M350 238a8 8 0 0 1 16 0z" fill="#5d4037"/><g><rect x="343" y="254" width="5" height="18" rx="2.5" fill="#1e88e5"/><animateTransform attributeName="transform" type="rotate" values="0 345 254;-40 345 254;0 345 254" dur="1.4s" repeatCount="indefinite"/></g></g>
+<!-- 4 PM/DIS -->
+<rect x="390" y="160" width="42" height="34" rx="6" fill="#26b5a8"/><text x="411" y="182" fill="#fff" font-size="11" text-anchor="middle" font-weight="700">MES</text>
+<line x1="411" y1="194" x2="411" y2="242" stroke="#90a4ae" stroke-width="4" stroke-dasharray="5 4" class="flow"/>
+<circle cx="411" r="5" fill="#ff7043"><animate attributeName="cy" values="240;196" dur="1.2s" repeatCount="indefinite"/></circle>
+<rect x="390" y="242" width="42" height="58" rx="5" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/><text x="411" y="292" fill="#546e7a" font-size="10" text-anchor="middle" font-weight="700">PLC</text>${[0,1,2].map(k=>`<circle cx="${400+k*11}" cy="256" r="3.5" fill="${['#43a047','#f4b400','#e53935'][k]}"><animate attributeName="opacity" values="1;.2;1" dur="${.6+k*.35}s" repeatCount="indefinite"/></circle>`).join('')}
+<!-- 5 FTPC conveyor + robot -->
+<rect x="452" y="284" width="250" height="12" rx="6" fill="#90a4ae"/><line x1="452" y1="290" x2="702" y2="290" stroke="#607d8b" stroke-width="2" class="flow"/>${[0,1,2,3].map(k=>`<g><rect y="268" width="20" height="16" rx="3" fill="#ffb74d" stroke="#f57c00"/><animateTransform attributeName="transform" type="translate" values="452 0;682 0" dur="6s" begin="${k*1.5}s" repeatCount="indefinite"/></g>`).join('')}
+<rect x="518" y="140" width="24" height="10" rx="3" fill="#78909c"/><g><rect x="526" y="148" width="8" height="58" rx="4" fill="#ff7043"/><circle cx="530" cy="148" r="6" fill="#455a64"/><circle cx="530" cy="206" r="7" fill="#455a64"/><path d="M522 212v10M538 212v10" stroke="#455a64" stroke-width="3" stroke-linecap="round"/><animateTransform attributeName="transform" type="rotate" values="-25 530 148;25 530 148;-25 530 148" dur="3s" repeatCount="indefinite"/></g>
+<!-- 6 genealogy -->
+<rect x="636" y="166" width="28" height="18" rx="4" fill="#7e57c2"/>${[[610,0],[650,1],[690,2]].map(([x,k])=>`<g opacity="0"><path d="M650 184L${x} 206" stroke="#7e57c2" stroke-width="2"/><rect x="${x-11}" y="206" width="22" height="14" rx="3" fill="#b39ddb"/><path d="M${x} 220L${x-8} 240M${x} 220L${x+8} 240" stroke="#b39ddb" stroke-width="2"/><circle cx="${x-8}" cy="242" r="4" fill="#d1c4e9"/><circle cx="${x+8}" cy="242" r="4" fill="#d1c4e9"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.2;.85;1" dur="4s" begin="${k*.4}s" repeatCount="indefinite"/></g>`).join('')}
+<!-- 7 NC hold + e-signature -->
+<path d="M722 300V226a26 26 0 0 1 52 0V300" fill="none" stroke="#26b5a8" stroke-width="6"/><circle cx="748" cy="214" r="6" fill="#43a047"><animate attributeName="fill" values="#43a047;#43a047;#e53935;#e53935;#43a047" keyTimes="0;.5;.55;.95;1" dur="4s" repeatCount="indefinite"/></circle>
+<rect x="784" y="250" width="44" height="50" rx="4" fill="none" stroke="#e53935" stroke-width="2"/>${[0,1,2,3].map(k=>`<line x1="${792+k*10}" y1="250" x2="${792+k*10}" y2="300" stroke="#e53935" stroke-width="2"/>`).join('')}<text x="806" y="246" fill="#e53935" font-size="10" text-anchor="middle" font-weight="700">HOLD</text>
+<g><rect y="268" width="18" height="16" rx="3" fill="#ef5350" stroke="#c62828"/><animateTransform attributeName="transform" type="translate" values="700 0;760 0;798 10;798 10" keyTimes="0;.4;.6;1" dur="4s" repeatCount="indefinite"/></g>
+<g><rect x="696" y="276" width="6" height="24" rx="3" fill="#37474f"/><rect x="704" y="276" width="6" height="24" rx="3" fill="#455a64"/><rect x="694" y="250" width="18" height="28" rx="6" fill="#43a047"/><rect x="694" y="262" width="18" height="3" fill="#fff59d"/><circle cx="703" cy="240" r="8" fill="#ffcc80"/><path d="M694 238a9 9 0 0 1 18 0z" fill="#fdd835"/><rect x="708" y="246" width="16" height="12" rx="2" fill="#1e88e5"/><path d="M711 254q3-5 5 0t5 0" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="20" stroke-dashoffset="20"><animate attributeName="stroke-dashoffset" values="20;0;0" keyTimes="0;.5;1" dur="2s" repeatCount="indefinite"/></path></g>
+<!-- 8 AVEVA tank -->
+<rect x="818" y="160" width="40" height="76" rx="8" fill="#e1f5fe" stroke="#0288d1" stroke-width="2"/><rect x="820" width="36" rx="6" fill="#4fc3f7"><animate attributeName="height" values="20;66;20" dur="5s" repeatCount="indefinite"/><animate attributeName="y" values="214;168;214" dur="5s" repeatCount="indefinite"/></rect><path d="M838 236V300" stroke="#0288d1" stroke-width="4"/>
+${ST.map(([x],n)=>`<g class="bdg" data-i="${n}" style="cursor:pointer"><circle cx="${x}" cy="${n===5?150:n===7?146:150}" r="13" fill="#fff" stroke="var(--c)" stroke-width="3"/><text x="${x}" y="${(n===5?150:n===7?146:150)+5}" font-size="13" text-anchor="middle" font-weight="900" fill="var(--c)">${n+1}</text></g>`).join('')}
+</svg>`;
+const fc=document.createElement('div');fc.className='sk skfeat rv';fc.style.setProperty('--c','#1e88e5');
+fc.innerHTML=`<div class="h"><span class="ms">precision_manufacturing</span><h3>MES / MOM · the story factory</h3></div><div class="fac">${FAC}</div><div class="story" aria-live="polite"><span class="ms" id="stIco">stacks</span><div><b id="stT"></b><p id="stP"></p></div><div class="stnav"><button type="button" id="stPrev" aria-label="Previous"><span class="ms">chevron_left</span></button><button type="button" id="stPlay" aria-label="Pause"><span class="ms">pause</span></button><button type="button" id="stNext" aria-label="Next"><span class="ms">chevron_right</span></button></div></div><div class="chips fchips">${ST.map((t,n)=>`<span data-i="${n}" style="--k:${n}"><i class="ms">${t[2]}</i>${n+1}. ${t[1]}</span>`).join('')}</div>`;
+$('#skg').prepend(fc);
+let si=0,stimer=null,playing=!RM;
+const spot=fc.querySelector('#spot'),chipsF=[...fc.querySelectorAll('.fchips span')],bdg=[...fc.querySelectorAll('.bdg')];
+const show8=n=>{si=(n+ST.length)%ST.length;const t=ST[si];spot.style.transform=`translate(${t[0]}px,232px)`;$('#stIco').textContent=t[2];$('#stT').textContent=`${si+1}. ${t[1]}`;$('#stP').textContent=t[3];chipsF.forEach((c,k)=>c.classList.toggle('on',k===si));bdg.forEach((c,k)=>c.classList.toggle('on',k===si));const st=fc.querySelector('.story');st.classList.remove('pop');void st.offsetWidth;st.classList.add('pop')};
+const loop=()=>{clearInterval(stimer);if(playing)stimer=setInterval(()=>show8(si+1),3800)};
+const setPlay=p=>{playing=p;$('#stPlay').querySelector('.ms').textContent=p?'pause':'play_arrow';$('#stPlay').setAttribute('aria-label',p?'Pause':'Play');loop()};
+chipsF.forEach((c,k)=>c.onclick=()=>{show8(k);loop()});bdg.forEach((c,k)=>c.addEventListener('click',()=>{show8(k);loop()}));
+$('#stPrev').onclick=()=>{show8(si-1);loop()};$('#stNext').onclick=()=>{show8(si+1);loop()};$('#stPlay').onclick=()=>setPlay(!playing);
+show8(0);setPlay(playing);
 
 /* education + certificates */
 const ed=[["school","Master of Science","Information Technology Management","Tecnológico de Monterrey","2025","img/MartersDegree.jpeg","#1e88e5"],
  ["engineering","Bachelor of Science","Control & Automation Engineering","Instituto Politécnico Nacional (IPN)","2008","img/EnginerringDegree.png","#26b5a8"],
  ["code","Professional Certificate","Coding: Full Stack Development with MERN","MIT xPRO · 48 CEUs","Aug 2023","img/MITFull.png","#e53935"]];
-$('#edu').innerHTML=ed.map((e,i)=>`<button class="dip rv" type="button" style="--c:${e[6]};--dl:${i*140}ms" data-lb="${e[5]}" data-cap="${e[2]} — ${e[3]} · ${e[4]}">
- <span class="drib">${e[1]}</span>
+$('#edu').innerHTML=ed.map((e,i)=>`<button class="dip tilt rv" type="button" style="--c:${e[6]};--dl:${i*140}ms" data-lb="${e[5]}" data-cap="${e[2]} — ${e[3]} · ${e[4]}">
+ <span class="drib">${e[1]}</span><span class="stamp"><span class="ms">verified</span>VERIFIED</span>
  <span class="frame"><span class="ph"><span class="ms">${e[0]}</span></span><img src="${e[5]}" alt="${e[1]} in ${e[2]}" loading="lazy" onerror="this.remove()"><span class="zoom"><span class="ms">zoom_in</span></span></span>
- <span class="seal"><svg viewBox="0 0 64 64"><g><path d="M32 2l6 5 8-1 3 7 7 3-1 8 5 6-5 6 1 8-7 3-3 7-8-1-6 5-6-5-8 1-3-7-7-3 1-8-5-6 5-6-1-8 7-3 3-7 8 1z" fill="${e[6]}"/><animateTransform attributeName="transform" type="rotate" values="0 32 32;360 32 32" dur="20s" repeatCount="indefinite"/></g><circle cx="32" cy="32" r="17" fill="#fff"/></svg><span class="ms">${e[0]}</span></span>
+ <span class="seal"><svg class="laurel" viewBox="0 0 120 70" aria-hidden="true">${[-1,1].map(d=>`<g transform="translate(60 0) scale(${d} 1)">${[0,1,2,3,4].map(k=>`<ellipse cx="${-26-k*5}" cy="${54-k*9}" rx="8.5" ry="3.8" transform="rotate(${-30-k*14} ${-26-k*5} ${54-k*9})" fill="#c9a227" style="--d:${k*90}ms"/>`).join("")}</g>`).join("")}</svg><svg viewBox="0 0 64 64"><g><path d="M32 2l6 5 8-1 3 7 7 3-1 8 5 6-5 6 1 8-7 3-3 7-8-1-6 5-6-5-8 1-3-7-7-3 1-8-5-6 5-6-1-8 7-3 3-7 8 1z" fill="${e[6]}"/><animateTransform attributeName="transform" type="rotate" values="0 32 32;360 32 32" dur="20s" repeatCount="indefinite"/></g><circle cx="32" cy="32" r="17" fill="#fff"/></svg><span class="ms">${e[0]}</span></span>
  <span class="dt"><b>${e[2]}</b><span>${e[3]}</span><em><span class="ms">event</span>${e[4]}</em></span></button>`).join('');
+
+/* diploma confetti + glare */
+const burst=el=>{if(RM)return;const C=['#1e88e5','#26b5a8','#ff7043','#f4b400','#e91e63','#7e57c2','#43a047'];for(let k=0;k<34;k++){const c=document.createElement('i');c.className='conf';const a=Math.random()*Math.PI*2,d=90+Math.random()*170;c.style.cssText=`background:${C[k%7]};--tx:${Math.cos(a)*d}px;--ty:${Math.sin(a)*d-60}px;--rot:${Math.random()*720-360}deg;animation-delay:${Math.random()*.15}s`;el.appendChild(c);setTimeout(()=>c.remove(),1700)}};
+const dio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;dio.unobserve(el);setTimeout(()=>burst(el),parseInt(getComputedStyle(el).getPropertyValue('--dl'))+1050||1050)}}),{threshold:.5});
+document.querySelectorAll('.dip').forEach(d=>{dio.observe(d);d.addEventListener('pointerenter',()=>burst(d));d.addEventListener('pointermove',e=>{const r=d.getBoundingClientRect();d.style.setProperty('--mx',(e.clientX-r.left)+'px');d.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 const certs=[["img/MITCertification.PNG","Full Stack Development with MERN","MIT xPRO · 48 CEUs · 2023"],["img/scoreCard.PNG","Data Science & Machine Learning","MIT IDSS · score card · 2022"],["img/coursesMIT.PNG","Data Science & Machine Learning","MIT IDSS · courses"],
  ["img/Capture1.PNG","Technical Achievement","Certificate"],["img/Capture2.PNG","Compliance & Quality","Certificate"],["img/Capture3.PNG","Project Milestone","Certificate"],["img/Capture4.PNG","Advanced Training","Certificate"],["img/Capture5.PNG","Industry Recognition","Certificate"],["img/Capture6.PNG","Specialization Certificate","Certificate"],["img/Capture7.PNG","Professional Credential","Certificate"],["","IATF 16949 Internal Auditor","Automotive quality management"],["","Control Network Module","Festo"]];
 $('#track').innerHTML=certs.map(c=>`<button class="cert" type="button" ${c[0]?`data-lb="${c[0]}"`:''} data-cap="${c[1]} — ${c[2]}"><div class="im"><span class="ms">workspace_premium</span>${c[0]?`<img src="${c[0]}" alt="${c[1]}" loading="lazy" onerror="this.remove()">`:''}</div><div class="cp"><span class="ms">military_tech</span><div><b>${c[1]}</b><span>${c[2]}</span></div></div></button>`).join('');
@@ -860,6 +1093,11 @@ const lb=$('#lb'),li=$('#lbimg'),lc=$('#lbcap');
 document.addEventListener('click',e=>{const t=e.target.closest('[data-lb]');if(!t)return;li.src=t.dataset.lb;li.alt=lc.textContent=t.dataset.cap||'';lb.classList.add('on')});
 lb.addEventListener('click',e=>{if(e.target!==li)lb.classList.remove('on')});addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
 }
+
+/* theme toggle */
+{const tbn=document.querySelector('#themebtn'),root=document.documentElement;
+const setIcon=()=>{const d=root.dataset.theme==='dark';tbn.querySelector('.ms').textContent=d?'light_mode':'dark_mode';tbn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode')};
+setIcon();tbn.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}setIcon();tbn.classList.remove('spin');void tbn.offsetWidth;tbn.classList.add('spin')})}
 </script>
 </body>
 </html>
