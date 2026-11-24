@@ -223,12 +223,6 @@ a{color:var(--b2)}
 @media(max-width:860px){.tl::before,.tl .fill{left:26px}.job,.job:nth-child(odd of .job){width:auto;margin-left:68px}.job:nth-child(n of .job) .pin{left:-68px;right:auto;width:44px;height:44px;font-size:12px}}
 
 
-/* skills story video */
-{const v=$('#stvv'),b=$('#stvm'),pi=$('#stvpi');if(v&&b){
-b.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}b.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
-v.addEventListener('timeupdate',()=>{pi.style.width=(v.currentTime/(v.duration||1)*100)+'%'});
-new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.3}).observe(v)}}
-
 /* skills */
 .skg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media(max-width:900px){.skg{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.skg{grid-template-columns:minmax(0,1fr)}}
@@ -1322,7 +1316,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 @keyframes adn{0%{top:4px}50%{top:calc(100% - 16px)}100%{top:4px}}
 @media(max-width:900px){.ahero{grid-template-columns:minmax(0,1fr)}.asteps{grid-template-columns:repeat(2,minmax(0,1fr))}.asteps::before{display:none}.lg2{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.ahero::before,.ast>.ms,.alv,.alad i{animation:none}}
-.sk .skd{font-size:13.5px;line-height:1.5;color:var(--mute);margin:-4px 0 14px;padding:0 2px}
+.sk .skd{font-size:13.5px;line-height:1.5;color:var(--mute);margin:16px 0 14px;padding:0 2px;position:relative;z-index:1}
 
 /* skills story video */
 .stv{position:relative;max-width:980px;margin:-6px auto 56px;padding:0 4%}
@@ -1348,6 +1342,8 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .stvt .ms{width:28px;height:28px;line-height:28px;border-radius:50%;font-size:17px;color:#fff;background:var(--c)}
 @keyframes stvfl{0%,100%{translate:0 0}50%{translate:0 -10px}}
 .stv.novid{display:none}
+.stv2{margin:34px auto 10px;max-width:900px}
+.stv2 .stvo{align-items:flex-start;padding-top:62px;background:linear-gradient(180deg,rgba(8,14,22,.8) 0,rgba(8,14,22,.35) 34%,transparent 55%)}
 @media(max-width:760px){.stvt{display:none}.stv{padding:0}.stvc small{display:none}.stvo{padding:14px 14px 20px}}
 @media(prefers-reduced-motion:reduce){.stvf,.stvt,.stvl i{animation:none}}
 </style>
@@ -1439,7 +1435,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
     <div class="ab">
       <div class="rv fl">
         <h2>I connect the plant floor to the business.</h2>
-        <p>I'm an Automation &amp; Control Engineer who bridges SAP S/4HANA and the PLC through ISA-95 aligned MES. I work hands-on from sensors and ladder logic to microservices, and I lead teams and build ROI and risk cases for senior leadership.</p>
+        <p>I'm an Automation &amp; Control Engineer who bridges SAP S/4HANA and the PLC through ISA-95 aligned MES. Hands-on from sensors and ladder logic to microservices, while leading teams and building ROI and risk cases for senior leadership.</p>
         <a class="btn" href="mailto:corpse92@hotmail.com" style="margin-top:22px"><span class="ms">send</span>Hire me</a>
       </div>
       <div class="round rv zm"><div><span class="ms">person</span><img src="img/AvatarID01.jpg" alt="Ivan Diaz Rodriguez" onerror="this.remove()" style="position:absolute;inset:0"></div></div>
@@ -1484,7 +1480,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
           <circle cx="110" cy="70" r="16" fill="none" stroke="#1e88e5" stroke-width="3"><animate attributeName="r" values="16;60" dur="3.6s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0" dur="3.6s" begin="1.2s" repeatCount="indefinite"/></circle>
         </svg></div>
         <div class="mvh"><span class="ms">flag</span><div><small>Mission</small><h3>Turn machine data into decisions people trust.</h3></div></div>
-        <p>I connect the plant floor to the business — PLCs, SCADA, MES and SAP — so every order, unit and signal becomes reliable, real-time data that helps operators, engineers and leaders act faster, build quality in, and cut waste.</p>
+        <p>My work connects the plant floor to the business — PLCs, SCADA, MES and SAP — so every order, unit and signal becomes reliable, real-time data that helps operators, engineers and leaders act faster, build quality in, and cut waste.</p>
         <ul class="mvl">
           <li><span class="ms">sync_alt</span>Bridge OT and IT on ISA-95 standards</li>
           <li><span class="ms">verified</span>High-fidelity data, end to end</li>
@@ -1556,7 +1552,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="pmc rv" style="--c:#ff7043;--dl:200ms"><div class="pma"><svg viewBox="0 0 200 110" aria-hidden="true"><circle cx="40" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="40" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">MX</text><circle cx="80" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="80" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">FRE</text><circle cx="120" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="120" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">LIV</text><circle cx="160" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="160" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">TOR</text><path d="M40 68 Q100 0 160 68" fill="none" stroke="#ff7043" stroke-width="2" stroke-dasharray="4 4" class="flow"/><circle r="5" fill="#ff7043"><animateMotion dur="2.4s" repeatCount="indefinite" path="M40 68 Q100 0 160 68"/></circle><rect x="76" y="20" width="48" height="18" rx="9" fill="#ff7043"/><text x="100" y="33" text-anchor="middle" font-size="9" font-weight="900" fill="#fff">PMO</text></svg></div><h3><span class="ms">merge</span>Scrumban</h3><p>Scrum's structure with Kanban's pull-based flow, which I used across a 4-site portfolio.</p></div>
     </div>
     <div class="ado rv">
-      <div class="adoh"><span class="adologo"><span class="ms">all_inclusive</span></span><div><b>Azure DevOps</b><small>I run sprints and write user stories in Azure DevOps, and I own the CI/CD pipelines: I build, maintain and approve every release to production.</small></div></div>
+      <div class="adoh"><span class="adologo"><span class="ms">all_inclusive</span></span><div><b>Azure DevOps</b><small>Sprints and user stories run in Azure DevOps, with full ownership of the CI/CD pipelines: building, maintaining and approving every release to production.</small></div></div>
       <div class="adom">
         <div style="--c:#0078d4"><span class="ms">view_kanban</span><b>Boards</b><small>Epics · user stories · sprints</small></div>
         <div style="--c:#e05e00"><span class="ms">account_tree</span><b>Repos</b><small>Git · branches · pull requests</small></div>
@@ -1584,7 +1580,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 
 <section class="band" id="projects">
   <div class="wrap">
-    <div class="hd rv"><span class="ms">insights</span><h2>Project roadmap &amp; impact</h2><div class="bar"></div><p class="sub">I've delivered for 14 years across five manufacturers, from plant-floor automation to machine learning in production.</p></div>
+    <div class="hd rv"><span class="ms">insights</span><h2>Project roadmap &amp; impact</h2><div class="bar"></div><p class="sub">14 years of delivery across five manufacturers, from plant-floor automation to machine learning in production.</p></div>
     <div class="h3s rv"><span class="ms">route</span>Project journey · 14 years from the PLC to GenAI</div>
     <div class="pjw">
       <div class="pjstat rv" id="pjstat"></div>
@@ -1592,11 +1588,11 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
     </div>
     <div class="ds">
       <div class="shot rv fl" data-lb="img/imageDataScience.PNG" data-cap="Data Science & Machine Learning"><span class="ms">monitoring</span><img src="img/imageDataScience.PNG" alt="Data science portfolio" loading="lazy" onerror="this.remove()"></div>
-      <div class="rv fr"><h3>Descriptive &amp; predictive analytics</h3><p>I build evidence-based models with null hypotheses, linear models, PCA, kNN and regression, and apply them to real manufacturing, sales, engineering and finance problems.</p>
+      <div class="rv fr"><h3>Descriptive &amp; predictive analytics</h3><p>Evidence-based models with null hypotheses, linear models, PCA, kNN and regression, applied to real manufacturing, sales, engineering and finance problems.</p>
         <div class="feat" style="margin-top:22px" id="cases"></div></div>
     </div>
     <div class="h3s rv"><span class="ms">school</span>Machine learning in production · turning plant data into better decisions</div>
-    <p class="sub rv" style="margin:0 0 18px;max-width:none">I deploy machine learning models in production to create measurable business value. Each model gives decision-makers, from operators and engineers to plant and executive leadership, a different lens on the same data, turning raw plant signals into clear, evidence-based decisions. Results are served through an MCP server to Claude, so anyone can ask a question in plain language and get an answer grounded in the model.</p>
+    <p class="sub rv" style="margin:0 0 18px;max-width:none">The machine learning models I deploy in production create measurable business value. Each model gives decision-makers, from operators and engineers to plant and executive leadership, a different lens on the same data, turning raw plant signals into clear, evidence-based decisions. Results are served through an MCP server to Claude, so anyone can ask a question in plain language and get an answer grounded in the model.</p>
     <div class="mlpipe rv" id="mlpipe"></div>
     <div class="pg pg4" id="models" style="margin-top:18px"></div>
     <div class="h3s rv"><span class="ms">rocket_launch</span>Featured web projects</div>
@@ -1623,7 +1619,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <section class="band contact" id="contact">
   <div class="wrap">
     <h2 class="rv">Let's connect your plant floor to the business</h2>
-    <p class="rv">I'm open to Sr. Data Systems Analyst, Senior MES Engineer, Senior Manufacturing Systems and Senior IT/OT Integration roles.</p>
+    <p class="rv">Open to Sr. Data Systems Analyst, Senior MES Engineer, Senior Manufacturing Systems and Senior IT/OT Integration roles.</p>
     <div class="cg">
       <a class="cc rv" href="mailto:corpse92@hotmail.com"><span class="ms">mail</span><b>Email</b><span>corpse92@hotmail.com</span></a>
       <a class="cc rv" href="tel:+13096124822" style="--dl:100ms"><span class="ms">call</span><b>Phone</b><span>+1 (309) 612-4822</span></a>
@@ -1680,38 +1676,38 @@ const cn=[["calendar_month",14,"+","years shop floor to enterprise"],["factory",
 $('#counts').innerHTML=cn.map((c,i)=>`<div class="cnt rv" style="--dl:${i*100}ms;--c:${["linear-gradient(135deg,#1e88e5,#42a5f5)","linear-gradient(135deg,#26b5a8,#4dd0c4)","linear-gradient(135deg,#ff7043,#ffa270)","linear-gradient(135deg,#7e57c2,#a383e0)"][i]}"><span class="ms">${c[0]}</span><div><b data-c="${c[1]}" data-s="${c[2]}">0</b><span>${c[3]}</span></div></div>`).join('');
 
 /* order loop */
-const VAL=[["diversity_3","Inclusive leadership","Experience and innovation reinforcing each other.","#1e88e5"],["handshake","Cross-functional synergy","I combine empathy with discipline to keep standards high.","#26b5a8"],["eco","Ethical engineering","Transparency and sustainable practices.","#43a047"],["autorenew","Continuous improvement","I bring a Lean Six Sigma mindset to every project.","#ff7043"]];
+const VAL=[["diversity_3","Inclusive leadership","Experience and innovation reinforcing each other.","#1e88e5"],["handshake","Cross-functional synergy","Empathy paired with discipline to keep standards high.","#26b5a8"],["eco","Ethical engineering","Transparency and sustainable practices.","#43a047"],["autorenew","Continuous improvement","A Lean Six Sigma mindset in every project I lead.","#ff7043"]];
 $('#vals').innerHTML=VAL.map((v,i)=>`<div class="val rv" style="--c:${v[3]};--dl:${i*100}ms"><span class="ms">${v[0]}</span><b>${v[1]}</b><p>${v[2]}</p></div>`).join('');
 
 /* timeline */
 const jobs=[
  {t:"Sr. Data System Analyst",o:"ITG Brands · Greensboro, NC",w:"Mar 2026 – Present",l:"ITG",c:"linear-gradient(135deg,#ff6b4a,#c2381c)",now:1,i:["Simatic IT ↔ SAP MII","GenAI via MCP","Ignition Edge + MQTT","Proxmox HA"],p:[
-  ["ERP ↔ shop-floor bridge","I integrated Siemens Simatic IT MES (PM / DIS) with SAP MII via SOAP/XML, mapping PLC tags into XML that SAP MII converts into IDocs for SAP S/4HANA."],
-  ["Real-time data routing","I built Node.js microservices and custom Ignition XML triggers that drive bidirectional MES DIS ↔ SAP MII flows."],
-  ["Edge-to-cloud telemetry","I deployed OnLogic edge hardware with Ignition Edge and MQTT, streaming through Kepware into EMQX brokers and SQL historians."],
-  ["Software-driven quality","I program Allen-Bradley and Siemens S7 ladder logic and turn traditional FMEAs into active SFMEA business rules in MES PM."],
-  ["Zero-downtime platform","I run Proxmox HA clusters and Docker Compose deployments for critical manufacturing services."],
-  ["AI on the line","I brought local GenAI (Ollama / Llama 3.2) to the line via MCP, ingesting PFDs, manuals and operator logs for real-time troubleshooting."]]},
+  ["ERP ↔ shop-floor bridge","Integrated Siemens Simatic IT MES (PM / DIS) with SAP MII via SOAP/XML, mapping PLC tags into XML that SAP MII converts into IDocs for SAP S/4HANA."],
+  ["Real-time data routing","Built Node.js microservices and custom Ignition XML triggers that drive bidirectional MES DIS ↔ SAP MII flows."],
+  ["Edge-to-cloud telemetry","Deployed OnLogic edge hardware with Ignition Edge and MQTT, streaming through Kepware into EMQX brokers and SQL historians."],
+  ["Software-driven quality","Allen-Bradley and Siemens S7 ladder logic, with traditional FMEAs turned into active SFMEA business rules in MES PM."],
+  ["Zero-downtime platform","Proxmox HA clusters and Docker Compose deployments for critical manufacturing services."],
+  ["AI on the line","Brought local GenAI (Ollama / Llama 3.2) to the line via MCP, ingesting PFDs, manuals and operator logs for real-time troubleshooting."]]},
  {t:"Data System Analyst",o:"Toyota North America · EV Battery · Georgetown, KY",w:"Aug 2023 – Mar 2026",l:"TOY",c:"linear-gradient(135deg,#e0314b,#8f1427)",i:["Ignition multi-tier","TimescaleDB","Terraform + Ansible","ML on battery cells"],p:[
-  ["Line commissioning","I commissioned new production lines with ETL hardware, Ignition MVPs and Docker microservices."],
-  ["Scalable IIoT","I designed a multi-tier Ignition Gateway & Edge architecture synchronized through EMQX and Kepware into TimescaleDB / PostgreSQL."],
-  ["Infrastructure as code","I automated Proxmox VE HA clusters with Terraform, Ansible and Cloud-Init, and managed containers with Portainer."],
-  ["Full-stack visibility","I built Node.js / Express APIs feeding React dashboards, Power BI and Ignition Perspective for KPI and labor compliance."],
-  ["Agile delivery","I ran Azure DevOps sprints and user stories and owned the CI/CD pipelines."],
-  ["Predictive analytics","I developed ML models for real-time pattern analysis on battery-cell production, enabling predictive maintenance and waste reduction."]]},
+  ["Line commissioning","Commissioned new production lines with ETL hardware, Ignition MVPs and Docker microservices."],
+  ["Scalable IIoT","Designed a multi-tier Ignition Gateway & Edge architecture synchronized through EMQX and Kepware into TimescaleDB / PostgreSQL."],
+  ["Infrastructure as code","Proxmox VE HA clusters automated with Terraform, Ansible and Cloud-Init; containers managed with Portainer."],
+  ["Full-stack visibility","Node.js / Express APIs feeding React dashboards, Power BI and Ignition Perspective for KPI and labor compliance."],
+  ["Agile delivery","Ran Azure DevOps sprints and user stories, and owned the CI/CD pipelines."],
+  ["Predictive analytics","ML models for real-time pattern analysis on battery-cell production, enabling predictive maintenance and waste reduction."]]},
  {t:"IT MES Analyst",o:"Rivian · via TCS · Normal, IL",w:"Mar 2022 – Jul 2023",l:"RIV",c:"linear-gradient(135deg,#f5b400,#a86f00)",i:["Rockwell FTPC","EV production","ETL + neural nets"],p:[
-  ["MES ownership","I owned the end-to-end integration and high-level support of Rockwell FactoryTalk ProductionCentre on high-volume EV lines."],
-  ["Digital platform architecture","I positioned the MES as the bridge between shop-floor automation and corporate intelligence."],
-  ["Data integrity & analytics","I built enterprise ETL into a high-fidelity data layer, plus Python and neural-network models for production decisions."]]},
+  ["MES ownership","Owned the end-to-end integration and high-level support of Rockwell FactoryTalk ProductionCentre on high-volume EV lines."],
+  ["Digital platform architecture","Positioned the MES as the bridge between shop-floor automation and corporate intelligence."],
+  ["Data integrity & analytics","Enterprise ETL into a high-fidelity data layer, plus Python and neural-network models for production decisions."]]},
  {t:"IT/OT MES Coordinator · Software Developer",o:"ABC Technologies · Querétaro, Mexico",w:"May 2016 – Feb 2022",l:"ABC",c:"linear-gradient(135deg,#2f9bff,#1456a8)",i:["SCADA / HMI","Real-time OEE","4-site PMO"],p:[
-  ["IIoT & digital architecture","I delivered PLCs, OPC servers (Kepware / Ignition) and custom SCADA / HMI solutions end to end."],
-  ["Visibility","I implemented data historians and real-time OEE tracking, closing the OT–IT gap."],
-  ["Multi-site PMO","I managed a portfolio across Mexico, Fremont, Livingston and Toronto with hybrid Scrum / Kanban / Scrumban."]]},
+  ["IIoT & digital architecture","Delivered PLCs, OPC servers (Kepware / Ignition) and custom SCADA / HMI solutions end to end."],
+  ["Visibility","Implemented data historians and real-time OEE tracking, closing the OT–IT gap."],
+  ["Multi-site PMO","Managed a portfolio across Mexico, Fremont, Livingston and Toronto with hybrid Scrum / Kanban / Scrumban."]]},
  {t:"MES & Controls Engineer · Manufacturing Project Lead",o:"Magna International · Mexico",w:"Feb 2012 – Mar 2016",l:"MGA",c:"linear-gradient(135deg,#8a96b0,#4a5570)",i:["Team lead","ROI business cases","24/7 support",".NET apps"],p:[
-  ["Team leadership","I led a cross-functional team of programmers, installers, electricians, buyers and 3 technicians, with sprints and Lean / Six Sigma."],
-  ["Business cases","I built ROI analyses, RFQs and risk assessments and presented them to plant management and senior leadership."],
-  ["End-to-end delivery","I delivered mission-critical manufacturing apps from architecture and quotation to deployment and 24/7 support."],
-  ["Custom applications","I developed .NET and web apps for real-time KPIs, OEE, balanced scorecards, labor efficiency, training and absenteeism."]]}];
+  ["Team leadership","Led a cross-functional team of programmers, installers, electricians, buyers and 3 technicians, with sprints and Lean / Six Sigma."],
+  ["Business cases","ROI analyses, RFQs and risk assessments presented to plant management and senior leadership."],
+  ["End-to-end delivery","Mission-critical manufacturing apps delivered from architecture and quotation to deployment and 24/7 support."],
+  ["Custom applications","Custom .NET and web apps for real-time KPIs, OEE, balanced scorecards, labor efficiency, training and absenteeism."]]}];
 
 const BI={'ERP ↔ shop-floor bridge':['sync_alt','#1e88e5'],'Real-time data routing':['alt_route','#26b5a8'],'Edge-to-cloud telemetry':['cloud_upload','#7e57c2'],'Software-driven quality':['verified','#43a047'],'Zero-downtime platform':['dns','#546e7a'],'AI on the line':['psychology','#e91e63'],'Line commissioning':['rocket_launch','#ff7043'],'Scalable IIoT':['hub','#00acc1'],'Infrastructure as code':['terminal','#37474f'],'Full-stack visibility':['dashboard','#1e88e5'],'Agile delivery':['sprint','#f4b400'],'Predictive analytics':['query_stats','#e53935'],'MES ownership':['precision_manufacturing','#26b5a8'],'Digital platform architecture':['account_tree','#7e57c2'],'Data integrity & analytics':['analytics','#1e88e5'],'IIoT & digital architecture':['sensors','#00acc1'],'Visibility':['monitoring','#43a047'],'Multi-site PMO':['public','#ff7043'],'Team leadership':['groups','#7e57c2'],'Business cases':['request_quote','#43a047'],'End-to-end delivery':['conveyor_belt','#ff7043'],'Custom applications':['code','#1e88e5']};
 const icons={ITG:"#ff7043",TOY:"#e53935",RIV:"#f4b400",ABC:"#1e9bd7",MGA:"#607d8b"};
@@ -1824,7 +1820,7 @@ let sk=[["precision_manufacturing","MES / MOM","#1e9bd7","Siemens Opcenter|Simat
  ["dns","Infrastructure","#546e7a","Proxmox HA|Docker / Compose|Portainer|Terraform|Ansible|Linux|Windows Server"],
  ["verified","Quality & planning","#f4b400","CAPA · 8D|SPC · Cp/Cpk|APS scheduling|ECR / ECO|FMEA / SFMEA|OEE|IATF 16949"],
  ["groups","Management","#00897b","Scrum|Kanban|Scrumban|Azure DevOps|WBS & Roadmaps|Lean Six Sigma|PDCA|Root cause|ITIL-ITSM|Pareto|Digital transformation"]];
-const SKD={"MES / MOM": "I deploy and run the MES that dispatches orders, tracks every unit and keeps full genealogy, so each line builds it right the first time.", "ERP integration": "I connect SAP to the shop floor: production orders flow down as IDocs, and confirmations, scrap and inventory flow back up in real time.", "IIoT & SCADA": "I collect live data from every machine and turn it into SCADA screens, alarms and historians that operators and engineers use every shift.", "Controls & robotics": "I program and troubleshoot PLCs, robots and vision systems, and tie them into the MES so every line runs to the recipe.", "Industrial AI": "I put AI on the line: models that predict failures and scrap, and assistants that answer operators from manuals and line history.", "Software & data": "I build the APIs, dashboards and apps that turn plant data into KPIs and decisions for every level of the business.", "Infrastructure": "I build and automate the servers and containers that keep critical manufacturing systems running with zero downtime.", "Quality & planning": "I build quality into the process with SPC, FMEA and CAPA, and plan production so lines hit OEE and delivery targets.", "Management": "I lead cross-functional teams with Agile and Lean, from roadmap and sprints to go-live and continuous improvement."};
+const SKD={"MES / MOM": "My MES deployments dispatch orders, track every unit and keep full genealogy, so each line builds it right the first time.", "ERP integration": "SAP connected to the shop floor: production orders flow down as IDocs, while confirmations, scrap and inventory flow back up in real time.", "IIoT & SCADA": "Live data from every machine, turned into the SCADA screens, alarms and historians operators and engineers rely on every shift.", "Controls & robotics": "Hands-on with PLCs, robots and vision systems, tied into the MES so every line runs to the recipe.", "Industrial AI": "AI on the line: models that predict failures and scrap, and assistants that answer operators from manuals and line history.", "Software & data": "APIs, dashboards and apps that turn plant data into KPIs and decisions for every level of the business.", "Infrastructure": "Automated servers and containers that keep critical manufacturing systems running with zero downtime.", "Quality & planning": "Quality built into the process with SPC, FMEA and CAPA, and production plans that hit OEE and delivery targets.", "Management": "Leading cross-functional teams with Agile and Lean, from roadmap and sprints to go-live and continuous improvement."};
 const ART={
 "MES / MOM":`<rect x="20" y="62" width="200" height="12" rx="6" fill="#cfd8dc"/><line x1="20" y1="68" x2="220" y2="68" stroke="#90a4ae" stroke-width="2" class="flow"/>${[0,1,2].map(i=>`<g><rect y="44" width="20" height="18" rx="3" fill="var(--c)"/><animateTransform attributeName="transform" type="translate" values="-30 0;250 0" dur="5s" begin="${i*1.66}s" repeatCount="indefinite"/></g>`).join('')}<g><circle cx="120" cy="22" r="14" fill="none" stroke="var(--c)" stroke-width="7" stroke-dasharray="6 4"/><circle cx="120" cy="22" r="5" fill="var(--c)"/><animateTransform attributeName="transform" type="rotate" values="0 120 22;360 120 22" dur="4s" repeatCount="indefinite"/></g>`,
 "ERP integration":`<rect x="20" y="20" width="60" height="44" rx="10" fill="var(--c)"/><text x="50" y="47" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">SAP</text><rect x="160" y="20" width="60" height="44" rx="10" fill="#1e88e5"/><text x="190" y="47" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">MES</text><path id="e1" d="M82 34H158"/><path id="e2" d="M158 50H82"/><path d="M82 34H158M158 50H82" stroke="#cfd8dc" stroke-width="2" stroke-dasharray="4 4"/>${[0,1].map(i=>`<rect width="14" height="10" rx="2" x="-7" y="-5" fill="#ff7043"><animateMotion dur="1.8s" begin="${i*.9}s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></rect><circle r="5" fill="#43a047"><animateMotion dur="1.8s" begin="${i*.9+.4}s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>`).join('')}`,
@@ -1872,7 +1868,7 @@ $('#skg').innerHTML=sk.map((s,i)=>`<div class="sk rv" style="--c:${s[2]};--dl:${
 
 /* MES story factory */
 const ST=[
- [95,"ISA-95","stacks","I make every level talk: sensor → PLC → SCADA → MES → SAP."],
+ [95,"ISA-95","stacks","Every level talks: sensor → PLC → SCADA → MES → SAP."],
  [200,"Production Modeler","schema","The plant's routes, equipment and rules modeled before the first order runs."],
  [305,"Siemens Opcenter","factory","Operators dispatch, run and track every work order from one screen."],
  [410,"Simatic IT PM/DIS","precision_manufacturing","PLC tags travel as XML to SAP MII and land in S/4HANA as IDocs."],
@@ -1937,7 +1933,7 @@ const HWY=`<div class="hwy"><div class="ahero">
 <span class="aeye"><span class="ms">verified</span>ISA-95 · IEC 62264 · the industry standard</span>
 <h3 class="ah">How I integrate a new project <em>on the plant floor</em></h3>
 <p class="alead">This is the architecture I implement. When a new line or project lands, I map it to <b>ISA-95</b>, the international standard for connecting enterprise and control systems, so SAP, the MES, SCADA and every PLC speak the same language from day one. Below is a real example from my digital plant: the SAP order travels down to the PLC, and the confirmation comes back up.</p>
-<div class="asteps">${[["hearing","Listen","I meet the team and walk the floor"],["layers","Map","I place every system on an ISA-95 level"],["cable","Integrate","IDocs, OPC UA and MQTT between levels"],["rocket_launch","Go live","I measure OEE and KPIs and improve"]].map((t,i)=>`<div class="ast" style="--i:${i};--c:${['#1e88e5','#7e57c2','#26b5a8','#ff7043'][i]}"><span class="ms">${t[0]}</span><b><i>${i+1}</i>${t[1]}</b><small>${t[2]}</small></div>`).join('')}</div>
+<div class="asteps">${[["hearing","Listen","Meeting the team and walking the floor"],["layers","Map","Every system placed on its ISA-95 level"],["cable","Integrate","IDocs, OPC UA and MQTT between levels"],["rocket_launch","Go live","Measuring OEE and KPIs, then improving"]].map((t,i)=>`<div class="ast" style="--i:${i};--c:${['#1e88e5','#7e57c2','#26b5a8','#ff7043'][i]}"><span class="ms">${t[0]}</span><b><i>${i+1}</i>${t[1]}</b><small>${t[2]}</small></div>`).join('')}</div>
 <span class="hwytags"><i style="--c:#1e88e5"><span class="ms">settings_input_component</span>Systems Analyst</i><span class="hwyplus">+</span><i style="--c:#f57c00"><span class="ms">query_stats</span>Business Analyst</i><span class="lg2"><i style="background:#1e88e5"></i>Order going down<i style="background:#43a047"></i>Confirmation going up</span></span>
 </div>
 <div class="alad" aria-hidden="true">${[["L4","Business · ERP","SAP S/4HANA","#1e88e5"],["L3","Operations · MES","Opcenter · SAP MII","#26b5a8"],["L2","Supervision · SCADA","Ignition","#ff7043"],["L1","Control","PLC · AB / S7","#f4b400"],["L0","Process","Sensors · actuators","#8d6e63"]].map((l,i)=>`<div class="alv" style="--c:${l[3]};--i:${i}"><b>${l[0]}</b><span><small>${l[1]}</small>${l[2]}</span></div>`).join('')}<i class="adn"></i><i class="aup"></i></div>
@@ -1965,7 +1961,20 @@ ${UP.map((t,i)=>{const w=t.length*6.4+18;return `<g opacity="0"><rect x="${-w/2}
   &lt;YIELD&gt;496&lt;/YIELD&gt;
   &lt;SCRAP&gt;4&lt;/SCRAP&gt;
   &lt;FINAL&gt;X&lt;/FINAL&gt;
-&lt;/ZPRODCONF&gt;</pre></div></div></div>`;
+&lt;/ZPRODCONF&gt;</pre></div></div>
+<div class="stv stv2">
+  <div class="stvf"><span class="stvb"></span><div class="stvs">
+    <video src="img/Vide03.mp4" poster="img/Vide03.jpg" muted loop playsinline preload="metadata" aria-label="How an order flows from the purchase order to the ERP and the plant" onerror="this.closest('.stv').classList.add('novid')"></video>
+    <div class="stvo"><span class="stvl"><i></i>Order to plant · in motion</span>
+      <div class="stvc"><b>It all starts with a purchase order</b><small>How I trace every order end to end: PO → SAP ERP → MES → plant floor</small></div>
+      <button class="stvm" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button></div>
+    <div class="stvp"><i></i></div>
+  </div></div>
+  <span class="stvt" style="--c:#e53935;--x:-3%;--y:16%;--d:0s"><span class="ms">receipt_long</span>Purchase order</span>
+  <span class="stvt" style="--c:#1e88e5;--x:101%;--y:22%;--d:1s"><span class="ms">cloud</span>SAP ERP</span>
+  <span class="stvt" style="--c:#26b5a8;--x:-2%;--y:80%;--d:2s"><span class="ms">description</span>LOIPRO IDoc</span>
+  <span class="stvt" style="--c:#43a047;--x:100%;--y:84%;--d:3s"><span class="ms">task_alt</span>ZPRODCONF</span>
+</div></div>`;
 const fc=document.createElement('div');fc.className='sk skfeat rv';fc.style.setProperty('--c','#1e88e5');
 fc.innerHTML=`<div class="h"><span class="ms">precision_manufacturing</span><h3>MES / MOM · the story factory</h3></div><div class="fac">${FAC}</div><div class="story" aria-live="polite"><span class="ms" id="stIco">stacks</span><div><b id="stT"></b><p id="stP"></p></div><div class="stnav"><button type="button" id="stPrev" aria-label="Previous"><span class="ms">chevron_left</span></button><button type="button" id="stPlay" aria-label="Pause"><span class="ms">pause</span></button><button type="button" id="stNext" aria-label="Next"><span class="ms">chevron_right</span></button></div></div><div class="chips fchips">${ST.map((t,n)=>`<span data-i="${n}" style="--k:${n}"><i class="ms">${t[2]}</i>${n+1}. ${t[1]}</span>`).join('')}</div>${HWY}`;
 $('#skg').prepend(fc);
@@ -2058,11 +2067,11 @@ new ResizeObserver(lay).observe(tr);cfgo(0);cfrun();}
 
 /* project journey */
 {const PJ=[
- ["2012 – 16","MGA","Magna International","dashboard","Plant KPI & OEE apps","I built real-time KPI, OEE, balanced-scorecard and labor-efficiency apps for plant leadership.",[".NET","Web apps","Lean · Six Sigma"],"trending_up","ROI cases to senior leadership","#5c6bc0"],
- ["2016 – 22","ABC","ABC Technologies","hub","SCADA + 4-site PMO","I delivered PLCs, OPC servers and custom SCADA / HMI, and ran a portfolio across Mexico, the U.S. and Canada.",["Kepware","Ignition","Scrum · Kanban"],"speed","Real-time OEE on the floor","#1e88e5"],
- ["2022 – 23","RIV","Rivian","electric_car","EV MES at scale","I owned Rockwell FactoryTalk ProductionCentre on high-volume EV lines.",["FTPC","ETL","Neural nets"],"link","MES bridges floor and enterprise","#f4b400"],
- ["2023 – 26","TOY","Toyota EV Battery","battery_charging_full","Battery IIoT platform","I designed a multi-tier Ignition architecture with EMQX, TimescaleDB and ML on battery cells.",["Ignition","EMQX","Terraform"],"psychology","Predictive maintenance, less waste","#e53935"],
- ["2026 – Now","ITG","ITG Brands","auto_awesome","SAP ↔ MES + GenAI","I connect Simatic IT ↔ SAP MII ↔ S/4HANA IDocs and bring GenAI to the line via MCP.",["SAP MII","IDocs","MCP"],"bolt","Operators ask, AI answers","#ff7043"]];
+ ["2012 – 16","MGA","Magna International","dashboard","Plant KPI & OEE apps","Real-time KPI, OEE, balanced-scorecard and labor-efficiency apps for plant leadership.",[".NET","Web apps","Lean · Six Sigma"],"trending_up","ROI cases to senior leadership","#5c6bc0"],
+ ["2016 – 22","ABC","ABC Technologies","hub","SCADA + 4-site PMO","PLCs, OPC servers and custom SCADA / HMI, plus a portfolio across Mexico, the U.S. and Canada.",["Kepware","Ignition","Scrum · Kanban"],"speed","Real-time OEE on the floor","#1e88e5"],
+ ["2022 – 23","RIV","Rivian","electric_car","EV MES at scale","Owned Rockwell FactoryTalk ProductionCentre on high-volume EV lines.",["FTPC","ETL","Neural nets"],"link","MES bridges floor and enterprise","#f4b400"],
+ ["2023 – 26","TOY","Toyota EV Battery","battery_charging_full","Battery IIoT platform","A multi-tier Ignition architecture with EMQX, TimescaleDB and ML on battery cells.",["Ignition","EMQX","Terraform"],"psychology","Predictive maintenance, less waste","#e53935"],
+ ["2026 – Now","ITG","ITG Brands","auto_awesome","SAP ↔ MES + GenAI","Simatic IT ↔ SAP MII ↔ S/4HANA IDocs, with GenAI brought to the line via MCP.",["SAP MII","IDocs","MCP"],"bolt","Operators ask, AI answers","#ff7043"]];
 const ST=[["calendar_month","14+","years of projects","#1e88e5"],["factory","5","global manufacturers","#26b5a8"],["public","3","countries · MX · US · CA","#ff7043"],["layers","L0 → L4","full ISA-95 stack","#7e57c2"]];
 $('#pjstat').innerHTML=ST.map(t=>`<div class="pjs" style="--c:${t[3]}"><span class="ms">${t[0]}</span><div><b>${t[1]}</b><span>${t[2]}</span></div></div>`).join('');
 const box=$('#pj'),sv=$('#pjr'),NS='http://www.w3.org/2000/svg',W=1240,H=720,X=[150,380,620,860,1090],Y=[300,420,300,420,300];
@@ -2079,7 +2088,7 @@ PJ.forEach((p,i)=>{const up=i%2==0;
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){box.classList.add('in');o.disconnect()}}),{threshold:.2}).observe(box)}
 
 /* projects */
-const cases=[["precision_manufacturing","Manufacturing","I predict scrap, downtime and material defects before they occur."],["storefront","Sales","I build recommendation systems from demographics and big-data behavior."],["engineering","Engineering","I optimize processes and materials from product characteristics."],["account_balance","Finance","I use decision trees to estimate NPV and future cash-flow probability."],["support_agent","Tech support","I apply unsupervised clustering for ETL data mining and labeling."],["dashboard","Business intelligence","I deliver real-time KPIs, OEE and balanced scorecards."]];
+const cases=[["precision_manufacturing","Manufacturing","Predicting scrap, downtime and material defects before they occur."],["storefront","Sales","Recommendation systems built from demographics and big-data behavior."],["engineering","Engineering","Process and material optimization from product characteristics."],["account_balance","Finance","Decision trees that estimate NPV and future cash-flow probability."],["support_agent","Tech support","Unsupervised clustering for ETL data mining and labeling."],["dashboard","Business intelligence","Real-time KPIs, OEE and balanced scorecards."]];
 $('#cases').innerHTML=cases.map((c,i)=>`<div class="ft" style="--c:${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400','#e91e63'][i]}"><span class="ms">${c[0]}</span><h3>${c[1]}</h3><p style="color:var(--mute)">${c[2]}</p></div>`).join('');
 const card=(m,i,label)=>`<a class="pc rv" href="${m[2]}" style="--c:${m[3]};--dl:${(i%4)*100}ms"><div class="pi"><span class="ms">${m[0]}</span></div><div class="pb"><h3>${m[1]}</h3><p>${m[4]}</p><span class="more">${label} <span class="ms">arrow_forward</span></span></div></a>`;
 const MLP=[["sensors","Plant data","MES · historian · ERP","#546e7a"],["model_training","Classical ML","Trees · kNN · PCA · RecSys","#1e88e5"],["table_chart","Result tables","Predictions · scores · clusters","#26b5a8"],["extension","MCP server","Tools over the tables","#7e57c2"],["auto_awesome","Claude Haiku","Answers in plain language","#d97757"]];
@@ -2156,6 +2165,11 @@ const el=document.getElementById('cicd');if(el){el.innerHTML=`<div class="cirow"
 
 /* rail visibility */
 {const rl=document.querySelector('.rail'),hero=document.getElementById('home');if(rl&&hero){const f=()=>{const r=hero.getBoundingClientRect();rl.classList.toggle('away',r.bottom>innerHeight*.35)};addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()}}
+/* story video players */
+document.querySelectorAll('.stv').forEach(w=>{const v=w.querySelector('video'),b=w.querySelector('.stvm'),pi=w.querySelector('.stvp i');if(!v||!b)return;
+b.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}b.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
+v.addEventListener('timeupdate',()=>{pi.style.width=(v.currentTime/(v.duration||1)*100)+'%'});
+new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.3}).observe(v)});
 </script>
 </body>
 </html>
