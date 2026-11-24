@@ -860,6 +860,74 @@ html[data-theme=dark] .hwysvg path[stroke="#bbdefb"]{stroke:#1d3a5c}html[data-th
 .car .arw.l{left:6px}.car .arw.r{right:6px}
 @media(max-width:600px){.track.cflow{height:330px}}
 
+
+/* ML pipeline */
+.mlpipe{border-radius:24px;padding:20px;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.6);box-shadow:0 18px 40px -20px rgba(20,40,80,.35)}
+.mlrow{display:flex;align-items:center;gap:6px}
+.mlst{flex:1;min-width:0;text-align:center;padding:12px 6px;border-radius:18px;background:color-mix(in srgb,var(--c) 9%,#fff);animation:mlp 5s ease-in-out infinite;animation-delay:calc(var(--i)*1s)}
+@keyframes mlp{0%,15%,100%{transform:none;box-shadow:none}6%{transform:translateY(-6px);box-shadow:0 12px 24px -10px var(--c)}}
+.mlst>.ms{width:48px;height:48px;border-radius:16px;margin:0 auto 6px;display:grid;place-items:center;background:var(--c);color:#fff;font-size:26px}
+.mlst b{display:block;font-size:14.5px}.mlst small{color:var(--mute);font-size:11.5px;line-height:1.3;display:block}
+.mlar{flex:none;width:34px;display:flex;gap:3px;justify-content:center}
+.mlar i{width:6px;height:6px;border-radius:50%;background:var(--c);animation:mla 1.2s infinite}.mlar i:nth-child(2){animation-delay:.2s}.mlar i:nth-child(3){animation-delay:.4s}
+@keyframes mla{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.1)}}
+.mlchat{margin-top:14px;display:grid;gap:8px}
+.mlchat>div{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:16px;font-size:14.5px;min-height:44px}
+.mlchat .q{background:#e3f2fd;color:#0d47a1;margin-right:18%}.mlchat .a{background:#fbe9e7;color:#5d2a1a;margin-left:18%}
+.mlchat .ms{font-size:20px;flex:none}.mlchat .a .ms{color:#d97757}
+.mlchat .tw::after{content:"";display:inline-block;width:2px;height:1em;background:currentColor;vertical-align:-2px;margin-left:2px;animation:bl 1s steps(1) infinite}
+@media(max-width:860px){.mlrow{flex-direction:column}.mlst{width:100%}.mlar{transform:rotate(90deg);height:18px}.mlchat .q,.mlchat .a{margin:0}}
+.mlart{height:150px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 10%,#fff),#fff);border-radius:24px 24px 0 0;display:grid;place-items:center}
+.mlart svg{width:100%;height:100%;padding:10px}
+.mltb{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 10%,#fff);border-radius:10px;padding:5px 9px}
+.mltb.mcp{color:#b5532f;background:#fbe9e7}
+.mltb .ms{font-size:16px}
+html[data-theme=dark] .mlpipe{background:rgba(28,38,52,.75);border-color:rgba(255,255,255,.08)}
+html[data-theme=dark] .mlst{background:color-mix(in srgb,var(--c) 18%,#18212d)}
+html[data-theme=dark] .mlchat .q{background:#16324f;color:#cfe3ff}html[data-theme=dark] .mlchat .a{background:#3a2218;color:#ffd9c7}
+html[data-theme=dark] .mlart{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 18%,#121c28),#121c28)}
+html[data-theme=dark] .mltb{background:color-mix(in srgb,var(--c) 20%,#18212d)}html[data-theme=dark] .mltb.mcp{background:#3a2218;color:#ffb59a}
+html[data-theme=dark] .mlart svg rect[fill="#f3e5f5"]{fill:#2a2140}html[data-theme=dark] .mlart svg rect[fill="#ede7f6"]{fill:#3a2f55}
+
+
+/* project management */
+.pmm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:860px){.pmm{grid-template-columns:minmax(0,1fr)}}
+.pmc{border-radius:24px;padding:0 0 20px;overflow:hidden;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.6);box-shadow:0 18px 40px -20px rgba(20,40,80,.35);transition:transform .35s var(--ease)}
+.pmc:hover{transform:translateY(-6px)}
+.pma{height:140px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 10%,#fff),#fff);display:grid;place-items:center}
+.pma svg{width:100%;height:100%;padding:8px}
+.pmc h3{display:flex;align-items:center;gap:8px;margin:16px 20px 0;font-size:19px}.pmc h3 .ms{color:var(--c)}
+.pmc p{color:var(--mute);margin:6px 20px 0;font-size:14.5px}
+.ado{margin-top:22px;border-radius:28px;padding:22px;background:linear-gradient(135deg,#0b3a75,#0078d4);color:#fff;box-shadow:0 24px 50px -22px rgba(0,80,160,.6);position:relative;overflow:hidden}
+.ado::before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
+.adoh{display:flex;align-items:center;gap:14px}
+.adologo{width:56px;height:56px;border-radius:16px;background:#fff;color:#0078d4;display:grid;place-items:center}
+.adologo .ms{font-size:34px;animation:rot 8s linear infinite}
+.adoh b{font-size:22px;display:block}.adoh small{color:#cfe6ff}
+.adom{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:18px}
+@media(max-width:980px){.adom{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:520px){.adom{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.adom div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px;text-align:center;transition:transform .3s var(--ease),background .3s}
+.adom div:hover{transform:translateY(-4px);background:rgba(255,255,255,.2)}
+.adom .ms{width:40px;height:40px;border-radius:12px;background:#fff;color:var(--c);display:grid;place-items:center;margin:0 auto 6px;font-size:24px}
+.adom b{display:block;font-size:14px}.adom small{color:#cfe6ff;font-size:11.5px;line-height:1.3;display:block}
+.cicd{margin-top:18px;background:rgba(0,0,0,.18);border-radius:20px;padding:16px 12px 12px}
+.cirow{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.citrack{position:absolute;left:8%;right:8%;top:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);z-index:0}
+.cidot{position:absolute;top:50%;left:0;width:14px;height:14px;margin:-7px;border-radius:50%;background:#fff;box-shadow:0 0 14px #fff;animation:cimv 6s linear infinite}
+@keyframes cimv{from{left:0}to{left:100%}}
+.cis{position:relative;z-index:1;text-align:center}
+.cis>.ms{width:46px;height:46px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;margin:0 auto 6px;font-size:24px;box-shadow:0 0 0 4px rgba(255,255,255,.15);animation:cip 6s linear infinite;animation-delay:calc(var(--i)*1s)}
+@keyframes cip{0%,12%{transform:scale(1.18);box-shadow:0 0 0 8px rgba(255,255,255,.3)}20%,100%{transform:none}}
+.cis b{display:block;font-size:13px}.cis small{color:#cfe6ff;font-size:11px}
+.cis .ok{position:absolute;top:-4px;left:calc(50% + 12px);width:18px;height:18px;border-radius:50%;background:#43a047;color:#fff;font-size:14px;display:grid;place-items:center;opacity:0;animation:cio 6s linear infinite;animation-delay:calc(var(--i)*1s)}
+@keyframes cio{0%,10%{opacity:0;transform:scale(.3)}16%,90%{opacity:1;transform:none}100%{opacity:0}}
+@media(max-width:700px){.cirow{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}.citrack{display:none}}
+html[data-theme=dark] .pmc{background:rgba(28,38,52,.75);border-color:rgba(255,255,255,.08)}
+html[data-theme=dark] .pma{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 18%,#121c28),#121c28)}
+html[data-theme=dark] .pma svg rect[fill="#e0f2f1"]{fill:#123a3d}html[data-theme=dark] .pma svg rect[fill="#fff"]{fill:#1f2b3b}html[data-theme=dark] .pma svg [fill="#fbe9e7"]{fill:#3a2218}
+html[data-theme=dark] .ado{background:linear-gradient(135deg,#061a36,#0a4a8a)}
+
 /* ===== dark theme ===== */
 html[data-theme=dark]{color-scheme:dark;--w:#18212d;--paper:#0e141c;--ink:#e6edf5;--mute:#9fb0c3;--line:#2a3646;--ch3:#2a3646;
  --e1:0 1px 3px rgba(0,0,0,.5);--e2:0 6px 16px rgba(0,0,0,.5);--e3:0 18px 40px rgba(0,0,0,.6)}
@@ -950,6 +1018,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   <a style="--c:#ff7043" href="#plant"><span class="ms">explore</span>Mission</a>
   <a style="--c:#7e57c2" href="#experience"><span class="ms">work</span>Experience</a>
   <a style="--c:#f4b400" href="#skills"><span class="ms">build</span>Skills</a>
+  <a style="--c:#0078d4" href="#pmo"><span class="ms">view_kanban</span>Projects PM</a>
   <a style="--c:#e91e63" href="#certs"><span class="ms">workspace_premium</span>Certifications</a>
   <a style="--c:#43a047" href="#projects"><span class="ms">insights</span>Projects</a>
   <a style="--c:#e53935" href="#videos"><span class="ms">smart_display</span>Videos</a>
@@ -1037,7 +1106,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
         <p>Automation &amp; Control Engineer who bridges SAP S/4HANA and the PLC through ISA-95 aligned MES. Hands-on from sensors and ladder logic to microservices — and a proven team leader who builds ROI and risk cases for senior leadership.</p>
         <a class="btn" href="mailto:corpse92@hotmail.com" style="margin-top:22px"><span class="ms">send</span>Hire me</a>
       </div>
-      <div class="round rv zm"><div><span class="ms">person</span><img src="img/imgProfile.PNG" alt="Ivan Diaz Rodriguez" onerror="this.remove()" style="position:absolute;inset:0"></div></div>
+      <div class="round rv zm"><div><span class="ms">person</span><img src="img/AvatarID01.jpg" alt="Ivan Diaz Rodriguez" onerror="this.remove()" style="position:absolute;inset:0"></div></div>
       <div class="facts rv fr">
         <div class="fact"><span class="ms">location_on</span><div><b>Based in Greensboro, NC</b><span>Work authorization: TN (USMCA)</span></div></div>
         <div class="fact"><span class="ms" style="background:var(--o)">work</span><div><b>Now at ITG Brands</b><span>Sr. Data System Analyst</span></div></div>
@@ -1104,6 +1173,28 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   </div>
 </section>
 
+<section class="band" id="pmo">
+  <div class="wrap">
+    <div class="hd rv"><span class="ms">view_kanban</span><h2>Project management &amp; DevOps</h2><div class="bar"></div><p class="sub">From a multi-site PMO across Mexico, Fremont, Livingston and Toronto to Azure DevOps sprints and CI/CD pipelines I own end to end.</p></div>
+    <div class="pmm">
+      <div class="pmc rv" style="--c:#1e88e5"><div class="pma"><svg viewBox="0 0 200 110" aria-hidden="true"><circle cx="100" cy="55" r="38" fill="none" stroke="#bbdefb" stroke-width="8"/><circle cx="100" cy="55" r="38" fill="none" stroke="#1e88e5" stroke-width="8" stroke-linecap="round" stroke-dasharray="60 179"><animateTransform attributeName="transform" type="rotate" values="0 100 55;360 100 55" dur="3s" repeatCount="indefinite"/></circle><text x="100" y="52" text-anchor="middle" font-size="12" font-weight="900" fill="#1e88e5">Sprint</text><text x="100" y="67" text-anchor="middle" font-size="10" font-weight="700" fill="#607d8b">2 weeks</text><rect x="78.0" y="2.0" width="44" height="18" rx="9" fill="#fff" stroke="#1e88e5" stroke-width="1.5"/><text x="100.0" y="15.0" text-anchor="middle" font-size="9" font-weight="800" fill="#1e88e5">Plan</text><rect x="138.0" y="46.0" width="44" height="18" rx="9" fill="#fff" stroke="#1e88e5" stroke-width="1.5"/><text x="160.0" y="59.0" text-anchor="middle" font-size="9" font-weight="800" fill="#1e88e5">Daily</text><rect x="78.0" y="90.0" width="44" height="18" rx="9" fill="#fff" stroke="#1e88e5" stroke-width="1.5"/><text x="100.0" y="103.0" text-anchor="middle" font-size="9" font-weight="800" fill="#1e88e5">Review</text><rect x="18.0" y="46.0" width="44" height="18" rx="9" fill="#fff" stroke="#1e88e5" stroke-width="1.5"/><text x="40.0" y="59.0" text-anchor="middle" font-size="9" font-weight="800" fill="#1e88e5">Retro</text></svg></div><h3><span class="ms">groups</span>Scrum</h3><p>Self-organizing teams that streamline processes and hit goals without top-down management.</p></div>
+      <div class="pmc rv" style="--c:#26b5a8;--dl:100ms"><div class="pma"><svg viewBox="0 0 200 110" aria-hidden="true"><rect x="12" y="8" width="56" height="94" rx="8" fill="#e0f2f1"/><text x="40" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#00796b">To do</text><rect x="74" y="8" width="56" height="94" rx="8" fill="#e0f2f1"/><text x="102" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#00796b">Doing</text><rect x="136" y="8" width="56" height="94" rx="8" fill="#e0f2f1"/><text x="164" y="22" text-anchor="middle" font-size="9" font-weight="800" fill="#00796b">Done</text><rect x="18" y="56" width="44" height="14" rx="3" fill="#ffb74d"/><rect x="142" y="30" width="44" height="14" rx="3" fill="#81c784"/><rect x="142" y="50" width="44" height="14" rx="3" fill="#81c784"/><g><rect x="18" y="32" width="44" height="14" rx="3" fill="#26b5a8"/><animateTransform attributeName="transform" type="translate" values="0 0;0 0;62 0;62 0;124 40;124 40" keyTimes="0;.15;.35;.6;.8;1" dur="4s" repeatCount="indefinite"/></g></svg></div><h3><span class="ms">view_kanban</span>Kanban</h3><p>Visual workflow for continuous improvement and real-time project status.</p></div>
+      <div class="pmc rv" style="--c:#ff7043;--dl:200ms"><div class="pma"><svg viewBox="0 0 200 110" aria-hidden="true"><circle cx="40" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="40" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">MX</text><circle cx="80" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="80" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">FRE</text><circle cx="120" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="120" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">LIV</text><circle cx="160" cy="80" r="12" fill="#fbe9e7" stroke="#ff7043" stroke-width="2"/><text x="160" y="84" text-anchor="middle" font-size="9" font-weight="900" fill="#ff7043">TOR</text><path d="M40 68 Q100 0 160 68" fill="none" stroke="#ff7043" stroke-width="2" stroke-dasharray="4 4" class="flow"/><circle r="5" fill="#ff7043"><animateMotion dur="2.4s" repeatCount="indefinite" path="M40 68 Q100 0 160 68"/></circle><rect x="76" y="20" width="48" height="18" rx="9" fill="#ff7043"/><text x="100" y="33" text-anchor="middle" font-size="9" font-weight="900" fill="#fff">PMO</text></svg></div><h3><span class="ms">merge</span>Scrumban</h3><p>Scrum's structure with Kanban's pull-based flow, used across a 4-site portfolio.</p></div>
+    </div>
+    <div class="ado rv">
+      <div class="adoh"><span class="adologo"><span class="ms">all_inclusive</span></span><div><b>Azure DevOps</b><small>Sprints, user stories and the CI/CD pipelines I maintained and approved</small></div></div>
+      <div class="adom">
+        <div style="--c:#0078d4"><span class="ms">view_kanban</span><b>Boards</b><small>Epics · user stories · sprints</small></div>
+        <div style="--c:#e05e00"><span class="ms">account_tree</span><b>Repos</b><small>Git · branches · pull requests</small></div>
+        <div style="--c:#2560e0"><span class="ms">rocket_launch</span><b>Pipelines</b><small>YAML CI/CD · approvals</small></div>
+        <div style="--c:#00a36c"><span class="ms">science</span><b>Test Plans</b><small>Manual &amp; automated tests</small></div>
+        <div style="--c:#c239b3"><span class="ms">inventory_2</span><b>Artifacts</b><small>npm · NuGet packages</small></div>
+        <div style="--c:#5c6bc0"><span class="ms">insights</span><b>Dashboards</b><small>Burndown · velocity</small></div>
+      </div>
+      <div class="cicd" id="cicd"></div>
+    </div>
+  </div>
+</section>
 <section class="band dark" id="certs">
   <div class="wrap">
     <div class="hd rv"><span class="ms">workspace_premium</span><h2>Education &amp; certifications</h2><div class="bar"></div><p class="sub">Verified academic and professional records. Click a certificate to enlarge it.</p></div>
@@ -1125,8 +1216,10 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="rv fr"><h3>Descriptive &amp; predictive analytics</h3><p>Evidence-based models with null hypotheses, linear models, PCA, kNN and regression — applied to real manufacturing, sales, engineering and finance problems.</p>
         <div class="feat" style="margin-top:22px" id="cases"></div></div>
     </div>
-    <div class="h3s rv"><span class="ms">school</span>Master's degree models</div>
-    <div class="pg pg4" id="models"></div>
+    <div class="h3s rv"><span class="ms">school</span>Classical ML models in production · queried by Claude via MCP</div>
+    <p class="sub rv" style="margin:0 0 18px;max-width:none">Built in my Master's and taken to production: classical ML models turn plant data into clean result tables, and an MCP server exposes those tables to Claude Haiku so engineers and operators can ask questions in plain language.</p>
+    <div class="mlpipe rv" id="mlpipe"></div>
+    <div class="pg pg4" id="models" style="margin-top:18px"></div>
     <div class="h3s rv"><span class="ms">rocket_launch</span>Featured web projects</div>
     <div class="pg" id="webp"></div>
   </div>
@@ -1145,18 +1238,13 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
         <div class="ft" style="--c:#43a047"><span class="ms">smart_toy</span><h3>AI developer</h3><p>RAG, Ollama / Llama 3 and n8n automation.</p></div>
       </div>
     </div>
-    <div class="pm">
-      <div class="rv" style="--c:var(--b)"><b><span class="ms">groups</span>Scrum</b><p>Self-organizing teams that streamline processes and hit goals without top-down management.</p></div>
-      <div class="rv" style="--c:var(--t);--dl:100ms"><b><span class="ms">view_kanban</span>Kanban</b><p>Visual workflow for continuous improvement and real-time project status.</p></div>
-      <div class="rv" style="--c:var(--o);--dl:200ms"><b><span class="ms">merge</span>Scrumban</b><p>Scrum's structure with Kanban's pull-based flow — used across 4 sites.</p></div>
-    </div>
   </div>
 </section>
 
 <section class="band contact" id="contact">
   <div class="wrap">
     <h2 class="rv">Let's connect your plant floor to the business</h2>
-    <p class="rv">Open to Senior MES, Manufacturing Systems and IT/OT integration roles.</p>
+    <p class="rv">Open to Sr. Data Systems Analyst, Senior MES Engineer, Senior Manufacturing Systems and Senior IT/OT Integration roles.</p>
     <div class="cg">
       <a class="cc rv" href="mailto:corpse92@hotmail.com"><span class="ms">mail</span><b>Email</b><span>corpse92@hotmail.com</span></a>
       <a class="cc rv" href="tel:+13096124822" style="--dl:100ms"><span class="ms">call</span><b>Phone</b><span>+1 (309) 612-4822</span></a>
@@ -1522,7 +1610,32 @@ new ResizeObserver(lay).observe(tr);cfgo(0);cfrun();}
 const cases=[["precision_manufacturing","Manufacturing","Predict scrap, downtime and material defects before they occur."],["storefront","Sales","Recommendation systems from demographics and big-data behavior."],["engineering","Engineering","Process and material optimization from product characteristics."],["account_balance","Finance","Decision trees for NPV and future cash-flow probability."],["support_agent","Tech support","Unsupervised clustering for ETL data mining and labeling."],["dashboard","Business intelligence","Real-time KPIs, OEE and balanced scorecards."]];
 $('#cases').innerHTML=cases.map((c,i)=>`<div class="ft" style="--c:${['#1e88e5','#26b5a8','#ff7043','#7e57c2','#f4b400','#e91e63'][i]}"><span class="ms">${c[0]}</span><h3>${c[1]}</h3><p style="color:var(--mute)">${c[2]}</p></div>`).join('');
 const card=(m,i,label)=>`<a class="pc rv" href="${m[2]}" style="--c:${m[3]};--dl:${(i%4)*100}ms"><div class="pi"><span class="ms">${m[0]}</span></div><div class="pb"><h3>${m[1]}</h3><p>${m[4]}</p><span class="more">${label} <span class="ms">arrow_forward</span></span></div></a>`;
-$('#models').innerHTML=[["account_tree","Decision Tree Analysis","pages/MastersDegreeDesisionTree.html","#1e9bd7","Classification with interpretable decision rules."],["scatter_plot","kNN Linear Regression","pages/MastersDegreekNN.html","#26b5a8","Nearest-neighbor and linear regression models."],["groups","PCA Absenteeism Study","pages/MastersDegreePCAAbsenteeismAtWork.html","#ff7043","Principal components behind absenteeism at work."],["recommend","Recommendation Systems","pages/MastersDegreeRecommendationSystems.html","#7e57c2","Personalized recommendations from behavior data."]].map((m,i)=>card(m,i,'Open model')).join('');
+const MLP=[["sensors","Plant data","MES · historian · ERP","#546e7a"],["model_training","Classical ML","Trees · kNN · PCA · RecSys","#1e88e5"],["table_chart","Result tables","Predictions · scores · clusters","#26b5a8"],["extension","MCP server","Tools over the tables","#7e57c2"],["auto_awesome","Claude Haiku","Answers in plain language","#d97757"]];
+$('#mlpipe').innerHTML=`<div class="mlrow">${MLP.map((p,i)=>`<div class="mlst" style="--c:${p[3]};--i:${i}"><span class="ms">${p[0]}</span><b>${p[1]}</b><small>${p[2]}</small></div>${i<MLP.length-1?`<div class="mlar" style="--c:${MLP[i+1][3]}"><i></i><i></i><i></i></div>`:''}`).join('')}</div>
+<div class="mlchat"><div class="q"><span class="ms">person</span><span class="tw" data-t="Which line will have the most scrap tomorrow?"></span></div><div class="a"><span class="ms">auto_awesome</span><span class="tw" data-t="Line 3 — the decision tree flags 82% scrap risk on night shift (high temp + lot 4471)."></span></div></div>`;
+const MA={
+tree:`<line x1="100" y1="22" x2="55" y2="62" stroke="#90caf9" stroke-width="3"/><line x1="100" y1="22" x2="145" y2="62" stroke="#90caf9" stroke-width="3"/><line x1="55" y1="62" x2="30" y2="102" stroke="#90caf9" stroke-width="3"/><line x1="55" y1="62" x2="80" y2="102" stroke="#90caf9" stroke-width="3"/><line x1="145" y1="62" x2="120" y2="102" stroke="#90caf9" stroke-width="3"/><line x1="145" y1="62" x2="170" y2="102" stroke="#90caf9" stroke-width="3"/>
+<rect x="74" y="10" width="52" height="22" rx="8" fill="#1e88e5"/><text x="100" y="25" font-size="9" fill="#fff" text-anchor="middle" font-weight="800">Temp &gt; 80?</text>
+<rect x="30" y="52" width="50" height="20" rx="8" fill="#42a5f5"/><text x="55" y="66" font-size="8.5" fill="#fff" text-anchor="middle" font-weight="800">Lot old?</text><rect x="120" y="52" width="50" height="20" rx="8" fill="#42a5f5"/><text x="145" y="66" font-size="8.5" fill="#fff" text-anchor="middle" font-weight="800">Speed?</text>
+${[[30,"#e53935","Scrap"],[80,"#43a047","OK"],[120,"#43a047","OK"],[170,"#e53935","Scrap"]].map(([x,c,t])=>`<rect x="${x-18}" y="96" width="36" height="16" rx="8" fill="${c}"/><text x="${x}" y="107" font-size="8" fill="#fff" text-anchor="middle" font-weight="800">${t}</text>`).join('')}
+<circle r="6" fill="#ff7043" stroke="#fff" stroke-width="2"><animateMotion dur="3s" repeatCount="indefinite" path="M100 22 L55 62 L30 102" keyPoints="0;.5;1" keyTimes="0;.5;1"/></circle>`,
+knn:`${[[40,40],[55,60],[35,75],[60,35],[48,90]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5" fill="#26b5a8"/>`).join('')}${[[150,40],[165,65],[140,85],[170,30],[155,95]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5" fill="#ff7043"/>`).join('')}
+<circle cx="100" cy="62" r="34" fill="none" stroke="#26b5a8" stroke-width="2" stroke-dasharray="4 4"><animate attributeName="r" values="8;48;48;8" keyTimes="0;.5;.85;1" dur="3.5s" repeatCount="indefinite"/></circle>
+${[[60,35],[55,60],[35,75]].map(([x,y],k)=>`<line x1="100" y1="62" x2="${x}" y2="${y}" stroke="#26b5a8" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.45;.5;.85;1" dur="3.5s" repeatCount="indefinite"/></line>`).join('')}
+<circle cx="100" cy="62" r="8" fill="#fff" stroke="#37474f" stroke-width="2.5"><animate attributeName="fill" values="#fff;#fff;#26b5a8;#26b5a8;#fff" keyTimes="0;.5;.55;.85;1" dur="3.5s" repeatCount="indefinite"/></circle><text x="100" y="116" font-size="9" text-anchor="middle" font-weight="800" fill="#26b5a8">k = 3 nearest → class</text>`,
+pca:`<line x1="20" y1="110" x2="190" y2="110" stroke="#cfd8dc" stroke-width="2"/><line x1="20" y1="110" x2="20" y2="10" stroke="#cfd8dc" stroke-width="2"/>
+${[[45,92],[60,80],[70,84],[85,66],[95,70],[110,55],[120,58],[135,42],[148,44],[160,30]].map(([x,y],k)=>`<circle r="4.5" fill="#ff7043"><animate attributeName="cx" values="${x};${x};${(x+ (y-110+ (x-20))*0)};${x}" dur="4s" repeatCount="indefinite"/><animate attributeName="cy" values="${y};${y};${110-((x-20)*.57)};${y}" keyTimes="0;.35;.65;1" dur="4s" repeatCount="indefinite"/></circle>`).join('')}
+<line x1="30" y1="104" x2="180" y2="20" stroke="#ff7043" stroke-width="3" stroke-dasharray="180" stroke-dashoffset="180"><animate attributeName="stroke-dashoffset" values="180;0;0;180" keyTimes="0;.3;.85;1" dur="4s" repeatCount="indefinite"/></line><text x="176" y="16" font-size="9" text-anchor="end" font-weight="800" fill="#ff7043">PC1</text>`,
+rec:`<rect x="20" y="20" width="160" height="88" rx="8" fill="#f3e5f5"/>${[0,1,2,3].map(r=>[0,1,2,3,4].map(c=>{const v=(r*3+c*7)%5;return `<rect x="${30+c*30}" y="${28+r*19}" width="24" height="14" rx="3" fill="${v>2?'#7e57c2':v>1?'#b39ddb':'#ede7f6'}"/>`}).join('')).join('')}
+<rect x="90" y="66" width="24" height="14" rx="3" fill="#ff7043"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.4;.5;.85;1" dur="3s" repeatCount="indefinite"/></rect><text x="102" y="77" font-size="9" text-anchor="middle" font-weight="900" fill="#fff"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.4;.5;.85;1" dur="3s" repeatCount="indefinite"/>★</text>
+<rect x="24" y="60" width="152" height="26" rx="6" fill="none" stroke="#7e57c2" stroke-width="2"><animate attributeName="y" values="24;43;62;81;24" dur="3s" repeatCount="indefinite"/></rect>`};
+$('#models').innerHTML=[["account_tree","Decision Tree","pages/MastersDegreeDesisionTree.html","#1e88e5","tree","Splits plant data into if/then rules and predicts scrap or downtime before it happens.","Output table: scrap_risk by lot & shift"],
+ ["scatter_plot","kNN + Linear Regression","pages/MastersDegreekNN.html","#26b5a8","knn","Finds the most similar past runs to classify a new one and regress expected yield.","Output table: similar_runs · predicted_yield"],
+ ["blur_linear","PCA · Absenteeism","pages/MastersDegreePCAAbsenteeismAtWork.html","#ff7043","pca","Compresses dozens of HR / labor variables into the few components that explain absenteeism.","Output table: component_scores by employee group"],
+ ["recommend","Recommendation System","pages/MastersDegreeRecommendationSystems.html","#7e57c2","rec","Learns from behavior to suggest the next best item, part or action.","Output table: top_n_recommendations"]].map((m,i)=>`<a class="pc mlc rv" href="${m[2]}" style="--c:${m[3]};--dl:${i*100}ms"><div class="mlart"><svg viewBox="0 0 200 122" aria-hidden="true">${MA[m[4]]}</svg></div><div class="pb"><h3><span class="ms" style="color:${m[3]};vertical-align:-5px;margin-right:6px">${m[0]}</span>${m[1]}</h3><p>${m[5]}</p><span class="mltb"><i class="ms">table_chart</i>${m[6]}</span><span class="mltb mcp"><i class="ms">extension</i>Exposed via MCP → Claude Haiku</span><span class="more">Open model <span class="ms">arrow_forward</span></span></div></a>`).join('');
+{const tws=[...document.querySelectorAll('.mlchat .tw')];let ran=false;const type=(el,cb)=>{const t=el.dataset.t;let k=0;el.textContent='';const it=setInterval(()=>{el.textContent=t.slice(0,++k);if(k>=t.length){clearInterval(it);cb&&setTimeout(cb,500)}},RM?0:28)};
+const loop=()=>{tws.forEach(t=>t.textContent='');type(tws[0],()=>type(tws[1],()=>setTimeout(loop,4000)))};
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting&&!ran){ran=true;loop();o.disconnect()}}),{threshold:.4}).observe(document.querySelector('.mlchat'))}
 $('#webp').innerHTML=[["sports_esports","PacMen Exercise","https://idiaz0.github.io/PacMen-Exercise/","#f4b400","Animated JavaScript game exercise."],["visibility","Eye Exercise","https://idiaz0.github.io/EyeMovement/","#e91e63","Eyes that follow your mouse in real time."],["directions_bus","Real-Time Bus Tracking","https://idiaz0.github.io/BusTracker/","#43a047","Live bus positions on an interactive map."]].map((m,i)=>card(m,i,'Live demo')).join('');
 
 /* videos */
@@ -1564,6 +1677,10 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{cons
 const tagScreens=()=>document.querySelectorAll('.scene svg,.fac svg,.skart svg').forEach(sv=>{let R=[];try{R=[...sv.querySelectorAll('rect[fill="#263238"]')].map(r=>r.getBBox())}catch(e){return}if(!R.length)return;
  sv.querySelectorAll('text[fill="#fff"],rect[fill="#37474f"],circle[fill="#37474f"],[stroke="#37474f"],[stroke="#455a64"],line[stroke="#fff"],circle[fill="#fff"]').forEach(el=>{let b;try{b=el.getBBox()}catch(e){return}const cx=b.x+b.width/2,cy=b.y+b.height/2;if(R.some(r=>cx>=r.x&&cx<=r.x+r.width&&cy>=r.y&&cy<=r.y+r.height))el.classList.add('onscr')})});
 setTimeout(tagScreens,300);
+
+/* CI/CD pipeline */
+{const st=[["commit","Commit","git push","#e05e00"],["build","Build","npm · dotnet","#2560e0"],["fact_check","Test","unit · lint","#00a36c"],["approval","Approval","release gate","#f4b400"],["cloud_upload","Deploy","Azure App Service","#0078d4"],["monitor_heart","Live","health check","#43a047"]];
+const el=document.getElementById('cicd');if(el){el.innerHTML=`<div class="cirow">${st.map((x,i)=>`<div class="cis" style="--c:${x[3]};--i:${i}"><span class="ms">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small><i class="ok ms">check</i></div>`).join('')}<div class="citrack"><i class="cidot"></i></div></div>`}}
 </script>
 </body>
 </html>
