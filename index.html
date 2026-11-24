@@ -1099,6 +1099,16 @@ html[data-theme=dark] .trtag{background:#1f2b3b}
 @media(prefers-reduced-motion:reduce){.pk{animation:none;opacity:1;position:static;transform:none;display:inline-block;margin:4px}.lanes{height:auto}}
 html[data-theme=dark] .plantimg{background:#f4f7fb}
 
+
+.hwyt{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.hwyt small{color:var(--mute);font-size:13.5px;line-height:1.45;max-width:72ch}
+.hwyt small em{font-style:normal;font-weight:800;color:var(--ink)}
+.hwytags{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:4px}
+.hwytags i{font-style:normal;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:800;color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);padding:4px 10px 4px 6px;border-radius:12px}
+.hwytags i .ms{font-size:15px;width:15px;height:15px}
+.hwyplus{font-weight:900;color:var(--mute)}
+.hwyh{align-items:flex-start!important}
+
 /* ===== dark theme ===== */
 html[data-theme=dark]{color-scheme:dark;--w:#18212d;--paper:#0e141c;--ink:#e6edf5;--mute:#9fb0c3;--line:#2a3646;--ch3:#2a3646;
  --e1:0 1px 3px rgba(0,0,0,.5);--e2:0 6px 16px rgba(0,0,0,.5);--e3:0 18px 40px rgba(0,0,0,.6)}
@@ -1714,7 +1724,7 @@ const NODES=[["L4","SAP S/4HANA","cloud","#1e88e5","ERP · orders & stock"],["L4
 const DOWN=["LOIPRO IDoc","SOAP / XML","Work order","OPC UA tags","Setpoints"];
 const UP=["ZPRODCONF IDoc","XML confirm","Qty · scrap","MQTT values","Tag data"];
 const NX=i=>70+i*152;
-const HWY=`<div class="hwy"><div class="hwyh"><span class="ms">alt_route</span><b>ISA-95 data highway</b><span class="lg"><i style="background:#1e88e5"></i>Order going down<i style="background:#43a047"></i>Confirmation going up</span></div>
+const HWY=`<div class="hwy"><div class="hwyh"><span class="ms">alt_route</span><div class="hwyt"><b>ISA-95 data highway</b><small>The shop-floor architecture I implement, where <em>Systems Analysis</em> meets <em>Business Analysis</em>: from SAP orders and KPIs down to PLC signals, and back.</small><span class="hwytags"><i style="--c:#1e88e5"><span class="ms">settings_input_component</span>Systems Analyst</i><span class="hwyplus">+</span><i style="--c:#f57c00"><span class="ms">query_stats</span>Business Analyst</i></span></div><span class="lg"><i style="background:#1e88e5"></i>Order going down<i style="background:#43a047"></i>Confirmation going up</span></div>
 <div class="plantfig">
 <div class="lanes top">${DOWN.map((t,i)=>`<span class="pk dn" style="--a:${6+i*18}%;--b:${22+i*18}%;--dl:${i*1.4}s">${t}</span>`).join('')}<i class="lane-line dn"></i></div>
 <div class="plantimg"><img src="img/planta-c48-qro1.svg" alt="Plant ISA-95 architecture from SAP S/4HANA to the PLCs" onerror="this.closest('.plantfig').classList.add('noimg')"></div>
