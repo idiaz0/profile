@@ -1281,6 +1281,40 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .pjc{position:relative;left:auto!important;top:auto!important;width:auto;margin-bottom:16px;transform:none!important;opacity:1!important}
 .pjc .vi{position:absolute;left:-34px}.pjstat{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.pjm .g,.pjm .p,.pjr .ln,.pjc .im .ms{animation:none}}
+
+/* architecture header */
+.ahero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center;margin-bottom:22px;padding:26px;border-radius:26px;position:relative;overflow:hidden;background:linear-gradient(135deg,color-mix(in srgb,#1e88e5 10%,var(--w)),var(--w) 55%,color-mix(in srgb,#43a047 9%,var(--w)));border:1px solid var(--line);box-shadow:var(--e1)}
+.ahero::before{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:conic-gradient(from 0deg,#1e88e522,#26b5a822,#ff704322,#f4b40022,#1e88e522);animation:cmspin 18s linear infinite}
+.ahl{position:relative}
+.aeye{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;color:#1e88e5;background:color-mix(in srgb,#1e88e5 12%,transparent);padding:5px 12px 5px 8px;border-radius:999px}
+.aeye .ms{font-size:16px}
+.ahero h3.ah{font-size:clamp(22px,2.6vw,32px);font-weight:900;margin:12px 0 10px;line-height:1.15}
+.ah em{font-style:normal;background:linear-gradient(90deg,#1e88e5,#26b5a8,#43a047);-webkit-background-clip:text;background-clip:text;color:transparent}
+.alead{color:var(--mute);font-size:14.5px;line-height:1.6;max-width:70ch}
+.alead b{color:var(--ink)}
+.asteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 14px;position:relative}
+.asteps::before{content:"";position:absolute;left:12%;right:12%;top:22px;height:3px;background:repeating-linear-gradient(90deg,#90a4ae 0 8px,transparent 8px 14px);animation:lanemv 1s linear infinite;opacity:.6}
+.ast{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px}
+.ast>.ms{width:46px;height:46px;line-height:46px;border-radius:50%;color:#fff;background:var(--c);box-shadow:0 0 0 5px var(--w),0 8px 18px -6px var(--c);font-size:24px;animation:astp 4s ease-in-out infinite;animation-delay:calc(var(--i)*1s)}
+@keyframes astp{0%,20%,100%{transform:scale(1)}10%{transform:scale(1.18)}}
+.ast b{font-size:14px;font-weight:900;display:flex;align-items:center;gap:5px}
+.ast b i{font-style:normal;font-size:10.5px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 15%,transparent);color:var(--c)}
+.ast small{font-size:11.5px;color:var(--mute);line-height:1.35}
+.lg2{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mute);font-weight:600;margin-left:10px}
+.lg2 i{width:12px;height:12px;border-radius:4px;margin-left:6px;padding:0!important;background:none}
+.alad{position:relative;display:flex;flex-direction:column;gap:7px;padding-left:22px}
+.alv{display:flex;align-items:center;gap:10px;padding:7px 12px 7px 7px;border-radius:14px;background:var(--w);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);box-shadow:0 6px 14px -10px var(--c);margin-left:calc(var(--i)*10px);animation:alvg 6s ease-in-out infinite;animation-delay:calc(var(--i)*.6s)}
+.alv b{flex:none;width:36px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;background:var(--c);font-size:13px;font-weight:900}
+.alv span{font-size:13px;font-weight:800;line-height:1.2}
+.alv small{display:block;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--c)}
+@keyframes alvg{0%,12%,100%{box-shadow:0 6px 14px -10px var(--c)}6%{box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 25%,transparent),0 8px 20px -8px var(--c)}}
+.alad::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(#1e88e5,#26b5a8,#ff7043,#f4b400,#8d6e63)}
+.alad .adn,.alad .aup{position:absolute;left:2px;width:12px;height:12px;border-radius:50%;border:3px solid #fff}
+.alad .adn{background:#1e88e5;animation:adn 3s ease-in-out infinite}
+.alad .aup{background:#43a047;animation:adn 3s ease-in-out infinite reverse 1.5s}
+@keyframes adn{0%{top:4px}50%{top:calc(100% - 16px)}100%{top:4px}}
+@media(max-width:900px){.ahero{grid-template-columns:minmax(0,1fr)}.asteps{grid-template-columns:repeat(2,minmax(0,1fr))}.asteps::before{display:none}.lg2{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.ahero::before,.ast>.ms,.alv,.alad i{animation:none}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1842,9 +1876,17 @@ const NODES=[["L4","SAP S/4HANA","cloud","#1e88e5","ERP · orders & stock"],["L4
 const DOWN=["LOIPRO IDoc","SOAP / XML","Work order","OPC UA tags","Setpoints"];
 const UP=["ZPRODCONF IDoc","XML confirm","Qty · scrap","MQTT values","Tag data"];
 const NX=i=>70+i*152;
-const HWY=`<div class="hwy"><div class="hwyh"><span class="ms">alt_route</span><div class="hwyt"><b>ISA-95 data highway</b><small>The shop-floor architecture I implement, where <em>Systems Analysis</em> meets <em>Business Analysis</em>: from SAP orders and KPIs down to PLC signals, and back.</small><span class="hwytags"><i style="--c:#1e88e5"><span class="ms">settings_input_component</span>Systems Analyst</i><span class="hwyplus">+</span><i style="--c:#f57c00"><span class="ms">query_stats</span>Business Analyst</i></span></div><span class="lg"><i style="background:#1e88e5"></i>Order going down<i style="background:#43a047"></i>Confirmation going up</span></div>
+const HWY=`<div class="hwy"><div class="ahero">
+<div class="ahl">
+<span class="aeye"><span class="ms">verified</span>ISA-95 · IEC 62264 · the industry standard</span>
+<h3 class="ah">How I integrate a new project <em>on the plant floor</em></h3>
+<p class="alead">This is the architecture I implement. When a new line or project lands, I map it to <b>ISA-95</b>, the international standard for connecting enterprise and control systems, so SAP, the MES, SCADA and every PLC speak the same language from day one. Below is a real example from my digital plant: the SAP order travels down to the PLC, and the confirmation comes back up.</p>
+<div class="asteps">${[["hearing","Listen","I meet the team and walk the floor"],["layers","Map","I place every system on an ISA-95 level"],["cable","Integrate","IDocs, OPC UA and MQTT between levels"],["rocket_launch","Go live","I measure OEE and KPIs and improve"]].map((t,i)=>`<div class="ast" style="--i:${i};--c:${['#1e88e5','#7e57c2','#26b5a8','#ff7043'][i]}"><span class="ms">${t[0]}</span><b><i>${i+1}</i>${t[1]}</b><small>${t[2]}</small></div>`).join('')}</div>
+<span class="hwytags"><i style="--c:#1e88e5"><span class="ms">settings_input_component</span>Systems Analyst</i><span class="hwyplus">+</span><i style="--c:#f57c00"><span class="ms">query_stats</span>Business Analyst</i><span class="lg2"><i style="background:#1e88e5"></i>Order going down<i style="background:#43a047"></i>Confirmation going up</span></span>
+</div>
+<div class="alad" aria-hidden="true">${[["L4","Business · ERP","SAP S/4HANA","#1e88e5"],["L3","Operations · MES","Opcenter · SAP MII","#26b5a8"],["L2","Supervision · SCADA","Ignition","#ff7043"],["L1","Control","PLC · AB / S7","#f4b400"],["L0","Process","Sensors · actuators","#8d6e63"]].map((l,i)=>`<div class="alv" style="--c:${l[3]};--i:${i}"><b>${l[0]}</b><span><small>${l[1]}</small>${l[2]}</span></div>`).join('')}<i class="adn"></i><i class="aup"></i></div>
+</div>
 <div class="plantfig">
-<div class="lanes top">${DOWN.map((t,i)=>`<span class="pk dn" style="--a:${6+i*18}%;--b:${22+i*18}%;--dl:${i*1.4}s">${t}</span>`).join('')}<i class="lane-line dn"></i></div>
 <div class="plantimg"><img src="img/digital-plant-c48-qro1.svg" alt="Plant ISA-95 architecture from SAP S/4HANA to the PLCs" onerror="this.closest('.plantfig').classList.add('noimg')"></div>
 <div class="lanes bot">${UP.map((t,i)=>`<span class="pk up" style="--a:${78-i*18}%;--b:${62-i*18}%;--dl:${7+i*1.4}s">${t}</span>`).join('')}<i class="lane-line up"></i></div>
 <svg viewBox="0 0 900 250" class="hwysvg" role="img" aria-label="ISA-95 data flow from SAP S/4HANA through SAP MII, Opcenter, Ignition and Kepware/EMQX to PLCs, with LOIPRO IDocs going down and confirmation IDocs going up">
