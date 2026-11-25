@@ -1370,7 +1370,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .xbadge i{width:8px;height:8px;border-radius:50%;background:#ffb300;box-shadow:0 0 10px #ffb300}
 .xprog{height:5px;border-radius:5px;background:color-mix(in srgb,var(--ink) 12%,transparent);margin:12px 4px 0;overflow:hidden}
 .xprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffc857,#ff7043,#26b5a8)}
-.xch{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:14px}
+.xch{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px;margin-top:14px}
 .xc{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px;border-radius:16px;text-align:center;background:color-mix(in srgb,var(--ink) 5%,transparent);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);transition:.3s}
 .xc .ms{width:38px;height:38px;line-height:38px;border-radius:12px;font-size:21px;color:#fff;background:var(--c);box-shadow:0 8px 18px -8px var(--c);transition:.3s}
 .xc b{font-size:12px;font-weight:900;color:var(--ink);line-height:1.15}
@@ -1378,7 +1378,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .xc:hover{background:color-mix(in srgb,var(--ink) 9%,transparent);transform:translateY(-3px)}
 .xc.on{background:color-mix(in srgb,var(--c) 22%,transparent);border-color:var(--c);transform:translateY(-4px)}
 .xc.on .ms{transform:scale(1.12) rotate(-6deg)}
-@media(max-width:760px){.xch{grid-template-columns:repeat(4,minmax(0,1fr))}.xfilm{height:18px;background-size:22px 18px}}
+@media(max-width:760px){.xch{grid-template-columns:repeat(3,minmax(0,1fr))}.xfilm{height:18px;background-size:22px 18px}}
 @media(prefers-reduced-motion:reduce){.xfilm,.xglow,.xplay .ms{animation:none}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
@@ -1550,8 +1550,8 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="xfilm top" aria-hidden="true"></div>
       <div class="xscreen">
         <span class="xglow" aria-hidden="true"></span>
-        <video id="xvid" src="img/Vide04.mp4" poster="img/Vide04.jpg" muted loop playsinline preload="metadata" aria-label="My career in 60 seconds: IPN, Magna, ABC Technologies, Rivian, Toyota and ITG Brands"></video>
-        <button class="xplay" id="xplay" type="button" aria-label="Play my career story"><span class="ms">play_arrow</span><b>Watch my career in 60 seconds</b></button>
+        <video id="xvid" src="img/Vide06.mp4" poster="img/Vide06.jpg" muted loop playsinline preload="metadata" aria-label="My career in 60 seconds: IPN, Magna, ABC Technologies, Rivian, Toyota and ITG Brands"></video>
+        <button class="xplay" id="xplay" type="button" aria-label="Play my career story"><span class="ms">play_arrow</span><b>Watch my career in 70 seconds</b></button>
         <button class="xsnd" id="xsnd" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button>
         <span class="xbadge"><i></i>Career story · 2008 → today</span>
       </div>
@@ -2215,7 +2215,7 @@ const el=document.getElementById('cicd');if(el){el.innerHTML=`<div class="cirow"
 
 /* experience career film */
 {const $=s=>document.querySelector(s);const w=$('#xcine'),v=$('#xvid');if(w&&v){
-const CH=[["movie","Intro","Who I am",0,"#ffb300"],["school","IPN","2008",6.5,"#26b5a8"],["groups","Magna","2012–16",13.93,"#5c6bc0"],["hub","ABC","2016–22",21.36,"#1e88e5"],["electric_car","Rivian","2022–23",28.79,"#f4b400"],["battery_charging_full","Toyota","2023–26",36.22,"#e53935"],["auto_awesome","ITG","2026–now",43.65,"#ff7043"],["flag","Finale","ISA-95",51.08,"#43a047"]];
+const CH=[["movie","Intro","Who I am",0,"#ffb300"],["workspace_premium","Studies","IPN · Tec · MIT",7.53,"#8e24aa"],["school","IPN","2008",15.06,"#26b5a8"],["groups","Magna","2012–16",22.59,"#5c6bc0"],["hub","ABC","2016–22",30.12,"#1e88e5"],["electric_car","Rivian","2022–23",37.65,"#f4b400"],["battery_charging_full","Toyota","2023–26",45.18,"#e53935"],["auto_awesome","ITG","2026–now",52.71,"#ff7043"],["flag","Finale","Sensor → SAP",60.24,"#43a047"]];
 const box=$('#xch');box.innerHTML=CH.map((c,i)=>`<button class="xc" type="button" data-t="${c[3]}" style="--c:${c[4]}"><span class="ms">${c[0]}</span><b>${c[1]}</b><small>${c[2]}</small></button>`).join('');
 const btns=[...box.children],bar=$('#xbar'),snd=$('#xsnd');
 const go=t=>{w.classList.add('on');v.currentTime=t;v.play().catch(()=>{})};
