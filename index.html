@@ -1380,6 +1380,25 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .xc.on .ms{transform:scale(1.12) rotate(-6deg)}
 @media(max-width:760px){.xch{grid-template-columns:repeat(3,minmax(0,1fr))}.xfilm{height:18px;background-size:22px 18px}}
 @media(prefers-reduced-motion:reduce){.xfilm,.xglow,.xplay .ms{animation:none}}
+
+/* concept map play + modal */
+.cmpl{all:unset;cursor:pointer;position:absolute;right:-2%;bottom:14%;z-index:4;width:24%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffe08a,#ffb300);color:#1a1200;box-shadow:0 0 0 4px var(--w),0 10px 24px -6px rgba(255,179,0,.8);animation:xpulse 2s infinite}
+.cmpl .ms{font-size:clamp(20px,2.4vw,34px)}
+.cmpl:hover{transform:scale(1.1)}
+.cmc .face{cursor:pointer}
+.vmod{position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:20px}
+.vmod[hidden]{display:none}
+.vmbg{position:absolute;inset:0;background:rgba(5,8,13,.78);backdrop-filter:blur(8px);animation:vmf .3s}
+.vmbox{position:relative;width:min(1100px,100%);border-radius:24px;padding:4px;background:conic-gradient(from var(--ang,0deg),#ffc857,#26b5a8,#1e88e5,#8e24aa,#ff7043,#ffc857);animation:stvr 8s linear infinite,vmz .45s cubic-bezier(.34,1.56,.64,1);box-shadow:0 40px 120px -20px rgba(0,0,0,.7)}
+.vmhd{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#0e1620;border-radius:20px 20px 0 0;color:#fff}
+.vmhd>.ms{width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background:#ffb300;color:#1a1200}
+.vmhd b{display:block;font-size:16px;font-weight:900}.vmhd small{font-size:12px;color:#9fb0c3}
+.vmx{all:unset;cursor:pointer;margin-left:auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1)}
+.vmx:hover{background:#ff7043}
+.vmscr{aspect-ratio:16/9;background:#000;border-radius:0 0 20px 20px;overflow:hidden}
+.vmscr video{width:100%;height:100%;display:block}
+@keyframes vmf{from{opacity:0}}@keyframes vmz{from{transform:scale(.85);opacity:0}}
+.drow:not(.wide) .dipv .frame{margin-left:auto!important;margin-right:auto!important;width:100%;max-width:480px;align-self:center}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1493,7 +1512,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="cmc">
         <div class="ring2"><i></i><i></i></div>
         <div class="ring"></div>
-        <div class="face"><video src="img/AvatarIvan.mp4" poster="img/AvatarIvan.jpg" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
+        <button class="cmpl" id="cmpl" type="button" aria-label="Watch how I work, 75 seconds"><span class="ms">play_arrow</span></button><div class="face"><video src="img/AvatarIvan.mp4" poster="img/AvatarIvan.jpg" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
         <div class="ed"><span style="background:#26b5a8">IPN</span><span style="background:#e53935">MIT</span><span style="background:#1e88e5">Tec</span></div>
         <div class="nm"><b>Ivan Diaz Rodriguez</b><span>MES · Automation · AI</span></div>
       </div>
@@ -1681,6 +1700,13 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <div class="lb" id="lb" role="dialog" aria-modal="true"><button class="x" type="button" aria-label="Close"><span class="ms">close</span></button><div><img id="lbimg" alt=""><p id="lbcap"></p></div></div>
 <div class="toast" id="toast" role="status"></div>
 
+<div class="vmod" id="vmod" role="dialog" aria-modal="true" aria-label="How I work video" hidden>
+  <div class="vmbg" data-x></div>
+  <div class="vmbox">
+    <div class="vmhd"><span class="ms">groups</span><div><b>How I work · always as a team</b><small>Listen → Gemba → Propose → Build → connect every ISA-95 level to SAP</small></div><button class="vmx" data-x type="button" aria-label="Close"><span class="ms">close</span></button></div>
+    <div class="vmscr"><video id="vmv" src="img/Vide05.mp4" poster="img/Vide05.jpg" controls playsinline preload="none"></video></div>
+  </div>
+</div>
 <script>
 {
 const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2009,18 +2035,18 @@ ${UP.map((t,i)=>{const w=t.length*6.4+18;return `<g opacity="0"><rect x="${-w/2}
   &lt;SCRAP&gt;4&lt;/SCRAP&gt;
   &lt;FINAL&gt;X&lt;/FINAL&gt;
 &lt;/ZPRODCONF&gt;</pre></div></div>
-<div class="stv stv2 clean">
+<div class="stv stv2">
   <div class="stvf"><span class="stvb"></span><div class="stvs">
-    <video src="img/Vide05.mp4" poster="img/Vide05.jpg" muted loop playsinline preload="metadata" aria-label="How I work: listening to the team, going to Gemba, proposing and connecting every ISA-95 level up to SAP" onerror="this.closest('.stv').classList.add('novid')"></video>
+    <video src="img/Vide03.mp4" poster="img/Vide03.jpg" muted loop playsinline preload="metadata" aria-label="How an order flows from the purchase order to the ERP and the plant" onerror="this.closest('.stv').classList.add('novid')"></video>
     <div class="stvo"><span class="stvl"><i></i>Order to plant · in motion</span>
       <div class="stvc"><b>It all starts with a purchase order</b><small>How I trace every order end to end: PO → SAP ERP → MES → plant floor</small></div>
       <button class="stvm" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button></div>
     <div class="stvp"><i></i></div>
   </div></div>
-  <span class="stvt" style="--c:#26b5a8;--x:-3%;--y:16%;--d:0s"><span class="ms">hearing</span>Listen</span>
-  <span class="stvt" style="--c:#f4b400;--x:101%;--y:22%;--d:1s"><span class="ms">directions_walk</span>Gemba</span>
-  <span class="stvt" style="--c:#7e57c2;--x:-2%;--y:80%;--d:2s"><span class="ms">layers</span>ISA-95</span>
-  <span class="stvt" style="--c:#1e88e5;--x:100%;--y:84%;--d:3s"><span class="ms">cloud</span>SAP ERP</span>
+  <span class="stvt" style="--c:#e53935;--x:-3%;--y:16%;--d:0s"><span class="ms">receipt_long</span>Purchase order</span>
+  <span class="stvt" style="--c:#1e88e5;--x:101%;--y:22%;--d:1s"><span class="ms">cloud</span>SAP ERP</span>
+  <span class="stvt" style="--c:#26b5a8;--x:-2%;--y:80%;--d:2s"><span class="ms">description</span>LOIPRO IDoc</span>
+  <span class="stvt" style="--c:#43a047;--x:100%;--y:84%;--d:3s"><span class="ms">task_alt</span>ZPRODCONF</span>
 </div></div>`;
 const fc=document.createElement('div');fc.className='sk skfeat rv';fc.style.setProperty('--c','#1e88e5');
 fc.innerHTML=`<div class="h"><span class="ms">precision_manufacturing</span><h3>MES / MOM · the story factory</h3></div><div class="fac">${FAC}</div><div class="story" aria-live="polite"><span class="ms" id="stIco">stacks</span><div><b id="stT"></b><p id="stP"></p></div><div class="stnav"><button type="button" id="stPrev" aria-label="Previous"><span class="ms">chevron_left</span></button><button type="button" id="stPlay" aria-label="Pause"><span class="ms">pause</span></button><button type="button" id="stNext" aria-label="Next"><span class="ms">chevron_right</span></button></div></div><div class="chips fchips">${ST.map((t,n)=>`<span data-i="${n}" style="--k:${n}"><i class="ms">${t[2]}</i>${n+1}. ${t[1]}</span>`).join('')}</div>${HWY}`;
@@ -2224,6 +2250,12 @@ btns.forEach(b=>b.onclick=()=>go(+b.dataset.t));
 snd.onclick=()=>{v.muted=!v.muted;snd.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';snd.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
 v.addEventListener('timeupdate',()=>{const t=v.currentTime;bar.style.width=(t/(v.duration||1)*100)+'%';let k=0;CH.forEach((c,i)=>{if(t>=c[3])k=i});btns.forEach((b,i)=>b.classList.toggle('on',i===k&&w.classList.contains('on')))});
 new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&!v.paused)v.pause()}),{threshold:.2}).observe(v)}}
+
+/* concept map video modal */
+{const m=document.getElementById('vmod'),v=document.getElementById('vmv'),b=document.getElementById('cmpl');
+if(m&&v&&b){const open=()=>{m.hidden=false;v.currentTime=0;v.play().catch(()=>{})},close=()=>{v.pause();m.hidden=true};
+b.onclick=open;const f=document.querySelector('.cmc .face');if(f)f.onclick=open;
+m.querySelectorAll('[data-x]').forEach(x=>x.onclick=close);addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close()})}}
 /* story video players */
 document.querySelectorAll('.stv').forEach(w=>{const v=w.querySelector('video'),b=w.querySelector('.stvm'),pi=w.querySelector('.stvp i');if(!v||!b)return;
 b.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}b.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
