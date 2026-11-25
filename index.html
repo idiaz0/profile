@@ -1551,7 +1551,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="xscreen">
         <span class="xglow" aria-hidden="true"></span>
         <video id="xvid" src="img/Vide06.mp4" poster="img/Vide06.jpg" muted loop playsinline preload="metadata" aria-label="My career in 60 seconds: IPN, Magna, ABC Technologies, Rivian, Toyota and ITG Brands"></video>
-        <button class="xplay" id="xplay" type="button" aria-label="Play my career story"><span class="ms">play_arrow</span><b>Watch my career in 70 seconds</b></button>
+        <button class="xplay" id="xplay" type="button" aria-label="Play my career story"><span class="ms">play_arrow</span><b>Watch my career in 75 seconds</b></button>
         <button class="xsnd" id="xsnd" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button>
         <span class="xbadge"><i></i>Career story · 2008 → today</span>
       </div>
@@ -1566,11 +1566,11 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <section class="band" id="skills">
   <div class="wrap">
     <div class="hd rv"><span class="ms">construction</span><h2>Expertise &amp; skills</h2><div class="bar"></div><p class="sub">What I work with, from ladder logic to the ERP, and the methods I use to keep projects on time.</p></div>
-    <div class="stv rv" id="stv">
+    <div class="stv clean rv" id="stv">
       <div class="stvf">
         <span class="stvb"></span>
         <div class="stvs">
-          <video id="stvv" src="img/Vide02.mp4" autoplay muted loop playsinline preload="metadata" aria-label="My story: from the plant floor to the business" onerror="document.getElementById('stv').classList.add('novid')"></video>
+          <video id="stvv" src="img/Vide06.mp4" poster="img/Vide06.jpg" autoplay muted loop playsinline preload="metadata" aria-label="My career story with narration and captions" onerror="document.getElementById('stv').classList.add('novid')"></video>
           <div class="stvo">
             <span class="stvl"><i></i>My story in motion</span>
             <div class="stvc"><b>From the plant floor to the business</b><small>The systems I connect every day, PLC → SCADA → MES → SAP</small></div>
@@ -2215,7 +2215,7 @@ const el=document.getElementById('cicd');if(el){el.innerHTML=`<div class="cirow"
 
 /* experience career film */
 {const $=s=>document.querySelector(s);const w=$('#xcine'),v=$('#xvid');if(w&&v){
-const CH=[["movie","Intro","Who I am",0,"#ffb300"],["workspace_premium","Studies","IPN · Tec · MIT",7.53,"#8e24aa"],["school","IPN","2008",15.06,"#26b5a8"],["groups","Magna","2012–16",22.59,"#5c6bc0"],["hub","ABC","2016–22",30.12,"#1e88e5"],["electric_car","Rivian","2022–23",37.65,"#f4b400"],["battery_charging_full","Toyota","2023–26",45.18,"#e53935"],["auto_awesome","ITG","2026–now",52.71,"#ff7043"],["flag","Finale","Sensor → SAP",60.24,"#43a047"]];
+const CH=[["movie","Intro","Who I am",0,"#ffb300"],["workspace_premium","Studies","IPN · Tec · MIT",7.93,"#8e24aa"],["school","IPN","2008",15.86,"#26b5a8"],["groups","Magna","2012–16",23.79,"#5c6bc0"],["hub","ABC","2016–22",31.72,"#1e88e5"],["electric_car","Rivian","2022–23",39.65,"#f4b400"],["battery_charging_full","Toyota","2023–26",47.58,"#e53935"],["auto_awesome","ITG","2026–now",55.51,"#ff7043"],["flag","Finale","Sensor → SAP",63.44,"#43a047"]];
 const box=$('#xch');box.innerHTML=CH.map((c,i)=>`<button class="xc" type="button" data-t="${c[3]}" style="--c:${c[4]}"><span class="ms">${c[0]}</span><b>${c[1]}</b><small>${c[2]}</small></button>`).join('');
 const btns=[...box.children],bar=$('#xbar'),snd=$('#xsnd');
 const go=t=>{w.classList.add('on');v.currentTime=t;v.play().catch(()=>{})};
