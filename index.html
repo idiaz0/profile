@@ -1421,6 +1421,26 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .stvx .stvo{align-items:flex-end!important;padding-bottom:22px!important}
 .stvx{width:min(1720px,94vw)!important;max-width:none!important;margin:10px 0 80px calc(50% - min(860px,47vw))!important;padding:0 1.5%!important}
 .stvx .stvt{left:clamp(95px,var(--x),calc(100% - 95px))!important}
+
+/* concept map center = 16:9 career video */
+.cmc{width:29%!important;aspect-ratio:16/9!important}
+.cmc .ring2{display:none}
+.cmc .ring{inset:-7px!important;border-radius:24px!important;padding:7px;animation:stvr 8s linear infinite!important;background:conic-gradient(from var(--ang,0deg),#ffc857,#ff7043,#e53935,#8e24aa,#1e88e5,#26b5a8,#43a047,#ffc857)!important;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0)!important;-webkit-mask-composite:xor!important;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)!important;box-shadow:0 0 50px -6px rgba(255,180,80,.45)}
+.cmc .face{border-radius:18px!important;box-shadow:0 30px 70px -20px rgba(0,0,0,.7)!important}
+.cmc .face video{object-fit:cover!important;object-position:50% 50%!important}
+.cmc .nm{top:calc(100% + 14px)!important}
+.cmc .ed{bottom:calc(100% + 14px)!important}
+@media(max-width:1020px){.cmc{width:min(560px,92vw)!important;margin:50px auto 70px!important}}
+/* creative frame corners */
+.fxc{position:absolute;width:46px;height:46px;z-index:6;pointer-events:none;border:0 solid #ffd27a;filter:drop-shadow(0 0 8px rgba(255,200,90,.8));animation:fxc 2.4s ease-in-out infinite}
+.fxc.tl{left:-16px;top:-16px;border-left-width:5px;border-top-width:5px;border-top-left-radius:14px}
+.fxc.tr{right:-16px;top:-16px;border-right-width:5px;border-top-width:5px;border-top-right-radius:14px;animation-delay:.6s}
+.fxc.bl{left:-16px;bottom:-16px;border-left-width:5px;border-bottom-width:5px;border-bottom-left-radius:14px;animation-delay:1.8s}
+.fxc.br{right:-16px;bottom:-16px;border-right-width:5px;border-bottom-width:5px;border-bottom-right-radius:14px;animation-delay:1.2s}
+@keyframes fxc{0%,100%{transform:translate(0,0);opacity:.85}50%{transform:translate(var(--fx,0),var(--fy,0));opacity:1}}
+.fxc.tl{--fx:-5px;--fy:-5px}.fxc.tr{--fx:5px;--fy:-5px}.fxc.bl{--fx:-5px;--fy:5px}.fxc.br{--fx:5px;--fy:5px}
+.fxo{position:absolute;inset:-26px;border-radius:44px;border:1.5px dashed color-mix(in srgb,#ffd27a 45%,transparent);pointer-events:none;z-index:0}
+@media(prefers-reduced-motion:reduce){.fxc{animation:none}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1472,7 +1492,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
     </div>
     <div class="photo">
       <div class="ring2"></div>
-      <div class="ring"></div>
+      <div class="ring"></div><i class="fxc tl"></i><i class="fxc tr"></i><i class="fxc bl"></i><i class="fxc br"></i>
       <div class="face"><span class="ms">person</span><img src="img/imgProfile.PNG" alt="Ivan Diaz Rodriguez" onerror="this.remove()"></div>
       <div class="orb" id="orb"></div>
     </div>
@@ -1534,7 +1554,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="cmc">
         <div class="ring2"><i></i><i></i></div>
         <div class="ring"></div>
-        <div class="face" role="button" tabindex="0" aria-label="Watch how I work with sound"><video src="img/AvatarIvan.mp4" poster="img/AvatarIvan.jpg" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
+        <div class="face" role="button" tabindex="0" aria-label="Watch my career story with sound"><video src="img/Vide04.mp4" poster="img/Vide04.jpg" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
         <div class="ed"><span style="background:#26b5a8">IPN</span><span style="background:#e53935">MIT</span><span style="background:#1e88e5">Tec</span></div>
         <div class="nm"><b>Ivan Diaz Rodriguez</b><span>MES · Automation · AI</span></div>
       </div>
@@ -1615,7 +1635,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   <div class="wrap">
     <div class="hd rv"><span class="ms">construction</span><h2>Expertise &amp; skills</h2><div class="bar"></div><p class="sub">What I work with, from ladder logic to the ERP, and the methods I use to keep projects on time.</p></div>
     <div class="stv clean stvx rv" id="stvhow">
-      <div class="stvf"><span class="stvb"></span><div class="stvs">
+      <div class="stvf"><i class="fxc tl"></i><i class="fxc tr"></i><i class="fxc bl"></i><i class="fxc br"></i><span class="fxo"></span><span class="stvb"></span><div class="stvs">
         <video src="img/Vide05.mp4" poster="img/Vide05.jpg" autoplay muted loop playsinline preload="metadata" aria-label="How I work: listen, Gemba, propose and connect every ISA-95 level to SAP" onerror="this.closest('.stv').classList.add('novid')"></video>
         <div class="stvo"><span class="stvl"><i></i>How I work</span><div class="stvc"><b>How I work</b><small></small></div><button class="stvm" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button></div>
         <div class="stvp"><i></i></div>
@@ -1726,8 +1746,8 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <div class="vmod" id="vmod" role="dialog" aria-modal="true" aria-label="How I work video" hidden>
   <div class="vmbg" data-x></div>
   <div class="vmbox">
-    <div class="vmhd"><span class="ms">groups</span><div><b>How I work · always as a team</b><small>Listen → Gemba → Propose → Build → connect every ISA-95 level to SAP</small></div><button class="vmx" data-x type="button" aria-label="Close"><span class="ms">close</span></button></div>
-    <div class="vmscr"><video id="vmv" src="img/Vide05.mp4" poster="img/Vide05.jpg" controls playsinline preload="none"></video></div>
+    <div class="vmhd"><span class="ms">groups</span><div><b>My career in 60 seconds</b><small>IPN → Magna → ABC → Rivian → Toyota → ITG Brands</small></div><button class="vmx" data-x type="button" aria-label="Close"><span class="ms">close</span></button></div>
+    <div class="vmscr"><video id="vmv" src="img/Vide04.mp4" poster="img/Vide04.jpg" controls playsinline preload="none"></video></div>
   </div>
 </div>
 <script>
