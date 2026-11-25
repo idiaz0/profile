@@ -1512,7 +1512,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="cmc">
         <div class="ring2"><i></i><i></i></div>
         <div class="ring"></div>
-        <button class="cmpl" id="cmpl" type="button" aria-label="Watch how I work, 75 seconds"><span class="ms">play_arrow</span></button><div class="face"><video src="img/AvatarIvan.mp4" poster="img/AvatarIvan.jpg" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
+        <div class="face" role="button" tabindex="0" aria-label="Watch how I work with sound"><video src="img/Vide05.mp4" poster="img/Vide05.jpg" style="object-position:50% 40%" autoplay muted loop playsinline aria-label="Ivan Diaz animated avatar" onerror="this.remove()"></video></div>
         <div class="ed"><span style="background:#26b5a8">IPN</span><span style="background:#e53935">MIT</span><span style="background:#1e88e5">Tec</span></div>
         <div class="nm"><b>Ivan Diaz Rodriguez</b><span>MES · Automation · AI</span></div>
       </div>
@@ -2252,9 +2252,9 @@ v.addEventListener('timeupdate',()=>{const t=v.currentTime;bar.style.width=(t/(v
 new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&!v.paused)v.pause()}),{threshold:.2}).observe(v)}}
 
 /* concept map video modal */
-{const m=document.getElementById('vmod'),v=document.getElementById('vmv'),b=document.getElementById('cmpl');
-if(m&&v&&b){const open=()=>{m.hidden=false;v.currentTime=0;v.play().catch(()=>{})},close=()=>{v.pause();m.hidden=true};
-b.onclick=open;const f=document.querySelector('.cmc .face');if(f)f.onclick=open;
+{const m=document.getElementById('vmod'),v=document.getElementById('vmv');
+if(m&&v){const open=()=>{m.hidden=false;v.currentTime=0;v.play().catch(()=>{})},close=()=>{v.pause();m.hidden=true};
+const f=document.querySelector('.cmc .face');if(f){f.onclick=open;f.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}}
 m.querySelectorAll('[data-x]').forEach(x=>x.onclick=close);addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close()})}}
 /* story video players */
 document.querySelectorAll('.stv').forEach(w=>{const v=w.querySelector('video'),b=w.querySelector('.stvm'),pi=w.querySelector('.stvp i');if(!v||!b)return;
