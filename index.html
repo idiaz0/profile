@@ -1192,7 +1192,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 
 /* ===== concept map ===== */
 .cmband{background:radial-gradient(1200px 600px at 50% 45%,color-mix(in srgb,var(--b) 9%,transparent),transparent 70%),var(--paper)}
-.cmap{position:relative;width:min(1760px,96vw);margin:0 0 0 calc(50% - min(880px,48vw));aspect-ratio:1680/1220}
+.cmap{position:relative;width:min(1760px,96vw);margin:0 0 0 calc(50% - min(880px,48vw));aspect-ratio:1680/960}
 .cmap svg.cml{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .cml .lk{fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round;opacity:.55;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.3s var(--ease),opacity .35s,stroke-width .35s}
 .cml .lf{fill:none;stroke:var(--c);stroke-width:1.6;stroke-dasharray:4 6;opacity:0;transition:opacity .8s,stroke-width .3s}
@@ -1509,6 +1509,16 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .cmap .leaf.al.on{transform:translate(-100%,-50%) scale(1.06)}.cmap .leaf.ar.on{transform:translate(0,-50%) scale(1.06)}}
 @media(min-width:1021px) and (max-width:1650px){.cmc{width:29%!important}}
 @media(min-width:1651px){.cmc{width:32%!important}}
+
+@media(min-width:1021px){
+.cmap .leaf{font-size:clamp(12px,.78vw,15px)!important;padding:clamp(5px,.35vw,7px) clamp(10px,.65vw,13px) clamp(5px,.35vw,7px) clamp(6px,.4vw,8px)!important}
+.cmap .leaf .ms{font-size:clamp(14px,.9vw,17px)!important}
+.cmap .hub .ms{width:clamp(36px,2.5vw,48px)!important;height:clamp(36px,2.5vw,48px)!important;line-height:clamp(36px,2.5vw,48px)!important;font-size:clamp(20px,1.35vw,27px)!important}
+.cmap .hub b{font-size:clamp(14px,1vw,19px)!important}
+.cmap .hub small{font-size:clamp(10px,.62vw,12px)!important}
+.cmap .hub{padding:clamp(7px,.5vw,10px) clamp(12px,.9vw,18px) clamp(7px,.5vw,10px) clamp(7px,.5vw,10px)!important}
+}
+@media(min-width:1021px){.cmap{max-width:calc((100vh - 70px)*1680/960)}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1618,7 +1628,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   <div class="wrap" style="max-width:1260px">
     <div class="hd rv"><span class="ms">hub</span><h2>My profile at a glance</h2><div class="bar"></div><p class="sub">Eight worlds I connect every day, from the PLC to the boardroom.</p></div>
     <div class="cmap" id="cmap">
-      <svg class="cml" id="cml" viewBox="0 0 1680 1220" aria-hidden="true"></svg>
+      <svg class="cml" id="cml" viewBox="0 0 1680 960" aria-hidden="true"></svg>
       <div class="cmc">
         <div class="ring2"><i></i><i></i></div>
         <div class="ring"></div>
@@ -2170,12 +2180,12 @@ show8(0);setPlay(playing);
  ["code","Software & Cloud","Build","#e53935",[["javascript","MERN stack"],["web","ASP.NET MVC"],["cloud_sync","Azure DevOps CI/CD"],["verified","Microsoft certified"]]],
  ["groups","Leadership & Agile","Lead","#43a047",[["view_kanban","Scrum · Kanban"],["flag","Project management"],["join_inner","Systems + Business"],["trending_up","ROI cases"]]],
  ["route","Career path","Industries","#7e57c2",[["local_shipping","ITG Brands · NC"],["electric_car","Toyota · KY"],["electric_bolt","Rivian · IL"],["factory","ABC · Magna · MX"]]]];
-const m=$('#cmap'),sv=$('#cml'),W=1680,H=1220,cx=W/2,cy=H/2,NS='http://www.w3.org/2000/svg';
+const m=$('#cmap'),sv=$('#cml'),W=1680,H=960,cx=W/2,cy=H/2,NS='http://www.w3.org/2000/svg';
 const pct=(x,y,el)=>{el.style.left=x/W*100+'%';el.style.top=y/H*100+'%'};
 const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
-sv.append(mk('ellipse',{class:'halo',cx,cy,rx:472,ry:362}),mk('ellipse',{class:'halo',cx,cy,rx:680.0,ry:490.0}));
+sv.append(mk('ellipse',{class:'halo',cx,cy,rx:470.0,ry:335.0}),mk('ellipse',{class:'halo',cx,cy,rx:670.0,ry:455.0}));
 const items=[];
-CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*472,hy=cy+Math.sin(an)*362;
+CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*470.0,hy=cy+Math.sin(an)*335.0;
  const g=document.createElement('div');g.className='cmgrp';g.style.setProperty('--c',b[3]);
  const h=document.createElement('button');h.type='button';h.className='hub';h.style.setProperty('--c',b[3]);h.style.setProperty('--fd',(i*.4)+'s');h.style.transitionDelay=(.5+i*.12)+'s';h.innerHTML=`<span class="ms">${b[0]}</span><span><small>${b[2]}</small><b>${b[1]}</b></span>`;pct(hx,hy,h);g.append(h);
  const c1x=cx+Math.cos(an)*130,c1y=cy+Math.sin(an)*60;
@@ -2183,16 +2193,16 @@ CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*
  const L=lk.getTotalLength?lk.getTotalLength():400;lk.style.setProperty('--len',L);lk.style.transitionDelay=(i*.12)+'s';
  if(!RM){const d=mk('circle',{class:'pls',r:5});d.style.setProperty('--c',b[3]);d.style.fill=b[3];const am=mk('animateMotion',{dur:'3.2s',repeatCount:'indefinite',begin:(i*.4)+'s',path:lk.getAttribute('d')});d.append(am);sv.append(d)}
  const grp={h,lk,lf:[],lv:[],side:Math.abs(Math.cos(an))>.6,sg:Math.sign(Math.cos(an)),hx,hy,an};
- b[4].forEach((l,k)=>{const sg=Math.sign(Math.cos(an)),sy=Math.sign(Math.sin(an)),side=Math.abs(Math.cos(an))>.6,lx=side?hx+sg*250.0:hx+sg*34,ly=side?hy+(k-1.5)*52:hy+sy*(82+k*50);
+ b[4].forEach((l,k)=>{const sg=Math.sign(Math.cos(an)),sy=Math.sign(Math.sin(an)),side=Math.abs(Math.cos(an))>.6,col=k%2,lx=side?hx+sg*250:hx+sg*(190+col*190),ly=side?hy+(k-1.5)*48:hy+(k<2?-26.0:26.0);
   const e=document.createElement('div');e.className='leaf';e.style.setProperty('--c',b[3]);e.style.transitionDelay=(1.1+i*.12+k*.07)+'s';e.innerHTML=`<span class="ms">${l[0]}</span>${l[1]}`;pct(lx,ly,e);g.append(e);
   const lf=mk('path',{class:'lf',d:`M${hx} ${hy} Q${(hx+lx)/2+Math.cos(an)*30} ${(hy+ly)/2+Math.sin(an)*30} ${lx} ${ly}`});lf.style.setProperty('--c',b[3]);lf.style.transitionDelay=(1+i*.12)+'s';sv.insertBefore(lf,sv.firstChild);
   if(!RM&&k%2==0){const d=mk('circle',{class:'pls',r:3});d.style.fill=b[3];d.append(mk('animateMotion',{dur:'2.4s',repeatCount:'indefinite',begin:(1+i*.3+k*.5)+'s',path:lf.getAttribute('d')}));sv.append(d)}
-  grp.lf.push(lf);grp.lv.push(e);e.dataset.ly=ly;if(grp.side)e.classList.add(grp.sg<0?'al':'ar')});
+  grp.lf.push(lf);grp.lv.push(e);e.dataset.ly=ly;e.dataset.col=col;e.classList.add(grp.sg<0?'al':'ar')});
  m.append(g);items.push(grp);
  const on=v=>{m.classList.toggle('foc',v);[h,lk,...grp.lf,...grp.lv].forEach(x=>x.classList.toggle('on',v))};
  h.addEventListener('pointerenter',()=>on(true));h.addEventListener('pointerleave',()=>on(false));h.addEventListener('focus',()=>on(true));h.addEventListener('blur',()=>on(false));
  h.addEventListener('click',()=>{const v=!h.classList.contains('on');items.forEach(o=>{m.classList.remove('foc');[o.h,o.lk,...o.lf,...o.lv].forEach(x=>x.classList.remove('on'))});on(v)})});
-const align=()=>{if(innerWidth<=1020)return;const M=m.getBoundingClientRect();items.forEach(g=>{if(!g.side)return;const hr=g.h.getBoundingClientRect();const x=g.sg<0?hr.left-18:hr.right+18;const pc=(x-M.left)/M.width;g.lv.forEach((e,k)=>{e.style.left=pc*100+'%';const ly=+e.dataset.ly,lx=pc*W;g.lf[k].setAttribute('d',`M${g.hx} ${g.hy} C${(g.hx+lx)/2} ${g.hy} ${(g.hx+lx)/2} ${ly} ${lx} ${ly}`)})})};
+const align=()=>{if(innerWidth<=1020)return;const M=m.getBoundingClientRect();items.forEach(g=>{const hr=g.h.getBoundingClientRect();const x0=g.sg<0?hr.left-16:hr.right+16;const w0=g.side?0:Math.max(...g.lv.filter((e,k)=>k%2==0).map(e=>e.offsetWidth));g.lv.forEach((e,k)=>{const x=(!g.side&&k%2)?x0+g.sg*(w0+10):x0;const pc=(x-M.left)/M.width;e.style.left=pc*100+'%';const ly=+e.dataset.ly,lx=pc*W;g.lf[k].setAttribute('d',`M${g.hx} ${g.hy} C${(g.hx+lx)/2} ${g.hy} ${(g.hx+lx)/2} ${ly} ${lx} ${ly}`)})})};
 addEventListener('resize',align);
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){m.classList.add('in');setTimeout(align,1300);setTimeout(align,2600);o.disconnect()}}),{threshold:.25}).observe(m)}
 
