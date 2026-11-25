@@ -1350,6 +1350,36 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .stv2 .stvo{align-items:flex-start;padding-top:62px;background:linear-gradient(180deg,rgba(8,14,22,.8) 0,rgba(8,14,22,.35) 34%,transparent 55%)}
 @media(max-width:760px){.stvt{display:none}.stv{padding:0}.stvc small{display:none}.stvo{padding:14px 14px 20px}}
 @media(prefers-reduced-motion:reduce){.stvf,.stvt,.stvl i{animation:none}}
+
+/* experience career film */
+.xcine{position:relative;max-width:1060px;margin:6px auto 60px}
+.xfilm{height:26px;border-radius:10px;background:#05080d radial-gradient(circle,rgba(255,255,255,.85) 0 4.5px,transparent 5px) 0 50%/32px 26px repeat-x;opacity:.9;animation:xfilm 3s linear infinite;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
+.xfilm.bot{animation-direction:reverse}
+@keyframes xfilm{to{background-position:320px 50%}}
+.xscreen{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;margin:8px 0;background:#000;box-shadow:0 0 0 3px #0b1018,0 0 0 5px color-mix(in srgb,#ffc857 60%,transparent),0 40px 90px -30px rgba(255,200,87,.45)}
+.xglow{position:absolute;inset:-30%;background:conic-gradient(from var(--ang,0deg),#ffc85733,#26b5a833,#ff704333,#1e88e533,#ffc85733);animation:stvr 10s linear infinite;filter:blur(60px);z-index:0}
+.xscreen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.xplay{all:unset;cursor:pointer;position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(circle at 50% 50%,rgba(5,8,13,.15),rgba(5,8,13,.7));transition:opacity .4s}
+.xplay .ms{width:96px;height:96px;line-height:96px;text-align:center;border-radius:50%;font-size:56px;color:#1a1200;background:linear-gradient(135deg,#ffe08a,#ffb300);box-shadow:0 0 0 0 rgba(255,200,87,.6);animation:xpulse 2s infinite}
+.xplay b{color:#fff;font-size:clamp(16px,2vw,22px);font-weight:900;letter-spacing:.5px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+@keyframes xpulse{70%{box-shadow:0 0 0 26px rgba(255,200,87,0)}100%{box-shadow:0 0 0 0 rgba(255,200,87,0)}}
+.xcine.on .xplay{opacity:0;pointer-events:none}
+.xsnd{all:unset;cursor:pointer;position:absolute;right:16px;bottom:16px;z-index:4;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);opacity:0;transition:.3s}
+.xcine.on .xsnd{opacity:1}.xsnd:hover{background:#ffb300;color:#1a1200}
+.xbadge{position:absolute;right:16px;top:14px;z-index:4;display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;color:#fff;background:rgba(5,8,13,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:999px}
+.xbadge i{width:8px;height:8px;border-radius:50%;background:#ffb300;box-shadow:0 0 10px #ffb300}
+.xprog{height:5px;border-radius:5px;background:color-mix(in srgb,var(--ink) 12%,transparent);margin:12px 4px 0;overflow:hidden}
+.xprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffc857,#ff7043,#26b5a8)}
+.xch{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:14px}
+.xc{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px;border-radius:16px;text-align:center;background:color-mix(in srgb,var(--ink) 5%,transparent);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);transition:.3s}
+.xc .ms{width:38px;height:38px;line-height:38px;border-radius:12px;font-size:21px;color:#fff;background:var(--c);box-shadow:0 8px 18px -8px var(--c);transition:.3s}
+.xc b{font-size:12px;font-weight:900;color:var(--ink);line-height:1.15}
+.xc small{font-size:10.5px;color:var(--mute);font-weight:700}
+.xc:hover{background:color-mix(in srgb,var(--ink) 9%,transparent);transform:translateY(-3px)}
+.xc.on{background:color-mix(in srgb,var(--c) 22%,transparent);border-color:var(--c);transform:translateY(-4px)}
+.xc.on .ms{transform:scale(1.12) rotate(-6deg)}
+@media(max-width:760px){.xch{grid-template-columns:repeat(4,minmax(0,1fr))}.xfilm{height:18px;background-size:22px 18px}}
+@media(prefers-reduced-motion:reduce){.xfilm,.xglow,.xplay .ms{animation:none}}
 </style>
 <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -1516,6 +1546,19 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <section class="band dark" id="experience">
   <div class="wrap">
     <div class="hd rv"><span class="ms">work_history</span><h2>Professional experience</h2><div class="bar"></div><p class="sub">Five global manufacturers I've worked for, across the U.S. and Mexico.</p></div>
+    <div class="xcine rv" id="xcine">
+      <div class="xfilm top" aria-hidden="true"></div>
+      <div class="xscreen">
+        <span class="xglow" aria-hidden="true"></span>
+        <video id="xvid" src="img/Vide04.mp4" poster="img/Vide04.jpg" muted loop playsinline preload="metadata" aria-label="My career in 60 seconds: IPN, Magna, ABC Technologies, Rivian, Toyota and ITG Brands"></video>
+        <button class="xplay" id="xplay" type="button" aria-label="Play my career story"><span class="ms">play_arrow</span><b>Watch my career in 60 seconds</b></button>
+        <button class="xsnd" id="xsnd" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button>
+        <span class="xbadge"><i></i>Career story · 2008 → today</span>
+      </div>
+      <div class="xfilm bot" aria-hidden="true"></div>
+      <div class="xprog"><i id="xbar"></i></div>
+      <div class="xch" id="xch"></div>
+    </div>
     <div class="tl" id="tl"><div class="fill" id="tlfill"></div></div>
   </div>
 </section>
@@ -1523,11 +1566,11 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 <section class="band" id="skills">
   <div class="wrap">
     <div class="hd rv"><span class="ms">construction</span><h2>Expertise &amp; skills</h2><div class="bar"></div><p class="sub">What I work with, from ladder logic to the ERP, and the methods I use to keep projects on time.</p></div>
-    <div class="stv clean rv" id="stv">
+    <div class="stv rv" id="stv">
       <div class="stvf">
         <span class="stvb"></span>
         <div class="stvs">
-          <video id="stvv" src="img/Vide04.mp4" poster="img/Vide04.jpg" autoplay muted loop playsinline preload="metadata" aria-label="My career story, from my first PLC to SAP and AI, with captions" onerror="document.getElementById('stv').classList.add('novid')"></video>
+          <video id="stvv" src="img/Vide02.mp4" autoplay muted loop playsinline preload="metadata" aria-label="My story: from the plant floor to the business" onerror="document.getElementById('stv').classList.add('novid')"></video>
           <div class="stvo">
             <span class="stvl"><i></i>My story in motion</span>
             <div class="stvc"><b>From the plant floor to the business</b><small>The systems I connect every day, PLC → SCADA → MES → SAP</small></div>
@@ -1966,18 +2009,18 @@ ${UP.map((t,i)=>{const w=t.length*6.4+18;return `<g opacity="0"><rect x="${-w/2}
   &lt;SCRAP&gt;4&lt;/SCRAP&gt;
   &lt;FINAL&gt;X&lt;/FINAL&gt;
 &lt;/ZPRODCONF&gt;</pre></div></div>
-<div class="stv stv2">
+<div class="stv stv2 clean">
   <div class="stvf"><span class="stvb"></span><div class="stvs">
-    <video src="img/Vide03.mp4" poster="img/Vide03.jpg" muted loop playsinline preload="metadata" aria-label="How an order flows from the purchase order to the ERP and the plant" onerror="this.closest('.stv').classList.add('novid')"></video>
+    <video src="img/Vide05.mp4" poster="img/Vide05.jpg" muted loop playsinline preload="metadata" aria-label="How I work: listening to the team, going to Gemba, proposing and connecting every ISA-95 level up to SAP" onerror="this.closest('.stv').classList.add('novid')"></video>
     <div class="stvo"><span class="stvl"><i></i>Order to plant · in motion</span>
       <div class="stvc"><b>It all starts with a purchase order</b><small>How I trace every order end to end: PO → SAP ERP → MES → plant floor</small></div>
       <button class="stvm" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button></div>
     <div class="stvp"><i></i></div>
   </div></div>
-  <span class="stvt" style="--c:#e53935;--x:-3%;--y:16%;--d:0s"><span class="ms">receipt_long</span>Purchase order</span>
-  <span class="stvt" style="--c:#1e88e5;--x:101%;--y:22%;--d:1s"><span class="ms">cloud</span>SAP ERP</span>
-  <span class="stvt" style="--c:#26b5a8;--x:-2%;--y:80%;--d:2s"><span class="ms">description</span>LOIPRO IDoc</span>
-  <span class="stvt" style="--c:#43a047;--x:100%;--y:84%;--d:3s"><span class="ms">task_alt</span>ZPRODCONF</span>
+  <span class="stvt" style="--c:#26b5a8;--x:-3%;--y:16%;--d:0s"><span class="ms">hearing</span>Listen</span>
+  <span class="stvt" style="--c:#f4b400;--x:101%;--y:22%;--d:1s"><span class="ms">directions_walk</span>Gemba</span>
+  <span class="stvt" style="--c:#7e57c2;--x:-2%;--y:80%;--d:2s"><span class="ms">layers</span>ISA-95</span>
+  <span class="stvt" style="--c:#1e88e5;--x:100%;--y:84%;--d:3s"><span class="ms">cloud</span>SAP ERP</span>
 </div></div>`;
 const fc=document.createElement('div');fc.className='sk skfeat rv';fc.style.setProperty('--c','#1e88e5');
 fc.innerHTML=`<div class="h"><span class="ms">precision_manufacturing</span><h3>MES / MOM · the story factory</h3></div><div class="fac">${FAC}</div><div class="story" aria-live="polite"><span class="ms" id="stIco">stacks</span><div><b id="stT"></b><p id="stP"></p></div><div class="stnav"><button type="button" id="stPrev" aria-label="Previous"><span class="ms">chevron_left</span></button><button type="button" id="stPlay" aria-label="Pause"><span class="ms">pause</span></button><button type="button" id="stNext" aria-label="Next"><span class="ms">chevron_right</span></button></div></div><div class="chips fchips">${ST.map((t,n)=>`<span data-i="${n}" style="--k:${n}"><i class="ms">${t[2]}</i>${n+1}. ${t[1]}</span>`).join('')}</div>${HWY}`;
@@ -2169,6 +2212,18 @@ const el=document.getElementById('cicd');if(el){el.innerHTML=`<div class="cirow"
 
 /* rail visibility */
 {const rl=document.querySelector('.rail'),hero=document.getElementById('home');if(rl&&hero){const f=()=>{const r=hero.getBoundingClientRect();rl.classList.toggle('away',r.bottom>innerHeight*.35)};addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()}}
+
+/* experience career film */
+{const $=s=>document.querySelector(s);const w=$('#xcine'),v=$('#xvid');if(w&&v){
+const CH=[["movie","Intro","Who I am",0,"#ffb300"],["school","IPN","2008",6.5,"#26b5a8"],["groups","Magna","2012–16",13.93,"#5c6bc0"],["hub","ABC","2016–22",21.36,"#1e88e5"],["electric_car","Rivian","2022–23",28.79,"#f4b400"],["battery_charging_full","Toyota","2023–26",36.22,"#e53935"],["auto_awesome","ITG","2026–now",43.65,"#ff7043"],["flag","Finale","ISA-95",51.08,"#43a047"]];
+const box=$('#xch');box.innerHTML=CH.map((c,i)=>`<button class="xc" type="button" data-t="${c[3]}" style="--c:${c[4]}"><span class="ms">${c[0]}</span><b>${c[1]}</b><small>${c[2]}</small></button>`).join('');
+const btns=[...box.children],bar=$('#xbar'),snd=$('#xsnd');
+const go=t=>{w.classList.add('on');v.currentTime=t;v.play().catch(()=>{})};
+$('#xplay').onclick=()=>{v.muted=false;snd.querySelector('.ms').textContent='volume_up';go(0)};
+btns.forEach(b=>b.onclick=()=>go(+b.dataset.t));
+snd.onclick=()=>{v.muted=!v.muted;snd.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';snd.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
+v.addEventListener('timeupdate',()=>{const t=v.currentTime;bar.style.width=(t/(v.duration||1)*100)+'%';let k=0;CH.forEach((c,i)=>{if(t>=c[3])k=i});btns.forEach((b,i)=>b.classList.toggle('on',i===k&&w.classList.contains('on')))});
+new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&!v.paused)v.pause()}),{threshold:.2}).observe(v)}}
 /* story video players */
 document.querySelectorAll('.stv').forEach(w=>{const v=w.querySelector('video'),b=w.querySelector('.stvm'),pi=w.querySelector('.stvp i');if(!v||!b)return;
 b.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}b.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';b.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
