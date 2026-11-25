@@ -1352,7 +1352,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 @media(prefers-reduced-motion:reduce){.stvf,.stvt,.stvl i{animation:none}}
 
 /* experience career film */
-.xcine{position:relative;max-width:1060px;margin:6px auto 60px}
+.xcine{position:relative;width:min(1440px,94vw);left:50%;transform:translateX(-50%);margin:6px 0 60px}
 .xfilm{height:26px;border-radius:10px;background:#05080d radial-gradient(circle,rgba(255,255,255,.85) 0 4.5px,transparent 5px) 0 50%/32px 26px repeat-x;opacity:.9;animation:xfilm 3s linear infinite;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
 .xfilm.bot{animation-direction:reverse}
 @keyframes xfilm{to{background-position:320px 50%}}
@@ -2034,20 +2034,7 @@ ${UP.map((t,i)=>{const w=t.length*6.4+18;return `<g opacity="0"><rect x="${-w/2}
   &lt;YIELD&gt;496&lt;/YIELD&gt;
   &lt;SCRAP&gt;4&lt;/SCRAP&gt;
   &lt;FINAL&gt;X&lt;/FINAL&gt;
-&lt;/ZPRODCONF&gt;</pre></div></div>
-<div class="stv stv2">
-  <div class="stvf"><span class="stvb"></span><div class="stvs">
-    <video src="img/Vide03.mp4" poster="img/Vide03.jpg" muted loop playsinline preload="metadata" aria-label="How an order flows from the purchase order to the ERP and the plant" onerror="this.closest('.stv').classList.add('novid')"></video>
-    <div class="stvo"><span class="stvl"><i></i>Order to plant · in motion</span>
-      <div class="stvc"><b>It all starts with a purchase order</b><small>How I trace every order end to end: PO → SAP ERP → MES → plant floor</small></div>
-      <button class="stvm" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button></div>
-    <div class="stvp"><i></i></div>
-  </div></div>
-  <span class="stvt" style="--c:#e53935;--x:-3%;--y:16%;--d:0s"><span class="ms">receipt_long</span>Purchase order</span>
-  <span class="stvt" style="--c:#1e88e5;--x:101%;--y:22%;--d:1s"><span class="ms">cloud</span>SAP ERP</span>
-  <span class="stvt" style="--c:#26b5a8;--x:-2%;--y:80%;--d:2s"><span class="ms">description</span>LOIPRO IDoc</span>
-  <span class="stvt" style="--c:#43a047;--x:100%;--y:84%;--d:3s"><span class="ms">task_alt</span>ZPRODCONF</span>
-</div></div>`;
+&lt;/ZPRODCONF&gt;</pre></div></div></div>`;
 const fc=document.createElement('div');fc.className='sk skfeat rv';fc.style.setProperty('--c','#1e88e5');
 fc.innerHTML=`<div class="h"><span class="ms">precision_manufacturing</span><h3>MES / MOM · the story factory</h3></div><div class="fac">${FAC}</div><div class="story" aria-live="polite"><span class="ms" id="stIco">stacks</span><div><b id="stT"></b><p id="stP"></p></div><div class="stnav"><button type="button" id="stPrev" aria-label="Previous"><span class="ms">chevron_left</span></button><button type="button" id="stPlay" aria-label="Pause"><span class="ms">pause</span></button><button type="button" id="stNext" aria-label="Next"><span class="ms">chevron_right</span></button></div></div><div class="chips fchips">${ST.map((t,n)=>`<span data-i="${n}" style="--k:${n}"><i class="ms">${t[2]}</i>${n+1}. ${t[1]}</span>`).join('')}</div>${HWY}`;
 $('#skg').prepend(fc);
