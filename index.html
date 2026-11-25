@@ -379,7 +379,7 @@ footer{background:#0d47a1;color:#bbdefb;text-align:center;padding:22px;font-size
 .scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;border-radius:2px;background:var(--b);translate:-50% 0;animation:sh 1.6s infinite}
 @keyframes sh{to{transform:translateY(14px);opacity:0}}
 .mq{overflow:hidden;border-block:1px solid var(--line);background:#fff;padding:16px 0;mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.mq div{display:flex;gap:44px;width:max-content;animation:mq 40s linear infinite}
+.mq div{display:flex;gap:44px;width:max-content;animation:mq 32s linear infinite}
 .mq span{font-size:clamp(18px,2vw,24px);font-weight:900;color:#b0bec5;white-space:nowrap}
 .mq span:nth-child(3n){color:var(--b)}.mq span:nth-child(3n+1){color:var(--t)}
 @keyframes mq{to{transform:translateX(-50%)}}
@@ -971,7 +971,6 @@ html[data-theme=dark] .hi.hi2::after{background:linear-gradient(110deg,transpare
 .mq span.mqi .ms{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:22px;color:#fff;background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 60%,#000));box-shadow:0 6px 14px -6px var(--c);animation:mqb 3s ease-in-out infinite}
 .mq span.mqi:nth-child(odd) .ms{animation-delay:-1.5s}
 @keyframes mqb{50%{transform:translateY(-3px) rotate(-6deg)}}
-.mq:hover div{animation-play-state:paused}
 .mq span.mqi:hover{opacity:1}
 
 
@@ -1193,14 +1192,14 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 
 /* ===== concept map ===== */
 .cmband{background:radial-gradient(1200px 600px at 50% 45%,color-mix(in srgb,var(--b) 9%,transparent),transparent 70%),var(--paper)}
-.cmap{position:relative;max-width:1240px;margin:0 auto;aspect-ratio:1240/860}
+.cmap{position:relative;max-width:1240px;margin:0 auto;aspect-ratio:1240/980}
 .cmap svg.cml{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .cml .lk{fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round;opacity:.55;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.3s var(--ease),opacity .35s,stroke-width .35s}
 .cml .lf{fill:none;stroke:var(--c);stroke-width:1.6;stroke-dasharray:4 6;opacity:0;transition:opacity .8s,stroke-width .3s}
 .cmap.in .cml .lk{stroke-dashoffset:0}.cmap.in .cml .lf{opacity:.55}
 .cml .halo{fill:none;stroke:var(--b);stroke-width:1.2;opacity:.25;stroke-dasharray:2 10}
 .cml .pls{fill:var(--c);filter:drop-shadow(0 0 6px var(--c))}
-.cmc{position:absolute;left:50%;top:50%;width:18%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:5}
+.cmc{position:absolute;left:50%;top:50%;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:5}
 .cmc .ring{position:absolute;inset:-9%;border-radius:50%;background:conic-gradient(from 0deg,#1e88e5,#26b5a8,#43a047,#f4b400,#ff7043,#e53935,#8e24aa,#1e88e5);animation:cmspin 9s linear infinite;-webkit-mask:radial-gradient(circle,transparent 63%,#000 64.5%);mask:radial-gradient(circle,transparent 63%,#000 64.5%)}
 .cmc .ring2{position:absolute;inset:-20%;border-radius:50%;border:2px dashed color-mix(in srgb,var(--b) 40%,transparent);animation:cmspin 30s linear infinite reverse}
 .cmc .ring2 i{position:absolute;width:14px;height:14px;border-radius:50%;top:-7px;left:calc(50% - 7px);background:var(--o);box-shadow:0 0 12px var(--o)}
@@ -1229,7 +1228,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 @keyframes cmspin{to{transform:rotate(360deg)}}
 @keyframes cmfloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
 @media(max-width:1020px){.cmap{aspect-ratio:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.cmap svg.cml{display:none}
-.cmc{position:relative;left:auto;top:auto;transform:none;width:min(220px,55vw);margin:30px auto 60px;grid-column:1/-1}
+.cmc{position:relative;left:auto;top:auto;transform:none;width:min(320px,78vw);margin:30px auto 60px;grid-column:1/-1}
 .cmgrp{display:flex;flex-wrap:wrap;gap:8px;padding:14px;border-radius:20px;background:var(--w);border-top:4px solid var(--c);box-shadow:var(--e1)}
 .hub,.leaf{position:relative!important;left:auto!important;top:auto!important;transform:none!important;opacity:1!important;animation:none!important;align-self:flex-start;white-space:normal}
 .hub{box-shadow:none;flex-basis:100%;max-width:max-content}}
@@ -1352,7 +1351,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 @media(prefers-reduced-motion:reduce){.stvf,.stvt,.stvl i{animation:none}}
 
 /* experience career film */
-.xcine{position:relative;width:min(1440px,94vw);left:50%;transform:translateX(-50%);margin:6px 0 60px}
+.xcine{position:relative;width:min(1720px,96vw);margin:10px 0 70px calc(50% - min(860px,48vw));display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:22px;align-items:start}
 .xfilm{height:26px;border-radius:10px;background:#05080d radial-gradient(circle,rgba(255,255,255,.85) 0 4.5px,transparent 5px) 0 50%/32px 26px repeat-x;opacity:.9;animation:xfilm 3s linear infinite;box-shadow:0 0 0 1px rgba(255,255,255,.06)}
 .xfilm.bot{animation-direction:reverse}
 @keyframes xfilm{to{background-position:320px 50%}}
@@ -1370,15 +1369,20 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
 .xbadge i{width:8px;height:8px;border-radius:50%;background:#ffb300;box-shadow:0 0 10px #ffb300}
 .xprog{height:5px;border-radius:5px;background:color-mix(in srgb,var(--ink) 12%,transparent);margin:12px 4px 0;overflow:hidden}
 .xprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffc857,#ff7043,#26b5a8)}
-.xch{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px;margin-top:14px}
-.xc{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 6px;border-radius:16px;text-align:center;background:color-mix(in srgb,var(--ink) 5%,transparent);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);transition:.3s}
+.xside{position:sticky;top:90px;border-radius:22px;padding:14px;background:color-mix(in srgb,var(--ink) 5%,transparent);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);backdrop-filter:blur(6px)}
+.xsh{display:flex;align-items:center;gap:10px;margin:2px 2px 12px}.xsh>.ms{width:38px;height:38px;line-height:38px;text-align:center;border-radius:12px;background:linear-gradient(135deg,#ffe08a,#ffb300);color:#1a1200}.xsh b{display:block;font-size:15px;font-weight:900;color:var(--ink)}.xsh small{font-size:11.5px;color:var(--mute)}
+.xch{display:flex;flex-direction:column;gap:7px}
+.xc{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:38px 1fr auto;align-items:center;column-gap:10px;padding:8px 10px;border-radius:14px;text-align:left;position:relative;overflow:hidden;background:color-mix(in srgb,var(--ink) 5%,transparent);border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);transition:.3s}
 .xc .ms{width:38px;height:38px;line-height:38px;border-radius:12px;font-size:21px;color:#fff;background:var(--c);box-shadow:0 8px 18px -8px var(--c);transition:.3s}
-.xc b{font-size:12px;font-weight:900;color:var(--ink);line-height:1.15}
+.xc b{font-size:13.5px;font-weight:900;color:var(--ink);line-height:1.15;display:block}
 .xc small{font-size:10.5px;color:var(--mute);font-weight:700}
-.xc:hover{background:color-mix(in srgb,var(--ink) 9%,transparent);transform:translateY(-3px)}
-.xc.on{background:color-mix(in srgb,var(--c) 22%,transparent);border-color:var(--c);transform:translateY(-4px)}
+.xc:hover{background:color-mix(in srgb,var(--ink) 9%,transparent);transform:translateX(4px)}
+.xc.on{background:color-mix(in srgb,var(--c) 22%,transparent);border-color:var(--c);transform:translateX(6px)}
+.xc em{font-style:normal;font-size:11px;font-weight:800;color:var(--mute);font-variant-numeric:tabular-nums}
+.xc .xb{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--c);transition:width .25s linear}
 .xc.on .ms{transform:scale(1.12) rotate(-6deg)}
-@media(max-width:760px){.xch{grid-template-columns:repeat(3,minmax(0,1fr))}.xfilm{height:18px;background-size:22px 18px}}
+@media(max-width:1100px){.xcine{grid-template-columns:minmax(0,1fr);width:auto;margin:10px 0 60px}.xside{position:static}.xch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.xch{grid-template-columns:repeat(2,minmax(0,1fr))}.xfilm{height:18px;background-size:22px 18px}}
 @media(prefers-reduced-motion:reduce){.xfilm,.xglow,.xplay .ms{animation:none}}
 
 /* concept map play + modal */
@@ -1508,7 +1512,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   <div class="wrap" style="max-width:1260px">
     <div class="hd rv"><span class="ms">hub</span><h2>My profile at a glance</h2><div class="bar"></div><p class="sub">Eight worlds I connect every day, from the PLC to the boardroom.</p></div>
     <div class="cmap" id="cmap">
-      <svg class="cml" id="cml" viewBox="0 0 1240 860" aria-hidden="true"></svg>
+      <svg class="cml" id="cml" viewBox="0 0 1240 980" aria-hidden="true"></svg>
       <div class="cmc">
         <div class="ring2"><i></i><i></i></div>
         <div class="ring"></div>
@@ -1566,17 +1570,19 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
   <div class="wrap">
     <div class="hd rv"><span class="ms">work_history</span><h2>Professional experience</h2><div class="bar"></div><p class="sub">Five global manufacturers I've worked for, across the U.S. and Mexico.</p></div>
     <div class="xcine rv" id="xcine">
+      <div class="xmain">
       <div class="xfilm top" aria-hidden="true"></div>
       <div class="xscreen">
         <span class="xglow" aria-hidden="true"></span>
-        <video id="xvid" src="img/Vide06.mp4" poster="img/Vide06.jpg" muted loop playsinline preload="metadata" aria-label="My career in 60 seconds: IPN, Magna, ABC Technologies, Rivian, Toyota and ITG Brands"></video>
+        <video id="xvid" src="img/Vide07.mp4" poster="img/Vide07.jpg" muted loop playsinline preload="metadata" aria-label="My career in 60 seconds: IPN, Magna, ABC Technologies, Rivian, Toyota and ITG Brands"></video>
         <button class="xplay" id="xplay" type="button" aria-label="Play my career story"><span class="ms">play_arrow</span><b>Watch my career in 75 seconds</b></button>
         <button class="xsnd" id="xsnd" type="button" aria-label="Turn sound on"><span class="ms">volume_off</span></button>
         <span class="xbadge"><i></i>Career story · 2008 → today</span>
       </div>
       <div class="xfilm bot" aria-hidden="true"></div>
       <div class="xprog"><i id="xbar"></i></div>
-      <div class="xch" id="xch"></div>
+      </div>
+      <aside class="xside"><div class="xsh"><span class="ms">movie</span><div><b>Chapters</b><small>Tap to jump · 9 scenes</small></div></div><div class="xch" id="xch"></div></aside>
     </div>
     <div class="tl" id="tl"><div class="fill" id="tlfill"></div></div>
   </div>
@@ -1589,7 +1595,7 @@ html[data-theme=dark] .skart{border-bottom-color:#2a3646}
       <div class="stvf">
         <span class="stvb"></span>
         <div class="stvs">
-          <video id="stvv" src="img/Vide06.mp4" poster="img/Vide06.jpg" autoplay muted loop playsinline preload="metadata" aria-label="My career story with narration and captions" onerror="document.getElementById('stv').classList.add('novid')"></video>
+          <video id="stvv" src="img/Vide07.mp4" poster="img/Vide07.jpg" autoplay muted loop playsinline preload="metadata" aria-label="My career story with narration and captions" onerror="document.getElementById('stv').classList.add('novid')"></video>
           <div class="stvo">
             <span class="stvl"><i></i>My story in motion</span>
             <div class="stvc"><b>From the plant floor to the business</b><small>The systems I connect every day, PLC → SCADA → MES → SAP</small></div>
@@ -2058,12 +2064,12 @@ show8(0);setPlay(playing);
  ["code","Software & Cloud","Build","#e53935",[["javascript","MERN stack"],["web","ASP.NET MVC"],["cloud_sync","Azure DevOps CI/CD"],["verified","Microsoft certified"]]],
  ["groups","Leadership & Agile","Lead","#43a047",[["view_kanban","Scrum · Kanban"],["flag","Project management"],["join_inner","Systems + Business Analyst"],["trending_up","ROI cases"]]],
  ["route","Career path","Industries","#7e57c2",[["local_shipping","ITG Brands · NC"],["electric_car","Toyota · KY"],["electric_bolt","Rivian · IL"],["factory","ABC · Magna · MX"]]]];
-const m=$('#cmap'),sv=$('#cml'),W=1240,H=860,cx=W/2,cy=H/2,NS='http://www.w3.org/2000/svg';
+const m=$('#cmap'),sv=$('#cml'),W=1240,H=980,cx=W/2,cy=H/2,NS='http://www.w3.org/2000/svg';
 const pct=(x,y,el)=>{el.style.left=x/W*100+'%';el.style.top=y/H*100+'%'};
 const mk=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e};
-sv.append(mk('ellipse',{class:'halo',cx,cy,rx:300,ry:232}),mk('ellipse',{class:'halo',cx,cy,rx:520,ry:375}));
+sv.append(mk('ellipse',{class:'halo',cx,cy,rx:335,ry:268}),mk('ellipse',{class:'halo',cx,cy,rx:520,ry:375}));
 const items=[];
-CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*300,hy=cy+Math.sin(an)*232;
+CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*335,hy=cy+Math.sin(an)*268;
  const g=document.createElement('div');g.className='cmgrp';g.style.setProperty('--c',b[3]);
  const h=document.createElement('button');h.type='button';h.className='hub';h.style.setProperty('--c',b[3]);h.style.setProperty('--fd',(i*.4)+'s');h.style.transitionDelay=(.5+i*.12)+'s';h.innerHTML=`<span class="ms">${b[0]}</span><span><small>${b[2]}</small><b>${b[1]}</b></span>`;pct(hx,hy,h);g.append(h);
  const c1x=cx+Math.cos(an)*130,c1y=cy+Math.sin(an)*60;
@@ -2071,7 +2077,7 @@ CM.forEach((b,i)=>{const an=-Math.PI/2+i*Math.PI/4+Math.PI/8,hx=cx+Math.cos(an)*
  const L=lk.getTotalLength?lk.getTotalLength():400;lk.style.setProperty('--len',L);lk.style.transitionDelay=(i*.12)+'s';
  if(!RM){const d=mk('circle',{class:'pls',r:5});d.style.setProperty('--c',b[3]);d.style.fill=b[3];const am=mk('animateMotion',{dur:'3.2s',repeatCount:'indefinite',begin:(i*.4)+'s',path:lk.getAttribute('d')});d.append(am);sv.append(d)}
  const grp={h,lk,lf:[],lv:[]};
- b[4].forEach((l,k)=>{const sg=Math.sign(Math.cos(an)),lx=hx+Math.cos(an)*235-Math.abs(k-1.5)*12*sg,ly=hy+Math.sin(an)*130+(k-1.5)*40;
+ b[4].forEach((l,k)=>{const sg=Math.sign(Math.cos(an)),lx=hx+Math.cos(an)*215-Math.abs(k-1.5)*12*sg,ly=hy+Math.sin(an)*130+(k-1.5)*40;
   const e=document.createElement('div');e.className='leaf';e.style.setProperty('--c',b[3]);e.style.transitionDelay=(1.1+i*.12+k*.07)+'s';e.innerHTML=`<span class="ms">${l[0]}</span>${l[1]}`;pct(lx,ly,e);g.append(e);
   const lf=mk('path',{class:'lf',d:`M${hx} ${hy} Q${(hx+lx)/2+Math.cos(an)*30} ${(hy+ly)/2+Math.sin(an)*30} ${lx} ${ly}`});lf.style.setProperty('--c',b[3]);lf.style.transitionDelay=(1+i*.12)+'s';sv.insertBefore(lf,sv.firstChild);
   if(!RM&&k%2==0){const d=mk('circle',{class:'pls',r:3});d.style.fill=b[3];d.append(mk('animateMotion',{dur:'2.4s',repeatCount:'indefinite',begin:(1+i*.3+k*.5)+'s',path:lf.getAttribute('d')}));sv.append(d)}
@@ -2229,13 +2235,13 @@ const el=document.getElementById('cicd');if(el){el.innerHTML=`<div class="cirow"
 /* experience career film */
 {const $=s=>document.querySelector(s);const w=$('#xcine'),v=$('#xvid');if(w&&v){
 const CH=[["movie","Intro","Who I am",0,"#ffb300"],["workspace_premium","Studies","IPN · Tec · MIT",7.93,"#8e24aa"],["school","IPN","2008",15.86,"#26b5a8"],["groups","Magna","2012–16",23.79,"#5c6bc0"],["hub","ABC","2016–22",31.72,"#1e88e5"],["electric_car","Rivian","2022–23",39.65,"#f4b400"],["battery_charging_full","Toyota","2023–26",47.58,"#e53935"],["auto_awesome","ITG","2026–now",55.51,"#ff7043"],["flag","Finale","Sensor → SAP",63.44,"#43a047"]];
-const box=$('#xch');box.innerHTML=CH.map((c,i)=>`<button class="xc" type="button" data-t="${c[3]}" style="--c:${c[4]}"><span class="ms">${c[0]}</span><b>${c[1]}</b><small>${c[2]}</small></button>`).join('');
+const box=$('#xch');const fmt=t=>`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;box.innerHTML=CH.map((c,i)=>`<button class="xc" type="button" data-t="${c[3]}" style="--c:${c[4]}"><span class="ms">${c[0]}</span><span><b>${c[1]}</b><small>${c[2]}</small></span><em>${fmt(c[3])}</em><i class="xb"></i></button>`).join('');
 const btns=[...box.children],bar=$('#xbar'),snd=$('#xsnd');
 const go=t=>{w.classList.add('on');v.currentTime=t;v.play().catch(()=>{})};
 $('#xplay').onclick=()=>{v.muted=false;snd.querySelector('.ms').textContent='volume_up';go(0)};
 btns.forEach(b=>b.onclick=()=>go(+b.dataset.t));
 snd.onclick=()=>{v.muted=!v.muted;snd.querySelector('.ms').textContent=v.muted?'volume_off':'volume_up';snd.setAttribute('aria-label',v.muted?'Turn sound on':'Turn sound off')};
-v.addEventListener('timeupdate',()=>{const t=v.currentTime;bar.style.width=(t/(v.duration||1)*100)+'%';let k=0;CH.forEach((c,i)=>{if(t>=c[3])k=i});btns.forEach((b,i)=>b.classList.toggle('on',i===k&&w.classList.contains('on')))});
+v.addEventListener('timeupdate',()=>{const t=v.currentTime;bar.style.width=(t/(v.duration||1)*100)+'%';let k=0;CH.forEach((c,i)=>{if(t>=c[3])k=i});btns.forEach((b,i)=>{b.classList.toggle('on',i===k&&w.classList.contains('on'));const st=CH[i][3],en=i+1<CH.length?CH[i+1][3]:(v.duration||st+8);b.querySelector('.xb').style.width=(t<=st?0:t>=en?100:(t-st)/(en-st)*100)+'%'})});
 new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&!v.paused)v.pause()}),{threshold:.2}).observe(v)}}
 
 /* concept map video modal */
